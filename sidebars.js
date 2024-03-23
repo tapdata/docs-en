@@ -298,6 +298,371 @@ const sidebars = {
      },
      'cloud/release-notes',
   ],
+// Tapdata Enterprise docs list
+  enterprise: [
+  'enterprise/what-is-tapdata-enterprise',
+    {
+     type: 'category',
+     label: 'Introduction',
+     link: {type: 'doc', id: 'enterprise/introduction/README'},
+     items: [
+             'enterprise/introduction/architecture',
+             'enterprise/introduction/features',
+             'enterprise/introduction/benefits',
+             'enterprise/introduction/use-cases',
+             'enterprise/introduction/supported-databases',
+             'enterprise/introduction/terms',
+       ]
+    },
+    {
+     type: 'category',
+     label: 'Quick Start',
+     link: {type: 'doc', id: 'enterprise/quick-start/README'},
+     items: [
+            {
+             type: 'category',
+             label: 'Install Tapdata',
+             link: {type: 'doc', id: 'enterprise/quick-start/install/README'},
+             items: [
+                    'enterprise/quick-start/install/install-tapdata-stand-alone',
+                    'enterprise/quick-start/install/install-on-windows',
+             ]
+            },
+            'enterprise/quick-start/connect-database',
+            'enterprise/quick-start/create-task',
+     ]
+    },
+{
+         type: 'category',
+         label: 'Connect Data Sources',
+         link: {type: 'doc', id: 'enterprise/prerequisites/README'},
+         items: [
+                 {
+                  type: 'category',
+                  label: 'Data Warehouse and Data Lake',
+                  link: {type: 'doc', id: 'enterprise/prerequisites/warehouses-and-lake/README'},
+                  items: [
+                          'enterprise/prerequisites/warehouses-and-lake/big-query',
+                          'enterprise/prerequisites/warehouses-and-lake/clickhouse',
+                          'enterprise/prerequisites/warehouses-and-lake/databend',
+                          'enterprise/prerequisites/warehouses-and-lake/doris',
+                          'enterprise/prerequisites/warehouses-and-lake/gaussdb',
+                          'enterprise/prerequisites/warehouses-and-lake/greenplum',
+                          'enterprise/prerequisites/warehouses-and-lake/selectdb',
+                          'enterprise/prerequisites/warehouses-and-lake/tablestore',
+                          'enterprise/prerequisites/warehouses-and-lake/yashandb',
+                         ]
+                  },
+                 {
+                  type: 'category',
+                  label: 'On-Premises Databases',
+                  link: {type: 'doc', id: 'enterprise/prerequisites/on-prem-databases/README'},
+                  items: [
+                          'enterprise/prerequisites/on-prem-databases/dameng',
+                          'enterprise/prerequisites/on-prem-databases/db2',
+                          'enterprise/prerequisites/on-prem-databases/elasticsearch',
+                          'enterprise/prerequisites/on-prem-databases/gbase-8a',
+                          'enterprise/prerequisites/on-prem-databases/gbase-8s',
+                          'enterprise/prerequisites/on-prem-databases/hive1',
+                          'enterprise/prerequisites/on-prem-databases/hive3',
+                          'enterprise/prerequisites/on-prem-databases/informix',
+                          'enterprise/prerequisites/on-prem-databases/kingbase-es-r3',
+                          'enterprise/prerequisites/on-prem-databases/kingbase-es-r6',
+                          'enterprise/prerequisites/on-prem-databases/mariadb',
+                          'enterprise/prerequisites/on-prem-databases/mongodb',
+                          'enterprise/prerequisites/on-prem-databases/mongodb-atlas',
+                          'enterprise/prerequisites/on-prem-databases/mrs-hive3',
+                          'enterprise/prerequisites/on-prem-databases/mysql',
+                          'enterprise/prerequisites/on-prem-databases/mysql-pxc',
+                          'enterprise/prerequisites/on-prem-databases/oceanbase',
+                          'enterprise/prerequisites/on-prem-databases/opengauss',
+                          'enterprise/prerequisites/on-prem-databases/oracle',
+                          'enterprise/prerequisites/on-prem-databases/postgresql',
+                          'enterprise/prerequisites/on-prem-databases/redis',
+                          'enterprise/prerequisites/on-prem-databases/sqlserver',
+                          'enterprise/prerequisites/on-prem-databases/tdengine',
+                          'enterprise/prerequisites/on-prem-databases/tidb',
+                          ]
+                  },
+                  {
+                   type: 'category',
+                   label: 'Cloud Databases',
+                   link: {type: 'doc', id: 'enterprise/prerequisites/cloud-databases/README'},
+                   items: [
+                           'enterprise/prerequisites/cloud-databases/aliyun-adb-mysql',
+                           'enterprise/prerequisites/cloud-databases/aliyun-adb-postgresql',
+                           'enterprise/prerequisites/cloud-databases/aliyun-mongodb',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-mariadb',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-mongodb',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-mysql',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-pg',
+                           'enterprise/prerequisites/cloud-databases/aliyun-rds-for-sql-server',
+                           'enterprise/prerequisites/cloud-databases/amazon-rds-mysql',
+                           'enterprise/prerequisites/cloud-databases/polardb-mysql',
+                           'enterprise/prerequisites/cloud-databases/polardb-postgresql',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-mariadb',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-mongodb',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-mysql',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-pg',
+                           'enterprise/prerequisites/cloud-databases/tencentdb-for-sql-server',
+                          ]
+                   },
+                  {
+                   type: 'category',
+                   label: 'Message Queue and Middleware',
+                   link: {type: 'doc', id: 'enterprise/prerequisites/mq-and-middleware/README'},
+                   items: [
+                           'enterprise/prerequisites/mq-and-middleware/activemq',
+                           'enterprise/prerequisites/mq-and-middleware/ai-chat',
+                           'enterprise/prerequisites/mq-and-middleware/bes-channels',
+                           'enterprise/prerequisites/mq-and-middleware/hazelcast-cloud',
+                           'enterprise/prerequisites/mq-and-middleware/kafka',
+                           'enterprise/prerequisites/mq-and-middleware/rabbitmq',
+                           'enterprise/prerequisites/mq-and-middleware/rocketmq',
+                          ]
+                   },
+                   {
+                   type: 'category',
+                   label: 'CRM and Sales Analytics',
+                   link: {type: 'doc', id: 'enterprise/prerequisites/crm-and-sales-analytics/README'},
+                   items: [
+                           'enterprise/prerequisites/crm-and-sales-analytics/hubspot',
+                           'enterprise/prerequisites/crm-and-sales-analytics/metabase',
+                           'enterprise/prerequisites/crm-and-sales-analytics/salesforce',
+                           'enterprise/prerequisites/crm-and-sales-analytics/zoho-crm',
+                          ]
+                   },
+                   {
+                    type: 'category',
+                    label: 'SaaS and APIs',
+                    link: {type: 'doc', id: 'enterprise/prerequisites/saas-and-api/README'},
+                    items: [
+                            'enterprise/prerequisites/saas-and-api/coding',
+                            'enterprise/prerequisites/saas-and-api/github',
+                            'enterprise/prerequisites/saas-and-api/lark-approval',
+                            'enterprise/prerequisites/saas-and-api/lark-doc',
+                            'enterprise/prerequisites/saas-and-api/lark-im',
+                            'enterprise/prerequisites/saas-and-api/lark-task',
+                            'enterprise/prerequisites/saas-and-api/quick-api',
+                            'enterprise/prerequisites/saas-and-api/vika',
+                            'enterprise/prerequisites/saas-and-api/zoho-desk',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: 'E-Commerce',
+                    link: {type: 'doc', id: 'enterprise/prerequisites/e-commerce/README'},
+                    items: [
+                            'enterprise/prerequisites/e-commerce/alibaba-1688',
+                            'enterprise/prerequisites/e-commerce/shein',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: 'Files',
+                    link: {type: 'doc', id: 'enterprise/prerequisites/files/README'},
+                    items: [
+                            'enterprise/prerequisites/files/csv',
+                            'enterprise/prerequisites/files/excel',
+                            'enterprise/prerequisites/files/json',
+                            'enterprise/prerequisites/files/xml',
+                           ]
+                   },
+                   {
+                    type: 'category',
+                    label: 'Others',
+                    link: {type: 'doc', id: 'enterprise/prerequisites/others/README'},
+                    items: [
+                            'enterprise/prerequisites/others/custom-connection',
+                            'enterprise/prerequisites/others/dummy',
+                            'enterprise/prerequisites/others/http-receiver',
+                           ]
+                   },
+         ]
+    },
+    {
+     type: 'category',
+     label: 'User Guide',
+     link: {type: 'doc', id: 'enterprise/user-guide/README'},
+     items: [
+             'enterprise/user-guide/workshop',
+             'enterprise/user-guide/manage-connection',
+             {
+              type: 'category',
+              label: 'Real-Time Data Hub',
+              link: {type: 'doc', id: 'enterprise/user-guide/real-time-data-hub/README'},
+              items:[
+                    {
+                     type: 'category',
+                     label: 'Data Integration Mode',
+                     link: {type: 'doc', id: 'enterprise/user-guide/real-time-data-hub/etl-mode/README'},
+                     items:[
+                            'enterprise/user-guide/real-time-data-hub/etl-mode/dashboard',
+                            'enterprise/user-guide/real-time-data-hub/etl-mode/create-task',
+                           ]
+                    },
+                    {
+                     type: 'category',
+                     label: 'DaaS Mode',
+                     link: {type: 'doc', id: 'enterprise/user-guide/real-time-data-hub/daas-mode/README'},
+                     items:[
+                            'enterprise/user-guide/real-time-data-hub/daas-mode/enable-real-time-data-hub',
+                            'enterprise/user-guide/real-time-data-hub/daas-mode/dashboard',
+                            'enterprise/user-guide/real-time-data-hub/daas-mode/create-task',
+                           ]
+                    },
+                    ]
+             },
+             {
+              type: 'category',
+              label: 'Data Plipeline',
+              link: {type: 'doc', id: 'enterprise/user-guide/data-pipeline/README'},
+              items:[
+                    {
+                     type: 'category',
+                     label: 'Data Replication',
+                     link: {type: 'doc', id: 'enterprise/user-guide/data-pipeline/copy-data/README'},
+                     items:[
+                            'enterprise/user-guide/data-pipeline/copy-data/create-task',
+                            'enterprise/user-guide/data-pipeline/copy-data/process-node',
+                            'enterprise/user-guide/data-pipeline/copy-data/monitor-task',
+                           ]
+                    },
+                    {
+                     type: 'category',
+                     label: 'Data Transformation',
+                     link: {type: 'doc', id: 'enterprise/user-guide/data-pipeline/data-development/README'},
+                     items:[
+                            'enterprise/user-guide/data-pipeline/data-development/create-task',
+                            'enterprise/user-guide/data-pipeline/data-development/create-materialized-view',
+                            'enterprise/user-guide/data-pipeline/data-development/manage-task',
+                            'enterprise/user-guide/data-pipeline/data-development/process-node',
+                            'enterprise/user-guide/data-pipeline/data-development/monitor-task',
+                           ]
+                    },
+                    'enterprise/user-guide/data-pipeline/verify-data',
+                    'enterprise/user-guide/data-pipeline/pre-check',
+                    ]
+             },
+             {
+              type: 'category',
+              label: 'Advanced Settings',
+              link: {type: 'doc', id: 'enterprise/user-guide/advanced-settings/README'},
+              items:[
+                     'enterprise/user-guide/advanced-settings/share-cache',
+                     'enterprise/user-guide/advanced-settings/manage-function',
+                     'enterprise/user-guide/advanced-settings/custom-node',
+                     'enterprise/user-guide/advanced-settings/share-mining',
+                    ]
+             },
+             {
+              type: 'category',
+              label: 'Data Service',
+              link: {type: 'doc', id: 'enterprise/user-guide/data-service/README'},
+              items:[
+                     'enterprise/user-guide/data-service/manage-app',
+                     'enterprise/user-guide/data-service/create-api-service',
+                     'enterprise/user-guide/data-service/create-api-client',
+                     'enterprise/user-guide/data-service/create-api-server',
+                     'enterprise/user-guide/data-service/audit-api',
+                     'enterprise/user-guide/data-service/monitor-api-request',
+                     'enterprise/user-guide/data-service/api-auth',
+                     'enterprise/user-guide/data-service/query-via-restful',
+                     'enterprise/user-guide/data-service/query-via-graphql',
+                     'enterprise/user-guide/data-service/api-query-params',
+                    ]
+             },
+             {
+              type: 'category',
+              label: 'Manage System',
+              link: {type: 'doc', id: 'enterprise/user-guide/manage-system/README'},
+              items:[
+                     'enterprise/user-guide/manage-system/manage-role',
+                     'enterprise/user-guide/manage-system/manage-user',
+                     'enterprise/user-guide/manage-system/manage-cluster',
+                     'enterprise/user-guide/manage-system/manage-external-storage',
+                    ]
+             },
+             {
+              type: 'category',
+              label: 'Other Settings',
+              link: {type: 'doc', id: 'enterprise/user-guide/other-settings/README'},
+              items:[
+                     'enterprise/user-guide/other-settings/system-settings',
+                     'enterprise/user-guide/other-settings/manage-license',
+                     'enterprise/user-guide/other-settings/check-version',
+                    ]
+             },
+             'enterprise/user-guide/notification',
+             'enterprise/user-guide/no-supported-data-type',
+        ]
+    },
+    {
+     type: 'category',
+     label: 'Production Admin',
+     link: {type: 'doc', id: 'enterprise/production-admin/README'},
+     items: [
+            'enterprise/production-admin/install-tapdata-ha',
+            'enterprise/production-admin/install-replica-mongodb',
+            'enterprise/production-admin/operation',
+            'enterprise/production-admin/emergency-plan',
+        ]
+    },
+    {
+     type: 'category',
+     label: 'Data Pipeline Tutorial',
+     link: {type: 'doc', id: 'enterprise/pipeline-tutorial/README'},
+     items: [
+            'enterprise/pipeline-tutorial/excel-to-mysql',
+            'enterprise/pipeline-tutorial/mysql-to-redis',
+            'enterprise/pipeline-tutorial/oracle-to-kafka',
+            'enterprise/pipeline-tutorial/extract-array',
+        ]
+    },
+    {
+         type: 'category',
+         label: 'Best Practices',
+         link: {type: 'doc', id: 'enterprise/best-practice/README'},
+         items: [
+                'enterprise/best-practice/data-sync',
+                'enterprise/best-practice/handle-schema-change',
+                'enterprise/best-practice/heart-beat-task',
+                'enterprise/best-practice/alert-via-qqmail',
+                'enterprise/best-practice/full-breakpoint-resumption',
+                'enterprise/best-practice/raw-logs-solution',
+            ]
+        },
+    {
+     type: 'category',
+     label: 'TroubleShooting',
+     link: {type: 'doc', id: 'enterprise/troubleshooting/README'},
+     items: [
+            'enterprise/troubleshooting/error-code',
+            'enterprise/troubleshooting/error-and-solutions',
+        ]
+    },
+    {
+     type: 'category',
+     label: 'FAQs',
+     link: {type: 'doc', id: 'enterprise/faq/README'},
+     items: [
+            'enterprise/faq/use-product',
+            'enterprise/faq/data-pipeline',
+        ]
+    },
+    {
+     type: 'category',
+     label: 'Appendix',
+     link: {type: 'doc', id: 'enterprise/appendix/README'},
+     items: [
+            'enterprise/appendix/standard-js',
+            'enterprise/appendix/enhanced-js',
+            'enterprise/appendix/benchmark'
+        ]
+    },
+  'enterprise/support',
+  'enterprise/release-notes',
+ ]
 };
 
 
