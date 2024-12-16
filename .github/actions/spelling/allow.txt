@@ -598,3 +598,13 @@ tapflow
 venv
 webui
 wildcards
+pipx
+pypa
+timestamped
+versioned
+bebe
+dcda
+ffe
+osasco
+
+
