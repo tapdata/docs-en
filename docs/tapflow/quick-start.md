@@ -9,31 +9,58 @@ import TabItem from '@theme/TabItem';
 
 ## Step 1: Install Tap Shell
 
-1. [Download and install Python 3](https://www.python.org/downloads/), version 3.6 or higher.
+1. Download and start Tap Shell.
 
-2. Run the following command to create a virtual environment. This isolates dependencies and avoids conflicts with the system Python environment.
+   <Tabs className="unique-tabs">
+   <TabItem value="Source Installation">
 
-   ```bash
-   python3 -m venv tapflow_env
-   ```
+   1. [Download and install Python 3](https://www.python.org/downloads/), version 3.6 or higher.
 
-3. Run the following commands to activate the virtual environment, and install Tap Shell along with its dependencies.
+   2. Run the following command to create a virtual environment. This isolates dependencies and avoids conflicts with the system Python environment.
 
-   ```bash
-   # Activate the virtual environment
-   source tapflow_env/bin/activate
-   
-   # Install Tap Shell
-   pip3 install tapflow
-   # or
-   pip install tapflow
-   ```
+      ```bash
+      python3 -m venv tapflow_env
+      ```
 
-   The installation is now complete. Before using Tap Shell again after exiting the command line, you need to activate the virtual environment. Alternatively, you can install TapFlow using [pipx](https://github.com/pypa/pipx). Simply run `pipx install tapflow`, and pipx will automatically create and manage the virtual environment for you.
+   3. Run the following commands to activate the virtual environment, and install Tap Shell along with its dependencies.
 
-4. Type `tap` to launch Tap Shell.
+      ```bash
+      # Activate the virtual environment
+      source tapflow_env/bin/activate
+      
+      # Install Tap Shell
+      pip3 install tapflow
+      # Or
+      pip install tapflow
+      ```
 
-5. Select your deployment type and configure the required authentication information. For this example, we’ll connect to TapData Cloud:
+      The installation is now complete. Before using Tap Shell again after exiting the command line, you need to activate the virtual environment. Alternatively, you can install TapFlow using [pipx](https://github.com/pypa/pipx). Simply run `pipx install tapflow`, and pipx will automatically create and manage the virtual environment for you.
+
+   4. Enter `tap` to start Tap Shell.
+
+   </TabItem>
+   <TabItem value="Binary Installation">
+
+   1. Download the corresponding binary package based on your operating system:
+
+      * [Ubuntu 22.04 +]( https://resource.tapdata.net/package/lite/tap-cli-linux-x86_64-ubuntu2004)
+      * [Windows](https://resource.tapdata.net/package/lite/tap-cli-win32-x86_64.exe)
+
+   2. Start Tap Shell.
+
+      * Ubuntu 22.04 +: Grant execution permissions and start TapShell.
+
+        ```bash
+        chmod +x tap-cli-linux-x86_64-ubuntu2004
+        ./tap-cli-linux-x86_64-ubuntu2004
+        ```
+
+      * Windows: Double-click `tap-cli-win32-x86_64.exe` to start TapShell.
+
+   </TabItem>
+   </Tabs>
+
+3. Select your deployment type and configure the required authentication information. For this example, we’ll connect to TapData Cloud:
 
    ```bash
    Tap Flow requires TapData Live Data Platform (LDP) cluster to run. 
