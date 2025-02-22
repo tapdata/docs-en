@@ -602,7 +602,7 @@ import TabItem from '@theme/TabItem';
 
 * Fixed an issue where the wrong category of operation logs was recorded when restarting the Agent via the webpage.
 
----
+
 
 ## 2023-09-20
 
@@ -639,3 +639,4 @@ import TabItem from '@theme/TabItem';
 - Fixed the issue where users couldn't view the monitoring page for previously run tasks.
 
 </TabItem>
+</Tabs>
