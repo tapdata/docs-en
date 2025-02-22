@@ -6,6 +6,32 @@ import Content from '../reuse-content/_cloud-features.md';
 
 To enhance the user experience, TapData Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for TapData Cloud, helping you grasp the new feature specifications more effectively.
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+  <TabItem value="2025" default>
+```
+
+### 2025-02-21
+
+#### New Features
+
+- Added support for the [Sybase to PostgreSQL](../prerequisites/on-prem-databases/sybase.md) sync scenario, now supporting synchronization of default values, enumerated types, and sequences.
+- Enabled the ability to define a primary key for tables without a primary key when configuring [Primary-Secondary Merge Nodes](../user-guide/data-development/process-node.md#pri-sec-merged), ensuring data synchronization consistency and improving merge efficiency.
+
+#### Enhancements
+
+- Improved field derivation logic for the Sybase to PostgreSQL sync scenario.
+
+#### Bug Fixes
+
+- Fixed an issue with multi-level associated keys in primary-secondary merges, preventing incorrect merging of child table data.
+
 ### 2025-01-24
 
 #### Bug Fixes
@@ -26,6 +52,11 @@ To enhance the user experience, TapData Cloud continuously enriches and optimize
 #### Bug Fixes
 
 - Fixed the issue where shared data mining tasks initiated by the admin user could not be used properly by other users.
+
+</TabItem>
+
+<TabItem value="2024">
+
 
 ### 2024-12-30
 
@@ -457,6 +488,11 @@ To enhance the user experience, TapData Cloud continuously enriches and optimize
 * Fixed instability in tasks due to frequent WebSocket reconnections.
 * Corrected several UI interaction experience issues.
 
+
+</TabItem>
+
+<TabItem value="2023">
+
 ## 2023-12-26
 
 ### New Features
@@ -601,3 +637,5 @@ To enhance the user experience, TapData Cloud continuously enriches and optimize
 ### Bug Fixes
 
 - Fixed the issue where users couldn't view the monitoring page for previously run tasks.
+
+</TabItem>

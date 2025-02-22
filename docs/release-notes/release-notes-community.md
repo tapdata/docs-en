@@ -6,6 +6,16 @@ import Content from '../reuse-content/_community-features.md';
 
 This document introduces the recent release notes for TapData Community. For more information on earlier versions, please refer to the [GitHub Release Page](https://github.com/tapdata/tapdata/releases).
 
+## 3.23.0
+
+### New Features
+
+- Enabled the ability to define a primary key for tables without a primary key when configuring [Primary-Secondary Merge Nodes](../user-guide/data-development/process-node.md#pri-sec-merged), ensuring data synchronization consistency and improving merge efficiency.
+
+### Bug Fixes
+
+- Fixed an issue with multi-level associated keys in primary-secondary merges, preventing incorrect merging of child table data.
+
 ## 3.22.0
 
 ### Enhancements
