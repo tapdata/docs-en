@@ -6,6 +6,22 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 This article provides release notes for TapData Enterprise, including new features, improvements, and bug fixes.
 
+## 3.23.0
+
+### New Features
+
+- Added support for the [Sybase to PostgreSQL](../prerequisites/on-prem-databases/sybase.md) sync scenario, now supporting synchronization of default values, enumerated types, and sequences.
+- Enabled the ability to define a primary key for tables without a primary key when configuring [Primary-Secondary Merge Nodes](../user-guide/data-development/process-node.md#pri-sec-merged), ensuring data synchronization consistency and improving merge efficiency.
+
+### Enhancements
+
+- Improved field derivation logic for the Sybase to PostgreSQL sync scenario.
+- Optimized CPU usage in shared mining tasks during concurrent multi-table consumption scenarios.
+
+### Bug Fixes
+
+- Fixed an issue with multi-level associated keys in primary-secondary merges, preventing incorrect merging of child table data.
+
 ## 3.22.0
 
 ### Enhancements
