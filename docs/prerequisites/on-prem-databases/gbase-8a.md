@@ -49,16 +49,26 @@ You can configure the write strategy in the **Advanced Settings** of the task no
 
 2. Grant the newly created account the necessary privileges. For example, you can also set more granular privilege controls based on business needs.
 
+   <Tabs className="unique-tabs">
+   <TabItem value="Grant to Specified Database" default>
+
    ```sql
    GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON database_name.* TO 'username';
    ```
+
+   </TabItem>
+
+   <TabItem value="Grant to All Databases">
 
    ```sql
    GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, CREATE ROUTINE, CREATE TEMPORARY TABLES, DROP ON *.* TO 'username';
    ```
 
-   - **database_name**: the name of the database to which privileges are being granted.
-   - **username**: the username.
+   </TabItem>
+   </Tabs>
+
+   * **database_name**: The name of the database to grant permissions.
+   * **username**: Enter user name.
 
 ## Connect to GBase 8a
 
