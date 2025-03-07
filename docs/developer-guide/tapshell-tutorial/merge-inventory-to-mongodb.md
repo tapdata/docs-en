@@ -1,6 +1,6 @@
-# Consolidate and Standardize Multi-Table Data with TapFlow
+# Consolidate and Standardize Multi-Table Data with TapData Shell
 
-TapFlow offers robust data transformation and integration capabilities, enabling the consolidation of multiple regional MySQL inventory tables into a unified MongoDB collection. This case study demonstrates how to leverage TapFlow's processing power to standardize and merge Point-of-Sale (POS) inventory data from different regions into a unified collection in MongoDB, supporting unified inventory queries and analytics across regions.
+TapData Shell offers robust data transformation and integration capabilities, enabling the consolidation of multiple regional MySQL inventory tables into a unified MongoDB collection. This case study demonstrates how to leverage TapData Shell's processing power to standardize and merge Point-of-Sale (POS) inventory data from different regions into a unified collection in MongoDB, supporting unified inventory queries and analytics across regions.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,7 @@ A global retail company maintains separate POS inventory tables in MySQL databas
 - **Complex Data Integration**: Minor differences in column formats, such as the `PK_CERT_NBR` field, hinder unified reporting and analytics.
 - **Lack of Real-Time Insights**: Inability to access up-to-date inventory changes across all regions affects decision-making speed.
 
-TapFlow addresses these issues by using the `union` function to merge multiple tables and applying JavaScript logic to standardize key fields. The consolidated data is stored in MongoDB, providing a real-time, unified inventory view for efficient querying and analytics. The data flow diagram is as follows:
+TapData Shell addresses these issues by using the `union` function to merge multiple tables and applying JavaScript logic to standardize key fields. The consolidated data is stored in MongoDB, providing a real-time, unified inventory view for efficient querying and analytics. The data flow diagram is as follows:
 
 ```mermaid
 %%{ init: { 'theme': 'neo', 'themeVariables': { 'primaryColor': '#1E88E5', 'edgeLabelBackground':'#F1F8E9', 'tertiaryColor': '#FAFAFA'}} }%%
@@ -139,14 +139,14 @@ This guide demonstrates how to consolidate regional inventory data into MongoDB 
 </TabItem>
 <TabItem value="Using Python Script">
 
-Below is a complete Python example demonstrating how to use TapFlow to merge inventory tables from multiple regions into a MongoDB collection while standardizing field values. You can run the script using `python inventory_merge.py`:
+Below is a complete Python example demonstrating how to use TapData Shell to merge inventory tables from multiple regions into a MongoDB collection while standardizing field values. You can run the script using `python inventory_merge.py`:
 
 - **Data Source**: Inventory tables from MySQL: `usaPOSGoldMaterial`, `canPOSGoldMaterial`, and `sgPOSGoldMaterial`.
 - **Processing Logic**: Normalize fields using JavaScript and merge data from different regions using `union`.
 - **Output**: The processed results are saved in real time to the `inventory_merge_all` collection in MongoDB, containing merged inventory records from different regions, each with a region identifier and a standardized `NBR` field.
 
 ```python title="inventory_merge.py"
-# Import TapFlow dependencies
+# Import TapData Shell dependencies
 from tapflow.lib import *
 from tapflow.cli.cli import init
 
@@ -324,4 +324,4 @@ Example query result:
 }
 ```
 
-With TapFlow’s real-time synchronization and integration capabilities, the company successfully consolidated regional inventory tables into MongoDB, enabling unified global inventory management and efficient analytics. The `FROM` field provides a clear identifier for the source region, while the standardized `NBR` field enhances query and analysis efficiency. This solution significantly optimizes cross-regional inventory management workflows and supports real-time decision-making with reliable data.
+With TapData’s real-time synchronization and integration capabilities, the company successfully consolidated regional inventory tables into MongoDB, enabling unified global inventory management and efficient analytics. The `FROM` field provides a clear identifier for the source region, while the standardized `NBR` field enhances query and analysis efficiency. This solution significantly optimizes cross-regional inventory management workflows and supports real-time decision-making with reliable data.

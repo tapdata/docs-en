@@ -26,9 +26,9 @@ Compared to traditional data migration/synchronization tools, TapData offers a f
 
   Based on proprietary CDC log parsing technology, it enables real-time data collection with zero intrusion and virtually no impact on the source database. Every new piece of data that enters the platform is responded to, computed, processed, and written into the target table within seconds. Additionally, it supports sharing incremental data to avoid repeated reads of source database incremental logs.
 
-* **[Efficient Data Flow Programming Framework](tapflow/README.md)**
+* **[Efficient Data Stream Development Toolkit](developer-guide/README.md)**
 
-  Provides a real-time data processing framework (TapFlow) for developers, enabling fully code-based task definitions. With a rich set of APIs and command-line tools (Tap Shell), it supports task scheduling, data cleansing, and processing. Ideal for complex business scenarios and script-based management, TapFlow significantly enhances development efficiency and flexibility.
+  TapData Shell (also known as TapShell) is a real-time data processing toolkit designed for developers. It enables fully codified task definitions, allowing users to schedule tasks, clean, and process data through an interactive command-line interface or Python programs. Ideal for complex business scenarios and script-based management, TapData Shell significantly enhances development efficiency and flexibility.
 
 * **[Unified Real-Time Data Hub](user-guide/real-time-data-hub/README.md)**
 

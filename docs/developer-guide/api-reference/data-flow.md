@@ -1,6 +1,6 @@
 # Data Flow API
 
-This document provides a comprehensive reference for managing data flows using the TapFlow API, including defining task sources/targets, executing data transformations, and handling advanced data flow operations.
+This article provides a comprehensive reference for managing data streams using TapData Shell's API, including defining data sources/targets and executing data processing operations.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -222,7 +222,7 @@ print("Data flow task configuration completed!")
 
 ## <span id="srouce">Advanced Source Configuration</span>
 
-In TapFlow, the **`Source` API** serves as the starting point for data flow tasks. It defines data sources, table names, and task types, and it also loads the source table data required for task execution. Additionally, `Source` provides advanced features and configuration options to support data synchronization, Change Data Capture (CDC), and performance optimization.
+In TapData Shell, the **`Source` API** serves as the starting point for data flow tasks. It defines data sources, table names, and task types, and it also loads the source table data required for task execution. Additionally, `Source` provides advanced features and configuration options to support data synchronization, Change Data Capture (CDC), and performance optimization.
 
 :::tip
 
@@ -341,7 +341,7 @@ By configuring advanced settings, you can optimize the performance, flexibility,
 
 ## <span id="sink">Advanced Target Configuration</span>
 
-In TapFlow, the `Sink` API serves as the endpoint for a data flow task, allowing you to define target table write configurations. `Sink` supports flexible behavior definitions and performance tuning options to meet various needs, such as full synchronization, incremental updates, and high-performance writes.
+In TapData Shell, the `Sink` API serves as the endpoint for a data flow task, allowing you to define target table write configurations. `Sink` supports flexible behavior definitions and performance tuning options to meet various needs, such as full synchronization, incremental updates, and high-performance writes.
 
 `Sink` configurations apply only to the current data flow task. They do not alter global settings of the target database or affect other data flow tasks.
 
@@ -429,7 +429,7 @@ print("Target write configuration complete!")
 
 ## Config Task Sync Types
 
-Before starting a data flow task, TapFlow supports flexible configuration of the task's synchronization type to meet various business needs, such as **full sync**, **incremental sync**, and **full + incremental sync** (the default). For incremental sync tasks, you can specify the start time to precisely control the range of incremental data collection.
+Before starting a data flow task, TapData supports flexible configuration of the task's synchronization type to meet various business needs, such as **full sync**, **incremental sync**, and **full + incremental sync** (the default). For incremental sync tasks, you can specify the start time to precisely control the range of incremental data collection.
 
 
 
