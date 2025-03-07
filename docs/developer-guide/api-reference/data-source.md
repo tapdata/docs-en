@@ -1,10 +1,10 @@
 # Data Source APIs
 
-This document explains how to create a new data source connection in TapFlow, which serves as the source and target for subsequent flow tasks. Additionally, you can manage data sources [through the interface](../../prerequisites/README.md) for convenience based on your preferences.
+This article explains how to create a new data source connection using TapData Shell, which serves as a source or target for subsequent streaming tasks. Additionally, you can manage data sources [through the interface](../../prerequisites/README.md) to accommodate different user preferences.
 
 :::tip
 
-TapFlow supports [dozens of common data sources](../../prerequisites/supported-databases.md). You can configure a data source by setting the `name`, `type`, and `config` parameters. Configuration details, required permissions, and parameter descriptions vary by data source type. For more information, see [Connect Data Sources](../../prerequisites/README.md).
+TapData supports [dozens of common data sources](../../prerequisites/supported-databases.md). You can configure a data source by setting the `name`, `type`, and `config` parameters. Configuration details, required permissions, and parameter descriptions vary by data source type. For more information, see [Connect Data Sources](../../prerequisites/README.md).
 
 :::
 
@@ -75,7 +75,7 @@ mysql_conn = DataSource('mysql', 'MySQL_ECommerce', mysql_json_config)
 # Set the data source type to 'source' (source database)
 mysql_conn.type('source')
 
-# Save the MySQL data source configuration to TapFlow
+# Save the MySQL data source configuration to TapData
 mysql_conn.save()
 
 # (Optional) To delete the data source configuration, call the delete() method

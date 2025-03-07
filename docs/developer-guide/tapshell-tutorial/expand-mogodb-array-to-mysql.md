@@ -1,6 +1,6 @@
-# Expand MongoDB Arrays to MySQL in Real Time with TapFlow
+# Expand MongoDB Arrays to MySQL in Real Time with TapData Shell
 
-TapFlow offers powerful data transformation and processing capabilities, enabling seamless conversion of nested array structures in document models to relational table structures. This guide demonstrates how to unfold nested arrays from MongoDB documents and synchronize them in real-time with MySQL flat tables, supporting efficient relational database queries and data analysis.
+TapData Shell offers powerful data transformation and processing capabilities, enabling seamless conversion of nested array structures in document models to relational table structures. This guide demonstrates how to unfold nested arrays from MongoDB documents and synchronize them in real-time with MySQL flat tables, supporting efficient relational database queries and data analysis.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -33,11 +33,11 @@ In this example, an e-commerce company aims to conduct independent analysis of o
 }
 ```
 
-To support traditional relational analysis requirements, we propose a solution using TapFlow to expand MongoDB’s nested order arrays (e.g., `order_payments`) into independent rows in MySQL, ensuring that analytical teams can leverage SQL queries to generate efficient reports and perform data mining. The flow is as follows:
+To support traditional relational analysis requirements, we propose a solution using TapData Shell to expand MongoDB’s nested order arrays (e.g., `order_payments`) into independent rows in MySQL, ensuring that analytical teams can leverage SQL queries to generate efficient reports and perform data mining. The flow is as follows:
 
-![Real-Time Expansion of MongoDB Arrays with TapFlow](../../images/unwind_mongodb_array.png)
+![Real-Time Expansion of MongoDB Arrays with TapData Shell](../../images/unwind_mongodb_array.png)
 
-Additionally, TapFlow’s real-time sync capabilities ensure that MySQL reflects the latest data from MongoDB, helping the company improve query performance while maintaining data freshness, thus enabling the analytics team to access timely business data and make informed decisions.
+Additionally, TapData’s real-time sync capabilities ensure that MySQL reflects the latest data from MongoDB, helping the company improve query performance while maintaining data freshness, thus enabling the analytics team to access timely business data and make informed decisions.
 
 ## Prerequisites
 
@@ -90,7 +90,7 @@ Next, we demonstrate how to expand the `order_payments` array and rename fields 
    Unwind_MongoDB_Array.write_to("MySQL_Demo.unwind_order_payments", pk=["order_id", "payment_sequential"]).save()
    ```
 
-   If the target table does not exist, TapFlow will automatically create it.
+   If the target table does not exist, TapData will automatically create it.
 
 6. Start the data flow task.
 
@@ -99,7 +99,7 @@ Next, we demonstrate how to expand the `order_payments` array and rename fields 
    Unwind_MongoDB_Array.start()
    ```
 
-   After the task starts, TapFlow continuously captures changes in the MongoDB source and transforms each `order_payments` array element, synchronizing it in real-time with the MySQL target table.
+   After the task starts, TapData continuously captures changes in the MongoDB source and transforms each `order_payments` array element, synchronizing it in real-time with the MySQL target table.
 
 7. While the task runs, you can check the task status and statistics using the command `status MySQL_to_MongoDB_Order`.
 
@@ -108,14 +108,14 @@ Next, we demonstrate how to expand the `order_payments` array and rename fields 
 </TabItem>
 <TabItem value="Using Python Script">
 
-Below is a complete Python example demonstrating how to use TapFlow to unwind the `order_payments` array in MongoDB and synchronize it to a MySQL table while renaming fields for easier business usage. You can run the script using `python unwind_mongo_array.py`:
+Below is a complete Python example demonstrating how to use TapData Shell to unwind the `order_payments` array in MongoDB and synchronize it to a MySQL table while renaming fields for easier business usage. You can run the script using `python unwind_mongo_array.py`:
 
 - **Data Source**: `MongoDB_Demo.order_collection` collection, containing a nested `order_payments` array field.
 - **Processing Logic**: Store each element of the array field as a separate row in the target table and set primary keys for real-time updates.
 - **Output**: The processed data is saved in real time to the `unwind_order_payments` table in the MySQL database, with fields expanded and renamed.
 
 ```python title="unwind_mongo_array.py"
-# Import TapFlow dependencies
+# Import TapData Shell dependencies
 from tapflow.lib import *
 from tapflow.cli.cli import init
 

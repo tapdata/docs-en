@@ -1,6 +1,6 @@
-# Builde Real-Time Wide Table with TapFlow
+# Builde Real-Time Wide Table with TapData Shell
 
-TapFlow is a programming framework that supports real-time data replication, data processing, and materialized view creation. It offers APIs, a Python SDK, and command-line tools (Tap Shell) to efficiently build and manage data flow tasks. This guide demonstrates using Tap Shell and the Python SDK to build a real-time wide table to support efficient queries in an e-commerce application by joining multiple tables of order information.
+TapData Shell offers powerful data transformation and processing capabilities, making it easy to efficiently build and manage data synchronization tasks. It is ideal for real-time data processing and materialized views. This guide demonstrates how to use TapData Shell and the Python SDK to construct a real-time wide table, enabling efficient multi-table joins for order information queries in e-commerce applications.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -17,17 +17,17 @@ As the business and data volume grows, the e-commerce company **XYZ** faces chal
 
 ![Typical E-commerce Table Structure](../../images/er_graph.png)
 
-To address these challenges, the company uses **TapFlow** to build a real-time wide table, consolidating order, customer, payment, and product data in MongoDB to support high-concurrency mobile API queries. Here’s an overview of the process:
+To address these challenges, the company uses **TapData Shell** to build a real-time wide table, consolidating order, customer, payment, and product data in MongoDB to support high-concurrency mobile API queries. Here’s an overview of the process:
 
-1. **Data Integration**: TapFlow uses CDC to monitor real-time changes in source tables, capturing updates to order, customer, and payment data and transferring them to MongoDB.
-2. **Wide Table Generation**: TapFlow's lookup feature combines data from multiple tables into a single wide table, embedding customer, product, and payment information into the order record for simplified queries.
-3. **Real-Time Updates**: When source data changes, TapFlow synchronizes incremental updates to the MongoDB wide table, ensuring the query content is always up-to-date.
+1. **Data Integration**: TapData uses CDC to monitor real-time changes in source tables, capturing updates to order, customer, and payment data and transferring them to MongoDB.
+2. **Wide Table Generation**: TapDatas lookup feature combines data from multiple tables into a single wide table, embedding customer, product, and payment information into the order record for simplified queries.
+3. **Real-Time Updates**: When source data changes, TapData synchronizes incremental updates to the MongoDB wide table, ensuring the query content is always up-to-date.
 
 ![Building a Real-Time Wide Table](../../images/real_time_wide_table.gif)
 
-By using TapFlow, XYZ enables real-time synchronization and fast querying of order and inventory information. Operations staff can access the latest order data instantly, significantly improving the user experience. The wide table consolidates order, customer, product, and logistics information in MongoDB, reducing cross-table join resource consumption and improving query efficiency and system performance.
+By using TapData, XYZ enables real-time synchronization and fast querying of order and inventory information. Operations staff can access the latest order data instantly, significantly improving the user experience. The wide table consolidates order, customer, product, and logistics information in MongoDB, reducing cross-table join resource consumption and improving query efficiency and system performance.
 
-Next, we’ll walk through setting up TapFlow to meet these requirements.
+Next, we’ll walk through setting up TapData  Shell to meet these requirements.
 
 ## Prerequisites
 
@@ -113,14 +113,14 @@ In this example, the MySQL data source is named `MySQL_ECommerce`, and the Mongo
 </TabItem>
 <TabItem value="Using Python Script">
 
-Below is a complete Python example demonstrating how to use TapFlow to join multiple MySQL tables in real time to create a MongoDB wide-table view. You can execute it using `python real_time_order_view.py`:
+Below is a complete Python example demonstrating how to use TapData  Shell to join multiple MySQL tables in real time to create a MongoDB wide-table view. You can execute it using `python real_time_order_view.py`:
 
 - **Main Table**: `ecom_orders`, containing basic order information.
 - **Associated Tables**: `ecom_customers` (customer info), `ecom_order_payments` (payment info), `ecom_order_items` (product info), etc.
 - **Output**: `orderSingleView` collection in MongoDB, containing complete order information along with its associated customer, payment, product, and seller details.
 
 ```python title="real-time-wide-table.py"
-# Import TapFlow dependencies
+# Import TapData  Shell dependencies
 from tapflow.lib import *
 from tapflow.cli.cli import init
 
@@ -208,7 +208,7 @@ Task status: running
 
 ## Step 2: Verify Real-Time Performance
 
-E-commerce company **XYZ** needs to process user orders and track each order's details within the system. Every time a user places an order, the order’s basic information, customer details, order items, product information, and seller information are recorded in the database, and the status updates when the order ships. With TapFlow, this information is synchronized in real-time to MongoDB for API queries, ensuring users see up-to-date order information.
+E-commerce company **XYZ** needs to process user orders and track each order's details within the system. Every time a user places an order, the order’s basic information, customer details, order items, product information, and seller information are recorded in the database, and the status updates when the order ships. With TapData, this information is synchronized in real-time to MongoDB for API queries, ensuring users see up-to-date order information.
 
 The following steps simulate data flow in a real-world business scenario by manually inserting data into MySQL.
 
@@ -242,7 +242,7 @@ The following steps simulate data flow in a real-world business scenario by manu
 
    :::tip
 
-   Once data is inserted, TapFlow automatically parses the Binlog for real-time data changes, processes them, and writes them to MongoDB’s `orderSingleView` collection.
+   Once data is inserted, TapData automatically parses the Binlog for real-time data changes, processes them, and writes them to MongoDB’s `orderSingleView` collection.
 
    :::
 

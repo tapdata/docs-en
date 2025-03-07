@@ -1,8 +1,8 @@
-# TapFlow API Reference
+# API Reference
 
-TapFlow offers a comprehensive set of APIs that simplify the management of data flow tasks, data source connection configuration, and complex data processing operations, making it ideal for scenarios requiring automated or script-based data synchronization management.
+TapData Shell offers a comprehensive set of APIs that simplify the management of data flow tasks, data source connection configuration, and complex data processing operations, making it ideal for scenarios requiring automated or script-based data synchronization management.
 
-After completing the [installation and login](../quick-start.md) to Tap Shell, enter `h` to display a prompt with usage information. An example is shown below:
+After completing the [installation](../quick-start.md) to TapData Shell, enter `h` to display a prompt with usage information. An example is shown below:
 
 ```bash
 h
