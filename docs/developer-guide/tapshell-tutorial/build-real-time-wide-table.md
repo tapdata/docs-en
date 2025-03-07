@@ -20,7 +20,7 @@ As the business and data volume grows, the e-commerce company **XYZ** faces chal
 To address these challenges, the company uses **TapData Shell** to build a real-time wide table, consolidating order, customer, payment, and product data in MongoDB to support high-concurrency mobile API queries. Here’s an overview of the process:
 
 1. **Data Integration**: TapData uses CDC to monitor real-time changes in source tables, capturing updates to order, customer, and payment data and transferring them to MongoDB.
-2. **Wide Table Generation**: TapDatas lookup feature combines data from multiple tables into a single wide table, embedding customer, product, and payment information into the order record for simplified queries.
+2. **Wide Table Generation**: TapData's lookup feature combines data from multiple tables into a single wide table, embedding customer, product, and payment information into the order record for simplified queries.
 3. **Real-Time Updates**: When source data changes, TapData synchronizes incremental updates to the MongoDB wide table, ensuring the query content is always up-to-date.
 
 ![Building a Real-Time Wide Table](../../images/real_time_wide_table.gif)
