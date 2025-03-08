@@ -17,6 +17,13 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2025" default>
 ```
 
+### 2025-03-06
+
+#### Bug Fixes
+
+- Fixed an issue where incremental data lost time precision when synchronizing from Oracle to PostgreSQL.
+- Fixed an issue in primary-secondary merge tasks where changes to the primary table's association conditions caused extra pre-update records in the target data.
+
 ### 2025-02-21
 
 #### New Features

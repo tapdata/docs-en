@@ -6,6 +6,12 @@ import Content from '../reuse-content/_community-features.md';
 
 This document introduces the recent release notes for TapData Community. For more information on earlier versions, please refer to the [GitHub Release Page](https://github.com/tapdata/tapdata/releases).
 
+## 3.24.0
+
+### Bug Fixes
+
+- Fixed an issue in primary-secondary merge tasks where changes to the primary table's association conditions caused extra pre-update records in the target data.
+
 ## 3.23.0
 
 ### New Features
