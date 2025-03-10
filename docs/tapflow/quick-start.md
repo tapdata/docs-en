@@ -7,9 +7,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
-## Step 1: Install Tap Shell
+## Step 1: Install TapShell
 
-1. Download and start Tap Shell.
+1. Download and start TapShell.
 
    <Tabs className="unique-tabs">
    <TabItem value="Source Installation">
@@ -22,21 +22,21 @@ import TabItem from '@theme/TabItem';
       python3 -m venv tapflow_env
       ```
 
-   3. Run the following commands to activate the virtual environment, and install Tap Shell along with its dependencies.
+   3. Run the following commands to activate the virtual environment, and install TapShell along with its dependencies.
 
       ```bash
       # Activate the virtual environment
       source tapflow_env/bin/activate
       
-      # Install Tap Shell
+      # Install TapShell
       pip3 install tapflow
       # Or
       pip install tapflow
       ```
 
-      The installation is now complete. Before using Tap Shell again after exiting the command line, you need to activate the virtual environment. Alternatively, you can install TapFlow using [pipx](https://github.com/pypa/pipx). Simply run `pipx install tapflow`, and pipx will automatically create and manage the virtual environment for you.
+      The installation is now complete. Before using TapShell again after exiting the command line, you need to activate the virtual environment. Alternatively, you can install TapFlow using [pipx](https://github.com/pypa/pipx). Simply run `pipx install tapflow`, and pipx will automatically create and manage the virtual environment for you.
 
-   4. Enter `tap` to start Tap Shell.
+   4. Enter `tap` to start TapShell.
 
    </TabItem>
    <TabItem value="Binary Installation">
@@ -46,16 +46,16 @@ import TabItem from '@theme/TabItem';
       * [Ubuntu 22.04 +]( https://resource.tapdata.net/package/lite/tap-cli-linux-x86_64-ubuntu2004)
       * [Windows](https://resource.tapdata.net/package/lite/tap-cli-win32-x86_64.exe)
 
-   2. Start Tap Shell.
+   2. Start TapShell.
 
-      * Ubuntu 22.04 +: Grant execution permissions and start TapShell.
+      * Ubuntu 20.04 +: Grant execution permissions and start TapShell.
 
         ```bash
-        chmod +x tap-cli-linux-x86_64-ubuntu2004
-        ./tap-cli-linux-x86_64-ubuntu2004
+        chmod +x tap-shell
+        ./tap-shell
         ```
 
-      * Windows: Double-click `tap-cli-win32-x86_64.exe` to start TapShell.
+      * Windows: Double-click `tap-shell.exe` to start TapShell.
 
    </TabItem>
    </Tabs>
@@ -138,7 +138,7 @@ Data flows are more advanced than individual real-time synchronization tasks and
 <TabItem value="Using Interactive Shell" default>
 ```
 
-Next, configure your data sources via Tap Shell. In this example, we’ll use MySQL as the source database and MongoDB as the target.
+Next, configure your data sources via TapShell. In this example, we’ll use MySQL as the source database and MongoDB as the target.
 
 1. Run the following command to add a MySQL data source named `MySQL_ECommerce`.
 
@@ -178,7 +178,7 @@ Next, configure your data sources via Tap Shell. In this example, we’ll use My
 
    :::tip
 
-   - Tap Shell supports [many popular data sources](../prerequisites/supported-databases.md), with slight configuration differences depending on the source. For more on permissions and parameters, see [Connecting Data Sources](../prerequisites/README.md).
+   - TapData supports [many popular data sources](../prerequisites/supported-databases.md), with slight configuration differences depending on the source. For more on permissions and parameters, see [Connecting Data Sources](../prerequisites/README.md).
    - If you receive a “**load schema status: error**” error, it’s typically a permission or configuration issue. Retrying with the same name will overwrite the previous configuration with “**database MongoDB_ECommerce exists, will update its config**.”
 
    :::
@@ -278,7 +278,7 @@ By using a programming approach, you can flexibly define and manage data flows. 
    flow.save()
    ```
 
-4. Start the data flow task. You can directly start the task within the script using the method below, or choose to start it through [Tap Shell](tapcli-reference.md) or other external schedulers to accommodate different business needs.
+4. Start the data flow task. You can directly start the task within the script using the method below, or choose to start it through [TapShell](tapshell-reference.md) or other external schedulers to accommodate different business needs.
 
    ```python
    # Start the data flow task
@@ -338,4 +338,4 @@ By using a programming approach, you can flexibly define and manage data flows. 
 
 * [Builde Real-Time Wide Tables](tapflow-tutorial/build-real-time-wide-table.md)
 * [API Reference](api-reference/README.md)
-* [Command Reference](tapcli-reference.md)
+* [Command Reference](tapshell-reference.md)

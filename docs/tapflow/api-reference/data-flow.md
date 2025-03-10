@@ -76,7 +76,7 @@ flowchart LR
 
 **Simple Example**
 
-Combining all the steps into a complete example, this task reads order data from MySQL and writes it to MongoDB. After saving the task, you can run the [start](../tapcli-reference.md#start) command to begin execution.
+Combining all the steps into a complete example, this task reads order data from MySQL and writes it to MongoDB. After saving the task, you can run the [start](../tapshell-reference.md#start) command to begin execution.
 
 ```python
 # Create a data flow task
@@ -183,7 +183,7 @@ flowchart LR
 
 **Complete Example**
 
-This example demonstrates how to read multiple tables from MySQL, configure batch writes, retain existing data, and add a filtering node to keep only records where the order amount is greater than 100. The processed data is then synchronized in real-time to a MongoDB target table. After saving the task, you can run the [start](../tapcli-reference.md#start) command to execute it.
+This example demonstrates how to read multiple tables from MySQL, configure batch writes, retain existing data, and add a filtering node to keep only records where the order amount is greater than 100. The processed data is then synchronized in real-time to a MongoDB target table. After saving the task, you can run the [start](../tapshell-reference.md#start) command to execute it.
 
 ```python
 # Reference an existing data source and set up a multi-table data replication task
@@ -757,5 +757,5 @@ tap> flow = Flow("Python_Function")  \
 
 ## See also
 
-Manage flow tasks through [Tap Shell](../tapcli-reference), including starting and stopping tasks, checking task status, deleting tasks, and more.
+Manage flow tasks through [TapShell](../tapshell-reference), including starting and stopping tasks, checking task status, deleting tasks, and more.
 
