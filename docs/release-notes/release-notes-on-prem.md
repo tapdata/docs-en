@@ -6,6 +6,18 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 This article provides release notes for TapData Enterprise, including new features, improvements, and bug fixes.
 
+## 3.24.0
+
+### Enhancements
+
+- Improved login failure messages by removing specific error details (e.g., incorrect email or password) to enhance security.
+- Added support for assigning separate alert email recipients for different tasks, allowing more precise monitoring of task status.
+
+### Bug Fixes
+
+- Fixed an issue where incremental data lost time precision when synchronizing from Oracle to PostgreSQL.
+- Fixed an issue in primary-secondary merge tasks where changes to the primary table's association conditions caused extra pre-update records in the target data.
+
 ## 3.23.0
 
 ### New Features
