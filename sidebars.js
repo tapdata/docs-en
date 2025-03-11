@@ -363,7 +363,7 @@ const sidebars = {
                     'tapflow/api-reference/data-flow',
              ]
             },
-            'tapflow/tapcli-reference',
+            'tapflow/tapshell-reference',
             {
              type: 'category',
              label: 'Typical Use Cases',

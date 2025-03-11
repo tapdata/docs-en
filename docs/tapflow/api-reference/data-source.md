@@ -100,4 +100,4 @@ If an error message like `load schema status: error` appears, it is often due to
 
 ## See also
 
-Manage data sources with [Tap Shell](../tapcli-reference), such as viewing data source status, table structure information, deleting data sources, and other operations.
+Manage data sources with [TapShell](../tapshell-reference), such as viewing data source status, table structure information, deleting data sources, and other operations.
