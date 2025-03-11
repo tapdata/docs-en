@@ -43,8 +43,8 @@ import TabItem from '@theme/TabItem';
 
    1. Download the corresponding binary package based on your operating system:
 
-      * [Ubuntu 22.04 +]( https://resource.tapdata.net/package/lite/tap-cli-linux-x86_64-ubuntu2004)
-      * [Windows](https://resource.tapdata.net/package/lite/tap-cli-win32-x86_64.exe)
+      * [Ubuntu 20.04 +](https://resource.tapdata.net/package/lite/tapshell)
+      * [Windows](https://resource.tapdata.net/package/lite/tapshell.exe)
 
    2. Start TapShell.
 
