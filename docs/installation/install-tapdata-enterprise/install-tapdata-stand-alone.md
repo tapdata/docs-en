@@ -17,7 +17,7 @@ Stand-alone deployment is suitable for functional testing scenarios. For product
 * CPU: 8 cores
 * Memory: 16 GB
 * Storage Space: 100 GB
-* Operating System: CentOS 7+ or Ubuntu 16.04+
+* Operating System: **CentOS 7+** , **Ubuntu 16.04+** or **Red Hat Enterprise Linux（RHEL）7.x/8.x**
 
 ## Procedure
 
