@@ -17,7 +17,7 @@ Before you begin, ensure your environment meets the following requirements:
 
 - Hardware specifications: 8-core CPU (x86 architecture), 16 GB of memory
 - Storage specifications: 100 GB
-- Operating System: CentOS 7+ or Ubuntu 16.04+
+- Operating System: **CentOS 7+** , **Ubuntu 16.04+** or **Red Hat Enterprise Linux（RHEL）7.x/8.x**
 
 ## Component Overview
 
