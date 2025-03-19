@@ -28,7 +28,8 @@ DML Operations: INSERT, UPDATE, DELETE
 
 :::tip
 
-When Sybase is used as a target, you can select the write strategy through the advanced settings of the task node: in case of insert conflicts, you can choose to convert to an update or discard the record; in case of update failures, you can choose to convert to an insert.
+- When Sybase is used as a target, you can select the write strategy through the advanced settings of the task node: in case of insert conflicts, you can choose to convert to an update or discard the record; in case of update failures, you can choose to convert to an insert.
+- For Sybase to PostgreSQL synchronization scenarios, extra support is provided for synchronizing **indexes**, **foreign key constraints**, and **sequences**.
 
 :::
 
@@ -48,7 +49,6 @@ When Sybase is used as a target, you can select the write strategy through the a
 
 - When performing real-time incremental synchronization from Sybase as a source, TapData will set log checkpoints to prevent log cleanup, advancing every 10 minutes, which may consume additional disk space. Suspended incremental tasks can cause transaction logs to accumulate, so it's recommended to promptly delete unneeded tasks or manually reset tasks that have been paused for a long time.
 - The full data synchronization phase may consume database and bandwidth resources, so ensure that sufficient hardware resources are available. The load impact during incremental synchronization is generally within 5%.
-- The Sybase to PostgreSQL synchronization scenario now also supports **index** migration and **sequence** synchronization capabilities.
 
 ## <span id="prerequisites">Prerequisites</span>
 

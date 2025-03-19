@@ -6,6 +6,24 @@ import Content from '../reuse-content/_community-features.md';
 
 This document introduces the recent release notes for TapData Community. For more information on earlier versions, please refer to the [GitHub Release Page](https://github.com/tapdata/tapdata/releases).
 
+## 3.25.0
+
+### New Features
+
+- Added support for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints** in [MySQL](../prerequisites/on-prem-databases/mysql.md)-to-MySQL and [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md)-to-PostgreSQL scenarios, ensuring data structure consistency.
+- Enhanced the **[primary-secondary merge node](../user-guide/data-development/process-node.md#pri-sec-merged)** functionality to allow subsequent connections with other processing nodes (including JS nodes), improving workflow flexibility.
+
+### Enhancements
+
+- Improved Kafka connector capabilities.
+- Optimized the display of task milestones for better clarity.
+
+### Bug Fixes
+
+- Fixed an issue where MongoDB sharded configurations could not be automatically synchronized.
+- Resolved a problem where MongoDB capped collections failed to sync correctly.
+- Fixed an issue where merged embedded arrays behaved unexpectedly when modifying relationship keys.
+
 ## 3.24.0
 
 ### Bug Fixes
