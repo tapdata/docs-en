@@ -6,6 +6,11 @@ import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
 [Sybase Database](https://infocenter.sybase.com/help/index.jsp), also known as Adaptive Server Enterprise (ASE), is a high-performance, reliable, and scalable enterprise-grade relational database management system. Sybase is nearing the end of its support lifecycle, and it is recommended to migrate to other databases to reduce risk. With TapData, you can easily build real-time synchronization pipelines to sync Sybase data to other database platforms, ensuring business continuity.
 
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
 ## Supported Versions and Architectures
 
 * **Version**: Sybase 16
@@ -54,18 +59,45 @@ DML Operations: INSERT, UPDATE, DELETE
 
 1. Log in to the Sybase database using a user with DBA privileges.
 
-2. Run the following SQL commands to create a user for the synchronization task and grant the necessary permissions:
+2. Create a user for data synchronization tasks.
 
    ```sql
-   create login <username> with password '<password>';
-   sp_displaylogin <username>;
-   sp_role 'grant', sa_role, <username>;
-   sp_role 'grant', replication_role, <username>;
-   sp_role 'grant', sybase_ts_role, <username>;
+   create login <username> with password <password>
+   sp_displaylogin <username>
+   sp_role 'grant',replication_role,<username>
    ```
 
-   * `<username>`: The username to be created.
-   * `<password>`: The password for the user.
+   - `<username>`: The username to be created.
+   - `<password>`: The password for the user.
+
+3. Execute the following SQL commands to grant permissions to the newly created user.
+
+   ```mdx-code-block
+   <Tabs className="unique-tabs">
+   <TabItem value="As Source Database" default>
+   ```
+
+   ```sql
+   sp_configure 'number of aux scan descriptors', 5000; 
+   sp_dboption database, 'ddl in tran', 'true'
+   sp_role 'grant',sa_role,<username>
+   sp_role 'grant',sybase_ts_role,<username>
+   ```
+
+   </TabItem>
+   
+   <TabItem value="As Target Database">
+   
+   ```sql
+   USE <database>;
+   sp_addalias <username>, dbo
+   ```
+   </TabItem>
+   </Tabs>
+
+   - `<database>`: The name of the database to grant permissions.
+   - `<username>`: The username to be granted permissions.
+   - `<password>`: The password for the user.
 
 ## Connect to Sybase
 
