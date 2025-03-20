@@ -612,6 +612,10 @@ fff
 fffde
 superusers
 tapshell
+addalias
+dboption
+tran
+
 
 
 
