@@ -79,7 +79,7 @@ DML Operations: INSERT, UPDATE, DELETE
 
    ```sql
    sp_configure 'number of aux scan descriptors', 5000; 
-   sp_dboption database, 'ddl in tran', 'true'
+   sp_dboption <database_name>, 'ddl in tran', 'true'
    sp_role 'grant',sa_role,<username>
    sp_role 'grant',sybase_ts_role,<username>
    ```
@@ -89,13 +89,13 @@ DML Operations: INSERT, UPDATE, DELETE
    <TabItem value="As Target Database">
    
    ```sql
-   USE <database>;
+   USE <database_name>;
    sp_addalias <username>, dbo
    ```
    </TabItem>
    </Tabs>
 
-   - `<database>`: The name of the database to grant permissions.
+   - `<database_name>`: The name of the database to grant permissions.
    - `<username>`: The username to be granted permissions.
    - `<password>`: The password for the user.
 
