@@ -1,3 +1,13 @@
+---
+keywords:
+- MongoDB Atlas
+- MongoDB Atlas real-time sync
+- MongoDB Atlas data integration
+- MongoDB Atlas incremental replication
+- MongoDB cloud migration
+- TapData MongoDB Atlas connector
+---
+
 # MongoDB Atlas
 
 import Content from '../../reuse-content/_all-features.md';
@@ -6,7 +16,11 @@ import Content from '../../reuse-content/_all-features.md';
 
 MongoDB Atlas is a multi-cloud application data platform provided by MongoDB. TapData Cloud supports building data pipelines with MongoDB Atlas as the source or target database.
 
-This article describes how to add MongoDB Atlas to TapData Cloud.
+[MongoDB Atlas](https://www.mongodb.com/atlas) is a multi-cloud managed database platform provided by MongoDB. This document describes how to add MongoDB Atlas as a data source in TapData, supporting real-time data synchronization and incremental replication, applicable to scenarios such as cloud data migration, real-time analytics, and syncing to local data warehouses.
+
+<Head>
+    <link rel="canonical" href="https://docs.tapdata.io/prerequisites/cloud-databases/mongodb-atlas" />
+</Head>
 
 
 ## Supported Versions

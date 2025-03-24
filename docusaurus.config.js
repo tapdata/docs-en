@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TapData Documentation',
+  title: 'TapData Documentation - Real-time Data Integration Platform',
   tagline: 'TapData Cloud, a Live Data Platform',
   url: 'https://docs.tapdata.io',
   baseUrl: '/',
