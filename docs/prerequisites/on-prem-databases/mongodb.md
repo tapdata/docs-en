@@ -14,7 +14,9 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-[MongoDB](https://www.mongodb.com/) is a popular open-source NoSQL database designed to store and retrieve data in a flexible and scalable manner. This document describes how to add MongoDB as a data source in TapData, supporting real-time CDC synchronization and incremental replication. MongoDB can be used as either a source or target to build data pipelines suitable for real-time data processing, real-time denormalization, data migration, disaster recovery, and more.
+[TapData](https://tapdata.io/) supports [MongoDB](https://www.mongodb.com/) (4.0 and above) as a data source, enabling real-time CDC sync, incremental replication, and flexible pipeline building.
+
+MongoDB is a popular open-source NoSQL database designed for flexible and scalable data storage. This document explains how to connect MongoDB in TapData, supporting real-time CDC synchronization and incremental replication. MongoDB can be used as a source or target to build data pipelines for real-time processing, denormalization, migration, and disaster recovery.
 
 <Head>
     <link rel="canonical" href="https://docs.tapdata.io/prerequisites/on-prem-databases/mongodb" />

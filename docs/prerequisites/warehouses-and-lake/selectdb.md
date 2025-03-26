@@ -14,7 +14,9 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-SelectDB Cloud(SelectDB) is a cloud-native real-time data warehouse built on Apache Doris. This document describes how to add SelectDB as a data source in TapData, suitable for real-time data synchronization, real-time data warehousing, analytics, and reporting scenarios.
+[TapData](https://tapdata.io/) supports [SelectDB Cloud](https://www.selectdb.com/) as a real-time data source for analytics, reporting, and high-performance data warehouse integration.
+
+SelectDB Cloud is a cloud-native real-time data warehouse built on Apache Doris. This document shows how to connect SelectDB in TapData to support real-time data sync, analytics, reporting, and building high-performance real-time data warehouses.
 
 <Head>
     <link rel="canonical" href="https://docs.tapdata.io/prerequisites/warehouses-and-lake/selectdb" />

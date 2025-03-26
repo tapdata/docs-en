@@ -14,7 +14,9 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-[MongoDB Atlas](https://www.mongodb.com/atlas) is a multi-cloud managed database platform provided by MongoDB. This document describes how to add MongoDB Atlas as a data source in TapData, supporting real-time data synchronization and incremental replication, applicable to scenarios such as cloud data migration, real-time analytics, and syncing to local data warehouses.
+[TapData](https://tapdata.io/) supports [MongoDB Atlas](https://www.mongodb.com/atlas) as a data source, enabling real-time data sync, incremental replication, and seamless cloud-to-local data integration.
+
+MongoDB Atlas is a multi-cloud managed database platform. This document describes how to connect MongoDB Atlas in TapData and use it for data migration, analytics, and syncing to local warehouses.
 
 <Head>
     <link rel="canonical" href="https://docs.tapdata.io/prerequisites/cloud-databases/mongodb-atlas" />
