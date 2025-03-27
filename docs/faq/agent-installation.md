@@ -94,6 +94,12 @@ The Agent reports the heartbeat to the TapData Cloud every minute, and if the Ta
 
 The Agent offline does not affect the normal operation of the running task, but the newly created task is affected.
 
+### Why is resource usage still being reported after stopping the computing engine?
+
+Clicking the "Stop" button in the console only stops the computing engine service, while the TapData Agent remains running to provide subsequent start/stop management. Because resource usage information is reported by the Agent, you will continue to see resource usage updates even after the computing engine is stopped.
+
+If you need to completely stop the service, log in to the server where the computing engine is deployed and run the `tapdata stop -f` command. This fully shuts down the service. In particular, make sure to run this command on the original server before migrating or redeploying the computing engine to avoid issues where resource usage or IP addresses might fluctuate between servers.
+
 ### What is the process for uninstalling and reinstalling the TapData Agent?
 
 Select the following methods to uninstall the Reinstall Agent according to your platform:

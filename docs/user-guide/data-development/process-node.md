@@ -56,7 +56,8 @@ In big data processing and analysis, merging and transforming data is a pivotal 
 
 :::tip
 
-When using the Master Slave Merge, it's essential to [upgrade the Agent instance](../manage-agent.md) to version 3.5.1. Additionally, the target database should be either a self-deployed MongoDB or MongoDB Atlas.
+- When using the Master Slave Merge, it's essential to [upgrade the Agent instance](../manage-agent.md) to version 3.5.1. Additionally, the target database should be either a self-deployed MongoDB or MongoDB Atlas.
+- Tables participating in the merge must contain one or more fields that form a logical unique identifier, ensuring data uniqueness.
 
 :::
 
@@ -77,6 +78,12 @@ When using the Master Slave Merge, it's essential to [upgrade the Agent instance
 6. Click the **Master Slave Merge** node, drag and drop the `date` table into the `lineorder` table to signify their relationship. Subsequently, you can view the merged table structure.
 
    ![Setting up Primary-Secondary Merge Node](../../images/primary_secondary_merge_node_setting.gif)
+
+   :::tip
+
+   When using nested array merge mode, only up to two levels of nesting are supported.
+
+   :::
 
 7. Drag a MongoDB or MongoDB Atlas data source from the left side of the page to store the merged table and then connect the **Master Slave Merge** node to this data source.
 
@@ -170,6 +177,12 @@ mysql> select * from student_merge;
 ## <span id="python">Python</span>
 
 If the built-in processing nodes don't fully meet your specific needs, or if you want to process data in a more detailed and personalized manner, you can add a Python processing node. By writing custom python scripts, you can manage the processing/logic of data. The processed data will then be synchronized to the target database, allowing you to customize the data link freely and better control the flow and processing of data.
+
+:::tip
+
+Currently, Python processing node does not support custom dependency packages and is not applicable to engines deployed on Windows.
+
+:::
 
 ![Python Node](../../images/python_node.png)
 
