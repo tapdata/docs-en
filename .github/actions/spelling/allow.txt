@@ -615,6 +615,7 @@ tapshell
 addalias
 dboption
 tran
+denormalization
 
 
 
