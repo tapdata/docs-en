@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
 - **Type**: Currently, the following three validation methods are supported. If the field names in the table have been modified during synchronization, executing **All Fields Validation** or **Associated FieldsValidation** may fail due to field name mismatches.
     - **Count Validation**: Verifies the row count of the source and target tables without displaying specific difference content, very fast.
     - **Full Fields Validation**: Verifies the values of all fields in the source and target tables row by row, displaying the difference content of all fields, slower.
-    - **Associated Fields Validation**: Only verifies the values of the associated fields in the source and target tables, medium speed.
+    - **Associated Fields Validation**: Only validates the values of associated fields in the source and target tables. The associated fields must have a sortable index, resulting in moderate performance.
     - **Hash Validation**: Currently does not support Verify data between heterogeneous databases.
 - **Advanced Configuration**: Click on advanced configuration to unfold more configuration options:
     - **Result Output**: Choose **Output all inconsistent data** or **Only output inconsistent data from the source table**.
@@ -52,7 +52,7 @@ import TabItem from '@theme/TabItem';
 - **Type**: Currently, the following three validation methods are supported.
     - **Count Validation**: Verifies the row count of the source and target tables without displaying specific difference content, very fast.
     - **All Fields Validation**: Verifies the values of all fields in the source and target tables row by row, displaying the difference content of all fields, slower.
-    - **Associated Fields Validation**: Only verifies the values of the associated fields in the source and target tables, medium speed.
+    - **Associated Fields Validation**: Only validates the values of associated fields in the source and target tables. The associated fields must have a sortable index, resulting in moderate performance.
     - **Hash Validation**: Currently does not support Verify data between heterogeneous databases.
 - **Advanced Configuration**: Click on advanced configuration to unfold more configuration options:
     - **Result Output**: Choose **Output all inconsistent data** or **Only output inconsistent data from the source table**.
