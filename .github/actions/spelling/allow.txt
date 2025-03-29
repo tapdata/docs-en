@@ -618,5 +618,9 @@ tran
 dav
 liy
 denormalization
+AMQP
+rabbitmqctl
+vhost
+
 
 
