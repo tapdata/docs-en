@@ -54,7 +54,7 @@ In the subsequent configuration of data replication/data transformation tasks, y
 
 2. In the left navigation panel, click **Connections**.
 
-3. On the right side of the page, click **Create connection**.
+3. On the right side of the page, click **Create**.
 
 4. In the pop-up dialog, select **Kafka**.
 
