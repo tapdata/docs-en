@@ -58,26 +58,23 @@ Applicable when MySQL is used as a source:
 
 - Only tables and indexes can be synchronized. Temporary tables, hidden columns, triggers, views, and stored procedures are not supported.
 
-- The MySQL Binlog must be retained for **at least 7 days**. Otherwise, Tapdata may fail to read incremental logs, causing sync failures.
-
-- Ensure the following Binlog settings:
-  - `binlog_format` is set to `ROW`
-  
-  - `binlog_row_image` is set to `FULL`
-  
-  - The target database is **not** listed in `binlog-ignore-db`
-  
-  - If `binlog-do-db` is used, the target database must be explicitly included
-  
-    :::tip
-  
-    For more details on Binlog configuration and parameter descriptions, refer to the [official MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html).
-  
-    :::
-  
-- If incremental sync starts from a specific time and the corresponding Binlog has expired or been deleted, the task will fail to start.
-
 - Tapdata supports master-slave switchovers without interrupting sync, but the replication status must be consistent and the failover strategy properly configured. Otherwise, temporary interruptions or data loss may occur.
+
+- To enable incremental data sync, make sure MySQL Binlog settings are correctly configured:
+
+  - The Binlog must be retained for **at least 7 days**, or Tapdata may fail to access it, resulting in incremental sync failures.
+
+  - `binlog_format` should be set to `ROW`, `binlog_row_image` to `FULL`, and the target database must **not** be included in `binlog-ignore-db`.
+
+  - If `binlog-do-db` is configured, the target database must be explicitly included; otherwise, incremental data may be missed.
+
+    :::tip
+
+    For detailed information on Binlog configuration and parameters, refer to the [official MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html).
+
+    :::
+
+- If incremental sync starts from a specific time and the corresponding Binlog has expired or been deleted, the task will fail to start.
 
 
 </TabItem>
