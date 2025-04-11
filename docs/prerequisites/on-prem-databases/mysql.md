@@ -42,10 +42,56 @@ import TabItem from '@theme/TabItem';
 In addition, for data synchronization between MySQL databases, extra support is provided for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints**.
 
 ## Considerations
-
+* The TapData Agent and MySQL instance should be deployed in the same intranet environment. If connecting over the internet, make sure the network is accessible.
 * Incremental data capture is mainly achieved through parsing the binlog, which may consume CPU and disk I/O resources if there are frequent data changes.
 * In MySQL 5.6 and earlier versions, preprocess negative values for the **TIME** type (e.g., convert to a legal positive value) to avoid issues with incremental data capture.
 * For some data sources based on the MySQL kernel, using schemas or functions not supported by native MySQL might cause errors in incremental data capture. In such cases, please contact [TapData Support](../../appendix/support.md) for assistance.
+
+## Limitations
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Source Side" default>
+```
+
+Applicable when MySQL is used as a source:
+
+- Only tables and indexes can be synchronized. Temporary tables, hidden columns, triggers, views, and stored procedures are not supported.
+- The MySQL Binlog must be retained for **at least 7 days**. Otherwise, Tapdata may fail to read incremental logs, causing sync failures.
+- Ensure the following Binlog settings:
+  - `binlog_format` is set to `ROW``
+  - ``binlog_row_image` is set to `FULL`
+  - The target database is **not** listed in `binlog-ignore-db`
+  - If `binlog-do-db` is used, the target database must be explicitly included
+- If incremental sync starts from a specific time and the corresponding Binlog has expired or been deleted, the task will fail to start.
+- Tapdata supports master-slave switchovers without interrupting sync, but the replication status must be consistent and the failover strategy properly configured. Otherwise, temporary interruptions or data loss may occur.
+
+
+</TabItem>
+
+<TabItem value="Target Side">
+
+Applicable when MySQL is used as a target:
+
+- If the target tables already exist and need to be preserved, ensure the column order and data types are consistent with the source. Otherwise, write failures may occur due to schema mismatch.
+- Indexes are synced only during initial DDL execution. Subsequent changes in source indexes will not be applied automatically.
+- Initial sync supports normal indexes, unique indexes, primary keys, and composite indexes. Full-text index support is limited.
+- When migrating between heterogeneous systems, MySQL’s spatial types, custom types, and ENUM/SET types will be converted to strings. You should verify that the target schema meets business expectations.
+- When syncing between MySQL databases:
+  - Syncing from a lower to higher version is generally compatible.
+  - Syncing from a higher to lower version may fail due to unsupported features (e.g., relaxed time formats or invalid date values).
+
+</TabItem>
+
+<TabItem value="Consistency & Conflicts">
+
+- Active-active conflict resolution is not supported in bidirectional MySQL sync. Avoid updating the same data on both sides at the same time.
+- External writes (not handled by Tapdata) during sync may cause data inconsistencies.
+- During full sync, avoid performing DDL operations on tables involved in the task, as this may lead to sync failure.
+
+</TabItem>
+
+</Tabs>
 
 ## Preparation
 
