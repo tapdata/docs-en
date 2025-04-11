@@ -57,13 +57,26 @@ In addition, for data synchronization between MySQL databases, extra support is 
 Applicable when MySQL is used as a source:
 
 - Only tables and indexes can be synchronized. Temporary tables, hidden columns, triggers, views, and stored procedures are not supported.
+
 - The MySQL Binlog must be retained for **at least 7 days**. Otherwise, Tapdata may fail to read incremental logs, causing sync failures.
+
 - Ensure the following Binlog settings:
-  - `binlog_format` is set to `ROW``
-  - ``binlog_row_image` is set to `FULL`
+  - `binlog_format` is set to `ROW`
+  
+  - `binlog_row_image` is set to `FULL`
+  
   - The target database is **not** listed in `binlog-ignore-db`
+  
   - If `binlog-do-db` is used, the target database must be explicitly included
+  
+    :::tip
+  
+    For more details on Binlog configuration and parameter descriptions, refer to the [official MySQL documentation](https://dev.mysql.com/doc/refman/8.4/en/replication-options-binary-log.html).
+  
+    :::
+  
 - If incremental sync starts from a specific time and the corresponding Binlog has expired or been deleted, the task will fail to start.
+
 - Tapdata supports master-slave switchovers without interrupting sync, but the replication status must be consistent and the failover strategy properly configured. Otherwise, temporary interruptions or data loss may occur.
 
 
