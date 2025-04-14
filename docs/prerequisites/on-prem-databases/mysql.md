@@ -41,6 +41,11 @@ import TabItem from '@theme/TabItem';
 
 In addition, for data synchronization between MySQL databases, extra support is provided for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints**.
 
+## Supported Sync Directions
+
+- One-way sync
+- Bidirectional sync
+
 ## Considerations
 * The TapData Agent and MySQL instance should be deployed in the same intranet environment. If connecting over the internet, make sure the network is accessible.
 * Incremental data capture is mainly achieved through parsing the binlog, which may consume CPU and disk I/O resources if there are frequent data changes.
