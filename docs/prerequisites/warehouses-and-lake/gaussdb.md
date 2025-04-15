@@ -44,6 +44,7 @@ import TabItem from '@theme/TabItem';
 
 ## Limitations
 
+- When using GaussDB (DWS) in a cluster architecture as the source for incremental synchronization, high availability for CDC is not yet supported. If a primary node switchover occurs, incremental sync may experience errors or interruptions.
 - When synchronizing tables without primary keys to GaussDB (DWS), you must disable unique index constraints for update conditions to avoid table creation failures.
 - By default, GaussDB (DWS) uses primary keys as distribution columns. Manually specified distribution columns must be included in the primary key, unique index, or update condition, or table creation will fail.
 - If the source performs unsupported operations, such as modifying distribution columns, GaussDB (DWS) will convert the update to a **delete followed by insert**. This requires the source update event to include complete `After` data fields. For example, Oracle sources must enable the **complete logging of all fields** feature.
