@@ -17,9 +17,30 @@ import TabItem from '@theme/TabItem';
   <TabItem value="2025" default>
 ```
 
-### 2025-03-19
+### 2025-04-14
 
-## 3.25.0
+#### New Features
+
+- The [Cluster Overview](../user-guide/workshop.md) page on the homepage now displays task distribution by node, helping you better understand cluster workload.
+- [OceanBase (MySQL Mode)](../prerequisites/on-prem-databases/oceanbase.md), [OceanBase (Oracle Mode)](../prerequisites/on-prem-databases/oceanbase-oracle.md), and [GaussDB (DWS)](../prerequisites/warehouses-and-lake/gaussdb.md) have passed Tapdata certification and are now classified as [Certified Data Sources](../prerequisites/supported-databases.md), offering enhanced features and improved production-level stability.
+- Data replication tasks now support writing multiple tables to the same Kafka topic, expanding compatibility with more write scenarios.
+
+#### Enhancements
+
+- Improved model visualization by adjusting how primary keys, foreign keys, and unique indexes are displayed, making models more readable and easier to edit.
+
+#### Bug Fixes
+
+- Fixed an issue where connection requests were not evenly distributed across multiple `mongos` nodes, eliminating potential single-node performance bottlenecks.
+
+### 2025-04-02
+
+#### New Features
+
+- Added support for syncing tables with auto-increment primary keys in [SQL Server](../prerequisites/on-prem-databases/sqlserver.md).
+- Added support for syncing default values and foreign keys in [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) to SQL Server sync scenarios.
+
+### 2025-03-19
 
 #### New Features
 

@@ -6,6 +6,28 @@ import Content from '../reuse-content/_community-features.md';
 
 This document introduces the recent release notes for TapData Community. For more information on earlier versions, please refer to the [GitHub Release Page](https://github.com/tapdata/tapdata/releases).
 
+## 3.27.0
+
+### New Features
+
+- The [Cluster Overview](../user-guide/workshop.md) page on the homepage now displays task distribution by node, helping you better understand cluster workload.
+- [OceanBase (MySQL Mode)](../prerequisites/on-prem-databases/oceanbase.md), and [GaussDB (DWS)](../prerequisites/warehouses-and-lake/gaussdb.md) have passed Tapdata certification and are now classified as [Certified Data Sources](../prerequisites/supported-databases.md), offering enhanced features and improved production-level stability.
+- Data replication tasks now support writing multiple tables to the same Kafka topic, expanding compatibility with more write scenarios.
+
+### Enhancements
+
+- Improved model visualization by adjusting how primary keys, foreign keys, and unique indexes are displayed, making models more readable and easier to edit.
+
+### Bug Fixes
+
+- Fixed an issue where connection requests were not evenly distributed across multiple `mongos` nodes, eliminating potential single-node performance bottlenecks.
+
+## 3.26.0
+
+### New Features
+
+- Added support for syncing default values and foreign keys in [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) to SQL Server sync scenarios.
+
 ## 3.25.0
 
 ### New Features
