@@ -112,7 +112,7 @@ Before connecting to the Dameng database, you need to complete some preparatory 
       
       -- Configure local archiving. If the directory specified by DEST does not exist, it will be created automatically.
       -- FILE_SIZE specifies the size of a single archive file in MB; SPACE_LIMIT specifies the space size limit, with 0 indicating no limit. You can clean up periodically using commands.
-      ALTER DATABASE ADD ARCHIVELOG 'DEST = /bak/dmdata/dameng, TYPE = local, FILE_SIZE = 1024, SPACE_LIMIT = 0';
+      ALTER DATABASE ADD ARCHIVELOG 'DEST = /bak/dmdata/dameng, TYPE = local, FILE_SIZE = 128, SPACE_LIMIT = 0';
       
       -- Enable archive mode
       ALTER DATABASE ARCHIVELOG;

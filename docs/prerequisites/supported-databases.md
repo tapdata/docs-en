@@ -93,6 +93,15 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>1.2 ~ 3.0</td>
   </tr>
+    <tr>
+    <td>GaussDB（DWS）</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>8.1.3</td>
+  </tr>
   <tr>
     <td>Kafka-Enhanced</td>
     <td>✅</td>
@@ -146,6 +155,24 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>5.0 ~ 9</td>
+  </tr>
+  <tr>
+    <td>OceanBase(MySQL Mode)</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
+  </tr>
+  <tr>
+    <td>OceanBase(Oracle Mode)</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>4.x</td>
   </tr>
   <tr>
     <td>Oracle</td>
@@ -285,24 +312,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>10.x</td>
   </tr>
   <tr>
-    <td>OceanBase（MySQL Mode）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
-  </tr>
-  <tr>
-    <td>OceanBase（Oracle Mode）</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>4.x</td>
-  </tr>
-  <tr>
     <td>Redis</td>
     <td>➖</td>
     <td>➖</td>
@@ -379,15 +388,6 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>➖</td>
     <td>0.11.0</td>
-  </tr>
-  <tr>
-    <td>GaussDB（DWS）</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>8.1.3</td>
   </tr>
   <tr>
     <td>SelectDB</td>
