@@ -37,7 +37,7 @@ Before configuring a RocketMQ connection, make sure your Tapdata platform or Age
      - **Type**: RocketMQ can be used as either a source or a target.
      - **Topic Name**: Leave empty to load all available topics. You can also manually specify topic names; use commas (`,`) to separate multiple topics.
      - **MQ Address**: Enter the RocketMQ server address (IP or domain supported).
-     - **MQ Port**: AMQP service port of RocketMQ. Default is **9876**. Tapdata reads message data via this port.
+     - **MQ Port**: Service port of RocketMQ. Default is **9876**. Tapdata reads message data via this port.
      - **Account / Password**: Enter the configured RocketMQ username and password.
    - **Advanced Settings**
      - **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs. This allows multiple tasks to share the same source database’s incremental log mining process, reducing duplicate reads and minimizing the impact of incremental synchronization on the source database. After enabling this feature, you will need to select an external storage to store the incremental log information.
