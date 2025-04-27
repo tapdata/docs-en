@@ -53,11 +53,11 @@ For more details, see the [Send message content structure](https://open.feishu.c
 
 4. [Set the app availability scope](https://open.feishu.cn/document/develop-process/test-and-release-app/availability) to ensure that the target users or groups for Lark messages are within the app’s visible range to avoid message delivery failures.
 
-5. Enable the [Bot capability](https://open.feishu.cn/document/uAjLw4CM/ugTN1YjL4UTN24CO1UjN/trouble-shooting/how-to-enable-bot-ability) for the application. Note that bot capabilities only take effect after the app is published.
+5. Enable the [Bot capability](https://open.feishu.cn/document/faq/trouble-shooting/how-to-enable-bot-ability) for the application. Note that bot capabilities only take effect after the app is published.
 
 ## Connect to Lark-IM
 
-1. [Log in to Tapdata platform](../..user-guide/log-in.md).
+1. [Log in to Tapdata platform](../../user-guide/log-in.md).
 
 2. In the left navigation bar, click **Connections**.
 
