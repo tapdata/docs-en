@@ -628,6 +628,14 @@ obcdc
 odp
 switchovers
 refman
+anonymization
+LLMs
+mcp
+modelcontextprotocol
+sparfenyuk
+sse
+STDIO
+Trae
 
 
 
