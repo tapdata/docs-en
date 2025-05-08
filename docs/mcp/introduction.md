@@ -18,25 +18,14 @@ To address these challenges, Tapdata provides the MCP service. It uses a standar
 
 ## Key Benefits
 
-- **Secure access to real-time data with trusted and controlled context**
-
-  Supports field-level data masking, access isolation, and permission control. Combined with multi-source real-time sync and incremental processing to ensure safe delivery of fresh data to AI models.
-
-- **Optimized structure and contextual modeling for efficient queries**
-
-  Allows graphical design of wide tables by merging multiple sources and building real-time materialized views using an intermediate data layer. No need to connect directly to source databases, improving AI query performance.
-
-- **Compatible with mainstream model frameworks and agent ecosystems**
-
-  Offers a standardized SSE protocol for streaming context data, along with no-code REST API configuration. Compatible with popular agent tools like Cursor MCP and Claude.
-
-- **Connects to 100+ data sources to unify enterprise data pipelines**
-
-  Supports integration with over 100 mainstream databases and SaaS platforms, enabling centralized management of heterogeneous data and eliminating silos. Provides a solid data foundation for context generation and multi-scenario inference.
-
-## Use Case Examples (Coming Soon)
-
-
+- **Real-Time Acceleration with 100x Faster Query Performance**
+  Powered by TapData’s caching and [materialized view](../tapflow/tapflow-tutorial/build-real-time-wide-table.md) capabilities, MCP enables millisecond-level query responses without direct access to source systems—dramatically improving context retrieval and model inference speed.
+- **Secure Access with Trusted, Controlled Context**
+  Supports field-level [masking](../user-guide/advanced-settings/custom-node.md) and [role-based](../user-guide/manage-system/manage-role.md) permissions. Combined with real-time sync and incremental updates, it ensures AI models access only fresh, authorized data during inference.
+- **Connect 100+ Data Sources with a Single MCP**
+  One MCP instance can connect to [over 100 heterogeneous data sources](../prerequisites/supported-databases.md), including major databases and SaaS platforms—breaking data silos and providing a unified foundation for context-aware AI.
+- **Built for LLM Agents with Seamless Integration**
+  Offers standardized SSE support and no-code [REST API](../user-guide/data-service/README.md) setup, fully compatible with tools like Cursor, Claude, and other popular agent frameworks—bridging enterprise data and AI with ease.
 
 ## Learn More
 
