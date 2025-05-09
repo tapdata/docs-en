@@ -350,6 +350,15 @@ const sidebars = {
     },
     {
      type: 'category',
+     label: 'MCP Server Guide (Preview)',
+     link: {type: 'doc', id: 'mcp/README'},
+     items: [
+            'mcp/introduction',
+            'mcp/quick-start',
+            ]
+     },
+    {
+     type: 'category',
      label: 'TapFlow Developer Guide (Preview)',
      link: {type: 'doc', id: 'tapflow/README'},
      items: [
