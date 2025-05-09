@@ -1,5 +1,9 @@
 # MCP Server Introduction
 
+import Content from '../reuse-content/_enterprise-and-community-features.md';
+
+<Content />
+
 **MCP (Model Context Protocol)** is a protocol designed to provide structured business data in real time to AI models, enhancing their understanding of business context. With the **Tapdata MCP Server**, you can integrate, anonymize, and publish data from multiple heterogeneous systems as real-time contextual views that can be dynamically accessed by LLMs (Large Language Models) or AI Agents. 
 
 This solution is especially suitable for enterprise scenarios with high demands for data freshness and compliance, such as financial risk control, intelligent customer service, and personalized recommendation.

@@ -1,10 +1,14 @@
 # Quick Start
 
+import Content from '../reuse-content/_enterprise-and-community-features.md';
+
+<Content />
+
 This guide walks you through enabling the [MCP (Model Context Protocol) service](introduction.md) in Tapdata and integrating it with AI agent tools that support the SSE protocol (e.g., Cursor). It enables real-time delivery of structured contextual data, helping large language models better understand business context.
 
 ## Prerequisites
 
-- Tapdata Platform is [deployed](../quick-start/install.md).
+- Requires Tapdata Enterprise or Community Edition to be [deployed](../quick-start/install.md).
 - You have an AI model service or tool that supports MCP with SSE protocol (e.g., Cursor or Trae).
 
 ## Step 1: Set Up User and Get Access Code
