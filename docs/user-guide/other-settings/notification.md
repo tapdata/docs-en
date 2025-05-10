@@ -41,9 +41,15 @@ After [logging into the TapData platform](../log-in.md), click the ![setting_ico
 
 ## Alert Settings
 
-Through alert settings, you can configure the notification method and sending interval for alert events:
+In the **Alert Settings**, you can configure which task events should trigger alert notifications, how the notifications are sent (e.g., via email), and the notification interval.
 
 ![](../../images/system_notification_2.png)
+
+:::tip
+
+For a practical example of email alert setup, see [Send Alerts via Mail](../../case-practices/best-practice/alert-via-qqmail.md).
+
+:::
 
 ## Webhook Alerts
 

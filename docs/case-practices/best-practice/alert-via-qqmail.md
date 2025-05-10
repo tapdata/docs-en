@@ -1,4 +1,4 @@
-# Sending Alert Emails via QQ Mail
+# Send Alert Emails via QQ Mail
 import Content from '../../reuse-content/_enterprise-features.md';
 
 <Content />
@@ -10,6 +10,11 @@ TapData supports sending alert emails through SMTP protocol, enabling users to r
 QQ Mail, as a widely used communication tool, facilitates the receipt and review of alert messages, providing users with a convenient way to handle exceptions. In this example, we will demonstrate how to integrate QQ Mail in TapData to send alert messages, helping to improve the efficiency of operations personnel in quickly locating and resolving issues.
 
 You can also integrate other email services (such as 163 Mail) in TapData platform, with a similar configuration process as described in this document.
+
+## Notes
+
+Tapdata can monitor task status and trigger alerts when specific events occur.
+For configurable alert types, see [Alert Settings](../../user-guide/other-settings/notification.md). You can choose which events should trigger email notifications based on your needs.
 
 ## Step One: Obtain Email Authorization Code
 
