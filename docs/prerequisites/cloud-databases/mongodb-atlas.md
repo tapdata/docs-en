@@ -127,3 +127,40 @@ Before establishing the connection, it is essential to complete the necessary pr
    If the connection test fails, follow the prompts on the page to fix it.
 
    :::
+
+
+
+## Node Advanced Features
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+When configuring data synchronization or transformation tasks with MongoDB Atlas as the source or target node, TapData provides more advanced features to better meet complex business needs and maximize performance. You can configure these features based on your requirements:
+
+![MongoDB Node Advanced Features](../../images/mongodb_atlas_node_advanced_settings.png)
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="MongoDB Atlas as a Source Node">
+```
+
+| **Configuration**         | **Description**                                              |
+| ------------------------- | ------------------------------------------------------------ |
+| **No Cursor Timeout**     | Disabled by default. When enabled, MongoDB Atlas will disable cursor timeout to prevent timeout errors during data synchronization. |
+| **Filling Modified Data** | Enabled by default. When enabled, it automatically fills in complete fields for **UPDATE** events. |
+
+
+</TabItem>
+
+<TabItem value="MongoDB Atlas as a Target Node">
+
+| **Configuration**             | **Description**                                              |
+| ----------------------------- | ------------------------------------------------------------ |
+| **Sync Index**                | Disabled by default. When enabled, indexes from the source database will be automatically synchronized to the target database during the full data synchronization phase. |
+| **Sync Partition Properties** | Disabled by default. When enabled, sharding attributes are kept consistent during synchronization between MongoDB Atlas sharded clusters. |
+| **Save Deleted Data**         | Disabled by default. When enabled, deleted data content will be cached.<br/> <br />Since MongoDB Atlas delete events only return the `_id` by default, if the sync condition for the target database (e.g., MySQL) does not include `_id`, the delete operation may fail. In this case, you can first sync the source table **A** to an intermediate table **A_COPY** (using `_id` as the update condition and enabling this option), then create a new task to sync from **A_COPY** to the target table **B**. |
+
+</TabItem>
+</Tabs>
