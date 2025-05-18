@@ -4,8 +4,7 @@ import Content1 from '../../reuse-content/_enterprise-features.md';
 
 <Content1 />
 
-StarRocks is a high-performance data warehouse designed for real-time analytics. It features a vectorized execution engine and an MPP architecture, supporting high concurrency, multidimensional analysis, and real-time data updates.
- Tapdata supports using StarRocks as a target in data pipelines to enable real-time data ingestion and analytics acceleration at scale.
+StarRocks is a high-performance data warehouse designed for real-time analytics. It features a vectorized execution engine and an MPP architecture, supporting high concurrency, multidimensional analysis, and real-time data updates. Tapdata supports using StarRocks as a target in data pipelines to enable real-time data ingestion and analytics acceleration at scale.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -34,8 +33,16 @@ StarRocks 3.x (no restrictions on deployment architecture)
 ## Notes
 
 - Tapdata writes to StarRocks using **Stream Load**. Since supported operations vary by table type (e.g., detail tables support inserts only, but not updates or deletes), see [Table Types Overview](https://docs.mirrorship.cn/docs/table_design/table_types/) for more information.
+
+  :::tip
+  Partitioned tables are not created automatically. You must manually define partition keys, buckets, and sort keys before syncing if needed.
+
+  :::
+
 - Avoid frequent transactional operations (e.g., frequent updates/deletes) when using StarRocks as the target, as they may degrade performance.
+
 - For better performance in batch inserts, it’s recommended to configure the batch size between **10,000 and 100,000** records depending on individual record size. Avoid overly large batches to prevent OOM issues.
+
 - Large-scale data loading is best performed during **off-peak hours** to minimize I/O contention and avoid affecting query performance.
 
 ## Prerequisites
