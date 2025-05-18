@@ -398,6 +398,15 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>➖</td>
     <td>2.0.13 and above</td>
   </tr>
+    <tr>
+    <td>StarRocks</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.0 and above</td>
+  </tr>
   <tr>
     <td>YashanDB</td>
     <td>➖</td>
