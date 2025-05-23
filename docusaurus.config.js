@@ -28,6 +28,12 @@ const config = {
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
+          // Configuring versioning behavior and label
+          lastVersion: 'current',
+          versions: {
+            current: {label: '4.x', banner: 'none' },
+            '3.0': { label: '3.x', banner: 'none' },
+          },
           editUrl:
             'https://github.com/tapdata/docs-en/tree/main',
         },
@@ -95,6 +101,11 @@ markdown: {
             href: 'https://cloud.tapdata.io',
             position: 'right',
             label: 'Log in TapData Cloud',
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            dropdownActiveClassDisabled: true,
           },
           {
             href: 'https://github.com/tapdata/tapdata',
