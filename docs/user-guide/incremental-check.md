@@ -4,7 +4,7 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
-Incremental data validation is a real-time data consistency assurance mechanism. It periodically samples and compares newly inserted or updated records between the source and target systems to detect and automatically fix inconsistencies, ensuring data accuracy and consistency.
+Incremental data validation is a real-time mechanism designed to enhance data accuracy and consistency. It periodically samples and compares newly inserted or updated records between the source and target systems to detect and automatically correct inconsistencies.
 
 ## Prerequisites
 
@@ -48,6 +48,16 @@ To address these challenges, TapData introduces **Incremental Data Validation**,
    - **Validation Frequency**: Controls how many records are validated per second. TapData will compare records by primary key to check for differences between source and target. Default is 10 records/sec. Adjust based on workload.
    - **Auto Repair**: When enabled, TapData will re-fetch and re-sync inconsistent records from the source, ensuring consistency without manual fixes.
 
+5. Before starting the task, it is recommended to go to **Settings** in the top-right corner of the page, open the **Alert Settings** tab, enable **Email Alerts** related to task validation, and **select recipients**. This ensures timely notifications when data inconsistencies are detected.
+
+   ![Incremental Check Alert Settings](../images/incr_check_alert_settings.png)
+
+   :::tip
+
+   For instructions on how to set up recipients, see [Send Alerts via Mail](../case-practices/best-practice/alert-via-qqmail.md).
+   
+   :::
+   
 5. *(Optional)* After configuration and task startup, the task monitoring page will show real-time validation metrics including sample size, detected discrepancies, and more.
 
    ![Task Monitoring Page](../images/task_status.png)
