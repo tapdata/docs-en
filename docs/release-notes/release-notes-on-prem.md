@@ -18,13 +18,27 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.1.0
+
+### New Features
+
+- Added support for [Incremental Data Validation](../user-guide/incremental-check.md) within tasks. This feature continuously verifies target-side data consistency during synchronization, improving validation efficiency and enhancing overall data reliability.
+
+### Enhancements
+
+- Improved the user experience of the data validation interface to make the process more intuitive and feedback more informative.
+
+### Bug Fixes
+
+- Fixed an issue where an unclear error message was shown when creating an Oracle data source with a non-existent account. The system now explicitly indicates that the account does not exist.
+
 ## 4.0.0
 
 ### New Features
 
 * Introduced [Tapdata MCP (Model Context Protocol)](../mcp/introduction.md), enabling integration of multi-source data into real-time contextual views consumable by LLMs and AI Agents. This feature is ideal for scenarios with high demands on data freshness and compliance, such as financial risk control.
 * Added support for using **StarRocks** as a target database, allowing faster construction of real-time data warehouses for high-concurrency, multi-dimensional analytics use cases.
-* Added the ability to choose from multiple data structures when syncing to **Kafka**, enhancing compatibility and integration efficiency with downstream systems.
+* Added the ability to choose from multiple data structures(e.g. Flink) when syncing to **[Kafka-Enhanced](../prerequisites/mq-and-middleware/kafka-enhanced.md)**, enhancing compatibility and integration efficiency with downstream systems.
 
 ### Enhancements
 
