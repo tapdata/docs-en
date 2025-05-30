@@ -6,6 +6,41 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 This article provides release notes for TapData Enterprise, including new features, improvements, and bug fixes.
 
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Version 4.x" default>
+```
+
+## 4.0.0
+
+### New Features
+
+* Introduced [Tapdata MCP (Model Context Protocol)](../mcp/introduction.md), enabling integration of multi-source data into real-time contextual views consumable by LLMs and AI Agents. This feature is ideal for scenarios with high demands on data freshness and compliance, such as financial risk control.
+* Added support for using **StarRocks** as a target database, allowing faster construction of real-time data warehouses for high-concurrency, multi-dimensional analytics use cases.
+* Added the ability to choose from multiple data structures when syncing to **Kafka**, enhancing compatibility and integration efficiency with downstream systems.
+
+### Enhancements
+
+* When update or delete operations fail to match records on the target side, the system now logs warning messages to aid troubleshooting.
+* Data replication tasks now support filtering tables by **primary keys and unique indexes**, including: primary key only, unique index only, with either, or without primary key (optionally including unique index).
+* In MySQL-to-MySQL sync scenarios, you can now create indexes based on the **first N characters** of a `text`-type field.
+
+### Bug Fixes
+
+* Fixed an issue where field and table processing nodes displayed incorrectly across pagination in replication tasks.
+* Fixed an `ArrayIndexOutOfBoundsException` that could occur during incremental sync from **Oracle to Doris**.
+* Fixed an error that occurred when using a `date` field as a join key for data validation during sync between Oracle databases.
+
+</TabItem>
+<TabItem value="Version 3.x">
+
 ## 3.27.0
 
 ### New Features
@@ -809,3 +844,6 @@ This article provides release notes for TapData Enterprise, including new featur
 - Introduced task editing versioning to prevent overwriting of higher-version configurations by lower versions when multiple users edit the same task.
 - Documentation on the right side of the data source configuration now supports image enlargement.
 - Implementation of error codes for Oracle data sources.
+
+</TabItem>
+</Tabs>

@@ -7,6 +7,7 @@
 (?:^|/).github/
 (?:^|/).docusaurus/
 (?:^|/)docs/images
+(?:^|/)versioned_docs/version-3.0/images
 (?:^|/)node_modules/
 (?:^|/)src/
 (?:^|/)static/
