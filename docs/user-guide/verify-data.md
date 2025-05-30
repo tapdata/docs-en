@@ -83,3 +83,7 @@ import TabItem from '@theme/TabItem';
 ## Common Issues
 
 For troubleshooting methods regarding failed validation tasks or inconsistent validation data, see [Common Questions on Data validation](../faq/data-pipeline.md#check-data).
+
+## See also
+
+[Incremental Data Validation](incremental-check.md)
