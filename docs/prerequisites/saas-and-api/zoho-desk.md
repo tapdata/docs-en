@@ -4,100 +4,137 @@ import Content from '../../reuse-content/_all-features.md';
 
 <Content />
 
-If you're interested, consider exploring ZoHo Desk's OpenAPI documentation and WebHook documentation to understand the details:
+Zoho Desk is a cloud-based customer service platform that supports ticket management, customer communication, and service automation. By integrating Zoho Desk as a data source in TapData, you can stream key data such as tickets, contacts, and conversations in real time. This is ideal for building unified customer service views, customer profiles, and service response monitoring systems.
 
-- [OpenAPI Documentation](https://desk.zoho.com.cn/support/APIDocument.do#Introduction)
-- [WebHook Documentation](https://desk.zoho.com.cn/support/WebhookDocument.do#Introduction)
-- [Workflow Configuration Documentation](https://www.zoho.com.cn/developer/help/extensions/automation/workflow-rules.html)
+## Supported Data
 
-Of course, you can also follow the content below for a quick start on configuring the ZoHo Desk data source.
+TapData reads Zoho Desk data in a table-like format and syncs it to target systems. The table names correspond to Zoho Desk modules as follows:
 
----
+- **Tickets**: Ticket records
+- **Departments**: Department records
+- **Products**: Product records
+- **OrganizationFields**: Custom field definitions
+- **Contracts**: Contract records
 
-## 1. Attribute Description
+## Notes
 
-1. **Organization ID (org ID):** Your data source organization. Obtain and configure this from ZoHo Desk manually.
-2. **Client ID:** Obtain and copy the client ID manually from ZoHo Desk.
-3. **Client Secret:** Similar to the client ID, you'll find the client secret alongside the client ID. Enter both to generate the application code.
-4. **Application Generation Code:** Use this code along with the client ID and client secret to get OpenAPI access key and refresh token.
-5. **Connection Mode:** Users can choose the connection mode, including normal document mode and CSV mode (not available yet).
-6. **Incremental Mode:** ZoHo Desk data sources only support WebHook incremental mode for OpenAPI. Details are explained below.
-7. **Service URL:** This URL is used to configure WebHooks. Copy and paste the generated service URL here for ZoHo Desk's WebHook configuration. Configuration process is explained below.
+- Each Zoho Desk data source requires a unique service URL to ensure proper WebHook delivery.
+- Since Zoho Desk limits the number of OpenAPI tokens per client, avoid using the same Client ID and Secret across multiple data sources to prevent throttling.
+- In WebHook incremental mode, Zoho Desk marks deleted records with `IsDel = TRUE` in update events. Note: if a task is reset and restarted, these deletions will not be retrieved via full sync again.
 
----
+## Prerequisites
 
-## 2. Configuration Steps
+Before connecting Zoho Desk to TapData, follow these steps to retrieve authentication credentials:
 
-### 2.1 Basic Configuration
+1. Obtain Organization ID.
 
-1. **Obtain Organization ID:** In ZoHo Desk, click "Settings" in the upper right corner, then navigate to "Developer Space" and the "API" section. Find "Zoho Service Communication (ZSC) Key" at the bottom and copy the organization ID.
+   1. Log in to [Zoho Desk](https://www.zoho.com/).
 
-2. Access the API Console by clicking "ADD CLIENT" in the upper right corner. Choose "Self Client."
+   2. Click the ![settings](../../images/setting_icon.png) icon in the top-right, search for **APIs**, and open the API authentication page to view the Organization ID.
 
-   API Console Link: [API Console](https://api-console.zoho.com.cn/)
+      ![Obtain Org ID](../../images/zoho_desk_org_id.png)
 
-3. Click "Client Secret" in the menu to get the Client ID and Client Secret.
+2. Obtain Client ID and Secret.
 
-4. Next, generate the "Generate Code". Input the Scope, providing a complete scope benefits API data retrieval. Example scope:
+   1. Go to the [Zoho API Console](https://api-console.zoho.com/) and click **GET STARTED**.
 
-   ```
-   Desk.tickets.ALL,Desk.search.READ,Desk.contacts.READ,Desk.contacts.WRITE,Desk.contacts.UPDATE,Desk.contacts.CREATE,Desk.tasks.ALL,Desk.basic.READ,Desk.basic.CREATE,Desk.settings.ALL,Desk.events.ALL,Desk.articles.READ,Desk.articles.CREATE,Desk.articles.UPDATE,Desk.articles.DELETE
-   ```
+   2. Under **Self Client**, click **CREATE NOW**.
 
-   You can customize the scope using the official documentation: [OAuth Scopes](https://desk.zoho.com.cn/support/APIDocument.do#OAuthScopes).
+   3. Click **CREATE**, then confirm with **OK**.
 
-5. Choose a "Time Duration": 3, 5, 7, or 10 minutes. You need to return to TapData Create Connection page within this time to get access and refresh tokens.
+   4. You will now receive the **Client ID** and **Client Secret**, which will be used in TapData.
 
-6. After clicking "Create", manually select the associated project (portal) which is the data source.
+      ![Get Credentials](../../images/obtain_zoho_secret.png)
 
-7. After generating "Generate Code", return to TapData Create Connection page within the specified time to obtain the Token. Follow the same steps to get Generate Code again if time is exceeded.
+3. Generate Authorization Code.
 
-### 2.2 WebHook Configuration
+   1. Navigate to the **Generate Code** tab, enter the following **Scope**, authorization duration, and description, then click **CREATE**:
 
-Configuring WebHooks enables real-time data updates.
+      ```bash
+      Desk.tickets.ALL,Desk.search.READ,Desk.contacts.READ,Desk.contacts.WRITE,Desk.contacts.UPDATE,Desk.contacts.CREATE,Desk.tasks.ALL,Desk.basic.READ,Desk.basic.CREATE,Desk.settings.ALL,Desk.events.ALL,Desk.articles.READ,Desk.articles.CREATE,Desk.articles.UPDATE,Desk.articles.DELETE
+      ```
 
-#### Global WebHook Configuration
+   2. In the **Select Portal** section, choose the desired portal and environment (e.g., Production), then click **CREATE**.
 
-1. First, click "Generate Service URL" to create the corresponding service URL for the data source. ZoHo Desk will use this URL to communicate update events.
+   3. Copy or download the generated code and store it securely. You’ll need this to complete the data source connection.
 
-2. Open ZoHo Desk, go to "Settings" in the upper right, select "Developer Space," then navigate to "WebHook." Create a new WebHook. Input the WebHook name, paste the generated service URL into the URL field, and select and add desired events.
+      ![Download Code](../../images/obtain_zoho_code.png)
 
-3. Click "Save" to activate the WebHook.
+## Connect to Zoho Desk
 
-#### Workflow WebHook Configuration
+1. [Log in to TapData](../../user-guide/log-in.md).
 
-1. If the global WebHook configuration doesn't work, you may need to configure a WebHook within a workflow.
+2. From the left navigation panel, click **Connections**.
 
-2. Access "Settings," find "Automation," select "Workflow," then "Rules." Create a new rule.
+3. Click **Create** on the right side of the screen.
 
-3. Choose the relevant module, name the rule, and proceed.
+4. In the pop-up dialog, search for and select **Zoho-Desk**.
 
-4. Select the execution event to trigger the workflow.
+5. Configure the data source according to the following instructions:
 
-5. Optionally define conditions to filter specific events.
+   ![Zoho Desk Connection Settings](../../images/connect_zoho_desk.png)
 
-6. Choose an operation. For WebHook, select all operations, then choose "Send Cliq Notification" from external operations.
+   - **Basic Settings**
 
-7. Edit the operation name and paste the service URL from the creation of ZoHo data source in TapData into the "InComing WebHook URL" field.
+     - **Name**: A meaningful name for the connection.
 
-8. Edit the "Notification Message" and click "Save." This configures a workflow.
+     - **Type**: Source only.
 
----
+     - **Organization ID**: Retrieved from Zoho Desk.
 
-## 3. Table Descriptions
+     - **Client ID**, **Client Secret**, and **Generate Code**: Enter the credentials obtained earlier. See [Prerequisites](#prerequisites).
+        Click the authorization button to retrieve access tokens. If authentication fails with "invalid_client", the code may have expired—please regenerate it.
 
-- Tickets: Work Order Table
-- Departments: Department Table
-- Products: Product Table
-- OrganizationFields: Custom Attribute Field Table
-- Contracts: Contract Table
+     - **Connection Mode**: Set to "**General document**".
 
----
+     - **Incremental Mode**: Currently only WebHook-based incremental updates are supported.
+        To enable real-time data sync from Zoho Desk, click **Generate URL to Notify**, then configure WebHooks in Zoho Desk:
 
-## 4. Precautions
+       :::tip
+       
+       If TapData is deployed locally, ensure that the generated URL is accessible through your firewall to guarantee successful receipt of incremental data pushed from Zoho Desk.
+       
+       :::
+       
+       
+       
+       <details>
+              <summary>Create Webhook (Click to expand) </summary>
+       
+       1. In [Zoho Desk](https://www.zoho.com/), click the ![settings](../../images/setting_icon.png) icon in the top-right.
+       
+       2. Search for **Webhooks** and go to the configuration page. Click **New Webhook**.
+       
+       3. Complete the following fields and click **Test Run**, then **Save**:
+       
+          ![Create WebHook](../../images/create_zoho_desk_webhook.png)
+       
+          - **Name**: A descriptive label for this WebHook.
+          - **URL to notify**: Paste the generated URL from TapData.
+          - **Choose Event**: Select the events to be tracked. For supported events and examples, see [Events Supported](https://desk.zoho.com/support/WebhookDocument.do#EventsSupported).   
+       
+          :::tip
+       
+          Alternatively, you can also [configure the WebHook via workflow rules](https://integratetax.zohodesk.com/portal/en/kb/articles/webhooks).
+       
+          :::
+       
+       </details>
 
-- Configuration of ZoHo data source requires generating the service URL and configuring it in ZoHo Desk. Otherwise, incremental events won't work.
-- When duplicating a ZoHo data source, configure a new WebHook in ZoHo Desk as the service URL is unique for each data source.
-- Avoid creating multiple ZoHo data sources using the same Client ID and Client Secret, as access keys from the same set are limited. This prevents unnecessary losses due to OpenAPI rate limiting. ZoHo Desk provides a limited number of OpenAPI access connections even for VIPs.
-- In WebHook incremental mode, if you delete a record or data monitored by WebHooks in ZoHo Desk, you'll receive an update event related to the IsDel field. If you reset and restart the task, the deleted record won't be obtained due to ZoHo Open API not providing records with IsDel set to TRUE.
-- Regarding the service URL, ZoHo WebHook requires your service URL to be accessible on port 80 or 443, e.g., http://xxx.xx.xxx:80/xxxxxxxx or https://xxx.xx.xxx:443/xxxxxx. Therefore, you need to receive ZoHo Desk's data on ports 80 or 443.
+   - **Advanced Settings**
+
+     - **Agent Settings**: Defaults to Platform automatic allocation, you can also manually specify an agent.
+     - **Model Load Time**: If there are less than 10,000 models in the data source, their schema will be updated every hour. But if the number of models exceeds 10,000, the refresh will take place daily at the time you have specified.
+
+6. Click **Test** at the bottom. Once the test passes, click **Save**.
+
+## Further Reading
+
+- [Zoho Desk OpenAPI](https://desk.zoho.com/DeskAPIDocument#Introduction)
+- [Zoho Desk WebHook](https://desk.zoho.com/DeskAPIDocument#Webhook)
+- [Workflow Configuration Guide](https://help.zoho.com/portal/en/kb/desk/automation/workflows/articles/workflow-automations)
+
+
+
+
+​         
