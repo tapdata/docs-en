@@ -618,6 +618,9 @@ tran
 dav
 liy
 denormalization
+AMQP
+rabbitmqctl
+vhost
 Binlogs
 obbinlog
 obd
