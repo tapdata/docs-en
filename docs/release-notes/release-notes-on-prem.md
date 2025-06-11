@@ -6,6 +6,82 @@ import Content from '../reuse-content/_enterprise-features.md';
 
 This article provides release notes for TapData Enterprise, including new features, improvements, and bug fixes.
 
+
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
+
+
+```mdx-code-block
+<Tabs className="unique-tabs">
+<TabItem value="Version 4.x" default>
+```
+
+## 4.1.0
+
+### New Features
+
+- Added support for [Incremental Data Validation](../user-guide/incremental-check.md) within tasks. This feature continuously verifies target-side data consistency during synchronization, improving validation efficiency and enhancing overall data reliability.
+
+### Enhancements
+
+- Improved the user experience of the data validation interface to make the process more intuitive and feedback more informative.
+
+### Bug Fixes
+
+- Fixed an issue where an unclear error message was shown when creating an Oracle data source with a non-existent account. The system now explicitly indicates that the account does not exist.
+
+## 4.0.0
+
+### New Features
+
+* Introduced [Tapdata MCP (Model Context Protocol)](../mcp/introduction.md), enabling integration of multi-source data into real-time contextual views consumable by LLMs and AI Agents. This feature is ideal for scenarios with high demands on data freshness and compliance, such as financial risk control.
+* Added support for using **StarRocks** as a target database, allowing faster construction of real-time data warehouses for high-concurrency, multi-dimensional analytics use cases.
+* Added the ability to choose from multiple data structures(e.g. Flink) when syncing to **[Kafka-Enhanced](../prerequisites/mq-and-middleware/kafka-enhanced.md)**, enhancing compatibility and integration efficiency with downstream systems.
+
+### Enhancements
+
+* When update or delete operations fail to match records on the target side, the system now logs warning messages to aid troubleshooting.
+* Data replication tasks now support filtering tables by **primary keys and unique indexes**, including: primary key only, unique index only, with either, or without primary key (optionally including unique index).
+* In MySQL-to-MySQL sync scenarios, you can now create indexes based on the **first N characters** of a `text`-type field.
+
+### Bug Fixes
+
+* Fixed an issue where field and table processing nodes displayed incorrectly across pagination in replication tasks.
+* Fixed an `ArrayIndexOutOfBoundsException` that could occur during incremental sync from **Oracle to Doris**.
+* Fixed an error that occurred when using a `date` field as a join key for data validation during sync between Oracle databases.
+
+</TabItem>
+<TabItem value="Version 3.x">
+
+## 3.27.0
+
+### New Features
+
+- The [Cluster Overview](../user-guide/workshop.md) page on the homepage now displays task distribution by node, helping you better understand cluster workload.
+- [OceanBase (MySQL Mode)](../prerequisites/on-prem-databases/oceanbase.md), [OceanBase (Oracle Mode)](../prerequisites/on-prem-databases/oceanbase-oracle.md), and [GaussDB (DWS)](../prerequisites/warehouses-and-lake/gaussdb.md) have passed Tapdata certification and are now classified as [Certified Data Sources](../prerequisites/supported-databases.md), offering enhanced features and improved production-level stability.
+- Data replication tasks now support writing multiple tables to the same Kafka topic, expanding compatibility with more write scenarios.
+
+### Enhancements
+
+- Improved model visualization by adjusting how primary keys, foreign keys, and unique indexes are displayed, making models more readable and easier to edit.
+
+### Bug Fixes
+
+- Fixed an issue where connection requests were not evenly distributed across multiple `mongos` nodes, eliminating potential single-node performance bottlenecks.
+
+## 3.26.0
+
+### New Features
+
+- Added support for syncing tables with auto-increment primary keys in [SQL Server](../prerequisites/on-prem-databases/sqlserver.md).
+- Added support for syncing default values and foreign keys in [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) to SQL Server sync scenarios.
+
+### Enhancements
+
+- Optimized the data validation feature by adding quick location and null-first filter options for easier data inspection.
+
 ## 3.25.0
 
 ### New Features
@@ -782,3 +858,6 @@ This article provides release notes for TapData Enterprise, including new featur
 - Introduced task editing versioning to prevent overwriting of higher-version configurations by lower versions when multiple users edit the same task.
 - Documentation on the right side of the data source configuration now supports image enlargement.
 - Implementation of error codes for Oracle data sources.
+
+</TabItem>
+</Tabs>

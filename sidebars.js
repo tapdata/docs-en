@@ -93,6 +93,7 @@ const sidebars = {
                           'prerequisites/warehouses-and-lake/greenplum',
                           'prerequisites/warehouses-and-lake/hudi',
                           'prerequisites/warehouses-and-lake/selectdb',
+                          'prerequisites/warehouses-and-lake/starrocks',
                           'prerequisites/warehouses-and-lake/tablestore',
                           'prerequisites/warehouses-and-lake/yashandb',
                          ]
@@ -119,6 +120,7 @@ const sidebars = {
                           'prerequisites/on-prem-databases/mysql',
                           'prerequisites/on-prem-databases/mysql-pxc',
                           'prerequisites/on-prem-databases/oceanbase',
+                          'prerequisites/on-prem-databases/oceanbase-oracle',
                           'prerequisites/on-prem-databases/opengauss',
                           'prerequisites/on-prem-databases/oracle',
                           'prerequisites/on-prem-databases/postgresql',
@@ -291,6 +293,7 @@ const sidebars = {
                       'user-guide/data-development/monitor-task',
                      ]
                },
+             'user-guide/incremental-check',
              'user-guide/verify-data',
              'user-guide/pre-check',
              {
@@ -347,6 +350,15 @@ const sidebars = {
              'user-guide/no-supported-data-type',
         ]
     },
+    {
+     type: 'category',
+     label: 'MCP Server Guide (Preview)',
+     link: {type: 'doc', id: 'mcp/README'},
+     items: [
+            'mcp/introduction',
+            'mcp/quick-start',
+            ]
+     },
     {
      type: 'category',
      label: 'TapFlow Developer Guide (Preview)',

@@ -621,6 +621,29 @@ denormalization
 AMQP
 rabbitmqctl
 vhost
+Binlogs
+obbinlog
+obd
+oblogproxy
+ocp
+liboblog
+obcdc
+odp
+switchovers
+refman
+anonymization
+LLMs
+mcp
+modelcontextprotocol
+sparfenyuk
+sse
+STDIO
+Trae
+mirrorship
+starrocks
+UTN
+dbserver
+placeholders
 
 
 
