@@ -441,6 +441,15 @@ The beta version of the data sources is in public preview and has passed the bas
 </thead>
 <tbody>
   <tr>
+    <td>Aliyun AnalyticDB MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>3.x</td>
+  </tr>  
+  <tr>
     <td>Azure CosmosDB</td>
     <td>✅</td>
     <td>➖</td>
@@ -550,6 +559,7 @@ The beta version of the data sources is in public preview and has passed the bas
   </tr>
 </tbody>
 </table>
+
 
 </TabItem>
 </Tabs>
@@ -747,15 +757,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>5.13.9</td>
   </tr>
   <tr>
-    <td>Aliyun AnalyticDB MySQL</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>➖</td>
-    <td>5.0, 5.1, 5.5, 5.6, 5.7, 8.x</td>
-  </tr>
-  <tr>
     <td>Aliyun AnalyticDB PostgreSQL</td>
     <td>✅</td>
     <td>✅</td>
@@ -874,6 +875,7 @@ The Alpha version of the data sources is in public preview and has passed the ba
   </tr>
 </tbody>
 </table>
+
 
 
 </TabItem>
