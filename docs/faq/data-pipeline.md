@@ -13,6 +13,17 @@ Data replication is primarily used for whole database or multi-table data synchr
 
 Data transformation is primarily used for data modeling, ETL processes, data cleaning, data merging (including merging multiple tables into a single table), and building wide tables. The main difference is that the target of data development is usually a single table.
 
+### Will Data Replication/Transformation Tasks Automatically Resume After Network Interruptions?
+
+Yes, in most cases, tasks will resume automatically under the following conditions:
+
+- **Network interruption between the Manager and Engine**:
+  - In the TapData Cloud, tasks continue running without impact. They will automatically resume after the network is restored.
+  - In the TapData Enterprise, short interruptions have no effect. If the disconnection lasts longer than 10 minutes, tasks will automatically switch to another available engine. Full sync tasks will restart from the beginning, while incremental sync tasks will resume from the last checkpoint.
+- **Network interruption between the Engine and Data Source**:
+  - The system will attempt to reconnect within the configured [retry interval](../user-guide/other-settings/system-settings.md#task-setting). Once the connection is restored, the task will continue.
+  - If the network is not restored within the timeout period, the task will stop. After recovery, full sync tasks will restart from the beginning, and incremental tasks will resume from the last checkpoint.
+
 ### Does it support cross-region, cross-network data synchronization?
 
 Yes. TapData connects sources and targets through Agents by opening limited network services to meet synchronization needs.
@@ -223,6 +234,24 @@ It's recommended to filter out primary key tables and non-primary key tables dur
 ### Can index information be automatically synchronized?
 
 Data replication tasks do not automatically synchronize existing indexes of the source table by default. You can manually create indexes in the target database after the table structure synchronization is completed. Additionally, to improve data synchronization efficiency, TapData will create indexes in the target based on the source table's related keys/primary keys during operation.
+
+### Which Data Sources Support Bidirectional Synchronization?
+
+TapData supports bidirectional synchronization between the following data sources:
+
+- **MySQL ↔ MySQL**
+- **PostgreSQL ↔ PostgreSQL**
+- **MongoDB ↔ MongoDB**
+- **PostgreSQL ↔ MySQL**
+- **SQL Server ↔ SQL Server**
+
+Support for more database types is planned for future releases.
+
+### How Does Bidirectional Synchronization Handle Write Conflicts?
+
+Currently, bidirectional synchronization does not include an automatic mechanism for handling concurrent write conflicts. Since synchronization occurs outside of transaction contexts, the system cannot detect or resolve data conflicts that may arise between source and target databases.
+
+Therefore, it is not recommended to modify the same data on both sides simultaneously. Conflicts should be avoided through proper business logic or operational guidelines.
 
 ### Will resetting the task configuration clear the synchronized tables and data?
 

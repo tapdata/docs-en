@@ -114,7 +114,7 @@ Process settings are primarily used to set the expiration time for process heart
 
 - **Process Heartbeat Period Time** (seconds)
 
-## Task Settings
+## <span id="task-setting">Task Settings</span>
 
 ![Task Settings](../../images/task_settings.png)
 
