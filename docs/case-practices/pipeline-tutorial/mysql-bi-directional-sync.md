@@ -33,6 +33,7 @@ Tapdata supports bi-directional data synchronization for MySQL ↔ MySQL, Postgr
 
 ## Considerations
 
+- Bidirectional synchronization does not currently support active-active conflict resolution. Avoid modifying the same data on both sides simultaneously.
 - To ensure that bi-directional DML operations execute correctly, the tables to be synchronized must have primary keys.
 - During bi-directional synchronization, do not perform DDL changes (such as adding columns) on the synchronized tables, as this will cause task failure.
 - A bi-directional synchronization task consists of two data synchronization tasks: one task synchronizes both full and incremental data, and the other only needs to synchronize incremental data to avoid data duplication.
