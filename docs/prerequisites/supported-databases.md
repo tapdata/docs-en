@@ -521,6 +521,15 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>➖</td>
     <td>N/A</td>
   </tr>
+    <tr>
+    <td>PolarDB MySQL</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>All</td>
+  </tr>
   <tr>
     <td>Salesforce</td>
     <td>✅</td>
@@ -808,15 +817,6 @@ The Alpha version of the data sources is in public preview and has passed the ba
     <td>✅</td>
     <td>➖</td>
     <td>2008 R2, 2012, 2014, 2016, 2017, 2019</td>
-  </tr>
-  <tr>
-    <td>PolarDB MySQL</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>✅</td>
-    <td>➖</td>
-    <td>5.6, 5.7, 8.0</td>
   </tr>
   <tr>
     <td>PolarDB PostgreSQL</td>
