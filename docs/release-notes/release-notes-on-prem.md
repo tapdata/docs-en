@@ -18,6 +18,22 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.2.0
+
+### New Features
+
+- Added status monitoring for incremental log mining plugins in the [Cluster Management](../user-guide/manage-system/manage-cluster.md) module to improve observability and troubleshooting efficiency.
+- Support for [customizing alert email content](../user-guide/other-settings/notification.md#mail-alert), enhancing readability and flexibility of notifications.
+- Support for importing/exporting [data verification task configurations](../user-guide/verify-data.md), making it easier to migrate or reuse configurations between test and production environments.
+
+### Enhancements
+
+- Optimized index synchronization logic to preserve index names in the target database, improving consistency and business traceability.
+
+### Bug Fixes
+
+- Fixed an issue where searching shared mining tasks by connection name caused a page error.
+
 ## 4.1.0
 
 ### New Features
