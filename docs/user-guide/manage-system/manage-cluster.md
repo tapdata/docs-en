@@ -34,3 +34,5 @@ Through the Cluster Management page, you can view the running status of all comp
 4. Click **Component View** in the upper right corner, and the page will display the status information of components by category. Additionally, you can assign different tags to multiple synchronization governance services (Agents). These tags can then be specified when configuring data synchronization or transformation tasks.
 
     ![Components View](../../images/components.png)
+    
+5. If you have deployed the [Raw Log Parsing Service](../../case-practices/best-practice/raw-logs-solution.md), you can click **Log Mining Monitor** to view the resource usage (such as CPU, memory, etc.) of the server where the service is running. This helps you gain a comprehensive understanding of the service’s operational status.

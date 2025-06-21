@@ -39,7 +39,7 @@ After [logging into the TapData platform](../log-in.md), click the ![setting_ico
 - Agent createdSystem
 - Agent deleted
 
-## Alert Settings
+## <span id="mail-alert">Alert Settings</span>
 
 In the **Alert Settings**, you can configure which task events should trigger alert notifications, how the notifications are sent (e.g., via email), and the notification interval.
 
@@ -50,6 +50,12 @@ In the **Alert Settings**, you can configure which task events should trigger al
 For a practical example of email alert setup, see [Send Alerts via Mail](../../case-practices/best-practice/alert-via-qqmail.md).
 
 :::
+
+You can also click **Custom Email Template** in the top-right corner of the page to personalize the email subject and body content, allowing better alignment with your business needs.
+
+![Customize Email Template](../../images/alter_email_templates.png)
+
+The subject and body support the following insertable variables: `{taskName}` (task name), `{errorTime}` (error time), and `{errorLog}` (error log). You can quickly insert them by clicking the variable names at the bottom of the page.
 
 ## Webhook Alerts
 
