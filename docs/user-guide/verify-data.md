@@ -77,6 +77,8 @@ import TabItem from '@theme/TabItem';
    When the validation type is **Full Fields Validation** or **Associated Fields Validation**, you can also click **Diff verification** in the upper right corner to re-verify the difference data results of this full validation to confirm whether the data has become consistent.
 
    :::
+   
+6. *(Optional)* On the data verification task list page, you can import and export task configurations—useful for migrating or reusing configurations between test and production environments.
 
 
 
