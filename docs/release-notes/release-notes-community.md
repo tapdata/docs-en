@@ -11,7 +11,7 @@ This document introduces the recent release notes for TapData Community. For mor
 ### New Features
 
 - The [Cluster Overview](../user-guide/workshop.md) page on the homepage now displays task distribution by node, helping you better understand cluster workload.
-- [OceanBase (MySQL Mode)](../prerequisites/on-prem-databases/oceanbase.md), and [GaussDB (DWS)](../prerequisites/warehouses-and-lake/gaussdb.md) have passed Tapdata certification and are now classified as [Certified Data Sources](../prerequisites/supported-databases.md), offering enhanced features and improved production-level stability.
+- [OceanBase (MySQL Mode)](../connectors/on-prem-databases/oceanbase.md), and [GaussDB (DWS)](../connectors/warehouses-and-lake/gaussdb.md) have passed Tapdata certification and are now classified as [Certified Data Sources](../connectors/supported-data-sources.md), offering enhanced features and improved production-level stability.
 - Data replication tasks now support writing multiple tables to the same Kafka topic, expanding compatibility with more write scenarios.
 
 ### Enhancements
@@ -26,13 +26,13 @@ This document introduces the recent release notes for TapData Community. For mor
 
 ### New Features
 
-- Added support for syncing default values and foreign keys in [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) to SQL Server sync scenarios.
+- Added support for syncing default values and foreign keys in [PostgreSQL](../connectors/on-prem-databases/postgresql.md) to SQL Server sync scenarios.
 
 ## 3.25.0
 
 ### New Features
 
-- Added support for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints** in [MySQL](../prerequisites/on-prem-databases/mysql.md)-to-MySQL and [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md)-to-PostgreSQL scenarios, ensuring data structure consistency.
+- Added support for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints** in [MySQL](../connectors/on-prem-databases/mysql.md)-to-MySQL and [PostgreSQL](../connectors/on-prem-databases/postgresql.md)-to-PostgreSQL scenarios, ensuring data structure consistency.
 - Enhanced the **[primary-secondary merge node](../user-guide/data-development/process-node.md#pri-sec-merged)** functionality to allow subsequent connections with other processing nodes (including JS nodes), improving workflow flexibility.
 
 ### Enhancements
@@ -131,7 +131,7 @@ This document introduces the recent release notes for TapData Community. For mor
 
 ### New Features
 
-- Added HTTPS connection support for [Elasticsearch data sources](../prerequisites/on-prem-databases/elasticsearch.md), enhancing data transmission security to meet more stringent data security and compliance requirements.
+- Added HTTPS connection support for [Elasticsearch data sources](../connectors/on-prem-databases/elasticsearch.md), enhancing data transmission security to meet more stringent data security and compliance requirements.
 - Enabled support for synchronizing tables without primary keys by adding a hash field (default name: `_no_pk_hash`), ensuring data consistency and stable synchronization in non-primary key scenarios.
 
 ### Enhancements
@@ -148,7 +148,7 @@ This document introduces the recent release notes for TapData Community. For mor
 
 ### New Features
 
-* Kafka-Enhanced and TiDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../prerequisites/supported-databases.md), providing more advanced features and enhanced production stability.
+* Kafka-Enhanced and TiDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../connectors/supported-data-sources.md), providing more advanced features and enhanced production stability.
 
 ### Enhancements
 
@@ -165,7 +165,7 @@ This document introduces the recent release notes for TapData Community. For mor
 
 ### New Features
 
-* Doris, ClickHouse, PostgreSQL, and MongoDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../prerequisites/supported-databases.md), providing more advanced features and enhanced production stability.
+* Doris, ClickHouse, PostgreSQL, and MongoDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../connectors/supported-data-sources.md), providing more advanced features and enhanced production stability.
 * When using PostgreSQL as a source, it is now possible to specify the time point for incremental data in task settings.
 
 ### Enhancements
@@ -182,7 +182,7 @@ This document introduces the recent release notes for TapData Community. For mor
 
 ### New Features
 
-* MySQL has passed the TapData certification testing process, upgrading it to a [certified data source](../prerequisites/supported-databases.md), providing more comprehensive features and enhanced production stability.
+* MySQL has passed the TapData certification testing process, upgrading it to a [certified data source](../connectors/supported-data-sources.md), providing more comprehensive features and enhanced production stability.
 
 ### Bug Fixes
 
@@ -192,8 +192,8 @@ This document introduces the recent release notes for TapData Community. For mor
 
 ### New Features
 
-- Dameng have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../prerequisites/supported-databases.md), offering richer features and higher production stability.
-- For [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) data sources, incremental data synchronization is now supported using the walminer plugin, catering to more use cases.
+- Dameng have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../connectors/supported-data-sources.md), offering richer features and higher production stability.
+- For [PostgreSQL](../connectors/on-prem-databases/postgresql.md) data sources, incremental data synchronization is now supported using the walminer plugin, catering to more use cases.
 - Data replication tasks now support reading from multiple tables simultaneously, improving parallel processing capabilities and task execution efficiency.
 
 ### Feature Enhancements
@@ -240,9 +240,9 @@ This document introduces the recent release notes for TapData Community. For mor
 ### New Features
 
 - Added a [Union Node](../user-guide/copy-data/process-node.md#union-node) to data replication tasks, enabling the merging (UNION) of multiple tables within the same database. This is useful for data integration and analysis scenarios.
-- [Doris](../prerequisites/warehouses-and-lake/doris.md) data source now supports certificate-free HTTPS connections.
+- [Doris](../connectors/warehouses-and-lake/doris.md) data source now supports certificate-free HTTPS connections.
 - MySQL, Oracle, OpenGauss, SQL Server, and PostgreSQL data sources now support enabling the **Hash Sharding** feature in the advanced settings of nodes during task configuration, significantly improving the full data sync speed for large tables.
-- Added support for [VastBase](../prerequisites/on-prem-databases/vastbase.md) data source, with a maturity level of Beta, further enriching the variety of data sources.
+- Added support for [VastBase](../connectors/on-prem-databases/vastbase.md) data source, with a maturity level of Beta, further enriching the variety of data sources.
 
 ### Enhancements
 

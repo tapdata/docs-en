@@ -41,7 +41,7 @@ In the catelog view, if you select a specific table, you can also see table deta
 </TabItem>
 
 <TabItem value="② Add Data Sources">
-Clicking the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../prerequisites">Connect Data Sources</a>.
+Clicking the <img src='/img/add_icon.png'></img> icon, in the pop-up dialog, we can add a data source, select a data source will jump to the connection configuration page. For more information, see <a href="../../connectors">Connect Data Sources</a>.
 </TabItem>
 
 <TabItem value="③ Search Tables">

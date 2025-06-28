@@ -30,7 +30,7 @@ binlog_format     = row
 binlog_row_image  = full
 ```
 
-After completing [permission granting and data source connection](../prerequisites/on-prem-databases/mysql.md), you can configure it as a data source in Tapdata's task configuration to achieve full and incremental data synchronization (default).
+After completing [permission granting and data source connection](../connectors/on-prem-databases/mysql.md), you can configure it as a data source in Tapdata's task configuration to achieve full and incremental data synchronization (default).
 
 ![Select Data Sync Type](..//images/select_sync_type.png)
 
@@ -39,7 +39,7 @@ After completing [permission granting and data source connection](../prerequisit
 <TabItem value="Database Log File">
 For Oracle and Db2 data sources, Tapdata provides raw log parsing capability in addition to the traditional LogMiner-based CDC. This approach directly parses the native binary log files, achieving more efficient event capture with higher collection performance (Records Per Second, RPS, over 20,000), and reduces the impact on the source database.
 
-This solution requires the additional installation of a log parsing plugin. For example, with Oracle, after [contacting Tapdata technical support](../appendix/support.md) to complete the plugin deployment, you can choose the log plugin as **bridge** when [configuring the Oracle connection](../prerequisites/on-prem-databases/oracle.md). Then, fill in the IP address of the raw log service, with the default service port of **8190**.
+This solution requires the additional installation of a log parsing plugin. For example, with Oracle, after [contacting Tapdata technical support](../appendix/support.md) to complete the plugin deployment, you can choose the log plugin as **bridge** when [configuring the Oracle connection](../connectors/on-prem-databases/oracle.md). Then, fill in the IP address of the raw log service, with the default service port of **8190**.
 
 ![Set Raw Log Plugin](..//images/raw_log_configuration.png)
 
@@ -55,7 +55,7 @@ For example, in MySQL, suppose there is a table `orders` where the `last_updated
 SELECT * FROM orders WHERE last_updated > '2024-06-01 00:00:00';
 ```
 
-After completing [permission granting and data source connection](../prerequisites/on-prem-databases/mysql.md), you can set the incremental synchronization method to **Polling** for the source node and select the target field (`last_updated`) in Tapdata when [configuring the data transformation task](../user-guide/data-development/create-task.md).
+After completing [permission granting and data source connection](../connectors/on-prem-databases/mysql.md), you can set the incremental synchronization method to **Polling** for the source node and select the target field (`last_updated`) in Tapdata when [configuring the data transformation task](../user-guide/data-development/create-task.md).
 
 ![Select Field Polling](..//images/obtain_cdc_via_polling.png)
 
@@ -142,7 +142,7 @@ This method is not optimal and increases maintenance costs, so Tapdata does not 
 
 * Q: Which data sources does Tapdata support CDC capture for?
 
-  A: Please refer to the tables in [Supported Data Sources](../prerequisites/supported-databases.md). If incremental data is supported as a data source, CDC information can be obtained.
+  A: Please refer to the tables in [Supported Data Sources](../connectors/supported-data-sources.md). If incremental data is supported as a data source, CDC information can be obtained.
 
 * Q: If my data source supports CDC, how do I choose the CDC collection method?
 

@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 #### New Features
 
 - The [Cluster Overview](../user-guide/workshop.md) page on the homepage now displays task distribution by node, helping you better understand cluster workload.
-- [OceanBase (MySQL Mode)](../prerequisites/on-prem-databases/oceanbase.md), [OceanBase (Oracle Mode)](../prerequisites/on-prem-databases/oceanbase-oracle.md), and [GaussDB (DWS)](../prerequisites/warehouses-and-lake/gaussdb.md) have passed Tapdata certification and are now classified as [Certified Data Sources](../prerequisites/supported-databases.md), offering enhanced features and improved production-level stability.
+- [OceanBase (MySQL Mode)](../connectors/on-prem-databases/oceanbase.md), [OceanBase (Oracle Mode)](../connectors/on-prem-databases/oceanbase-oracle.md), and [GaussDB (DWS)](../connectors/warehouses-and-lake/gaussdb.md) have passed Tapdata certification and are now classified as [Certified Data Sources](../connectors/supported-data-sources.md), offering enhanced features and improved production-level stability.
 - Data replication tasks now support writing multiple tables to the same Kafka topic, expanding compatibility with more write scenarios.
 
 #### Enhancements
@@ -37,15 +37,15 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-- Added support for syncing tables with auto-increment primary keys in [SQL Server](../prerequisites/on-prem-databases/sqlserver.md).
-- Added support for syncing default values and foreign keys in [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) to SQL Server sync scenarios.
+- Added support for syncing tables with auto-increment primary keys in [SQL Server](../connectors/on-prem-databases/sqlserver.md).
+- Added support for syncing default values and foreign keys in [PostgreSQL](../connectors/on-prem-databases/postgresql.md) to SQL Server sync scenarios.
 
 ### 2025-03-19
 
 #### New Features
 
-- Added support for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints** in [MySQL](../prerequisites/on-prem-databases/mysql.md)-to-MySQL, [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md)-to-PostgreSQL, and [SQL Server](../prerequisites/on-prem-databases/sqlserver.md)-to-PostgreSQL scenarios, ensuring data structure consistency.
-- Enabled foreign key constraint synchronization in [Sybase](../prerequisites/on-prem-databases/sybase.md)-to-PostgreSQL tasks, further enhancing data consistency.
+- Added support for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints** in [MySQL](../connectors/on-prem-databases/mysql.md)-to-MySQL, [PostgreSQL](../connectors/on-prem-databases/postgresql.md)-to-PostgreSQL, and [SQL Server](../connectors/on-prem-databases/sqlserver.md)-to-PostgreSQL scenarios, ensuring data structure consistency.
+- Enabled foreign key constraint synchronization in [Sybase](../connectors/on-prem-databases/sybase.md)-to-PostgreSQL tasks, further enhancing data consistency.
 - Enhanced the **[primary-secondary merge node](../user-guide/data-development/process-node.md#pri-sec-merged)** functionality to allow subsequent connections with other processing nodes (including JS nodes), improving workflow flexibility.
 
 #### Enhancements
@@ -70,7 +70,7 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-- Added support for the [Sybase to PostgreSQL](../prerequisites/on-prem-databases/sybase.md) sync scenario, now supporting synchronization of default values, enumerated types, and sequences.
+- Added support for the [Sybase to PostgreSQL](../connectors/on-prem-databases/sybase.md) sync scenario, now supporting synchronization of default values, enumerated types, and sequences.
 - Enabled the ability to define a primary key for tables without a primary key when configuring [Primary-Secondary Merge Nodes](../user-guide/data-development/process-node.md#pri-sec-merged), ensuring data synchronization consistency and improving merge efficiency.
 
 #### Enhancements
@@ -92,7 +92,7 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-- Enhanced [Sybase](../prerequisites/on-prem-databases/sybase.md)-to-PostgreSQL synchronization scenario, adding index migration and **sequence** synchronization features, further improving migration automation and ensuring sequence data consistency.
+- Enhanced [Sybase](../connectors/on-prem-databases/sybase.md)-to-PostgreSQL synchronization scenario, adding index migration and **sequence** synchronization features, further improving migration automation and ensuring sequence data consistency.
 
 #### Feature Optimizations
 
@@ -168,7 +168,7 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-- Added HTTPS connection support for [Elasticsearch data sources](../prerequisites/on-prem-databases/elasticsearch.md), enhancing data transmission security to meet more stringent data security and compliance requirements.
+- Added HTTPS connection support for [Elasticsearch data sources](../connectors/on-prem-databases/elasticsearch.md), enhancing data transmission security to meet more stringent data security and compliance requirements.
 - Enabled support for synchronizing tables without primary keys by adding a hash field (default name: `_no_pk_hash`), ensuring data consistency and stable synchronization in non-primary key scenarios.
 
 #### Enhancements
@@ -186,11 +186,11 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-* Kafka-Enhanced and TiDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../prerequisites/supported-databases.md), providing more advanced features and enhanced production stability.
+* Kafka-Enhanced and TiDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../connectors/supported-data-sources.md), providing more advanced features and enhanced production stability.
 
 #### Enhancements
 
-- Added a [Multi-threaded CT Table Polling](../prerequisites/on-prem-databases/sqlserver.md#advanced-settings) option to improve incremental data collection performance for SQL Server environments with a large number of tables (over 500), significantly increasing synchronization efficiency.
+- Added a [Multi-threaded CT Table Polling](../connectors/on-prem-databases/sqlserver.md#advanced-settings) option to improve incremental data collection performance for SQL Server environments with a large number of tables (over 500), significantly increasing synchronization efficiency.
 - Optimized the cache management logic for processing nodes, enhancing resource usage efficiency and improving task execution speed.
 - Introduced an automatic retry mechanism for Oracle LogMiner errors caused by exceeding PGA limits, improving fault tolerance.
 
@@ -205,7 +205,7 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-* Doris, ClickHouse, KingBaseES-R6, PostgreSQL, SQL Server, and MongoDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../prerequisites/supported-databases.md), providing more advanced features and enhanced production stability.
+* Doris, ClickHouse, KingBaseES-R6, PostgreSQL, SQL Server, and MongoDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../connectors/supported-data-sources.md), providing more advanced features and enhanced production stability.
 * When using PostgreSQL as a source, it is now possible to specify the time point for incremental data in task settings.
 
 #### Enhancements
@@ -222,7 +222,7 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-* MySQL has passed the TapData certification testing process, upgrading it to a [certified data source](../prerequisites/supported-databases.md), providing more comprehensive features and enhanced production stability.
+* MySQL has passed the TapData certification testing process, upgrading it to a [certified data source](../connectors/supported-data-sources.md), providing more comprehensive features and enhanced production stability.
 * Added a [form-based mode](../user-guide/copy-data/quick-create-task.md) for building replication tasks, simplifying the task creation process and improving operational convenience.
 
 #### Enhancements
@@ -237,9 +237,9 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-- Oracle, Dameng, and Db2 have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../prerequisites/supported-databases.md), offering richer features and higher production stability.
+- Oracle, Dameng, and Db2 have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../connectors/supported-data-sources.md), offering richer features and higher production stability.
 - Added [traffic billing](../billing/billing-overview.md) feature for fully managed instances, supporting [traffic bill viewing and payment](../billing/renew-subscribe.md), enabling users to easily monitor traffic usage and manage bills conveniently.
-- For [PostgreSQL](../prerequisites/on-prem-databases/postgresql.md) data sources, incremental data synchronization is now supported using the walminer plugin, catering to more use cases.
+- For [PostgreSQL](../connectors/on-prem-databases/postgresql.md) data sources, incremental data synchronization is now supported using the walminer plugin, catering to more use cases.
 - Data replication tasks now support reading from multiple tables simultaneously, improving parallel processing capabilities and task execution efficiency.
 
 #### Enhancements
@@ -273,7 +273,7 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-- Oracle, Kafka, and Db2 have completed the TapData certification testing process, upgraded to [GA-level data sources](../prerequisites/supported-databases.md), offering enhanced capabilities and production stability.
+- Oracle, Kafka, and Db2 have completed the TapData certification testing process, upgraded to [GA-level data sources](../connectors/supported-data-sources.md), offering enhanced capabilities and production stability.
 - Added traffic billing view and payment features in the cloud version.
 
 #### Enhancements
@@ -314,9 +314,9 @@ import TabItem from '@theme/TabItem';
 #### New Features
 
 - Added a [Union Node](../user-guide/copy-data/process-node.md) to data replication tasks, enabling the merging (UNION) of multiple tables within the same database. This is useful for data integration and analysis scenarios.
-- [Doris](../prerequisites/warehouses-and-lake/doris.md) data source now supports certificate-free HTTPS connections.
+- [Doris](../connectors/warehouses-and-lake/doris.md) data source now supports certificate-free HTTPS connections.
 - MySQL, Oracle, OpenGauss, SQL Server, and PostgreSQL data sources now support enabling the **Hash Sharding** feature in the advanced settings of nodes during task configuration, significantly improving the full data sync speed for large tables.
-- Added support for [VastBase](../prerequisites/on-prem-databases/vastbase.md) data source, with a maturity level of Beta, further enriching the variety of data sources.
+- Added support for [VastBase](../connectors/on-prem-databases/vastbase.md) data source, with a maturity level of Beta, further enriching the variety of data sources.
 
 #### Enhancements
 
@@ -364,7 +364,7 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-* Enhanced [TiDB](../prerequisites/on-prem-databases/tidb.md) data source capabilities with support for real-time incremental synchronization.
+* Enhanced [TiDB](../connectors/on-prem-databases/tidb.md) data source capabilities with support for real-time incremental synchronization.
 
 #### Enhancements
 
@@ -457,7 +457,7 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-* Added support for real-time log parsing of [TiDB data sources](../prerequisites/on-prem-databases/tidb.md), fulfilling incremental data synchronization needs.
+* Added support for real-time log parsing of [TiDB data sources](../connectors/on-prem-databases/tidb.md), fulfilling incremental data synchronization needs.
 * During the full sync phase from Oracle to MySQL, support has been added for syncing unique and normal indexes that do not utilize functions.
 * Enhanced the task start process to include an option to skip errors encountered during the last run.
 
@@ -479,7 +479,7 @@ import TabItem from '@theme/TabItem';
 
 #### Enhancements
 
-* To further enhance user experience, Beta and Alpha [data sources](../prerequisites/README.md) now require an application for use, allowing TapData to provide better technical support based on your business scenarios.
+* To further enhance user experience, Beta and Alpha [data sources](../connectors/README.md) now require an application for use, allowing TapData to provide better technical support based on your business scenarios.
 
 #### Bug Fixes
 
@@ -563,11 +563,11 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- Added [Azure Cosmos DB](../prerequisites/cloud-databases/azure-cosmos-db.md) as a new data source, enabling full data synchronization to facilitate quick cloud data transfers.
+- Added [Azure Cosmos DB](../connectors/cloud-databases/azure-cosmos-db.md) as a new data source, enabling full data synchronization to facilitate quick cloud data transfers.
 
 ### Enhancements
 
-- Upgraded data source connections, with [SQL Server](../prerequisites/on-prem-databases/sqlserver.md) now supporting SSL connections, enhancing data security.
+- Upgraded data source connections, with [SQL Server](../connectors/on-prem-databases/sqlserver.md) now supporting SSL connections, enhancing data security.
 - Optimized field type adjustments in [data replication tasks](../user-guide/copy-data/create-task.md), allowing for direct selection of common types from the target database.
 - Improved task source node settings, enabling customization of the number of rows read per batch in the incremental phase, catering to performance needs of incremental synchronization.
 
@@ -582,7 +582,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* Support for loading table comments on [Oracle data sources](../prerequisites/on-prem-databases/oracle.md#advanced), which can be enabled in the **Advanced Settings** when configuring the data source. This makes it easier to quickly identify the business meaning of tables through their comments.
+* Support for loading table comments on [Oracle data sources](../connectors/on-prem-databases/oracle.md#advanced), which can be enabled in the **Advanced Settings** when configuring the data source. This makes it easier to quickly identify the business meaning of tables through their comments.
 * In the task [monitoring page](../user-guide/copy-data/monitor-task.md), support viewing RPS (Records Per Second) information based on the size of events.
 
 ### Enhancements
@@ -603,7 +603,7 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-- Enhanced [Data Source Connection](../prerequisites/README.md) methods, supporting SSL connections for data sources like MySQL, PostgreSQL, Kafka, TiDB, MariaDB, etc., to further enhance data security.
+- Enhanced [Data Source Connection](../connectors/README.md) methods, supporting SSL connections for data sources like MySQL, PostgreSQL, Kafka, TiDB, MariaDB, etc., to further enhance data security.
 - Improved user interface interaction logic.
 - To better manage data duplication for updates on non-primary keys, TapData Cloud now supports creating unique indexes.
 

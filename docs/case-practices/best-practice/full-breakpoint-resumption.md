@@ -17,7 +17,7 @@ To address this issue, TapData introduces the full resumption from breakpoint fu
 ## Prerequisites
 
 * The full resumption from breakpoint is currently only supported for MongoDB data sources, i.e., the source database must be MongoDB.
-* Before creating a data transformation task, ensure you have configured the relevant data sources, see [Configuring MongoDB Connection](../../prerequisites/on-prem-databases/mongodb.md) for details.
+* Before creating a data transformation task, ensure you have configured the relevant data sources, see [Configuring MongoDB Connection](../../connectors/on-prem-databases/mongodb.md) for details.
 
 ## Procedure
 

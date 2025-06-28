@@ -34,8 +34,8 @@ In this case, we aim to read real-time data from the car insurance claims table 
 
 Before creating a data transformation task, ensure you have configured the necessary data sources:
 
-1. [Configure Oracle Connection](../../prerequisites/on-prem-databases/oracle.md)
-2. [Configure Kafka Connection](../../prerequisites/mq-and-middleware/kafka.md)
+1. [Configure Oracle Connection](../../connectors/on-prem-databases/oracle.md)
+2. [Configure Kafka Connection](../../connectors/mq-and-middleware/kafka.md)
 
 ## Configure Task
 

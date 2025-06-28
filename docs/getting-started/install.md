@@ -19,16 +19,16 @@ TapData offers various deployment options to cater to diverse needs, from quick 
 1. Visit [TapData Cloud](https://cloud.tapdata.io/console/v3/) and sign up for free.
 2. Log in to your account to access your shared TapData Agent.
 3. Follow these quick guides to explore TapData’s features:
-   - **[Connect a Data Source](connect-database.md)**: Link your databases or data sources to the TapData platform.
-   - **[Create Your First Data Pipeline](connect-database.md)**: Start syncing or transforming data in real time.
+   - **[Connect a Data Source](connect-data-source.md)**: Link your databases or data sources to the TapData platform.
+   - **[Create Your First Data Pipeline](connect-data-source.md)**: Start syncing or transforming data in real time.
 
 ## More Deployment Options
 
 If your project requires more control or custom setups, TapData has you covered with additional deployment methods tailored to your needs:
 
-- **[TapData Enterprise](../installation/install-tapdata-enterprise/README.md)**
+- **[TapData Enterprise](install-and-setup/install-enterprise-edition/README.md)**
    Designed for organizations with strict data governance and security requirements, TapData Enterprise is ideal for industries like finance, government, or large enterprises. Deploy TapData in your own data center to ensure full control over your data.
-- **[TapData Community](../installation/install-tapdata-community.md)**
+- **[TapData Community](install-and-setup/install-community-edition.md)**
    An open-source version of TapData, perfect for small projects or technical teams. Quickly deploy via Docker to access core data synchronization and transformation capabilities, with the option to upgrade to Enterprise or Cloud for additional features.
 
 ## See also

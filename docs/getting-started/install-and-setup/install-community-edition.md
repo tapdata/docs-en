@@ -1,8 +1,4 @@
-# TapData Community
-
-import Content from '../reuse-content/_community-features.md';
-
-<Content />
+# Deploy ODH Community
 
 TapData Community is an open-source real-time data platform that facilitates data synchronization and transformation. This guide demonstrates how to quickly install and start TapData Community.
 
@@ -17,7 +13,7 @@ Before you begin, ensure your environment meets the following requirements:
 
 - Hardware specifications: 8-core CPU (x86 architecture), 16 GB of memory
 - Storage specifications: 100 GB
-- Operating System: **CentOS 7+** , **Ubuntu 16.04+** or **Red Hat Enterprise Linux（RHEL）7.x/8.x**
+- Operating System: **CentOS 7+** , **Ubuntu 16.04+** , **Red Hat Enterprise Linux（RHEL）7.x/8.x** or **Windows OS (64-bit)**.
 
 ## Component Overview
 
@@ -90,7 +86,7 @@ TapData Community includes the following main components:
 
    For example, for version 3.5.16, the command would be: `tar -zxvf tapdata-v3.5.16-663b7b11.tar.gz && cd tapdata`
 
-3. [Install MongoDB](../administration/production-deploy/install-replica-mongodb.md) (version 4.0 or later). TapData will use it as an intermediary database to store tasks and metadata.
+3. [Install MongoDB](../../administration/production-deploy/install-replica-mongodb.md) (version 4.0 or later). TapData will use it as an intermediary database to store tasks and metadata.
 
 3. Execute the following command to specify the [URI connection string](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format) of the MongoDB instance you just deployed.
 
@@ -126,4 +122,4 @@ TapData Community includes the following main components:
 
 ## Next Steps
 
-[Connect to a Database](../quick-start/connect-database.md)
+[Connect to a Database](../connect-data-source.md)

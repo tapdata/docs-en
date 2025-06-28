@@ -31,8 +31,8 @@ To fully tap into these advantages, the initial step is to ensure effective sync
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
-1. [Configure SQL Server Connection](../../prerequisites/on-prem-databases/sqlserver.md)
-2. [Configure BigQuery Connection](../../prerequisites/warehouses-and-lake/big-query.md)
+1. [Configure SQL Server Connection](../../connectors/on-prem-databases/sqlserver.md)
+2. [Configure BigQuery Connection](../../connectors/warehouses-and-lake/big-query.md)
 
 Also note the reference [data type support](../../user-guide/no-supported-data-type.md).
 

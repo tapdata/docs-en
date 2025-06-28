@@ -27,7 +27,7 @@ To address these challenges, Tapdata provides the MCP service. It uses a standar
 - **Secure Access with Trusted, Controlled Context**
   Supports field-level [masking](../user-guide/advanced-settings/custom-node.md) and [role-based](../user-guide/manage-system/manage-role.md) permissions. Combined with real-time sync and incremental updates, it ensures AI models access only fresh, authorized data during inference.
 - **Connect 100+ Data Sources with a Single MCP**
-  One MCP instance can connect to [over 100 heterogeneous data sources](../prerequisites/supported-databases.md), including major databases and SaaS platforms—breaking data silos and providing a unified foundation for context-aware AI.
+  One MCP instance can connect to [over 100 heterogeneous data sources](../connectors/supported-data-sources.md), including major databases and SaaS platforms—breaking data silos and providing a unified foundation for context-aware AI.
 - **Built for LLM Agents with Seamless Integration**
   Offers standardized SSE support and no-code [REST API](../user-guide/data-service/README.md) setup, fully compatible with tools like Cursor, Claude, and other popular agent frameworks—bridging enterprise data and AI with ease.
 

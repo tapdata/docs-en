@@ -24,8 +24,8 @@ Having understood the differences between TapData and traditional solutions, we 
 
 Before building the data sync pipeline, we first need to establish a connection to the data source on TapData. The specific steps are as follows:
 
-1. [Connect to MySQL](../../prerequisites/on-prem-databases/mysql.md)
-2. [Connect to Oracle](../../prerequisites/on-prem-databases/oracle.md)
+1. [Connect to MySQL](../../connectors/on-prem-databases/mysql.md)
+2. [Connect to Oracle](../../connectors/on-prem-databases/oracle.md)
 
 ## Configure Task
 

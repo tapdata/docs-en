@@ -8,7 +8,7 @@ This article lists common questions encountered while using TapData.
 
 ## What data sources does TapData support?
 
-TapData supports a wide range of databases, including common relational, non-relational, and queue-based data sources. For details, see [Supported Databases](../prerequisites/supported-databases.md).
+TapData supports a wide range of databases, including common relational, non-relational, and queue-based data sources. For details, see [Supported Databases](../connectors/supported-data-sources.md).
 
 ## Does TapData offer a trial?
 
@@ -25,7 +25,7 @@ TapData offers two deployment options, **Cloud** and **Enterprise**, to meet you
 
 ## What to do if the connection test fails?
 
-When creating a data connection, refer to the connection configuration help on the right side of the page and complete the settings according to the guide. You can also refer to [Preparation Work](../prerequisites) to complete the setup.
+When creating a data connection, refer to the connection configuration help on the right side of the page and complete the settings according to the guide. You can also refer to [Preparation Work](../connectors) to complete the setup.
 
 ## When configuring a replication task, why is the target node inference result abnormal?
 

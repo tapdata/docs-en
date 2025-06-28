@@ -12,8 +12,8 @@ This article explains the specific data replication process to help you quickly 
 
 Before you create a data replication task, you need to perform the following preparations:
 
-* [Install TapData](../../quick-start/install.md)
-* [Connect to a Data Source](../../quick-start/connect-database.md)
+* [Install TapData](../../getting-started/install.md)
+* [Connect to a Data Source](../../getting-started/connect-data-source.md)
 
 ## Procedure
 

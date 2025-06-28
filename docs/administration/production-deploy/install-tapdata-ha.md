@@ -298,4 +298,4 @@ Before deployment, we need to perform the following operations on both servers.
 
 ## Next Steps
 
-[Connect to a Database](../../quick-start/connect-database.md)
+[Connect to a Database](../../getting-started/connect-data-source.md)

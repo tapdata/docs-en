@@ -88,7 +88,7 @@ Building on the free offerings of TapData Community for developers, TapData Ente
 <tbody>
   <tr>
     <td rowspan="4">Basic Features</td>
-    <td><a href="../quick-start/install">Deployment Method</a></td>
+    <td><a href="../getting-started/install">Deployment Method</a></td>
     <td>Local</td>
     <td><a href="https://cloud.tapdata.net/console/v3/">Register and Use</a></td>
     <td>Local</td>
@@ -100,13 +100,13 @@ Building on the free offerings of TapData Community for developers, TapData Ente
     <td>➖</td>
   </tr>
   <tr>
-    <td><a href="../prerequisites">Data Source Connection Management</a></td>
+    <td><a href="../connectors">Data Source Connection Management</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
 <tr>
-  <td><a href="../prerequisites/supported-databases">Supported Databases</a></td>
+  <td><a href="../connectors/supported-databases">Supported Databases</a></td>
   <td><span style={{ color: 'blue' }}>100+</span></td>
   <td><span style={{ color: 'blue' }}>100+</span></td>
   <td><span style={{ color: 'grey' }}>16</span></td>

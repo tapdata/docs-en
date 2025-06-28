@@ -25,7 +25,7 @@ Next, we will introduce the specific operational procedures.
 
 ## Preparation
 
-1. [Connect to your on-prem MySQL database](../../prerequisites/on-prem-databases/mysql.md).
+1. [Connect to your on-prem MySQL database](../../connectors/on-prem-databases/mysql.md).
 
    :::tip
 
@@ -33,7 +33,7 @@ Next, we will introduce the specific operational procedures.
 
    :::
 
-2. [Connect to Alibaba Cloud RDS MySQL](../../prerequisites/cloud-databases/aliyun-rds-for-mysql.md).
+2. [Connect to Alibaba Cloud RDS MySQL](../../connectors/cloud-databases/aliyun-rds-for-mysql.md).
 
 ## Steps
 

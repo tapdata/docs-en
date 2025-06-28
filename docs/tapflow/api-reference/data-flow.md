@@ -271,7 +271,7 @@ source.enableDDL()
 
 :::tip
 
-To enable DDL synchronization, the target database must also support DDL application. You can check the [list of supported data sources](../../prerequisites/supported-databases.md) for each database's support for DDL events. For more details, see [Best Practices for Handling Schema Changes](../../case-practices/best-practice/handle-schema-changes.md).
+To enable DDL synchronization, the target database must also support DDL application. You can check the [list of supported data sources](../../connectors/supported-data-sources.md) for each database's support for DDL events. For more details, see [Best Practices for Handling Schema Changes](../../case-practices/best-practice/handle-schema-changes.md).
 
 :::
 

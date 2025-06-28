@@ -38,7 +38,7 @@ An external database intended for data storage has been created. Currently, Mong
 
 ## Use External Storage
 
-You can enable the Shared Mining feature and select the recently configured external storage when [creating a connection](../../prerequisites/README.md), as shown in the example below: 
+You can enable the Shared Mining feature and select the recently configured external storage when [creating a connection](../../connectors/README.md), as shown in the example below: 
 
 ![Select External Storage](../../images/select_external_storage.png)
 

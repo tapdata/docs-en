@@ -8,13 +8,13 @@ To alleviate the pressure on the source database during increments, TapData supp
 
 ## Enable CDC Log Cache
 
-You can enable CDC Log Cache when [creating a connection](../../prerequisites/README.md), which allows for the collection of the source database's incremental logs into external storage. Once enabled, these logs can be used by multiple tasks, eliminating the need for redundant reads of the source database's incremental logs.
+You can enable CDC Log Cache when [creating a connection](../../connectors/README.md), which allows for the collection of the source database's incremental logs into external storage. Once enabled, these logs can be used by multiple tasks, eliminating the need for redundant reads of the source database's incremental logs.
 
 ![](../../images/enable_shared_mining.png)
 
 ## Use CDC Log Cache
 
-Create a data transformation or data replication task. When the task contains incremental tasks and the data source has cached the CDC logs, you can use this feature in the task settings. For more introductions about task configuration, see [create data replication/transformation task](../../quick-start/create-task.md).
+Create a data transformation or data replication task. When the task contains incremental tasks and the data source has cached the CDC logs, you can use this feature in the task settings. For more introductions about task configuration, see [create data replication/transformation task](../../getting-started/create-task.md).
 
 ![](../../images/create_shared_mining.png)
 

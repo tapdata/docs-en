@@ -41,7 +41,7 @@ Tapdata supports bi-directional data synchronization for MySQL ↔ MySQL, Postgr
 
 ## Preparation
 
-[Connect MySQL databases in two regions separately](../../prerequisites/on-prem-databases/mysql.md).
+[Connect MySQL databases in two regions separately](../../connectors/on-prem-databases/mysql.md).
 
 :::tip
 

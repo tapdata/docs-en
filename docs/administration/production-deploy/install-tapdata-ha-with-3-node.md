@@ -190,4 +190,4 @@ Upon successful login, you can view the status of the TapData services on all th
 
 ## Next Steps
 
-[Connect to a Database](../../quick-start/connect-database.md)
+[Connect to a Database](../../getting-started/connect-data-source.md)

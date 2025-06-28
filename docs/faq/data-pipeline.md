@@ -155,7 +155,7 @@ The topic expression is a regular expression used to match the name of the messa
 
 ### If Oracle synchronizes to SQL Server, is the Select permission sufficient?
 
-Oracle needs some additional permissions for CDC. For specific configuration and authorization, see [Oracle Preparation Work](../prerequisites/on-prem-databases/oracle.md).
+Oracle needs some additional permissions for CDC. For specific configuration and authorization, see [Oracle Preparation Work](../connectors/on-prem-databases/oracle.md).
 
 ### Can changes be made during task execution, such as adding tables to be synchronized?
 

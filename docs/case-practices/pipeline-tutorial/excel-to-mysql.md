@@ -20,8 +20,8 @@ The business provides real-time data updates and improved data analysis capabili
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
-1. [Configure Excel Connection](../../prerequisites/files/excel.md)
-2. [Configure MySQL Connection](../../prerequisites/on-prem-databases/mysql.md)
+1. [Configure Excel Connection](../../connectors/files/excel.md)
+2. [Configure MySQL Connection](../../connectors/on-prem-databases/mysql.md)
 
 ## Procedure
 

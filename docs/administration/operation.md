@@ -366,7 +366,7 @@ By closely reviewing system high-risk operations, timely identification and resp
 
 Common high-risk operations include:
 
-* [Connection Management](../prerequisites/README.md)
+* [Connection Management](../connectors/README.md)
     * **Deleting data source connections**: To avoid accidental deletion, when performing a deletion operation, a prompt will appear if the connection is referenced by a task.
     * **Editing data source connections**: If the parameters of the data source are set incorrectly, it may cause the connection to fail. Tasks referencing this data source will use the previous parameters and will not be affected, but new tasks or tasks reset afterwards may trigger errors.
 * [Data Replication](../user-guide/copy-data/create-task.md)/[Data Transformation](../user-guide/data-development/create-task.md) Tasks
