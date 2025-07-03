@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 
 - Added status monitoring for incremental log mining plugins in the [Cluster Management](../user-guide/manage-system/manage-cluster.md) module to improve observability and troubleshooting efficiency.
 - Support for [customizing alert email content](../user-guide/other-settings/notification.md#mail-alert), enhancing readability and flexibility of notifications.
-- Support for importing/exporting [data verification task configurations](../user-guide/verify-data.md), making it easier to migrate or reuse configurations between test and production environments.
+- Support for importing/exporting [data verification task configurations](../design-incremental-views/validate-views.md), making it easier to migrate or reuse configurations between test and production environments.
 
 ### Enhancements
 
@@ -195,7 +195,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- In the **[Data Verification](../user-guide/verify-data.md)** task's advanced settings, a "**Custom Collate**" option has been added, allowing you to specify the sorting rules for both the source and target databases to ensure consistent character sorting during verification.
+- In the **[Data Verification](../design-incremental-views/validate-views.md)** task's advanced settings, a "**Custom Collate**" option has been added, allowing you to specify the sorting rules for both the source and target databases to ensure consistent character sorting during verification.
 
 ### Enhancements
 
@@ -380,7 +380,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- [Data Verification](../user-guide/verify-data.md) feature now allows downloading detailed discrepancy data from the verification task details page for in-depth analysis.
+- [Data Verification](../design-incremental-views/validate-views.md) feature now allows downloading detailed discrepancy data from the verification task details page for in-depth analysis.
 - Added a [Union Node](../user-guide/copy-data/process-node.md#union-node) to data replication tasks, enabling the merging (UNION) of multiple tables within the same database. This is useful for data integration and analysis scenarios.
 - [Doris](../connectors/warehouses-and-lake/doris.md) data source now supports certificate-free HTTPS connections.
 - MySQL, Oracle, OpenGauss, SQL Server, and PostgreSQL data sources now support enabling the **Hash Sharding** feature in the advanced settings of nodes during task configuration, significantly improving the full data sync speed for large tables.
@@ -409,7 +409,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* [Data Verification](../user-guide/verify-data.md) now includes differential data repair capabilities, enhancing data consistency and accuracy.
+* [Data Verification](../design-incremental-views/validate-views.md) now includes differential data repair capabilities, enhancing data consistency and accuracy.
 * Added a new button for using CDC log Caching when creating [Live Cache](../user-guide/advanced-settings/share-cache.md), simplifying cache task configuration and improving the efficiency and flexibility of cache sharing.
 
 ### Enhancements
@@ -440,7 +440,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 * Enhanced [TiDB](../connectors/on-prem-databases/tidb.md) data source capabilities with support for real-time incremental synchronization.
-* [Data Validation](../user-guide/verify-data.md) now supports automatic difference checking, allowing real-time tasks to automatically perform difference checks based on incremental delay.
+* [Data Validation](../design-incremental-views/validate-views.md) now supports automatic difference checking, allowing real-time tasks to automatically perform difference checks based on incremental delay.
 
 ### Enhancements
 
@@ -479,7 +479,7 @@ import TabItem from '@theme/TabItem';
 
 * Added support for dynamically generating date suffixes for target table names when [configuring data transformation tasks](../user-guide/data-development/create-task.md#target-node-set), suitable for daily batch processing scenarios.
 * Added support for [integrating with third-party platforms via Webhook](../user-guide/other-settings/notification.md) to enable more alert notification channels.
-* Added support for performing Hash validation between MySQL, Oracle, SQL Server, PostgreSQL, and GaussDB data sources when [configuring data validation tasks](../user-guide/verify-data.md), improving validation efficiency.
+* Added support for performing Hash validation between MySQL, Oracle, SQL Server, PostgreSQL, and GaussDB data sources when [configuring data validation tasks](../design-incremental-views/validate-views.md), improving validation efficiency.
 * Added support for setting partitions when configuring Doris data sources.
 * Added support for the Oracle mode of OceanBase data sources, with the data source name OceanBase(Oracle).
 
@@ -556,8 +556,8 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* When [configuring data verification tasks](../user-guide/verify-data.md), custom filtering based on time fields is now available for MongoDB aggregation queries.
-* Supported [hash verification](../user-guide/verify-data.md) for MySQL/Oracle homogeneous data source synchronization.
+* When [configuring data verification tasks](../design-incremental-views/validate-views.md), custom filtering based on time fields is now available for MongoDB aggregation queries.
+* Supported [hash verification](../design-incremental-views/validate-views.md) for MySQL/Oracle homogeneous data source synchronization.
 
 ### Bug Fixes
 
@@ -647,7 +647,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 - Supports loading table comments for [Oracle data sources](../connectors/on-prem-databases/oracle.md#advanced), which can be enabled in the advanced options during data source configuration, allowing quick identification of tables' business meanings through comments.
-- Supports deployment of TapData on [Windows platform](../getting-started/install-and-setup/install-enterprise-edition/install-on-windows.md), further expanding the range of supported deployment platforms.
+- Supports deployment of TapData on [Windows platform](../backup-files/install-enterprise-edition/install-on-windows.md), further expanding the range of supported deployment platforms.
 - In the task operation [monitoring page](../user-guide/copy-data/monitor-task.md), supports viewing RPS (Records Per Second) information based on the dimension of event size.
 
 ### Bug Fixes
@@ -660,7 +660,7 @@ import TabItem from '@theme/TabItem';
 ### Enhancements
 
 - Optimized [data source connections](../connectors/README.md), with MySQL, PostgreSQL, Kafka, TiDB, MariaDB, etc., supporting SSL connections to further enhance data security.
-- Enhanced the filtering function of [data verification](../user-guide/verify-data.md), supporting custom query and aggregation query filtering through SQL.
+- Enhanced the filtering function of [data verification](../design-incremental-views/validate-views.md), supporting custom query and aggregation query filtering through SQL.
 - Optimized interface interaction logic.
 - For non-primary key update conditions, created a unique index to solve the problem of data duplication.
 
@@ -699,7 +699,7 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-- [Data verification](../user-guide/verify-data.md) feature field filtering experience optimization.
+- [Data verification](../design-incremental-views/validate-views.md) feature field filtering experience optimization.
 - Supported quick node targeting at the top of the data replication/data transformation configuration page through node search.
 
 ## V3.5.2
@@ -755,7 +755,7 @@ import TabItem from '@theme/TabItem';
 - [Kafka data source](../connectors/mq-and-middleware/kafka.md) now supports custom message body formats.
 - Added the [API interface documentation export feature](../user-guide/data-service/create-api-service.md#release330-export-api) to help teams quickly establish and enhance API usage documents.
 - Shared mining functionality supports [configuring task alerts](../user-guide/advanced-settings/share-mining.md#release330-alert), allowing alerts via system notifications or emails for better task monitoring.
-- The [data validation function](../user-guide/verify-data.md) allows setting data filters, enabling validation of specific conditional data only, reducing validation scope and increasing efficiency.
+- The [data validation function](../design-incremental-views/validate-views.md) allows setting data filters, enabling validation of specific conditional data only, reducing validation scope and increasing efficiency.
 - In data service platform mode, when dragging a data table to the platform cache layer to generate a task, it supports [setting the synchronization type of the task to be full or incremental](../user-guide/real-time-data-hub/daas-mode/create-daas-task.md#release330-task).
 
 ### Enhancements
@@ -781,7 +781,7 @@ import TabItem from '@theme/TabItem';
 - In the data platform mode, it can directly [display the relationship of table-level traceability](../user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard.md#release320-daas), helping you to visually show the link relationship of data tables.
 - In the data platform mode, it supports [deleting tables from the platform processing layer](../user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard.md#release320-daas).
 - When configuring the target node of a task, it supports [adjusting field length by a coefficient](../user-guide/copy-data/create-task.md#release320-col-length) to avoid data write failures due to different character encodings.
-- [Data verification](../user-guide/verify-data.md) feature supports SelectDB data source.
+- [Data verification](../design-incremental-views/validate-views.md) feature supports SelectDB data source.
 - In scenarios where Redis is the target node, and data is stored in List or Hash format with a single key, it [supports writing the source table schema into a Hash key](../case-practices/pipeline-tutorial/mysql-to-redis.md) (default name is `-schema-key-`). The value is used to store the source table's table name and column name information.
 - Added [**type filter**](../user-guide/data-development/process-node.md#release320-type-filter) processing node, which can quickly filter columns of the same type. Filtered fields will not be passed to the next node.
 - **Field editing** processing node supports conversion between snake_case and camelCase naming.
@@ -826,8 +826,8 @@ import TabItem from '@theme/TabItem';
 
 - Shared mining task management improved, supporting [starting/stopping mining tasks for individual tables](../user-guide/advanced-settings/share-mining.md#release310-share-mining).
 - [Shared cache](../user-guide/advanced-settings/share-cache.md), [functions](../user-guide/advanced-settings/manage-function.md), [API data services](../user-guide/data-service/create-api-service.md) support import/export functions.
-- [Data verification](../user-guide/verify-data.md) supports configuring alert rules and notification methods.
-- Auto-fill table logic for [data verification](../user-guide/verify-data.md) has been optimized.
+- [Data verification](../design-incremental-views/validate-views.md) supports configuring alert rules and notification methods.
+- Auto-fill table logic for [data verification](../design-incremental-views/validate-views.md) has been optimized.
 - Frontend added explanations for the distinction between [standard JS](appendix/standard-js.md) and [enhanced JS](appendix/enhanced-js.md).
 - JS processor standardization, JS usage, and trial run have been restructured.
 - In all processing nodes supporting JS scripting, typing `record.` automatically prompts for the current model's field names.

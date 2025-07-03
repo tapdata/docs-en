@@ -294,7 +294,6 @@ const sidebars = {
                      ]
                },
              'user-guide/incremental-check',
-             'user-guide/verify-data',
              'user-guide/pre-check',
              {
               type: 'category',

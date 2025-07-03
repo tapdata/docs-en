@@ -65,4 +65,4 @@ Just 3 simple steps to experience the powerful and convenient data flow capabili
 
 * [Install TapData](../getting-started/install-and-setup/README.md)
 * [Connect to a Database](../getting-started/connect-data-source.md)
-* [Create a Data Pipeline](../getting-started/create-task.md)
+* [Create a Data Pipeline](../backup-files/create-task.md)

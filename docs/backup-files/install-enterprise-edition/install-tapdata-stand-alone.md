@@ -4,7 +4,7 @@ This document explains how to quickly deploy TapData service on a Linux platform
 
 :::tip
 
-Stand-alone deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high availability deployment](../../../administration/production-deploy/install-tapdata-ha.md).
+Stand-alone deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high availability deployment](../../administration/production-deploy/install-tapdata-ha.md).
 
 :::
 
@@ -39,7 +39,7 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
        yum -y install java-1.8.0-openjdk
        ```
 
-    2. [Install MongoDB](../../../administration/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
+    2. [Install MongoDB](../../administration/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
 
 3. Download the TapData installation package (contact us at [team@tapdata.io](mailto:team@tapdata.io) to obtain it) and upload it to the target device.
 
@@ -132,4 +132,4 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
 
 ## Next Steps
 
-[Connect to Databases](../../connect-data-source.md)
+[Connect to Databases](../../getting-started/connect-data-source.md)

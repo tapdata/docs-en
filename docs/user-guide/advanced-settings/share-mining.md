@@ -14,7 +14,7 @@ You can enable CDC Log Cache when [creating a connection](../../connectors/READM
 
 ## Use CDC Log Cache
 
-Create a data transformation or data replication task. When the task contains incremental tasks and the data source has cached the CDC logs, you can use this feature in the task settings. For more introductions about task configuration, see [create data replication/transformation task](../../getting-started/create-task.md).
+Create a data transformation or data replication task. When the task contains incremental tasks and the data source has cached the CDC logs, you can use this feature in the task settings. For more introductions about task configuration, see [create data replication/transformation task](../../backup-files/create-task.md).
 
 ![](../../images/create_shared_mining.png)
 

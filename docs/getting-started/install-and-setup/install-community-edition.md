@@ -1,4 +1,4 @@
-# Deploy ODH Community
+# Deploy TapData Community
 
 TapData Community is an open-source real-time data platform that facilitates data synchronization and transformation. This guide demonstrates how to quickly install and start TapData Community.
 

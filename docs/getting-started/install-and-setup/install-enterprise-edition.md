@@ -1,6 +1,6 @@
-# Deploy ODH Enterprise
+# Deploy TapData Enterprise
 
-The Enterprise Edition Operational Data Hub (ODH) supports both single-node and high-availability deployments. This article explains how to quickly deploy it locally on Linux and Windows platforms (single-node architecture). For production environments, it is recommended to use the [high-availability deployment](../../../administration/production-deploy/install-tapdata-ha.md) approach.
+The Enterprise Edition supports both single-node and high-availability deployments. This article explains how to quickly deploy it locally on Linux and Windows platforms (single-node architecture). For production environments, it is recommended to use the [high-availability deployment](../../../administration/production-deploy/install-tapdata-ha.md) approach.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
