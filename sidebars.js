@@ -224,8 +224,8 @@ const sidebars = {
           label: 'Create Views',
           link: { type: 'doc', id: 'design-incremental-views/create-views/README' },
           items: [
-            'design-incremental-views/create-views/using-data-pipeline-ui',
             'design-incremental-views/create-views/using-imv-guide',
+            'design-incremental-views/create-views/using-data-pipeline-ui',
             'design-incremental-views/create-views/using-tapflow',
           ],
         },
@@ -235,6 +235,23 @@ const sidebars = {
       ],
     },
     {
+      type: 'category',
+      label: 'Publish Data as APIs ',
+      link: {type: 'doc', id: 'publish-apis/README'},
+      items:[
+             'publish-apis/manage-app',
+             'publish-apis/create-api-service',
+             'publish-apis/create-api-client',
+             'publish-apis/create-api-server',
+             'publish-apis/audit-api',
+             'publish-apis/monitor-api-request',
+             'publish-apis/api-auth',
+             'publish-apis/query-via-restful',
+             'publish-apis/query-via-graphql',
+             'publish-apis/api-query-params',
+             ]
+    },
+    /*{
      type: 'category',
      label: 'User Guide',
      link: {type: 'doc', id: 'user-guide/README'},
@@ -305,23 +322,6 @@ const sidebars = {
                      'user-guide/advanced-settings/custom-node',
                      'user-guide/advanced-settings/share-mining',
                      'user-guide/advanced-settings/manage-external-storage',
-                    ]
-             },
-             {
-              type: 'category',
-              label: 'Publish Data API ',
-              link: {type: 'doc', id: 'user-guide/data-service/README'},
-              items:[
-                     'user-guide/data-service/manage-app',
-                     'user-guide/data-service/create-api-service',
-                     'user-guide/data-service/create-api-client',
-                     'user-guide/data-service/create-api-server',
-                     'user-guide/data-service/audit-api',
-                     'user-guide/data-service/monitor-api-request',
-                     'user-guide/data-service/api-auth',
-                     'user-guide/data-service/query-via-restful',
-                     'user-guide/data-service/query-via-graphql',
-                     'user-guide/data-service/api-query-params',
                     ]
              },
              {
@@ -481,7 +481,7 @@ const sidebars = {
             'release-notes/release-notes-on-prem',
             'release-notes/release-notes-community'
         ]
-    },
+    },*/
  ]
 };
 

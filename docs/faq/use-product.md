@@ -52,7 +52,7 @@ import Content1 from '../reuse-content/_enterprise-features.md';
 
 <Content1 />
 
-Yes (for single tables), you can publish processed tables [as API services](../user-guide/data-service/create-api-service.md) to allow other applications to easily access and retrieve data.
+Yes (for single tables), you can publish processed tables [as API services](../publish-apis/create-api-service.md) to allow other applications to easily access and retrieve data.
 
 ## How to publish complex multi-table queries as API services?
 
@@ -77,7 +77,7 @@ Steps include:
 2. Replace specific operations in the SQL statement with process nodes. For example, as shown in the image below, we pre-join **customer** and **company** tables (implemented through a [join node](../user-guide/data-development/process-node.md#join)) and store the results in the **join_result** table.
    ![Join Table](../images/join_table_for_api.png)
 3. Start the task to implement real-time data synchronization.
-4. Based on the new table (join_result), [create and publish an API service](../user-guide/data-service/create-api-service.md).
+4. Based on the new table (join_result), [create and publish an API service](../publish-apis/create-api-service.md).
 
 **Batch View Strategy**
 
@@ -93,4 +93,4 @@ Steps include:
 3. In the source node settings, turn on the custom query switch for full sync and add the SQL query statement needed during the full data sync phase (does not affect the incremental phase).
    ![Custom Query](../images/query_table_for_api.png)
 4. After setting up the target node, click the settings in the upper right corner of the page, set the synchronization type to **full**, and then set a regular scheduling strategy based on real-time requirements.
-5. Start the task and wait for it to run to completion before creating and publishing an API service based on the new table [create and publish an API service](../user-guide/data-service/create-api-service.md).
+5. Start the task and wait for it to run to completion before creating and publishing an API service based on the new table [create and publish an API service](../publish-apis/create-api-service.md).

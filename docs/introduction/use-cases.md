@@ -15,7 +15,7 @@ TapData offers a one-stop real-time data synchronization experience, enabling yo
 * Supports a rich array of [data sources](../connectors/supported-data-sources.md) for data synchronization between homogeneous/heterogeneous data sources.
 * Supports event-triggered data processing logic and multiple data verification methods to ensure high reliability and low latency.
 * Enables deduplication, rule judgment, and other master data governance functions through powerful UDF capabilities.
-* Supports low-code [API services](../user-guide/data-service/README.md) deployment for end-to-end data consumption.
+* Supports low-code [API services](../publish-apis/README.md) deployment for end-to-end data consumption.
 
 ## Extract/Transform/Load Data (ETL)
 

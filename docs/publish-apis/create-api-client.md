@@ -1,5 +1,5 @@
 # Create a Client
-import Content from '../../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -7,13 +7,13 @@ To manage and create API calls, an API client is required. Applications that dev
 
 ## Procedure
 
-1. [Log in to TapData Platform](../log-in.md).
+1. [Log in to TapData Platform](../user-guide/log-in.md).
 
 2. In the left navigation bar, select **Data Services** > **API Clients**.
 
 3. Click **Create a Client** in the top right corner, fill in the relevant information, and click **OK**.
 
-   ![](../../images/create_api_client.png)
+   ![](../images/create_api_client.png)
 
    :::tip
 

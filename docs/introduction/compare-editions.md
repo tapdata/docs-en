@@ -206,19 +206,19 @@ Building on the free offerings of TapData Community for developers, TapData Ente
   </tr>
   <tr>
   <td rowspan="3">Data API Services</td>
-  <td><a href="../user-guide/data-service/create-api-service">API Publishing</a></td>
+  <td><a href="../publish-apis/create-api-service">API Publishing</a></td>
   <td>✅</td>
   <td>➖</td>
   <td>➖</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/data-service/audit-api">API Audit</a><a href="../user-guide/data-service/monitor-api-request">Statistics</a></td>
+  <td><a href="../publish-apis/audit-api">API Audit</a><a href="../publish-apis/monitor-api-request">Statistics</a></td>
   <td>✅</td>
   <td>➖</td>
   <td>➖</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/data-service/create-api-service#release330-export-api">API Documentation Generation</a></td>
+  <td><a href="../publish-apis/create-api-service#release330-export-api">API Documentation Generation</a></td>
   <td>✅</td>
   <td>➖</td>
   <td>➖</td>

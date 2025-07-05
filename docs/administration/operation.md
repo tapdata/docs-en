@@ -378,7 +378,7 @@ Common high-risk operations include:
 a data replication task is used for scenarios that only synchronize incremental data, i.e., retaining target table data, if the target table's data scale is large, the synchronization index operation may affect the overall performance of the target database.
 * **Setting update condition fields**: If there is no index on the target, an index will be created based on the update condition fields.
 * **Task Agent settings**: In the task settings in the upper right corner, if an Agent is manually specified, this configuration item will remain unchanged when the task is copied, which may cause excessive pressure on a single Agent. It is recommended to set it to **Automatically assigned by the platform**.
-* [Data Services](../user-guide/data-service/README.md)
+* [Data Services](../publish-apis/README.md)
     * Deleting or taking an API offline will render it unavailable.
 * [System Management](../user-guide/manage-system/README.md)
     * When [managing a cluster](../user-guide/manage-system/manage-cluster.md), only perform close or restart operations on related services when they are experiencing anomalies.

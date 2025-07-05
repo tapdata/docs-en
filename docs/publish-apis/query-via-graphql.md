@@ -1,5 +1,5 @@
 # Query API via GraphQL
-import Content from '../../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -9,7 +9,7 @@ In this article, we will introduce how to use the Postman to view API data servi
 
 ## Procedure
 
-1. [Log in to TapData Platform](../log-in.md).
+1. [Log in to TapData Platform](../user-guide/log-in.md).
 
 2. Retrieve the GraphQL query request address.
 
@@ -17,7 +17,7 @@ In this article, we will introduce how to use the Postman to view API data servi
 
    2. Obtain the API server's access address on this page. In this case, it's `192.168.1.200:3080`.
 
-      ![API Server List](../../images/api_server_list.png)
+      ![API Server List](../images/api_server_list.png)
 
    3. In your browser, enter the API server’s access address and add the `/graphql` suffix, e.g., `http://192.168.1.200:3080/graphql`, to get the GraphQL query request address.
 
@@ -29,23 +29,23 @@ In this article, we will introduce how to use the Postman to view API data servi
 
    3. In the panel on the right, click the **Debug** tab, scroll down to the example code section to get the Access Token authentication information.
 
-      ![Get Access Token](../../images/obtain_access_token.png)
+      ![Get Access Token](../images/obtain_access_token.png)
 
 4. Open the [Postman](https://www.postman.com/), and click **Workspaces** at the top of the software page, and select your Workspace.
 
 5. Click **New**, and in the pop-up box, choose **GraphQL Request**.
 
-   ![Create GraphQL Request](../../images/create_graphql_request.png)
+   ![Create GraphQL Request](../images/create_graphql_request.png)
 
 6. In the Request URL text box, enter the GraphQL query request address you retrieved in step 2.
 
 7. Click **Authorization** below the text box, choose **Type** as **Bearer Token**, and fill in the Access Token authentication information obtained in step 3.
 
-   ![Set Authorization Information](../../images/graphql_authorization.png)
+   ![Set Authorization Information](../images/graphql_authorization.png)
 
 8. Click on the Query tab, first click the refresh button to get all API lists, then find the target API, select the data you want to query, and finally click **Query**.
 
-   ![Execute Query](../../images/query_graphql.png)
+   ![Execute Query](../images/query_graphql.png)
 
    :::tip
 
@@ -55,4 +55,4 @@ In this article, we will introduce how to use the Postman to view API data servi
 
    Upon successful query, the result of this query will be returned at the bottom of the page, as shown below.
 
-   ![Query Result](../../images/query_graphql_result.png)
+   ![Query Result](../images/query_graphql_result.png)

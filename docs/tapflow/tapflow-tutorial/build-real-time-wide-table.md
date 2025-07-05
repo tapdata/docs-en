@@ -313,4 +313,4 @@ The following steps simulate data flow in a real-world business scenario by manu
 
 ## See also
 
-[Publish Data as API](../../user-guide/data-service/create-api-service.md)
+[Publish Data as API](../../publish-apis/create-api-service.md)

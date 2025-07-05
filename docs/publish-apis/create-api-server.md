@@ -1,5 +1,5 @@
 # Create a Server
-import Content from '../../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -7,7 +7,7 @@ API servers can be configured to expose API server addresses externally, and mul
 
 ## Procedure
 
-1. [Log in to TapData Platform](../log-in.md).
+1. [Log in to TapData Platform](../user-guide/log-in.md).
 
 2. In the left navigation bar, select **Data Services** > **API Servers**.
 
@@ -15,7 +15,7 @@ API servers can be configured to expose API server addresses externally, and mul
 
 4. In the pop-up dialog box, enter the server name and access address, and then click **OK**.
 
-   ![](../../images/create_api_server.png)
+   ![](../images/create_api_server.png)
 
    :::tip
 

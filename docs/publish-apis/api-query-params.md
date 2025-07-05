@@ -1,5 +1,5 @@
 # API Query Parameters
-import Content from '../../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -33,7 +33,7 @@ registry_date: 02-04-1978
 
 You can also use the Postman tool for a visualized invocation as shown in the following figure:
 
-![Query Example](../../images/query_api.png)
+![Query Example](../images/query_api.png)
 
 Next, we will introduce how to use various filters and provide examples, i.e., setting **Query Params** in the figure above, which corresponds to parameters after the question mark in the request URL.
 

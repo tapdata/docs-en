@@ -359,7 +359,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- Added table name and API address display functionality in the [Service Management List Page](../user-guide/data-service/create-api-service.md), supporting quick search and filtering by keywords.
+- Added table name and API address display functionality in the [Service Management List Page](../publish-apis/create-api-service.md), supporting quick search and filtering by keywords.
 - Enhanced [Data Transformation Task Configuration](../user-guide/data-development/create-task.md) to support reloading of single table models in the source node model preview area, improving loading efficiency.
 - Introduced time detection functionality that automatically detects the time difference between the engine deployment server and the database server and displays it on the task monitoring page.
 
@@ -680,7 +680,7 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-- Optimized the setting of [published API scope](../user-guide/data-service/create-api-service.md#settings), allowing adjustments without needing to publish.
+- Optimized the setting of [published API scope](../publish-apis/create-api-service.md#settings), allowing adjustments without needing to publish.
 - When [configuring data replication tasks](../user-guide/copy-data/create-task.md), the **selectable table range** dropdown box allows quick filtering of tables with or without primary keys, where tables with primary keys include those without primary keys but with unique indexes.
 
 ### Bug Fixes
@@ -753,7 +753,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 - [Kafka data source](../connectors/mq-and-middleware/kafka.md) now supports custom message body formats.
-- Added the [API interface documentation export feature](../user-guide/data-service/create-api-service.md#release330-export-api) to help teams quickly establish and enhance API usage documents.
+- Added the [API interface documentation export feature](../publish-apis/create-api-service.md#release330-export-api) to help teams quickly establish and enhance API usage documents.
 - Shared mining functionality supports [configuring task alerts](../user-guide/advanced-settings/share-mining.md#release330-alert), allowing alerts via system notifications or emails for better task monitoring.
 - The [data validation function](../design-incremental-views/validate-views.md) allows setting data filters, enabling validation of specific conditional data only, reducing validation scope and increasing efficiency.
 - In data service platform mode, when dragging a data table to the platform cache layer to generate a task, it supports [setting the synchronization type of the task to be full or incremental](../user-guide/real-time-data-hub/daas-mode/create-daas-task.md#release330-task).
@@ -819,13 +819,13 @@ import TabItem from '@theme/TabItem';
 
 - [Data panel functionality](../user-guide/real-time-data-hub/etl-mode) now supports table-level traceability capabilities. You can view data lineage relationships through table details.
 - When [configuring data copy tasks](../user-guide/copy-data/create-task.md#310-table-model), you can view the table model in the processing node.
-- Supports publishing API data services based on Doris data source [Release API Data Services](../user-guide/data-service/create-api-service.md).
+- Supports publishing API data services based on Doris data source [Release API Data Services](../publish-apis/create-api-service.md).
 - [Cluster management](../user-guide/manage-system/manage-cluster.md) page allows downloading thread resource monitoring and data source usage data.
 
 ### Enhancements
 
 - Shared mining task management improved, supporting [starting/stopping mining tasks for individual tables](../user-guide/advanced-settings/share-mining.md#release310-share-mining).
-- [Shared cache](../user-guide/advanced-settings/share-cache.md), [functions](../user-guide/advanced-settings/manage-function.md), [API data services](../user-guide/data-service/create-api-service.md) support import/export functions.
+- [Shared cache](../user-guide/advanced-settings/share-cache.md), [functions](../user-guide/advanced-settings/manage-function.md), [API data services](../publish-apis/create-api-service.md) support import/export functions.
 - [Data verification](../design-incremental-views/validate-views.md) supports configuring alert rules and notification methods.
 - Auto-fill table logic for [data verification](../design-incremental-views/validate-views.md) has been optimized.
 - Frontend added explanations for the distinction between [standard JS](appendix/standard-js.md) and [enhanced JS](appendix/enhanced-js.md).
@@ -858,8 +858,8 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- [Integrated GraphQL capability](../user-guide/data-service/query-via-graphql.md), enriching API query methods.
-- Added [application categorization capability for APIs](../user-guide/data-service/create-api-service.md), facilitating categorization based on business.
+- [Integrated GraphQL capability](../publish-apis/query-via-graphql.md), enriching API query methods.
+- Added [application categorization capability for APIs](../publish-apis/create-api-service.md), facilitating categorization based on business.
 - Introduced [time calculation processing node](../user-guide/data-development/process-node.md#time-calculation) for flexible handling of discrepancies in source and destination database time zones.
 - Introduced [full-scale partitioning capability](../case-practices/best-practice/full-breakpoint-resumption.md), currently only supported for MongoDB.
 

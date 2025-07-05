@@ -1,5 +1,5 @@
 # Query API through RESTful
-import Content from '../../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -9,7 +9,7 @@ In this article, we will introduce how to use the Postman to invoke API requests
 
 ## Procedure
 
-1. [Log in to TapData Platform](../log-in.md).
+1. [Log in to TapData Platform](../user-guide/log-in.md).
 
 2. In the left navigation bar, select **Data Services** > **API List**.
 
@@ -19,17 +19,17 @@ In this article, we will introduce how to use the Postman to invoke API requests
 
    2. Scroll down to the service access area in the right-hand panel and get the address for service access. In this case, we will demonstrate the procedure using a **GET** type service as an example.
 
-      ![Get Service Access Address](../../images/obtain_restful_address.png)
+      ![Get Service Access Address](../images/obtain_restful_address.png)
 
    3. Click the **Debug** tab, scroll down to **Example Code**, and obtain the Access Token authentication information.
 
-      ![Get Access Token](../../images/obtain_access_token.png)
+      ![Get Access Token](../images/obtain_access_token.png)
 
 4. Open the [Postman tool](https://www.postman.com/), and click **Workspaces** at the top of the software page, and select your Workspace.
 
 5. Click **New**, and in the pop-up dialog box, select **HTTP Request**.
 
-   ![Create HTTP Request](../../images/create_restful_request.png)
+   ![Create HTTP Request](../images/create_restful_request.png)
 
 6. In the Request URL text box, enter the API query request address you obtained in step 3.
 
@@ -37,11 +37,11 @@ In this article, we will introduce how to use the Postman to invoke API requests
 
 8. Click **Authorization** below the text box, select **Type** as **Bearer Token**, and fill in the Access Token authentication information obtained in step 3.
 
-   ![Set Authorization Information](../../images/restful_authorization.png)
+   ![Set Authorization Information](../images/restful_authorization.png)
 
 9. Click **Query**, the return example is shown below.
 
-   ![Query Result](../../images/restful_api_query_result.png)
+   ![Query Result](../images/restful_api_query_result.png)
 
    :::tip
 

@@ -1,5 +1,5 @@
 # Create Data API
-import Content from '../../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -11,13 +11,13 @@ Currently, it supports Doris, MongoDB, MySQL, Oracle, PostgreSQL, SQL Server, an
 
 ## Procedure
 
-1. [Log in to TapData Platform](../log-in.md).
+1. [Log in to TapData Platform](../user-guide/log-in.md).
 
 2. In the left navigation bar, choose **Data Services** > **API List**.
 
 3. Click **Create API** at the top right of the page, then complete the settings on the right panel according to the instructions below.
 
-   ![](../../images/create_api_service.png)
+   ![](../images/create_api_service.png)
 
    * **Service Name**: Enter a service name with business significance for easy identification in the future.
    * **Owner Application**: Select the affiliated application for convenient business category management. For more introduction, see [Application Management](manage-app.md).
@@ -35,10 +35,10 @@ Currently, it supports Doris, MongoDB, MySQL, Oracle, PostgreSQL, SQL Server, an
 
 6. (Optional) Click the service you just created, select the **Debug** tab in the right panel, enter request parameters, and click **Submit** to verify service availability.
 
-   ![Try Query API](../../images/try_query_api.png)
+   ![Try Query API](../images/try_query_api.png)
 
 7. (Optional) For the data services you have created, you can <span id="release330-export-api">select and export them</span> for backup or sharing with other team members. You can also import data services.
 
-   ![Import/Export API Services](../../images/import_export_api.png)
+   ![Import/Export API Services](../images/import_export_api.png)
 
    Additionally, for published data services, you can select them and click **API Document Export** to quickly establish API usage documentation within the team. The exported Word file is in docx format and includes data service name, API description, GET/POST parameter descriptions.

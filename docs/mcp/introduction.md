@@ -29,7 +29,7 @@ To address these challenges, Tapdata provides the MCP service. It uses a standar
 - **Connect 100+ Data Sources with a Single MCP**
   One MCP instance can connect to [over 100 heterogeneous data sources](../connectors/supported-data-sources.md), including major databases and SaaS platforms—breaking data silos and providing a unified foundation for context-aware AI.
 - **Built for LLM Agents with Seamless Integration**
-  Offers standardized SSE support and no-code [REST API](../user-guide/data-service/README.md) setup, fully compatible with tools like Cursor, Claude, and other popular agent frameworks—bridging enterprise data and AI with ease.
+  Offers standardized SSE support and no-code [REST API](../publish-apis/README.md) setup, fully compatible with tools like Cursor, Claude, and other popular agent frameworks—bridging enterprise data and AI with ease.
 
 ## Learn More
 
