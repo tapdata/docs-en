@@ -22,7 +22,7 @@ Compared to traditional data migration/synchronization tools, TapData offers a f
 
   Ensures high consistency between target data and source data through various proprietary technologies, supports multiple verification methods, and meets the stringent requirements of production environments.
 
-* **[Low-latency Collection Performance](user-guide/advanced-settings/share-mining.md)**
+* **[Low-latency Collection Performance](operational-data-hub/advanced/share-mining.md)**
 
   Based on proprietary CDC log parsing technology, it enables real-time data collection with zero intrusion and virtually no impact on the source database. Every new piece of data that enters the platform is responded to, computed, processed, and written into the target table within seconds. Additionally, it supports sharing incremental data to avoid repeated reads of source database incremental logs.
 

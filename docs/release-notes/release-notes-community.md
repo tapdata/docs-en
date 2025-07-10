@@ -262,7 +262,7 @@ This document introduces the recent release notes for TapData Community. For mor
 
 ### New Features
 
-* Added a new button for using shared mining when creating [Shared Caches](../user-guide/advanced-settings/share-cache.md), simplifying cache task configuration and improving the efficiency and flexibility of cache sharing.
+* Added a new button for using shared mining when creating [Shared Caches](../operational-data-hub/advanced/share-cache.md), simplifying cache task configuration and improving the efficiency and flexibility of cache sharing.
 
 ### Enhancements
 

@@ -12,7 +12,7 @@ An external database intended for data storage has been created. Currently, Mong
 
 ## Create External Storage
 
-1. [Log in to TapData Platform](../log-in.md).
+1. [Log in to TapData Platform](../../user-guide/log-in.md).
 
 2. In the left navigation bar, select **Advanced** > **External Storage**.
 

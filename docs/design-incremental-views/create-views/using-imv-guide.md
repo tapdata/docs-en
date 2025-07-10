@@ -86,7 +86,7 @@ Follow these steps to design your advanced real-time view with nested user profi
 
 Once your task is running, log in to your target MongoDB to explore the new view. Here’s an example document illustrating the nested structure:
 
-```json
+```javascript
 {
   _id: ObjectId('6868d470d9b9cd512feb6b69'),
   order_id: 'o2001',

@@ -58,7 +58,7 @@ To improve data change capture efficiency, TapData supports both the native data
 
 :::tip
 
-- When using the traditional LogMiner method, each data synchronization task will start a LogMiner session. For large-scale incremental changes, it can occupy up to one CPU core; for smaller changes, it may use about 0.25 CPU cores. It is recommended to dedicate a separate mining process for large data tasks, while small tasks can use [shared mining](../../user-guide/advanced-settings/share-mining.md).
+- When using the traditional LogMiner method, each data synchronization task will start a LogMiner session. For large-scale incremental changes, it can occupy up to one CPU core; for smaller changes, it may use about 0.25 CPU cores. It is recommended to dedicate a separate mining process for large data tasks, while small tasks can use [shared mining](../../operational-data-hub/advanced/share-mining.md).
 - When using the Raw Log method, due to its high parsing performance, it may occupy CPU, memory, and disk I/O resources during peak times. It is recommended to connect to standby nodes to minimize the impact on business operations.
 
 :::
@@ -515,7 +515,7 @@ XE=
       * **Use SSL**: Select whether to enable SSL connection for the data source to enhance data security. After enabling this feature, you will need to upload SSL certificate files and enter the certificate password. The relevant files can be obtained from [Enabling SSL Connection](#ssl).
       * **Timezone for datetime**: Default is set to UTC (0 timezone). If changed to another timezone, fields without timezone (such as TIMESTAMP) will be affected, while fields with timezone (such as TIMESTAMP WITH TIME ZONE) and DATE types will remain unaffected.
       * **Socket Read Timeout**: Set this parameter to avoid zombie connections that may occur due to unexpected situations (e.g., socket interaction timeout) when LogMiner automatically mines incremental changes. The default value of 0 means no timeout is set.
-      * **CDC Log Caching**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs. This allows multiple tasks to share the same source database’s incremental log mining process, reducing duplicate reads and minimizing the impact of incremental synchronization on the source database. After enabling this feature, you will need to select an external storage to store the incremental log information.
+      * **CDC Log Caching**: [Mining the source database's](../../operational-data-hub/advanced/share-mining.md) incremental logs. This allows multiple tasks to share the same source database’s incremental log mining process, reducing duplicate reads and minimizing the impact of incremental synchronization on the source database. After enabling this feature, you will need to select an external storage to store the incremental log information.
       * **Contain table**: The default option is **All**, which includes all tables. Alternatively, you can select **Custom** and manually specify the desired tables by separating their names with commas (,).
       * **Exclude tables**: Once the switch is enabled, you have the option to specify tables to be excluded. You can do this by listing the table names separated by commas (,) in case there are multiple tables to be excluded.
       * **Agent settings**: Defaults to **Platform automatic allocation**, you can also manually specify an agent.

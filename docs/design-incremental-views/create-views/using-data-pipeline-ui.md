@@ -76,7 +76,7 @@ Follow these steps to design an advanced real-time view with nested user profile
 
    3. Map the join key to `product_id` so product details are included in each order item.
 
-      Document nests the product data as an object, while **Flatten** merges product fields directly into order items—choose the style that fits your target schema.
+      Document nests the product data as an object, while **Flatten** merges product fields directly into **order_items**—choose the style that fits your target schema.
 
 8. Configure the target output.
 

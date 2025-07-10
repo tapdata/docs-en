@@ -251,6 +251,69 @@ const sidebars = {
              'publish-apis/api-query-params',
              ]
     },
+    {
+      type: 'category',
+      label: 'Operational Data Hub--TBD',
+      link: { type: 'doc', id: 'operational-data-hub/README' },
+      collapsed: false,
+      items: [
+        'operational-data-hub/plan-data-platform',
+        {
+          type: 'category',
+          label: 'FDM Layer',
+          link: { type: 'doc', id: 'operational-data-hub/fdm-layer/README' },
+          collapsed: false,
+          items: [
+            'operational-data-hub/fdm-layer/replicate-data',
+            'operational-data-hub/fdm-layer/validate-data-quality',
+            'operational-data-hub/fdm-layer/monitor-sync-task'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'MDM Layer',
+          link: { type: 'doc', id: 'operational-data-hub/mdm-layer/README' },
+          collapsed: false,
+          items: [
+            'operational-data-hub/mdm-layer/define-data-categories',
+            'operational-data-hub/mdm-layer/prepare-and-transform',
+            'operational-data-hub/mdm-layer/build-view-in-odh'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'ADM Layer',
+          link: { type: 'doc', id: 'operational-data-hub/adm-layer/README' },
+          collapsed: false,
+          items: [
+            'operational-data-hub/adm-layer/integrate-apis',
+            'operational-data-hub/adm-layer/sync-downstream'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Advanced Features & Extensions',
+          link: { type: 'doc', id: 'operational-data-hub/advanced/README' },
+          collapsed: false,
+          items: [
+            'operational-data-hub/advanced/custom-node',
+            'operational-data-hub/advanced/manage-external-storage',
+            'operational-data-hub/advanced/manage-function',
+            'operational-data-hub/advanced/share-cache',
+            'operational-data-hub/advanced/share-mining'
+          ],
+        },
+        {
+         type: 'category',
+         label: 'Chat with Data via MCP (Preview)',
+         link: {type: 'doc', id: 'operational-data-hub/mcp/README'},
+         items: [
+                'operational-data-hub/mcp/introduction',
+                'operational-data-hub/mcp/quick-start'
+                ]
+         },
+      ],
+    },
     /*{
      type: 'category',
      label: 'User Guide',

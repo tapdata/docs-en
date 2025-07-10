@@ -52,7 +52,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* Introduced [Tapdata MCP (Model Context Protocol)](../mcp/introduction.md), enabling integration of multi-source data into real-time contextual views consumable by LLMs and AI Agents. This feature is ideal for scenarios with high demands on data freshness and compliance, such as financial risk control.
+* Introduced [Tapdata MCP (Model Context Protocol)](../operational-data-hub/mcp/introduction.md), enabling integration of multi-source data into real-time contextual views consumable by LLMs and AI Agents. This feature is ideal for scenarios with high demands on data freshness and compliance, such as financial risk control.
 * Added support for using **StarRocks** as a target database, allowing faster construction of real-time data warehouses for high-concurrency, multi-dimensional analytics use cases.
 * Added the ability to choose from multiple data structures(e.g. Flink) when syncing to **[Kafka-Enhanced](../connectors/mq-and-middleware/kafka-enhanced.md)**, enhancing compatibility and integration efficiency with downstream systems.
 
@@ -410,7 +410,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 * [Data Verification](../design-incremental-views/validate-views.md) now includes differential data repair capabilities, enhancing data consistency and accuracy.
-* Added a new button for using CDC log Caching when creating [Live Cache](../user-guide/advanced-settings/share-cache.md), simplifying cache task configuration and improving the efficiency and flexibility of cache sharing.
+* Added a new button for using CDC log Caching when creating [Live Cache](../operational-data-hub/advanced/share-cache.md), simplifying cache task configuration and improving the efficiency and flexibility of cache sharing.
 
 ### Enhancements
 
@@ -586,7 +586,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- [Shared Mining](../user-guide/advanced-settings/share-mining.md) functionality supports using RocksDB as local external storage for incremental log storage expansion.
+- [Shared Mining](../operational-data-hub/advanced/share-mining.md) functionality supports using RocksDB as local external storage for incremental log storage expansion.
 - [TDengine Connector](../connectors/on-prem-databases/tdengine.md) supports using multiple databases as incremental sources.
 
 ### Enhancements
@@ -693,7 +693,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 - Added [building materialized views](../user-guide/data-development/create-materialized-view.md) feature, enabling quick construction of real-time data models.
-- Added support for configuring source nodes of [shared mining](../user-guide/advanced-settings/share-mining.md) tasks, including settings for enabling **incremental multi-threaded writing** and **supplementing updated data with complete fields**.
+- Added support for configuring source nodes of [shared mining](../operational-data-hub/advanced/share-mining.md) tasks, including settings for enabling **incremental multi-threaded writing** and **supplementing updated data with complete fields**.
 - Kafka data source added support for [setting the number of replicas and partitions](../case-practices/pipeline-tutorial/oracle-to-kafka.md).
 - Added support for the `$unset` operation during synchronization between MongoDB instances.
 
@@ -754,13 +754,13 @@ import TabItem from '@theme/TabItem';
 ### New Features
 - [Kafka data source](../connectors/mq-and-middleware/kafka.md) now supports custom message body formats.
 - Added the [API interface documentation export feature](../publish-apis/create-api-service.md#release330-export-api) to help teams quickly establish and enhance API usage documents.
-- Shared mining functionality supports [configuring task alerts](../user-guide/advanced-settings/share-mining.md#release330-alert), allowing alerts via system notifications or emails for better task monitoring.
+- Shared mining functionality supports [configuring task alerts](../operational-data-hub/advanced/share-mining.md#release330-alert), allowing alerts via system notifications or emails for better task monitoring.
 - The [data validation function](../design-incremental-views/validate-views.md) allows setting data filters, enabling validation of specific conditional data only, reducing validation scope and increasing efficiency.
 - In data service platform mode, when dragging a data table to the platform cache layer to generate a task, it supports [setting the synchronization type of the task to be full or incremental](../user-guide/real-time-data-hub/daas-mode/create-daas-task.md#release330-task).
 
 ### Enhancements
 - Introduced [rolling upgrades](../administration/operation.md#release330-upgrade), which, compared to the downtime upgrade method, further reduces business impacts.
-- Post-error in [shared mining tasks](../user-guide/advanced-settings/share-mining.md), associated tasks now include alert prompts.
+- Post-error in [shared mining tasks](../operational-data-hub/advanced/share-mining.md), associated tasks now include alert prompts.
 - In the [row filter processing node](../user-guide/data-development/process-node.md), added usage examples when filtering with the DATE type.
 - [Time operation node](../user-guide/data-development/process-node.md#date-calculation) now displays adjusted fields.
 - Optimized algorithm for estimating remaining time for full synchronization.
@@ -791,8 +791,8 @@ import TabItem from '@theme/TabItem';
 
 - Product menu adjustments: data development is renamed to [data conversion](../user-guide/data-development/). Some functions have been moved to [advanced settings](../user-guide/advanced-settings/) (e.g., shared cache).
 - Improved interaction for tables without primary keys, e.g., [support for filtering non-primary key tables and adding primary key table identification](../user-guide/copy-data/create-task.md#310-table-model) when configuring data copy tasks.
-- For external storage configurations of MongoDB data sources, [connection testing capability](../user-guide/advanced-settings/manage-external-storage.md#320-external-storage) has been added.
-- When creating a new external storage and choosing MongoDB, it supports [using SSL connections](../user-guide/advanced-settings/manage-external-storage.md#320-external-storage).
+- For external storage configurations of MongoDB data sources, [connection testing capability](../operational-data-hub/advanced/manage-external-storage.md#320-external-storage) has been added.
+- When creating a new external storage and choosing MongoDB, it supports [using SSL connections](../operational-data-hub/advanced/manage-external-storage.md#320-external-storage).
 - Creating an HttpReceiver data source now [supports script trial runs](../connectors/others/http-receiver.md) and [access authentication functionality](../connectors/others/http-receiver.md).
 - Standard JS node capabilities adjusted, adding [Linked HashMap data structure](appendix/standard-js.md#linkedhashmap) and [context.global object](appendix/standard-js.md#global).
 - **Field editing** processing node's UI interaction has been improved.
@@ -824,8 +824,8 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-- Shared mining task management improved, supporting [starting/stopping mining tasks for individual tables](../user-guide/advanced-settings/share-mining.md#release310-share-mining).
-- [Shared cache](../user-guide/advanced-settings/share-cache.md), [functions](../user-guide/advanced-settings/manage-function.md), [API data services](../publish-apis/create-api-service.md) support import/export functions.
+- Shared mining task management improved, supporting [starting/stopping mining tasks for individual tables](../operational-data-hub/advanced/share-mining.md#release310-share-mining).
+- [Shared cache](../operational-data-hub/advanced/share-cache.md), [functions](../operational-data-hub/advanced/manage-function.md), [API data services](../publish-apis/create-api-service.md) support import/export functions.
 - [Data verification](../design-incremental-views/validate-views.md) supports configuring alert rules and notification methods.
 - Auto-fill table logic for [data verification](../design-incremental-views/validate-views.md) has been optimized.
 - Frontend added explanations for the distinction between [standard JS](appendix/standard-js.md) and [enhanced JS](appendix/enhanced-js.md).
@@ -865,7 +865,7 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-- [Shared cache function](../user-guide/advanced-settings/share-mining.md) improved, offering an observable page to monitor mining progress and troubleshoot failures.
+- [Shared cache function](../operational-data-hub/advanced/share-mining.md) improved, offering an observable page to monitor mining progress and troubleshoot failures.
 - [Full custom query function](../user-guide/data-development/create-task.md#full-sql-query) relaxed the restriction of only using JS nodes, now allowing the addition of other processing nodes with the node model directly utilizing the source table's model.
 - The field [processing node](../user-guide/data-development/process-node.md) supporting operations like adding/deleting fields, type modifications, and renaming fields now includes a field search function.
 - Adjusted wording for Schema loading frequency configuration in connection settings.

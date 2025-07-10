@@ -38,7 +38,7 @@ DM versions 7.x and 8.x (standalone architecture)
 
 ## Considerations
 
-* Incremental log mining uses official features to load log files into temporary views and filter the DML and DDL logs of the tracked tables. This is similar to Oracle's LogMiner and may consume some database performance. If there are multiple synchronization tasks with scattered data tables, it is recommended to use [Shared Mining](../../user-guide/advanced-settings/share-mining.md) to reduce database load.
+* Incremental log mining uses official features to load log files into temporary views and filter the DML and DDL logs of the tracked tables. This is similar to Oracle's LogMiner and may consume some database performance. If there are multiple synchronization tasks with scattered data tables, it is recommended to use [Shared Mining](../../operational-data-hub/advanced/share-mining.md) to reduce database load.
 * When the database log space is insufficient, you can use the command `SF_ARCHIVELOG_DELETE_BEFORE_TIME(SYSDATE-1);` to clean up archive logs from the day before, retaining only the logs from the last day. You can also specify the number of days to retain based on your needs.
 
 ## Preparation

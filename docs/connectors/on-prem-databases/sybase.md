@@ -42,7 +42,7 @@ DML Operations: INSERT, UPDATE, DELETE
 
 - DDL event capture and application are not supported. If a DDL event occurs during synchronization, you must stop the task and re-run a full data sync.
 
-- Due to Sybase limitations, if multiple synchronization tasks are enabled on the same database, you must enable **[Shared Mining](../../user-guide/advanced-settings/share-mining.md)** in the Sybase connection and task configurations to prevent new tasks from failing to correctly sync incremental data.
+- Due to Sybase limitations, if multiple synchronization tasks are enabled on the same database, you must enable **[Shared Mining](../../operational-data-hub/advanced/share-mining.md)** in the Sybase connection and task configurations to prevent new tasks from failing to correctly sync incremental data.
 
 - Due to Sybase's cache limitations when executing SQL statements, if you encounter the error **"Procedure cache exhausted before a query plan could be found."** while loading the schema, you can adjust the cache size by running the following command:
 
@@ -124,7 +124,7 @@ DML Operations: INSERT, UPDATE, DELETE
      * **Password**: The password associated with the database account.
      * **Byte Order**: Choose between big-endian and little-endian based on the machine architecture. For example, Linux machines typically use little-endian, while some dedicated Sybase machines use big-endian. Incorrect configuration may cause inconsistent data during the incremental synchronization phase.
    * **Advanced Settings**
-      * **Shared Mining**: [Mining the source database's](../../user-guide/advanced-settings/share-mining.md) incremental logs allows multiple tasks to share the same source database’s incremental log mining process, reducing duplicate reads and minimizing the impact of incremental synchronization on the source database. After enabling this feature, you will need to select external storage to store the incremental log information.
+      * **Shared Mining**: [Mining the source database's](../../operational-data-hub/advanced/share-mining.md) incremental logs allows multiple tasks to share the same source database’s incremental log mining process, reducing duplicate reads and minimizing the impact of incremental synchronization on the source database. After enabling this feature, you will need to select external storage to store the incremental log information.
       * **Include Tables**: Default is **All**. You can customize and specify the topics to include by separating table names with commas (`,`).
       * **Exclude Tables**: When enabled, you can specify topics to exclude, separated by commas (`,`).
       * **Agent Settings**: Defaults to **Platform Automatic Allocation**, but you can manually assign an agent.

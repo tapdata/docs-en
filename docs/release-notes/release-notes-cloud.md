@@ -504,8 +504,8 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- Added support for [Shared Mining](../user-guide/advanced-settings/share-mining.md), allowing multiple tasks to share incremental logs from the source database, thus avoiding redundant reads and significantly reducing the load on the source database during incremental synchronization.
-- The Shared Mining feature now supports using RocksDB as [local external storage](../user-guide/advanced-settings/manage-external-storage.md) to extend storage for incremental logs.
+- Added support for [Shared Mining](../operational-data-hub/advanced/share-mining.md), allowing multiple tasks to share incremental logs from the source database, thus avoiding redundant reads and significantly reducing the load on the source database during incremental synchronization.
+- The Shared Mining feature now supports using RocksDB as [local external storage](../operational-data-hub/advanced/manage-external-storage.md) to extend storage for incremental logs.
 
 ### Enhancements
 
