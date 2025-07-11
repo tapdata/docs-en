@@ -25,7 +25,7 @@ The data replication feature helps you achieve real-time synchronization between
 
    :::tip
 
-   The following steps demonstrate how to synchronize MySQL to MongoDB in real-time using the **Select Existing Connection** option. The process is similar for other data sources. For information on how to create data sources in advance, see [Connecting Data Sources](../../prerequisites/README.md).
+   The following steps demonstrate how to synchronize MySQL to MongoDB in real-time using the **Select Existing Connection** option. The process is similar for other data sources. For information on how to create data sources in advance, see [Connecting Data Sources](../../connectors/README.md).
 
    :::
 

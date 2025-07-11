@@ -25,8 +25,8 @@ Recognizing the demand for data migration, TapData introduced ClickHouse as a sy
 
 Before setting up a data sync pipeline on TapData Cloud, connect your data sources:
 
-1. [Connect to MySQL](../../prerequisites/on-prem-databases/mysql.md)
-2. [Connect to ClickHouse](../../prerequisites/warehouses-and-lake/clickhouse.md)
+1. [Connect to MySQL](../../connectors/on-prem-databases/mysql.md)
+2. [Connect to ClickHouse](../../connectors/warehouses-and-lake/clickhouse.md)
 
 ## Configure Task
 

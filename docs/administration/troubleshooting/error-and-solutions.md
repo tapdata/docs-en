@@ -22,7 +22,7 @@ Task runtime logs can be viewed at the bottom of the [task monitoring page](../.
 
 **Scenario**: This error occurs when Oracle is used as the source and incremental data synchronization fails.
 
-**Solution**: Enable Oracle's archive logging. For details, see [Preparation for Oracle Data Source](../../prerequisites/on-prem-databases/oracle.md).
+**Solution**: Enable Oracle's archive logging. For details, see [Preparation for Oracle Data Source](../../connectors/on-prem-databases/oracle.md).
 
 ### ORA-00257
 
@@ -53,7 +53,7 @@ Task runtime logs can be viewed at the bottom of the [task monitoring page](../.
 
 **Scenario**: Oracle is used as the source and fails to perform full or incremental synchronization.
 
-**Solution**: Typically, this is a permission assignment issue. For authorization methods, see [Preparation for Oracle Data Source](../../prerequisites/on-prem-databases/oracle.md).
+**Solution**: Typically, this is a permission assignment issue. For authorization methods, see [Preparation for Oracle Data Source](../../connectors/on-prem-databases/oracle.md).
 
 ### ORA-01400: cannot insert NULL into...
 

@@ -88,7 +88,7 @@ Building on the free offerings of TapData Community for developers, TapData Ente
 <tbody>
   <tr>
     <td rowspan="4">Basic Features</td>
-    <td><a href="../quick-start/install">Deployment Method</a></td>
+    <td><a href="../getting-started/install">Deployment Method</a></td>
     <td>Local</td>
     <td><a href="https://cloud.tapdata.net/console/v3/">Register and Use</a></td>
     <td>Local</td>
@@ -100,13 +100,13 @@ Building on the free offerings of TapData Community for developers, TapData Ente
     <td>➖</td>
   </tr>
   <tr>
-    <td><a href="../prerequisites">Data Source Connection Management</a></td>
+    <td><a href="../connectors">Data Source Connection Management</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
 <tr>
-  <td><a href="../prerequisites/supported-databases">Supported Databases</a></td>
+  <td><a href="../connectors/supported-databases">Supported Databases</a></td>
   <td><span style={{ color: 'blue' }}>100+</span></td>
   <td><span style={{ color: 'blue' }}>100+</span></td>
   <td><span style={{ color: 'grey' }}>16</span></td>
@@ -206,19 +206,19 @@ Building on the free offerings of TapData Community for developers, TapData Ente
   </tr>
   <tr>
   <td rowspan="3">Data API Services</td>
-  <td><a href="../user-guide/data-service/create-api-service">API Publishing</a></td>
+  <td><a href="../publish-apis/create-api-service">API Publishing</a></td>
   <td>✅</td>
   <td>➖</td>
   <td>➖</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/data-service/audit-api">API Audit</a><a href="../user-guide/data-service/monitor-api-request">Statistics</a></td>
+  <td><a href="../publish-apis/audit-api">API Audit</a><a href="../publish-apis/monitor-api-request">Statistics</a></td>
   <td>✅</td>
   <td>➖</td>
   <td>➖</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/data-service/create-api-service#release330-export-api">API Documentation Generation</a></td>
+  <td><a href="../publish-apis/create-api-service#release330-export-api">API Documentation Generation</a></td>
   <td>✅</td>
   <td>➖</td>
   <td>➖</td>

@@ -154,7 +154,7 @@ Next, let's create a free Agent instance.
 
 ## Next step
 
-[Connect Data Sources](../quick-start/connect-database.md)
+[Connect Data Sources](../getting-started/connect-data-source.md)
 
 ## See also
 

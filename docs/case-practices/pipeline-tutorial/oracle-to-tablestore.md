@@ -9,8 +9,8 @@ import Content from '../../reuse-content/_all-features.md';
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
-1. [Configure Oracle Connection](../../prerequisites/on-prem-databases/oracle.md)
-2. [Configure Tablestore Connection](../../prerequisites/warehouses-and-lake/tablestore.md)
+1. [Configure Oracle Connection](../../connectors/on-prem-databases/oracle.md)
+2. [Configure Tablestore Connection](../../connectors/warehouses-and-lake/tablestore.md)
 
 Also note the reference [data type support](../../user-guide/no-supported-data-type.md).
 

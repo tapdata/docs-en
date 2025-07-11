@@ -366,7 +366,7 @@ By closely reviewing system high-risk operations, timely identification and resp
 
 Common high-risk operations include:
 
-* [Connection Management](../prerequisites/README.md)
+* [Connection Management](../connectors/README.md)
     * **Deleting data source connections**: To avoid accidental deletion, when performing a deletion operation, a prompt will appear if the connection is referenced by a task.
     * **Editing data source connections**: If the parameters of the data source are set incorrectly, it may cause the connection to fail. Tasks referencing this data source will use the previous parameters and will not be affected, but new tasks or tasks reset afterwards may trigger errors.
 * [Data Replication](../user-guide/copy-data/create-task.md)/[Data Transformation](../user-guide/data-development/create-task.md) Tasks
@@ -378,7 +378,7 @@ Common high-risk operations include:
 a data replication task is used for scenarios that only synchronize incremental data, i.e., retaining target table data, if the target table's data scale is large, the synchronization index operation may affect the overall performance of the target database.
 * **Setting update condition fields**: If there is no index on the target, an index will be created based on the update condition fields.
 * **Task Agent settings**: In the task settings in the upper right corner, if an Agent is manually specified, this configuration item will remain unchanged when the task is copied, which may cause excessive pressure on a single Agent. It is recommended to set it to **Automatically assigned by the platform**.
-* [Data Services](../user-guide/data-service/README.md)
+* [Data Services](../publish-apis/README.md)
     * Deleting or taking an API offline will render it unavailable.
 * [System Management](../user-guide/manage-system/README.md)
     * When [managing a cluster](../user-guide/manage-system/manage-cluster.md), only perform close or restart operations on related services when they are experiencing anomalies.

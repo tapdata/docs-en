@@ -13,7 +13,7 @@ To enhance the efficiency of capturing data changes, TapData supports not only u
 * **Operating System**: Linux 64 or Windows 64 platforms.
 * **Storage**: Supported file systems include ext4, btrfs, zfs, xfs, sshfs; supported database block sizes are 2k, 4k, 8k, 16k, 32k.
 * **Port Requirements**: Some server ports must be open for service communication, including: default data transfer port: **8203**, web management default port: **8303**, raw log service port: **8190**.
-* **Permission**: The operating system user running the raw log plugin must have read access to redo log files; in addition to the permissions required for the source database as per the [Oracle Preparation Work](../../prerequisites/on-prem-databases/oracle.md#source) and enabling archive logs, additional permissions must be granted to simulate Oracle's data information structure and processes to cache part of Oracle Schema information to support the parsing of redo logs.
+* **Permission**: The operating system user running the raw log plugin must have read access to redo log files; in addition to the permissions required for the source database as per the [Oracle Preparation Work](../../connectors/on-prem-databases/oracle.md#source) and enabling archive logs, additional permissions must be granted to simulate Oracle's data information structure and processes to cache part of Oracle Schema information to support the parsing of redo logs.
 
 ```sql
 -- Replace <DSTUSER> with the actual username
@@ -106,7 +106,7 @@ Next, we'll demonstrate the deployment process for raw log querying using Oracle
 
 ## Next Steps
 
-When [configuring an Oracle connection](../../prerequisites/on-prem-databases/oracle.md), choose the log plugin as **bridge** and then enter the IP address of the raw log service, with the default service port being **8190**.
+When [configuring an Oracle connection](../../connectors/on-prem-databases/oracle.md), choose the log plugin as **bridge** and then enter the IP address of the raw log service, with the default service port being **8190**.
 
 ## Common Questions
 

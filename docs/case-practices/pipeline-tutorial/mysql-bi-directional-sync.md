@@ -41,7 +41,7 @@ Tapdata supports bi-directional data synchronization for MySQL ↔ MySQL, Postgr
 
 ## Preparation
 
-[Connect MySQL databases in two regions separately](../../prerequisites/on-prem-databases/mysql.md).
+[Connect MySQL databases in two regions separately](../../connectors/on-prem-databases/mysql.md).
 
 :::tip
 
@@ -123,7 +123,7 @@ Follow the instructions in the document to complete the Binlog configuration and
 
    :::tip
 
-   For Tapdata Enterprise, you can use the [data verification](../../user-guide/verify-data.md) to continuously verify the data of the two bi-directional sync tasks, better meeting your business needs.
+   For Tapdata Enterprise, you can use the [data verification](../../design-incremental-views/validate-views.md) to continuously verify the data of the two bi-directional sync tasks, better meeting your business needs.
 
    :::
 

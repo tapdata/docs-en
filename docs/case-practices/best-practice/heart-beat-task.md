@@ -15,7 +15,7 @@ TapData uses heartbeat tables to write timestamp information to the source datab
 
 ## Considerations
 
-* Since the heartbeat table function needs to automatically create the table and update the timestamp in the source database, ensure the database account has the necessary permissions before enabling. For example, in MySQL, ensure the account has **CREATE**, **INSERT**, and **UPDATE** permissions. For more on permissions, see [Data Source Preparation](../../prerequisites/README.md).
+* Since the heartbeat table function needs to automatically create the table and update the timestamp in the source database, ensure the database account has the necessary permissions before enabling. For example, in MySQL, ensure the account has **CREATE**, **INSERT**, and **UPDATE** permissions. For more on permissions, see [Data Source Preparation](../../connectors/README.md).
 * The heartbeat table is named **_tapdata_heartbeat_table**. Ensure the integrity and reliability of the heartbeat table data and avoid operations on it in the source database (such as deleting the table).
 
 ## Enabling Heartbeat Tables for a Data Source
@@ -26,7 +26,7 @@ TapData uses heartbeat tables to write timestamp information to the source datab
 
 3. Find the created data source and click **Edit** in the **Actions** column.
 
-   If setting this up during the creation of a new data source, the method is the same. For more information, see [Connecting Data Sources](../../prerequisites/README.md).
+   If setting this up during the creation of a new data source, the method is the same. For more information, see [Connecting Data Sources](../../connectors/README.md).
 
 4. Scroll down to the bottom of the page and turn on the heartbeat table switch.
 
@@ -34,7 +34,7 @@ TapData uses heartbeat tables to write timestamp information to the source datab
 
    :::tip
 
-   If you do not see this switch, check the **Connection Type** setting on the page to ensure it is set to **Source and Target**. Additionally, some data sources do not support being used as both source and target. For more information, see [Supported Data Sources](../../prerequisites/supported-databases.md).
+   If you do not see this switch, check the **Connection Type** setting on the page to ensure it is set to **Source and Target**. Additionally, some data sources do not support being used as both source and target. For more information, see [Supported Data Sources](../../connectors/supported-data-sources.md).
 
    :::
 

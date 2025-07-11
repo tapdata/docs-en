@@ -17,8 +17,8 @@ If you need to sync a table from the source MySQL to Redis at the same time, you
 
 Before creating a data transformation task, make sure you have set up the relevant data sources:
 
-1. [Configure MySQL connection](../../prerequisites/on-prem-databases/mysql.md)
-2. [Configure Redis connection](../../prerequisites/on-prem-databases/redis.md)
+1. [Configure MySQL connection](../../connectors/on-prem-databases/mysql.md)
+2. [Configure Redis connection](../../connectors/on-prem-databases/redis.md)
 
 ## Procedure
 

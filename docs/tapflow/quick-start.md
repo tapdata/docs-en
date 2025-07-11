@@ -178,7 +178,7 @@ Next, configure your data sources via TapShell. In this example, we’ll use MyS
 
    :::tip
 
-   - TapData supports [many popular data sources](../prerequisites/supported-databases.md), with slight configuration differences depending on the source. For more on permissions and parameters, see [Connecting Data Sources](../prerequisites/README.md).
+   - TapData supports [many popular data sources](../connectors/supported-data-sources.md), with slight configuration differences depending on the source. For more on permissions and parameters, see [Connecting Data Sources](../connectors/README.md).
    - If you receive a “**load schema status: error**” error, it’s typically a permission or configuration issue. Retrying with the same name will overwrite the previous configuration with “**database MongoDB_ECommerce exists, will update its config**.”
 
    :::
