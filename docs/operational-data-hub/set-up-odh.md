@@ -35,7 +35,7 @@ Once your MongoDB database is ready and connected, follow these steps to enable 
 
 5. Specify the MongoDB data source(s) you prepared for the **FDM** and **MDM** layers.
 
-   ![enable-odh](/Users/walter/Desktop/images/enable-odh.png)
+   ![enable-odh](../images/enable-odh.png)
 
    :::tip
 
