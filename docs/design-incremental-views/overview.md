@@ -12,13 +12,15 @@ However, in real-world e-commerce environments, data requirements are rarely so 
 - **BI and reporting teams** need detailed transaction-level data to analyze order quantities, categories, and product bundles.
 - **Developers and data engineers** are looking for ways to simplify ETL pipelines and API integrations, while keeping production systems performant.
 
-![Tables Relationship](../images/design_imv_table_relations.png)
-
 To support these diverse use cases, we’ll extend our earlier example and design a more advanced, business-ready view that combines multiple data sources:
 
 - Embedded user profiles to preserve full customer details in each record.
 - Nested arrays of order items to capture all products in a single purchase.
 - Flattened product attributes so each order line includes product names, categories, and pricing.
+
+import TapDataAnimation from '@site/src/components/Animation/TapDataAnimation';
+
+<TapDataAnimation />
 
 
 <details><summary>Ways to Add Related Fields</summary>

@@ -1,0 +1,676 @@
+/* TapData Flow Animation - Adapted for Docusaurus */
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 500px;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  box-sizing: border-box;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 50px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.flowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2%;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 400px;
+}
+
+/* Multi-Tables Section */
+.multiTables {
+  flex: 1.5;
+  min-width: 0;
+  opacity: 0;
+  animation: slideInLeft 1s ease-out 0.5s forwards;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.valueBadge {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  animation: badgeSlideIn 1s ease-out forwards;
+  z-index: 20;
+  white-space: nowrap;
+}
+
+.valueBadge.zeroImpact {
+  color: #8b5cf6;
+  border-color: #8b5cf6;
+  animation-delay: 4s;
+}
+
+.tablesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.table {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.table.users {
+  border-color: #f59e0b;
+}
+
+.table.orders {
+  border-color: #3182ce;
+}
+
+.tableHeader {
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+}
+
+.table.users .tableHeader {
+  background: #f59e0b;
+}
+
+.table.orders .tableHeader {
+  background: #3182ce;
+}
+
+.tableRow {
+  padding: 8px 16px;
+  font-size: 12px;
+  color: #718096;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+/* Processing Section */
+.processing {
+  flex: 2.8;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.tapdataPlatform {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  transform: scale(0.8);
+  animation: scaleUp 0.8s ease-out 1.5s forwards, platformPulse 3s ease-in-out infinite 2.5s;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  max-width: 280px;
+}
+
+/* Data processing rings */
+.tapdataPlatform::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: processingRing1 2s ease-in-out infinite;
+}
+
+.tapdataPlatform::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: processingRing2 2s ease-in-out infinite 0.5s;
+}
+
+.processingIndicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: processingPulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.dataProcessor {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.dataProcessor svg {
+  width: 100%;
+  height: 100%;
+  animation: engineJiggle 4s ease-in-out infinite;
+}
+
+.platformTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.platformSubtitle {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Double Flow Arrows */
+.arrow {
+  width: 60px !important;
+  height: 40px !important;
+  position: relative;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  flex: 0 0 60px;
+}
+
+.arrow .flowChevron {
+  width: 20px !important;
+  height: 20px !important;
+  opacity: 0;
+  flex-shrink: 0;
+}
+
+.arrow .flowChevron:nth-child(1) {
+  animation: chevronFlow 2s ease-in-out infinite;
+}
+
+.arrow .flowChevron:nth-child(2) {
+  animation: chevronFlow 2s ease-in-out infinite 0.4s;
+}
+
+.arrow .flowChevron svg {
+  width: 100%;
+  height: 100%;
+}
+
+.arrow .flowChevron svg path {
+  fill: #3b82f6;
+}
+
+.arrow.animated {
+  animation: drawArrow 0.8s ease-out forwards;
+}
+
+.arrow.animated .flowChevron:nth-child(1) {
+  animation: drawArrow 0.8s ease-out forwards, chevronFlow 2s ease-in-out infinite 1s;
+}
+
+.arrow.animated .flowChevron:nth-child(2) {
+  animation: drawArrow 0.8s ease-out forwards, chevronFlow 2s ease-in-out infinite 1.4s;
+}
+
+.arrow:nth-of-type(1) { animation-delay: 1.2s; }
+.arrow:nth-of-type(2) { animation-delay: 1.8s; }
+.arrow:nth-of-type(3) { animation-delay: 2.3s; }
+
+/* Materialized View */
+.materializedView {
+  flex: 3.2;
+  min-width: 0;
+  opacity: 0;
+  animation: slideInRight 1s ease-out 2s forwards;
+}
+
+.mvContainer {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(56, 161, 105, 0.2);
+  overflow: hidden;
+  border: 2px solid #38a169;
+  width: 100%;
+}
+
+.mvHeader {
+  background: #38a169;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-weight: 600;
+  position: relative;
+  padding-right: 65px;
+}
+
+.realtimeIndicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #10b981;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  animation: blink 2s ease-in-out infinite;
+  z-index: 10;
+  letter-spacing: 0.5px;
+}
+
+.mvContent {
+  padding: 16px;
+  background: #f0fff4;
+}
+
+.mvFeature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #2d3748;
+}
+
+.mvFeature:last-child {
+  margin-bottom: 0;
+}
+
+.checkmark {
+  color: #38a169;
+  font-weight: bold;
+}
+
+/* Applications */
+.applications {
+  flex: 1.5;
+  min-width: 0;
+  opacity: 0;
+  animation: slideInRight 1s ease-out 2.5s forwards;
+}
+
+.appsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  animation: appsFloat 4s ease-in-out infinite;
+}
+
+.appItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-size: 12px;
+  color: #4b5563;
+  width: 100%;
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+  font-weight: 500;
+  opacity: 0;
+  animation: appItemAppear 0.6s ease-out forwards;
+  justify-content: flex-start;
+}
+
+.appItem:nth-child(1) { animation-delay: 3s; }
+.appItem:nth-child(2) { animation-delay: 3.2s; }
+.appItem:nth-child(3) { animation-delay: 3.4s; }
+.appItem:nth-child(4) { animation-delay: 3.6s; }
+.appItem:nth-child(5) { animation-delay: 3.8s; }
+
+.appItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  border-color: #d1d5db;
+}
+
+/* Data Flow Animation - Global styles */
+:global(.data-flow) {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 10;
+}
+
+:global(.data-flow.users-data) {
+  background: linear-gradient(45deg, #f59e0b, #fbbf24);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+:global(.data-flow.orders-data) {
+  background: linear-gradient(45deg, #3182ce, #63b3ed);
+  box-shadow: 0 0 10px rgba(49, 130, 206, 0.5);
+}
+
+:global(.data-flow.merged-data) {
+  background: linear-gradient(45deg, #38a169, #68d391);
+  box-shadow: 0 0 10px rgba(56, 161, 105, 0.5);
+}
+
+:global(.data-flow.active) {
+  animation: flowData 3s ease-in-out infinite;
+}
+
+/* Data change indicators */
+:global(.data-indicator) {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f56565;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+:global(.data-indicator.users) { background: #f59e0b; }
+:global(.data-indicator.orders) { background: #3182ce; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); }
+  to { transform: scale(1); }
+}
+
+@keyframes badgeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes platformPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
+  }
+}
+
+@keyframes processingRing1 {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes processingRing2 {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes processingPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
+  }
+}
+
+@keyframes engineJiggle {
+  0%, 85%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+  1% { transform: translateX(-1px) translateY(0.5px) rotate(-0.5deg); }
+  2% { transform: translateX(1px) translateY(-0.5px) rotate(0.5deg); }
+  3% { transform: translateX(-0.5px) translateY(1px) rotate(-0.3deg); }
+  4% { transform: translateX(0.5px) translateY(-1px) rotate(0.3deg); }
+  5% { transform: translateX(-1px) translateY(-0.5px) rotate(-0.5deg); }
+  6% { transform: translateX(1px) translateY(0.5px) rotate(0.5deg); }
+  7% { transform: translateX(-0.5px) translateY(-1px) rotate(-0.3deg); }
+  8% { transform: translateX(0.5px) translateY(1px) rotate(0.3deg); }
+  9% { transform: translateX(-1px) translateY(0) rotate(-0.5deg); }
+  10% { transform: translateX(0) translateY(0) rotate(0deg); }
+}
+
+@keyframes chevronFlow {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(10px) scale(0.8);
+  }
+}
+
+@keyframes drawArrow {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+  to {
+    opacity: 1;
+    width: 60px;
+  }
+}
+
+@keyframes appsFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes appItemAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  25%, 75% { opacity: 0.5; }
+}
+
+@keyframes flowData {
+  0% { opacity: 0; transform: translateX(0) scale(0.5); }
+  20% { opacity: 1; transform: translateX(20%) scale(1); }
+  80% { opacity: 1; transform: translateX(80%) scale(1); }
+  100% { opacity: 0; transform: translateX(100%) scale(0.5); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .flowContainer {
+    gap: 1.5%;
+  }
+
+  .arrow {
+    width: 50px !important;
+    flex: 0 0 50px;
+  }
+
+  .arrow .flowChevron {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .flowContainer {
+    gap: 1%;
+  }
+
+  .arrow {
+    width: 40px !important;
+    flex: 0 0 40px;
+  }
+
+  .arrow .flowChevron {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .appItem {
+    font-size: 11px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .tapdataPlatform {
+    max-width: 200px;
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 400px;
+    padding: 15px;
+  }
+
+  .flowContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .multiTables,
+  .processing,
+  .materializedView,
+  .applications {
+    flex: none;
+    width: 100%;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+    width: 40px !important;
+    height: 20px !important;
+  }
+
+  .arrow .flowChevron {
+    width: 12px !important;
+    height: 12px !important;
+  }
+}

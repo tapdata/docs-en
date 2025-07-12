@@ -10,6 +10,10 @@ This article shows you how to use TapData to build **Incremental Materialized Vi
 
 Imagine you're a data analyst at an e-commerce company. You need to quickly identify **high-value transactions over $300 in Q1 2025** and understand customer membership levels and regions to drive targeted marketing—like sending special coupons or offering tier upgrades to boost retention and sales.
 
+import TapDataFlowAnimation from '@site/src/components/Animation/TapDataFlowAnimation';
+
+<TapDataFlowAnimation />
+
 In traditional databases, you'd have to run complex multi-table JOINs between your orders and users tables. When data volumes are large, these queries can be slow and put pressure on production systems. IT might even ask you to run them during off-peak hours—slowing down your entire analysis workflow and limiting your team's agility.
 
 ![IMV Solution](../images/imv-solution.gif)
