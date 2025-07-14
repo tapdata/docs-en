@@ -16,7 +16,7 @@ import TapDataFlowAnimation from '@site/src/components/Animation/TapDataFlowAnim
 
 In traditional databases, you'd have to run complex multi-table JOINs between your orders and users tables. When data volumes are large, these queries can be slow and put pressure on production systems. IT might even ask you to run them during off-peak hours—slowing down your entire analysis workflow and limiting your team's agility.
 
-![IMV Solution](../images/imv-solution.gif)
+
 
 With **TapData’s real-time materialized views**, you can automatically join your orders and users tables into a single, always-up-to-date view synced to MongoDB. Your BI tools or APIs can query this single, denormalized table to get the latest data instantly—no complex SQL, no load on your operational systems. It's fast, scalable, and designed for real-time analytics.
 

@@ -229,7 +229,6 @@ const sidebars = {
             'design-incremental-views/create-views/using-tapflow',
           ],
         },
-        'design-incremental-views/validate-views',
         'design-incremental-views/design-considerations',
         'design-incremental-views/monitor-view-tasks',
       ],
@@ -259,7 +258,7 @@ const sidebars = {
         'operational-data-hub/plan-data-platform',
         {
           type: 'category',
-          label: 'FDM Layer',
+          label: 'Ingest and Sync Data (FDM Layer)',
           link: { type: 'doc', id: 'operational-data-hub/fdm-layer/README' },
           items: [
             'operational-data-hub/fdm-layer/replicate-data',
@@ -269,7 +268,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'MDM Layer',
+          label: 'Design and Transform Data (MDM Layer)',
           link: { type: 'doc', id: 'operational-data-hub/mdm-layer/README' },
           items: [
             'operational-data-hub/mdm-layer/define-data-categories',
@@ -279,7 +278,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'ADM Layer',
+          label: 'Deliver Data (ADM Layer)',
           link: { type: 'doc', id: 'operational-data-hub/adm-layer/README' },
           items: [
             'operational-data-hub/adm-layer/integrate-apis',

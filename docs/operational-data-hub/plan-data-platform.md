@@ -34,10 +34,10 @@ With an ODH, you move from siloed, hard-to-manage data flows to a single, unifie
 
 Tapdata's ODH design breaks this journey into clear, manageable layers:
 
-![Tapdata's Layered Approach](../images/ldp_architecture.png)
+![Tapdata's Layered Approach](../images/odh_architecture.png)
 
 | Layer                        | Purpose                                                      |
-| ---- |  |
+| ---------------------------- | ------------------------------------------------------------ |
 | **Source Data Layer**        | Connect to and abstract data from all business systems and sources, without disrupting existing operations. |
 | **Platform Cache (FDM)**     | Use real-time change data capture (CDC) to mirror source tables safely, reducing load on critical systems. |
 | **Processing Layer (MDM)**   | Transform, clean, and model data into standardized business entities and wide tables for consistent consumption. |
