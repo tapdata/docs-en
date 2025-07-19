@@ -1,8 +1,6 @@
 # Mock Source
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 The Mock Source can be used as a source database, primarily for performance testing scenarios.
 

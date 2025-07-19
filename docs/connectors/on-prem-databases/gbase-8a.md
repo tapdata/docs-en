@@ -1,8 +1,6 @@
 # GBase 8a
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GBase 8a is an analytical database developed by GBASE, highly compatible with MySQL syntax, features, and field types. TapData supports using GBase 8a as a target database, helping you quickly build real-time data synchronization links. Next, we will introduce how to add GBase 8a as a data source in TapData.
 

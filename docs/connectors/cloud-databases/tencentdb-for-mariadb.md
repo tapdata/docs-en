@@ -1,8 +1,6 @@
 # TencentDB MariaDB
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Please follow the instructions below to successfully add and use MariaDB databases in TapData Cloud.
 

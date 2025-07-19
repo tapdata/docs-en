@@ -1,9 +1,5 @@
 # TapData Cloud
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
-
 The TapData Agent is an essential component for data synchronization, data heterogeneity, and data pipeline scenarios. While it is recommended to install the TapData Agent within the local network where the database is located for real-time processing, an alternative option is available. You can also install the TapData Agent on the TapData Cloud server, eliminating the need for setting up a machine locally. This provides flexibility and convenience for managing your data flow.
 
 ```mdx-code-block

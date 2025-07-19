@@ -1,8 +1,6 @@
 # Automatic Data Flow with One Click
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 In the Data Service Platform Mode, you can simply drag the source table to the required level to generate a data pipeline and automatically start the task, greatly simplifying the task configuration process. This article describes how to achieve the flow of data between different levels and finally provide it to the terminal business.
 

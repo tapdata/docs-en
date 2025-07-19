@@ -1,8 +1,6 @@
 # Kafka-Enhanced
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [Apache Kafka](https://kafka.apache.org/) is a distributed data streaming platform that allows real-time publishing, subscribing, storing, and processing of data streams. Kafka-Enhanced is an upgraded version of the Kafka connector, supporting both standard event structures and native Kafka data structures for data transmission. It removes the limitation of the previous Kafka connector, which only supported JSON Object formats, allowing non-JSON Object structures to be loaded into applications for processing. It also provides a more reliable resume-from-breakpoint mechanism.
 

@@ -1,7 +1,5 @@
 # Real-Time Oracle to Kafka Synchronization
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In the era of big data, more and more enterprises need to synchronize data from traditional relational databases to big data processing platforms to support real-time data processing, data lake construction, and alternative data warehousing scenarios. Oracle, widely used in enterprise applications, increasingly requires synchronization to big data platforms.
 

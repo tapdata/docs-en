@@ -1,7 +1,5 @@
 # Create a Server
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 API servers can be configured to expose API server addresses externally, and multiple servers can also be added.
 

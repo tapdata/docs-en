@@ -1,7 +1,5 @@
 # Real-time Heterogeneous Sync from MySQL to Oracle
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 With the rapid development of modern enterprises, data has become one of the most important assets. In many organizations, to meet a variety of business and technical requirements, various types of databases might be in use. Through a real case of migration from Oracle to MySQL, this article introduces how to achieve real-time synchronization of heterogeneous databases through TapData. This helps to quickly complete data flow between databases of different types, structures, and technologies, building a unified data service platform and preventing data silos.
 

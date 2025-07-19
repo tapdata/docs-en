@@ -1,8 +1,6 @@
 # Http Receiver
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 With TapData Cloud's HTTP Receiver data source, you can receive data pushed from platforms such as SaaS to quickly bridge data silos and build a unified data platform. This article explains how to add an HTTP Receiver data source in TapData Cloud.
 

@@ -1,8 +1,6 @@
 # MySQL to BigQuery Real-Time Sync
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) is a fully serverless and cost-effective enterprise data warehouse that operates seamlessly across different cloud platforms and effortlessly scales with your data. It incorporates business intelligence, machine learning, and AI functionalities. TapData, on the other hand, enables real-time synchronization of multiple data sources with BigQuery, facilitating smooth data flow and effectively accommodating changes in data architecture or big data analysis requirements.
 
@@ -83,7 +81,7 @@ Also note the reference [data type support](../../user-guide/no-supported-data-t
 
 On the Task List page, you can also start, stop, monitor, edit, copy, reset, and delete tasks.
 
-For more information, See [Management Tasks](../../user-guide/copy-data/manage-task.md).
+For more information, See [Management Tasks](../../design-incremental-views/manage-task.md).
 
 
 

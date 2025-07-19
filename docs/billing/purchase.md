@@ -1,8 +1,5 @@
 # Subscription Instance
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
 
 After registering with TapData Cloud, you will receive the benefit of creating one free Agent instance. If you require additional agents or desire higher transfer performance, you can refer to the instructions in this article to complete the subscription process for the desired instance.
 

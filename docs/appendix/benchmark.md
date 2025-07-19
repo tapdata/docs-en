@@ -1,9 +1,5 @@
 # Performance Testing
 
-import Content from '../reuse-content/_enterprise-features.md';
-
-<Content />
-
 This document aims to detail the methods and steps for conducting performance tests on TapData. We will explore how to accurately assess TapData's data processing capabilities, response times, and system stability under various conditions. This helps you understand TapData's performance under different loads, allowing for better resource planning and configuration optimization.
 
 ## Testing Environment

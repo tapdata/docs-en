@@ -1,9 +1,5 @@
 # Doris
 
-import Content1 from '../../reuse-content/_all-features.md';
-
-<Content1 />
-
 [Apache Doris](https://doris.apache.org/) is an MPP-based real-time data warehouse known for its high query speed. It can be used for report analysis, ad-hoc queries, unified data warehouse, and data lake query acceleration. Tapdata supports using Doris as both a source and a target database to build data pipelines, helping you quickly handle data flows for big data analysis scenarios. In this article, we will introduce how to connect to Doris on the Tapdata platform.
 
 ```mdx-code-block

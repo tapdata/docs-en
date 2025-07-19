@@ -1,9 +1,5 @@
 # KingbaseES-R6
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
-
-<Content1 />
-
 [KingbaseES](https://www.kingbase.com.cn/en/kingbasees1/index.htm) is a commercial relational database management system (RDBMS) developed by Beijing Kingbase Technology Inc. KingbaseES-R6 is compatible with most features of PostgreSQL 9.6. This document will guide you on how to add KingbaseES-R6 as a data source in TapData and use it as either a source or target database to build data pipelines.
 
 ```mdx-code-block

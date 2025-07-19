@@ -1,7 +1,5 @@
 # SQL Server to BigQuery Real-Time Sync
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In today's age of rapidly expanding data, companies are increasingly turning to [BigQuery](https://cloud.google.com/bigquery/docs)  in order to extract valuable insights and further modernize their data analysis strategies. Through BigQuery, they aim to run large-scale critical business applications, optimizing operations, enhancing customer experience, and reducing overall costs.
 

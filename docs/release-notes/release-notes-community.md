@@ -1,9 +1,5 @@
 # TapData Community Release Notes
 
-import Content from '../reuse-content/_community-features.md';
-
-<Content />
-
 This document introduces the recent release notes for TapData Community. For more information on earlier versions, please refer to the [GitHub Release Page](https://github.com/tapdata/tapdata/releases).
 
 ## 3.27.0

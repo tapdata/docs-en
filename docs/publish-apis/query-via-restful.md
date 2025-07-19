@@ -1,7 +1,5 @@
 # Query API through RESTful
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 RESTful API is an application programming interface (API or Web API) that adheres to REST architectural specifications. TapData supports integrated RESTful API services, allowing you to execute requests through the API service address and obtain managed data information.
 

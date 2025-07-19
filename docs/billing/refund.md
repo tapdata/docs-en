@@ -1,8 +1,5 @@
 # Unsubscribe Instance
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
 
 If you no longer need to use the Agent instance, you can follow the process to unsubscribe from the instance in this article while ensuring that its associated tasks do not affect your business.
 

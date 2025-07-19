@@ -1,8 +1,5 @@
 # Deploy HA TapData Enterprise (3 Nodes)
 
-import Content from '../../reuse-content/_enterprise-features.md';
-
-<Content />
 
 To ensure the reliability of business operations in a production environment, a high availability (HA) deployment is recommended. This guide explains how to deploy TapData services using three servers to achieve high availability.
 

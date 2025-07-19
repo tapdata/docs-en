@@ -1,7 +1,4 @@
 # Manage Roles
-import Content from '../reuse-content/_enterprise-features.md';
-
-<Content />
 
 A role is a collection of one or more permissions. You can grant multiple operation permissions to a role, and then grant the role to a [user](manage-user.md), who will inherit all the permissions within that role. Based on this design, you can pre-create roles based on business needs and then directly assign roles to users when creating them, without the need to configure permissions for each user, thereby simplifying operational management and enhancing security.
 

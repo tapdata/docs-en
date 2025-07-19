@@ -1,8 +1,6 @@
 # Step 2: Connect a Data Sources
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 Once you have [installed the Agent](../backup-files/install.md), you need to connect the Agent to the data sources through TapData, and you can create a data pipeline once the connection has been established.
 

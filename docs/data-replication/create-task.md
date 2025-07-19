@@ -1,10 +1,8 @@
 # Create a Data Replication Task
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
-The data replication function can help you to achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](../../introduction/use-cases.md). 
+The data replication function can help you to achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](../introduction/use-cases.md). 
 
 This article explains the specific data replication process to help you quickly become familiar with creating, monitoring, and managing data replication tasks.
 
@@ -12,8 +10,8 @@ This article explains the specific data replication process to help you quickly 
 
 Before you create a data replication task, you need to perform the following preparations:
 
-* [Install TapData](../../backup-files/install.md)
-* [Connect to a Data Source](../../getting-started/connect-data-source.md)
+* [Install TapData](../backup-files/install.md)
+* [Connect to a Data Source](../getting-started/connect-data-source.md)
 
 ## Procedure
 
@@ -24,7 +22,7 @@ As an example of creating a data replication task, the article demonstrates the 
   To build efficient and reliable data replication tasks, it is recommended to read the <a href="../../../case-practices/best-practice/data-sync">Data Synchronization Best Practices</a> before starting to configure tasks.
 </details>
 
-1. [Log in to TapData Platform](../log-in.md).
+1. [Log in to TapData Platform](../user-guide/log-in.md).
 
 2. In the left navigation panel, click **Data Replication**.
 
@@ -38,7 +36,7 @@ As an example of creating a data replication task, the article demonstrates the 
 
 4. On the left side of the page, you can drag and drop the source and destination data icons onto the right canvas. After placing them, you can connect them by drawing a line between them to establish the data flow for the replication task.
 
-   ![Drag Data Source to Canvas](../../images/drag_database.png)
+   ![Drag Data Source to Canvas](../images/drag_database.png)
 
    :::tip
 
@@ -48,7 +46,7 @@ As an example of creating a data replication task, the article demonstrates the 
 
 5. Click the source node (MySQL in this example) to complete the parameter configuration of the right panel according to the following instructions.
 
-   ![Source Settings](../../images/data_source_settings.png)
+   ![Source Settings](../images/data_source_settings.png)
 
    * **Basic Settings**      
 
@@ -80,7 +78,7 @@ As an example of creating a data replication task, the article demonstrates the 
 
 6. Click on the target node, which in this example is MongoDB, to configure the parameters in the right panel based on the following instructions.
 
-   ![Basic settings](../../images/data_copy_normal_setting.png)
+   ![Basic settings](../images/data_copy_normal_setting.png)
 
    * **Basic Settings**
      * **Node Name**: Defaults to the connection name; you can also set a name that has business significance.
@@ -101,7 +99,7 @@ As an example of creating a data replication task, the article demonstrates the 
    * **Alert Settings**
      Defaults as per source node alert settings.
 
-7. (Optional) Click the ![setting](../../images/setting.png) icon above to configure the <span id="task-attr">task properties</span>.
+7. (Optional) Click the ![setting](../images/setting.png) icon above to configure the <span id="task-attr">task properties</span>.
 
    * **Task name**: Fill in a name that has business significance.
    * **Sync type**: You have the option to select **Full + incremental synchronization**, or you can choose to perform **Initial sync** and **CDC** (Change Data Capture) separately. In real-time data synchronization scenarios, using the combination of full and incremental data copying allows you to copy existing data from the source database to the target database.
@@ -110,11 +108,11 @@ As an example of creating a data replication task, the article demonstrates the 
 
 8. Click **Start**, and you will be able to view the performance of the task on the current page, including metrics such as RPS (Records Per Second), delay, and task event statistics.
 
-   ![Task implementation](../../images/copy_data_monitor_en.png)
+   ![Task implementation](../images/copy_data_monitor_en.png)
 
 
 
 ## See also
 
-[Monitor or Manage Tasks](manage-task.md)
+[Monitor or Manage Tasks](../design-incremental-views/manage-task.md)
 

@@ -1,7 +1,4 @@
 # Expiration Policy
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
 
 To prevent any disruptions to your business operations, we highly recommend [renewing](renew-subscribe.md) your annual/monthly instance before it expires. Alternatively, during the initial subscription process, you can choose the continuous annual/monthly payment method. This ensures seamless continuity of your instance and avoids any potential impact on your business.
 

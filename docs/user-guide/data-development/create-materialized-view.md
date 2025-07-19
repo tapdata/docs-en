@@ -1,8 +1,6 @@
 # Build Real-Time Materialized Views (Beta)
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Materialized views are specialized database object that cache the results of intricate queries, thereby accelerating data retrieval. With TapData, you can craft real-time materialized views across diverse data sources. This not only ensures accuracy and immediacy of data but also streamlines data management and application development.
 

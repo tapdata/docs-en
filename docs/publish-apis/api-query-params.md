@@ -1,7 +1,5 @@
 # API Query Parameters
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 When invoking published API interfaces, it's possible to add query conditions in the URL query string to quickly filter the query results. This article introduces supported filters and provides related usage examples.
 

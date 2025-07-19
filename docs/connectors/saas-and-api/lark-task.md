@@ -1,7 +1,5 @@
 # LarkTask
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 **Lark** is a collaboration and management platform that provides instant messaging, video conferencing, and other features. After completing the Agent deployment, you can follow this guide to add a **LarkTask** data source in Tapdata, and later use it as a target to build data pipelines.
 

@@ -1,7 +1,5 @@
 # API Status Monitor
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 Service Monitoring allows for the oversight and management of API requests on the platform, providing a view into global statistics and the status of each API.
 

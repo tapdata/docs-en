@@ -1,9 +1,5 @@
 # OceanBase (Oracle Mode)
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
-
-<Content />
-
 **OceanBase** is a natively distributed relational database developed by Ant Group. It is compatible with both MySQL and Oracle syntax and features high availability, high performance, and strong consistency. Tapdata supports **OceanBase (Oracle Mode)** as both a source and a target database, enabling you to build real-time, multi-source data pipelines for synchronization and integration across heterogeneous systems.
 
 ```mdx-code-block

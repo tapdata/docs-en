@@ -1,7 +1,5 @@
 # Monitor Data Replication Task
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Once the data replication task is started, the page will automatically redirect to the task monitoring page. From there, you can monitor the task's operation details, such as the status of the Agent, data synchronization progress, task progress, alert settings, and other relevant information.
 
@@ -11,7 +9,7 @@ By clicking the **monitor** button on the task list page, you can access the mon
 
 :::
 
-![](../../images/monitor_copy_task_overview.png)
+![](../images/monitor_copy_task_overview.png)
 
 
 
@@ -43,7 +41,7 @@ Displaying basic information and key monitoring indicators of the task, includin
 
 ## ③ Node Information Display Area
 
-Hover your mouse pointer over a node to display key metrics for that node, and click the ![](../../images/node_more_icon.png) icon in the bottom right corner of the node to see more details.
+Hover your mouse pointer over a node to display key metrics for that node, and click the ![](../images/node_more_icon.png) icon in the bottom right corner of the node to see more details.
 
 - **Full Sync Progress**: The progress report on the full data synchronization.
 - **Incremental Data Synchronization**: The incremental log collection time point is represented as the relative time of (engine time - incremental time point of the node) in the floating window when hovering the mouse.
@@ -57,13 +55,13 @@ Hover your mouse pointer over a node to display key metrics for that node, and c
 
 ## ④ Task Log Display Area
 
-Click the ![](../../images/view_log_icon.png) icon at the top of the page, then you can view the progress, logs, alert list, and associated task information for a task run. You can filter the logs using keywords, periods, and levels, or download them for local analysis on the **Log** tab.
+Click the ![](../images/view_log_icon.png) icon at the top of the page, then you can view the progress, logs, alert list, and associated task information for a task run. You can filter the logs using keywords, periods, and levels, or download them for local analysis on the **Log** tab.
 
 
 
 ## ⑤ Task/Alert Setting Area
 
-Click the ![](../../images/task_setting_icon.png) icon at the top of the page, which displays the task settings (not modifiable) and alert settings, you can set the alert rules:
+Click the ![](../images/task_setting_icon.png) icon at the top of the page, which displays the task settings (not modifiable) and alert settings, you can set the alert rules:
 
 * Task running error alert
 * Notice of full completion of tasks

@@ -1,8 +1,6 @@
 # Hudi
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [Apache Hudi](https://hudi.apache.org/cn/docs/overview) is a storage format for data lakes that provides the ability to update, delete, and consume change data on top of the Hadoop file system. TapData supports using Hudi as a **target database** to build data transfer pipelines.
 

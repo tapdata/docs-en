@@ -1,8 +1,6 @@
 # Lark Doc
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 **Lark Docs** is the core platform within the Lark ecosystem for knowledge accumulation, sharing, and collaboration. Tapdata supports using Lark Docs as a data source, allowing you to extract document content in real time and sync it to target databases, search engines, or data lakes.
 Through structured management and unified governance, this integration helps enterprises build intelligent knowledge systems, improve document search efficiency, and support downstream BI analytics, question-answering systems, and data-driven decision-making.

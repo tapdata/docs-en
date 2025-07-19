@@ -1,8 +1,6 @@
 # Quick Start
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 Welcome to TapData! This guide will help you go from zero to delivering real-time, analysis-ready data services—without heavy ETL pipelines or complex SQL joins.
 

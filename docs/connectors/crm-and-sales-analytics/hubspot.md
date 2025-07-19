@@ -1,8 +1,6 @@
 # HubSpot
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 HubSpot's CRM platform contains the marketing, sales, service, operations, and website-building software you need to grow your business. TapData Cloud supports building data pipelines with HubSpot as the source database, allowing you to read HubSpot operational data and sync it to a specified data source. This document explains how to add a HubSpot data source in TapData Cloud.
 

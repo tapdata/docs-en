@@ -1,8 +1,6 @@
 # Data Pipelines
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 This article lists potential issues and solutions encountered when constructing data pipelines, including data replication tasks, data transformation tasks, and data validation modules.
 

@@ -1,7 +1,5 @@
 # Monitor Data Synchronization with Heartbeat Tables
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 TapData uses heartbeat tables to write timestamp information to the source database every **10 seconds**. By checking the timestamp information in the heartbeat tables, we can quickly determine the activity and health of the data source, thereby better monitoring the data synchronization path and ensuring the stability and reliability of the data synchronization path.
 

@@ -1,8 +1,6 @@
 # Architecture and Workflow
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 As a new-generation real-time data service platform, TapData enables enterprises to easily break the limitations of data silos. It provides real-time, accurate data for analytical and transactional business workloads through real-time data collection technology, flexible data processing methods, comprehensive data governance capabilities, and convenient data publishing methods, supporting businesses in achieving more agile innovation.
 

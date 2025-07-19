@@ -1,7 +1,4 @@
 # Log in to TapData Platform
-import Content from '../reuse-content/_all-features.md';
-
-<Content />
 
 TapData provides a user-friendly interface, allowing you to set up and manage data pipelines easily through simple drag-and-drop actions. Before starting, you need to log in to the TapData platform according to the product series you have chosen by following the guidelines below.
 

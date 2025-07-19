@@ -59,7 +59,6 @@ const sidebars = {
          link: {type: 'doc', id: 'connectors/README'},
          items: [
                  'connectors/supported-data-sources',
-                 'connectors/manage-connection',
                  {
                   type: 'category',
                   label: 'Warehouses and Lakes',
@@ -212,51 +211,18 @@ const sidebars = {
                             'connectors/others/mock-target',
                            ]
                    },
+                   'connectors/manage-connection',
+                   'connectors/pre-check',
+                   'connectors/trouble-shooting-connection',
          ]
     },
     {
       type: 'category',
-      label: 'Design Incremental Materialized Views',
-      link: { type: 'doc', id: 'design-incremental-views/README' },
-      items: [
-        'design-incremental-views/overview',
-        {
-          type: 'category',
-          label: 'Create Views',
-          link: { type: 'doc', id: 'design-incremental-views/create-views/README' },
-          items: [
-            'design-incremental-views/create-views/using-imv-guide',
-            'design-incremental-views/create-views/using-data-pipeline-ui',
-            'design-incremental-views/create-views/using-tapflow',
-          ],
-        },
-        'design-incremental-views/design-considerations',
-        'design-incremental-views/monitor-view-tasks',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Publish Data as APIs ',
-      link: {type: 'doc', id: 'publish-apis/README'},
-      items:[
-             'publish-apis/manage-app',
-             'publish-apis/create-api-service',
-             'publish-apis/create-api-client',
-             'publish-apis/create-api-server',
-             'publish-apis/audit-api',
-             'publish-apis/monitor-api-request',
-             'publish-apis/api-auth',
-             'publish-apis/query-via-restful',
-             'publish-apis/query-via-graphql',
-             'publish-apis/api-query-params',
-             ]
-    },
-    {
-      type: 'category',
-      label: 'Operational Data Hub--TBD',
+      label: 'Operational Data Hub',
       link: { type: 'doc', id: 'operational-data-hub/README' },
       items: [
         'operational-data-hub/plan-data-platform',
+        'operational-data-hub/set-up-odh',
         {
           type: 'category',
           label: 'Ingest and Sync Data (FDM Layer)',
@@ -298,17 +264,66 @@ const sidebars = {
             'operational-data-hub/advanced/share-mining'
           ],
         },
-        {
-         type: 'category',
-         label: 'Chat with Data via MCP (Preview)',
-         link: {type: 'doc', id: 'operational-data-hub/mcp/README'},
-         items: [
-                'operational-data-hub/mcp/introduction',
-                'operational-data-hub/mcp/quick-start'
-                ]
-         },
       ],
     },
+    {
+      type: 'category',
+      label: 'Design Incremental Materialized Views',
+      link: { type: 'doc', id: 'design-incremental-views/README' },
+      items: [
+        'design-incremental-views/overview',
+        {
+          type: 'category',
+          label: 'Create Views',
+          link: { type: 'doc', id: 'design-incremental-views/create-views/README' },
+          items: [
+            'design-incremental-views/create-views/using-imv-guide',
+            'design-incremental-views/create-views/using-data-pipeline-ui',
+            'design-incremental-views/create-views/using-tapflow',
+          ],
+        },
+        'design-incremental-views/design-considerations',
+        'design-incremental-views/monitor-view-tasks',
+        'design-incremental-views/manage-task',
+      ],
+    },
+    {
+     type: 'category',
+     label: 'Data Replication',
+     link: {type: 'doc', id: 'data-replication/README'},
+     items: [
+            'data-replication/create-task',
+            'data-replication/incremental-check',
+            'data-replication/manage-task',
+            'data-replication/monitor-task'
+            ]
+     },
+    {
+      type: 'category',
+      label: 'Publish Data as APIs ',
+      link: {type: 'doc', id: 'publish-apis/README'},
+      items:[
+             'publish-apis/manage-app',
+             'publish-apis/create-api-service',
+             'publish-apis/create-api-client',
+             'publish-apis/create-api-server',
+             'publish-apis/audit-api',
+             'publish-apis/monitor-api-request',
+             'publish-apis/api-auth',
+             'publish-apis/query-via-restful',
+             'publish-apis/query-via-graphql',
+             'publish-apis/api-query-params',
+             ]
+    },
+    {
+     type: 'category',
+     label: 'Chat with Data via MCP (Preview)',
+     link: {type: 'doc', id: 'mcp/README'},
+     items: [
+            'mcp/introduction',
+            'mcp/quick-start'
+            ]
+     },
     {
       type: 'category',
       label: 'System Admin ',
@@ -416,7 +431,8 @@ const sidebars = {
             'appendix/support'
         ]
     },
-    {
+    'release-notes-on-prem',
+    /*{
      type: 'category',
      label: 'Release Notes',
      link: {type: 'doc', id: 'release-notes/README'},
@@ -426,7 +442,7 @@ const sidebars = {
             'release-notes/release-notes-community'
         ]
     },
-    /*{
+    {
      type: 'category',
      label: 'User Guide',
      link: {type: 'doc', id: 'user-guide/README'},

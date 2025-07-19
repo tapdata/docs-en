@@ -1,7 +1,4 @@
 # Send Alert Emails via QQ Mail
-import Content from '../../reuse-content/_enterprise-features.md';
-
-<Content />
 
 TapData supports sending alert emails through SMTP protocol, enabling users to receive timely notifications in their commonly used email accounts, thus helping you promptly perceive operational anomalies and ensure the stability and reliability of task operations.
 

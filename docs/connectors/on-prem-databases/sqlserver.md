@@ -1,8 +1,6 @@
 # SQL Server
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 [SQL Server](https://www.microsoft.com/en-us/sql-server/) is a relational database management system (RDBMS) developed by Microsoft. TapData supports using SQL Server as both a source and target database, helping you quickly build real-time data synchronization pipelines. In this guide, we will walk you through how to add SQL Server as a data source in TapData.
 

@@ -1,8 +1,6 @@
 # ClickHouse
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [ClickHouse](https://clickhouse.com/) is a high-performance, column-oriented SQL database management system (DBMS) for online analytical processing (OLAP). This document will guide you on how to add ClickHouse as a data source in TapData, enabling you to use it as either a **source** or **target database** for building real-time data pipelines.
 

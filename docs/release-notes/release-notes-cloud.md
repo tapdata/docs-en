@@ -1,8 +1,5 @@
 # TapData Cloud Release Notes
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
 
 To enhance the user experience, TapData Cloud continuously enriches and optimizes product features and rectifies known defects by releasing new versions. This article provides an update log for TapData Cloud, helping you grasp the new feature specifications more effectively.
 
@@ -423,7 +420,7 @@ import TabItem from '@theme/TabItem';
 * Support for importing files from [MongoDB Relmig](https://www.mongodb.com/docs/relational-migrator/) version 1.3.0 and above, further enhancing ecosystem integration capabilities.
 * Support for synchronizing MongoDB [Oplog](https://www.mongodb.com/docs/manual/core/replica-set-oplog/) (operation log) data.
 * Support for filtering the time field of tables in the source node’s **[Advanced Settings](../user-guide/data-development/create-task.md#full-sql-query)** when configuring data transformation tasks (e.g., relative dates).
-* Display milestone information for tasks on the [Task List](../user-guide/copy-data/manage-task.md) page, helping users quickly understand key progress statuses.
+* Display milestone information for tasks on the [Task List](../design-incremental-views/manage-task.md) page, helping users quickly understand key progress statuses.
 
 #### Enhancements
 
@@ -439,8 +436,8 @@ import TabItem from '@theme/TabItem';
 
 #### New Features
 
-* [Data replication tasks](../user-guide/copy-data/create-task.md) now support table-level checkpoint resumption, allowing tasks to continue syncing from the last incomplete table upon restart.
-* Added the ability to quickly [set task labels](../user-guide/copy-data/manage-task.md) by dragging and dropping.
+* [Data replication tasks](../data-replication/create-task.md) now support table-level checkpoint resumption, allowing tasks to continue syncing from the last incomplete table upon restart.
+* Added the ability to quickly [set task labels](../design-incremental-views/manage-task.md) by dragging and dropping.
 * Added support for MySQL replica architecture, ensuring tasks continue to sync data normally after a failover event.
 
 #### Enhancements
@@ -510,7 +507,7 @@ import TabItem from '@theme/TabItem';
 ### Enhancements
 
 - Improved the onboarding process for users from the [Google Cloud Marketplace](https://console.cloud.google.com/marketplace/product/tapdata-public/detail).
-- Added a time filter option for the incremental phase in the [Task Monitoring Page](../user-guide/copy-data/monitor-task.md) to quickly observe RPS (Records Per Second) during the incremental phase.
+- Added a time filter option for the incremental phase in the [Task Monitoring Page](../data-replication/monitor-task.md) to quickly observe RPS (Records Per Second) during the incremental phase.
 - Added warning messages for critical operations that might impact the database (e.g., filtering source table data).
 - Refined the logic for unsubscribing after instance subscription expiration.
 
@@ -568,7 +565,7 @@ import TabItem from '@theme/TabItem';
 ### Enhancements
 
 - Upgraded data source connections, with [SQL Server](../connectors/on-prem-databases/sqlserver.md) now supporting SSL connections, enhancing data security.
-- Optimized field type adjustments in [data replication tasks](../user-guide/copy-data/create-task.md), allowing for direct selection of common types from the target database.
+- Optimized field type adjustments in [data replication tasks](../data-replication/create-task.md), allowing for direct selection of common types from the target database.
 - Improved task source node settings, enabling customization of the number of rows read per batch in the incremental phase, catering to performance needs of incremental synchronization.
 
 ### Bug Fixes
@@ -583,7 +580,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 * Support for loading table comments on [Oracle data sources](../connectors/on-prem-databases/oracle.md#advanced), which can be enabled in the **Advanced Settings** when configuring the data source. This makes it easier to quickly identify the business meaning of tables through their comments.
-* In the task [monitoring page](../user-guide/copy-data/monitor-task.md), support viewing RPS (Records Per Second) information based on the size of events.
+* In the task [monitoring page](../data-replication/monitor-task.md), support viewing RPS (Records Per Second) information based on the size of events.
 
 ### Enhancements
 
@@ -618,13 +615,13 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- Added support for [automatically creating sharded collections](../user-guide/copy-data/create-task.md#advanced-settings) when MongoDB Cluster is set as the target.
+- Added support for [automatically creating sharded collections](../data-replication/create-task.md#advanced-settings) when MongoDB Cluster is set as the target.
 - Add support for [Unwind Processing Node](../user-guide/data-development/process-node.md#Unwind), which can help you efficiently "unwind" each element in an array, converting each element into independent data rows.
 - Added support for disabling node capabilities when configuring tasks. You can access this feature by hovering over a node, which can help reduce the cost of data flow during processing.
 
 ### Enhancements
 
-- When [configuring data replication tasks](../user-guide/copy-data/create-task.md), you can now quickly filter tables with or without primary keys through the "**Selectable table range**" dropdown. Tables with primary keys include those without primary keys but with unique indexes.
+- When [configuring data replication tasks](../data-replication/create-task.md), you can now quickly filter tables with or without primary keys through the "**Selectable table range**" dropdown. Tables with primary keys include those without primary keys but with unique indexes.
 - Added a Demo data source to the onboarding guide flow for new users, helping you quickly complete the tutorial and set up your first data flow task.
 - Optimized the front-end display effects of operation buttons on the engine interface.
 

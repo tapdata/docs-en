@@ -4,19 +4,23 @@ Now that you've [planned your data platform](plan-data-platform.md) strategy, it
 
 ## Preparation
 
-Before you enable ODH in Tapdata, you’ll need a **MongoDB database (version 4.0 or higher)** to act as the storage engine for Tapdata’s core layers:
+To enable the Operational Data Hub (ODH) in Tapdata, you’ll first need to connect a MongoDB database (version 4.0 or above) as the core storage engine.
 
-- **Platform Cache (FDM Layer):** Real-time replica of your source systems.
-- **Processing Layer (MDM Layer):** Stores cleaned, business-ready models.
+This MongoDB instance will serve two critical roles:
 
-For connection instructions, see [Connect On-Premises MongoDB](../connectors/on-prem-databases/mongodb.md).
+- **Platform Cache (FDM Layer):** Stores real-time mirrored data from source systems.
+- **Processing Layer (MDM Layer):** Hosts cleaned, structured business data for analytics and API access.
+
+:::tip
+
+When creating the MongoDB connection, be sure to set the **connection role as both Source and Target**, so it can support full read/write capabilities across Tapdata’s layers. For step-by-step setup, refer to [Connect On-Premises MongoDB](../connectors/on-prem-databases/mongodb.md).
 
 <details><summary>Recommended best practices</summary>
-  At the top of the page, click on <b>click here to privede the connection information</b>, and fill in the MongoDB Atlas connection URL.
 
-  - Choose either a **single database** for both layers or **dedicated databases** for better isolation and scaling.
-- Deploy MongoDB as a **replica set** or **sharded cluster** to ensure high availability.
-- Plan sufficient storage capacity and ensure an Oplog window of at least 14 days for reliable CDC.
+
+- You can use one shared database for both FDM and MDM layers, or create dedicated databases for better isolation and scalability.
+- Deploy MongoDB as a [replica set](../platform-ops/production-deploy/install-replica-mongodb.md) to ensure high availability and fault tolerance.
+- Ensure the MongoDB instance has enough disk space and a 14-day Oplog retention to support stable real-time synchronization and CDC.
 
 </details>
 

@@ -1,8 +1,6 @@
 # Redis
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Redis is an open source (BSD licensed), in-memory data structure store used as a database, cache, message broker, and streaming engine. TapData Cloud supports real-time synchronization of data from relational databases (Oracle, MySQL, MongoDB, PostgreSQL, SQL Server) to Redis to help you quickly complete data flow. 
 This article describes how to connect to Redis data sources on TapData Cloud.

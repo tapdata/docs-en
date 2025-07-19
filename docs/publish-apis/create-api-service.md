@@ -1,7 +1,5 @@
 # Create Data API
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 To help developers easily dock interfaces and conveniently view API information published through TapData, we offer a data services feature.
 

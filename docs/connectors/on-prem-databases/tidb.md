@@ -1,8 +1,6 @@
 # TiDB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 [TiDB](https://docs.pingcap.com/tidb/stable) is an open-source, distributed relational database developed by PingCAP. It is a hybrid database product that supports both Online Transaction Processing (OLTP) and Online Analytical Processing (OLAP). After deploying the Agent, you can follow this tutorial to add TiDB as a data source in TapData, where it can be used as a **source** or **target database** to build data pipelines.
 

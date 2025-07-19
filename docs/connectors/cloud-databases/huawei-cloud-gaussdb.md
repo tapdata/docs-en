@@ -1,8 +1,6 @@
 # Huawei Cloud GaussDB
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 GaussDB is a distributed relational database independently developed by Huawei, supporting distributed transactions, cross-AZ deployment, and zero data loss. It offers scalability of over 1000 nodes, PB-level massive storage, providing enterprises with a comprehensive, stable, reliable, scalable, and high-performance enterprise-grade database service. TapData supports using GaussDB as a source or target database, helping you quickly build data flow pipelines. Next, we will introduce how to connect GaussDB data sources in the TapData platform.
 

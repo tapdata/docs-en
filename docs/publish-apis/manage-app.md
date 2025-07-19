@@ -1,7 +1,5 @@
 # Manage Application
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 To better manage and distinguish API services, we can categorize them based on business needs, assigning different APIs into different applications. This article introduces the specific operation process.
 

@@ -1,8 +1,6 @@
 # Oracle
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 Oracle Database is a powerful and widely used relational database management system (RDBMS) developed by Oracle Corporation. It provides a comprehensive set of features to store, organize and retrieve large amounts of data efficiently. Because of its scalability, reliability, concurrency and performance, it is a popular choice for large-scale enterprise applications. This document will guide you through adding an Oracle data source in TapData, which can be used as a **source** or **target database** to build real-time data pipelines.
 

@@ -1,8 +1,6 @@
 # Validate View Results
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Leveraging various proprietary technologies, TapData ensures maximum data consistency. In addition, TapData supports data table validation to further verify and ensure the correctness of data flow, meeting the stringent requirements of production environments. This document introduces the configuration process for data validation tasks.
 
@@ -88,4 +86,4 @@ For troubleshooting methods regarding failed validation tasks or inconsistent va
 
 ## See also
 
-[Incremental Data Validation](../../user-guide/incremental-check.md)
+[Incremental Data Validation](../../data-replication/incremental-check.md)

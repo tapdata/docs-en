@@ -1,8 +1,6 @@
 # Zoho Desk
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Zoho Desk is a cloud-based customer service platform that supports ticket management, customer communication, and service automation. By integrating Zoho Desk as a data source in TapData, you can stream key data such as tickets, contacts, and conversations in real time. This is ideal for building unified customer service views, customer profiles, and service response monitoring systems.
 

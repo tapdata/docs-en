@@ -1,8 +1,6 @@
 # CSV
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 A comma-separated values (CSV) file is a delimited text file that uses a comma to separate values. Each line of the file is a data record. Each record consists of one or more fields, separated by separator (such as commas, semicolons, or tabs).
 

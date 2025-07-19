@@ -1,8 +1,6 @@
 # Terminology
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 This article introduces common terms used in TapData to help you quickly understand product and feature concepts.
 

@@ -1,9 +1,5 @@
 # User Defined Processors
 
-import Content from '../../reuse-content/_enterprise-and-community-features.md';
-
-<Content />
-
 By customizing the node function, you have the flexibility to organize your JavaScript script into reusable processing nodes. Once created, these custom nodes can be easily referenced in your data transformation tasks without the need for rewriting the script. This significantly reduces the development workload. 
 
 In this article, we will guide you on how to use custom nodes effectively and provide use cases as examples for your reference.

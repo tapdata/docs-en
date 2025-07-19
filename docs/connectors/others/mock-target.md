@@ -1,7 +1,5 @@
 # Mock Target
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 The Mock Target can be used as a target database, primarily for performance testing scenarios.
 

@@ -1,8 +1,5 @@
 # Quickly Create Data Replication Task
 
-import Content from '../../reuse-content/_cloud-features.md';
-
-<Content />
 
 The data replication feature helps you achieve real-time synchronization between homogeneous or heterogeneous data sources. It is suitable for various business scenarios such as data migration/synchronization, disaster recovery, and read performance expansion. TapData supports a form-based wizard to guide you through creating replication tasks quickly. This article explains the detailed process.
 

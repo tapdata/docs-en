@@ -1,8 +1,6 @@
 # GaussDB (DWS)
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 GaussDB (DWS) is a fully managed, enterprise-grade cloud data warehouse service offering zero-maintenance, online scaling, and efficient multi-source data loading capabilities. It is compatible with the PostgreSQL ecosystem. TapData supports using GaussDB (DWS) as both a source and a target, enabling you to quickly build data pipelines. This guide explains how to connect GaussDB (DWS) in the TapData platform.
 

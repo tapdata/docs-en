@@ -10,9 +10,7 @@ keywords:
 
 # MongoDB Atlas
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [TapData](https://tapdata.io/) supports [MongoDB Atlas](https://www.mongodb.com/atlas) as a data source, enabling real-time data sync, incremental replication, and seamless cloud-to-local data integration.
 

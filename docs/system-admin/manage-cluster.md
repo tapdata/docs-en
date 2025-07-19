@@ -1,7 +1,5 @@
 # Manage Clusters
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 Through the Cluster Management page, you can view the running status of all components within the current cluster, the number of external connections established, and other information. It also supports management operations.
 

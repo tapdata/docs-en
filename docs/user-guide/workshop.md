@@ -1,7 +1,5 @@
 # Dashboard
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 The dashboard provides a convenient platform to swiftly understand the product's functionality and effortlessly perform tasks like creating agents, establishing connections, and setting up tasks. Based on the product series you have chosen, refer to the following documentation.
 

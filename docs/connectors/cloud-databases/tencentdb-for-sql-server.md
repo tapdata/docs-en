@@ -1,8 +1,6 @@
 # TencentDB for SQL Server
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Tencent Cloud TencentDB for SQL Server is one of the most popular commercial databases in the industry, providing perfect compatibility with Windows-based applications. 
 

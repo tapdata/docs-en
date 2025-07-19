@@ -1,8 +1,6 @@
 # Generate Data Pipeline with One Click
 
-import Content from '../../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 In the Data Integration Mode, you can simply drag the source table to the target database to generate a data pipeline with one click, greatly simplifying the task configuration process and real-time synchronization of source data. This article introduce how to generate a data pipeline.
 

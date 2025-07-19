@@ -1,8 +1,6 @@
 # Generate Data Pipeline with One Click
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In the **Board** view mode, you can simply drag the source table to the target database to generate a data pipeline with one click, greatly simplifying the task configuration process and real-time synchronization of source data. This article introduce how to generate a data pipeline.
 
@@ -28,5 +26,5 @@ In the **Board** view mode, you can simply drag the source table to the target d
 
    - **Save and Run**: No additional action is required. TapData will automatically create a data transformation task and run it to synchronize your source tables in real-time to the selected target data source. In this case, the **customer** table in the source MySQL will be synchronized to MongoDB in real-time.
 
-      You can also click the task name in the target data card to enter the task monitoring page to see the detailed operation status. For more information, see [Monitoring Tasks](monitor-task.md).
+      You can also click the task name in the target data card to enter the task monitoring page to see the detailed operation status. For more information, see [Monitoring Tasks](../../data-replication/monitor-task.md).
 

@@ -1,7 +1,5 @@
 # Editions Comparison
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 TapData offers three different editions of its product: TapData Cloud, TapData Enterprise, and TapData Community, catering to different user needs and scenarios. Below is a detailed introduction to their features and applicable scenarios.
 

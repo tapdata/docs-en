@@ -1,9 +1,5 @@
 # Incremental Data Validation
 
-import Content from '../reuse-content/_enterprise-features.md';
-
-<Content />
-
 Incremental data validation is a real-time mechanism designed to enhance data accuracy and consistency. It periodically samples and compares newly inserted or updated records between the source and target systems to detect and automatically correct inconsistencies.
 
 ## Prerequisites
@@ -34,7 +30,7 @@ To address these challenges, TapData introduces **Incremental Data Validation**,
 
 ## Procedure
 
-1. [Log in to TapData Platform](log-in.md).
+1. [Log in to TapData Platform](../user-guide/log-in.md).
 
 2. Create a data replication or transformation task.
 

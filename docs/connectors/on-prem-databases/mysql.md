@@ -1,7 +1,5 @@
 # MySQL
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 MySQL is the most widely used open-source relational database, serving as the data storage solution for many websites, applications, and commercial products. This document will guide you through adding an MySQL data source in TapData, which can be used as a **source** or **target database** to build real-time data pipelines.
 

@@ -1,7 +1,5 @@
 # Adding Processing Nodes to Replication Tasks
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 TapData supports integrating processing nodes into data replication tasks for requirements like data filtering or field adjustments.
 
@@ -153,7 +151,7 @@ In this case, the source database is in UTC+8, and the target database is in UTC
     - **Select the time type to operate on**: TapData auto-detects supportable time types. You should choose based on your business requirements. Additionally, you can click the **Model** tab to see the relationship between time types and column names.
     - **Select the operation method**: Supports adding or subtracting time, in integer hours. In this case, we choose to subtract 8 hours.
 
-6. Complete the configuration for the target node and the task. For specific steps, see [Creating a Data Replication Task](create-task.md).
+6. Complete the configuration for the target node and the task. For specific steps, see [Creating a Data Replication Task](../../data-replication/create-task.md).
 
 **Result Verification**:
 

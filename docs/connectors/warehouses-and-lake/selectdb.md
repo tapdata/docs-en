@@ -10,9 +10,7 @@ keywords:
 
 # SelectDB
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [TapData](https://tapdata.io/) supports [SelectDB Cloud](https://www.selectdb.com/) as a real-time data source for analytics, reporting, and high-performance data warehouse integration.
 

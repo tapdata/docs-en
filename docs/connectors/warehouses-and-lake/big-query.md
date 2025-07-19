@@ -1,8 +1,6 @@
 # BigQuery
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 TapData Cloud offers seamless support for data synchronization and data transformation tasks using [BigQuery](https://cloud.google.com/bigquery/docs) as the target database. BigQuery is a highly efficient, serverless, and cost-effective enterprise data warehouse that provides extensive capabilities for BI (Business Intelligence), machine learning, and AI (Artificial Intelligence). With TapData Cloud, you can easily integrate BigQuery data sources into your workflows. 
 

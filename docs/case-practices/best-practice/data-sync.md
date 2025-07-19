@@ -1,7 +1,5 @@
 # Data Sync Best Practices
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 This guide aims to provide best practices for data synchronization using TapData Cloud. We will discuss in detail aspects like data source analysis, task configuration, and monitoring, to help you build efficient and reliable data synchronization tasks.
 
@@ -34,11 +32,11 @@ Based on the understanding of the data source, the next step is to configure dat
 
 ## Monitor and Maintain
 
-After starting the task, regularly check the task [monitoring page](../../user-guide/copy-data/monitor-task.md) for details such as the synchronization rate during the full synchronization phase and changes in the source database data, so you can ensure timely identification and resolution of any issues. If you encounter task anomalies, consult the task logs for detailed [Error Codes and Solutions](../../user-guide/error-code-solution.md) to facilitate troubleshooting.
+After starting the task, regularly check the task [monitoring page](../../data-replication/monitor-task.md) for details such as the synchronization rate during the full synchronization phase and changes in the source database data, so you can ensure timely identification and resolution of any issues. If you encounter task anomalies, consult the task logs for detailed [Error Codes and Solutions](../../user-guide/error-code-solution.md) to facilitate troubleshooting.
 
 Additionally, during the task execution, you can log into the TapData server and use commands like `top` or `free` to monitor whether the server's compute or memory resources have reached their limits.
 
 ## See also
 
-* [Create Data Replication Tasks](../../user-guide/copy-data/README.md)
+* [Create Data Replication Tasks](../../data-replication/README.md)
 * [Frequently Asked Questions](../../faq/README.md)

@@ -1,9 +1,5 @@
 # Billing
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
-
 This section will introduce the billing details of the TapData Cloud product.
 
 :::tip

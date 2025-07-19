@@ -1,9 +1,5 @@
 # Manage Subscription
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
-
 For annual/monthly subscription instances, TapData Cloud will remind you to renew one month before the expiration date. To avoid any impact on your business, please renew your subscription in time before it expires, or choose the **Continuous Annual/Monthly** billing method at the time of purchase. Additionally, you can view traffic bills in the Subscription Center.
 
 

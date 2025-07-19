@@ -1,8 +1,6 @@
 # Excel to MySQL Real-Time Sync
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Excel is a wide range of data statistics and data analysis software. TapData enables reading local, FTP, SFTP, SMB, OSS, or S3FS on Excel files to meet diverse data flow needs.
 

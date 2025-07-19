@@ -1,8 +1,6 @@
 # How to Build a Real-time Data Warehouse by Syncing MySQL to ClickHouse
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 ClickHouse® is an open-source column-oriented database management system that allows generating analytical data reports in real-time. Its official ClickHouse Cloud offers scalable, real-time analytical processing without the need to manage infrastructure. With storage and computation decoupled, ClickHouse Cloud can auto-scale to accommodate modern workloads, ensuring high-speed query processing.
 

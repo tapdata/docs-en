@@ -1,8 +1,6 @@
 # Monitor Data Transformation Task
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Once the data transformation task is started, the page will automatically redirect to the task monitoring page. From there, you can monitor the task's operation details, such as the status of the Agent, data synchronization progress, task progress, alert settings, and other relevant information.
 

@@ -1,8 +1,6 @@
 # ActiveMQ
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 ActiveMQ is an open-source Java message broker that supports multiple industry-standard protocols. It is widely used for enterprise-level messaging, ideal for scenarios such as asynchronous processing, application decoupling, traffic peak shaving (e.g., flash sales), log processing, and message communication. This guide will walk you through adding ActiveMQ as a data source in TapData, enabling seamless integration as either a source or a target to build efficient data pipelines and achieve real-time data synchronization.
 

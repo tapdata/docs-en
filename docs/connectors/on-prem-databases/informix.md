@@ -1,8 +1,6 @@
 # Informix
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Informix is a product family within IBM's Information Management division that is centered on several relational database management system and Multi-model database offerings.
 

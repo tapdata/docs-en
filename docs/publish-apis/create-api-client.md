@@ -1,7 +1,5 @@
 # Create a Client
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 To manage and create API calls, an API client is required. Applications that developers design and develop, or any other applications needing to call API interfaces (referred to collectively as client applications), must register with the data publishing system. Upon registration, you will receive a unique client ID (client_id) and client secret (client_secret).
 

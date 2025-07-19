@@ -1,9 +1,5 @@
 # Deploy HA TapData Enterprise (2 Nodes)
 
-import Content from '../../reuse-content/_enterprise-features.md';
-
-<Content />
-
 To ensure reliability in production environments, we recommend deploying TapData in a high-availability setup. This guide will show you how to quickly deploy a high-availability TapData service on a local Linux platform.
 
 ## Software & Hardware Requirements

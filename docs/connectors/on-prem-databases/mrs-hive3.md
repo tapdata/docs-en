@@ -1,8 +1,6 @@
 # mrs-hive3
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Follow these instructions to ensure that the Hive database is successfully added and used in TapData Cloud.
 

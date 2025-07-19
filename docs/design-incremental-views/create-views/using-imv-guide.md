@@ -1,8 +1,6 @@
 # Build View with IMV Guide
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Use TapData’s IMV Guide to design real-time, incremental materialized views that deliver analysis-ready data without complex SQL or heavy ETL. Ideal for BI dashboards, marketing analytics, and API integrations—all with a simple, no-code experience.
 

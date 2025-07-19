@@ -1,8 +1,6 @@
 # Supported Data Sources
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 TapData supports rich data sources as follows:
 

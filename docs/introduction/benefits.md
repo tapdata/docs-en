@@ -1,8 +1,6 @@
 # Benefits
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 ## Innovative Real-time Data Synchronization
 

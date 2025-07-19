@@ -18,6 +18,7 @@ Before you start, make sure you’re set up for a smooth experience:
 
 - [ODH mode is enabled](../set-up-odh.md) on your Tapdata workspace.
 - Your source database connections are configured and tested, for details, see [Connect Data Sources](../../connectors/README.md).
+- Your source tables must have a primary key or unique index.
 
 ## Procedure
 

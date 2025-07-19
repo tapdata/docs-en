@@ -1,8 +1,6 @@
 # Kafka
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Apache Kafka is an open-source distributed event streaming platform that is utilized by numerous companies for a variety of purposes, including high-performance data pipelines, streaming analytics, data integration, and crucial applications.
 

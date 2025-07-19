@@ -1,9 +1,5 @@
 # Data Security and Network Configuration
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
-
 This article lists common problems related to data security and network configuration.
 
 ## How does data flow when using TapData Cloud?

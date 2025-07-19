@@ -1,8 +1,6 @@
 # Step 3: Build Real-time Materialized View
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 This article shows you how to use TapData to build **Incremental Materialized Views (IMV)**—real-time, high-performance analytics tables that combine data from multiple sources to speed up your insights and decision-making.
 

@@ -1,7 +1,5 @@
 # Manage Connection
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 TapData saves the connection information for each database using a connection, allowing you to reference it directly when creating data replication/development tasks. This eliminates the need for repetitive configuration and improves the convenience of operation and maintenance. 
 

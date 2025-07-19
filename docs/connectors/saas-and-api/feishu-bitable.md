@@ -1,8 +1,6 @@
 # Feishu Bitable
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 [Feishu Bitable](https://open.feishu.cn/document/server-docs/docs/bitable-v1/bitable-overview) is a new business management tool that helps you restructure your work applications and team collaboration models. It enables efficient online data collaboration, allows you to build personalized applications at will, and easily manage all your business data.
 

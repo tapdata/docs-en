@@ -1,8 +1,6 @@
 # Application Scenarios
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 TapData is a next-generation real-time data platform that centralizes core enterprise data in real-time into a centralized data platform. It supports downstream interactive applications, microservices, or interactive analytics by providing real-time data through APIs or reverse synchronization.
 

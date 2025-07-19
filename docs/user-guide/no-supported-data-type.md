@@ -1,8 +1,6 @@
 # Data Type Support Description
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 :::tip
 

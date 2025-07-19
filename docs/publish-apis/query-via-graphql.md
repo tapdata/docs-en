@@ -1,7 +1,5 @@
 # Query API via GraphQL
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 GraphQL provides a query language that allows you to request data from the server in a declarative way, such as specific data in a schema. TapData has integrated GraphQL, allowing you to execute requests through the API service address.
 

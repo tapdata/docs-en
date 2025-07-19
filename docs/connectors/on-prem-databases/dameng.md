@@ -1,7 +1,5 @@
 # Dameng
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 [Dameng Database Management System](https://en.dameng.com/) is a new generation of large-scale general-purpose relational database developed by Dameng. It fully supports SQL standards and mainstream programming language interfaces/development frameworks. With its hybrid row-column storage technology, it caters to both OLAP and OLTP, meeting the needs of HTAP (Hybrid Transactional and Analytical Processing) applications. This document will guide you on how to add Dameng as a data source in TapData, which can subsequently be used as a source or target database to build data pipelines.
 

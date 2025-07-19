@@ -1,8 +1,6 @@
 # Azure Cosmos DB
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Azure Cosmos DB is a fully managed NoSQL and relational database for modern app development including. This article explains how to connect Azure Cosmos DB on the TapData platform, assisting in the rapid circulation of cloud data.
 

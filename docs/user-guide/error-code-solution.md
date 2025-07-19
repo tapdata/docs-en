@@ -1,8 +1,6 @@
 # Task Error Codes and Solutions
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 If you encounter an exception with a task, you can view the relevant log information at the bottom of the task's [monitoring page](data-development/monitor-task.md). For common issues, TapData has codified them into specific error codes for easier lookup, and provides the cause of the error and its solution.
 

@@ -1,7 +1,4 @@
 # Billing Overview
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
 
 This article introduces billing information such as billing items, billing methods and price descriptions in TapData Cloud.
 

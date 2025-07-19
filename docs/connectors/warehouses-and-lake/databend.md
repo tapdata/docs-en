@@ -1,8 +1,6 @@
 # Databend
 
-import Content1 from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content1 />
 
 Databend is an open-source, elastic, and workload-aware modern cloud data warehouse. Utilizing the latest vectorized query processing technology, Databend helps users perform rapid data analysis on object storage.
 

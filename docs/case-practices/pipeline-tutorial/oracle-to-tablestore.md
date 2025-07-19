@@ -1,7 +1,5 @@
 # Oracle to Tablestore Real-Time Sync
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [Alibaba Cloud Tablestore](https://www.alibabacloud.com/help/en/tablestore) is a serverless table storage service designed for handling large volumes of structured data. It also provides a comprehensive solution for IoT scenarios, offering optimized data storage capabilities. TapData enables real-time synchronization of Oracle data to Tablestore, providing seamless data flow and facilitating easy adaptation to data architecture changes and big data analysis scenarios.
 
@@ -47,4 +45,4 @@ Also note the reference [data type support](../../user-guide/no-supported-data-t
 
 On the Task List page, you can also start, stop, monitor, edit, copy, reset, and delete tasks.
 
-For more information, See [Management Tasks](../../user-guide/copy-data/manage-task.md).
+For more information, See [Management Tasks](../../design-incremental-views/manage-task.md).

@@ -1,9 +1,5 @@
 # Notification and Alert Settings
 
-import Content from '../../reuse-content/_enterprise-features.md';
-
-<Content />
-
 :::tip
 
 If you are using TapData Cloud, notification messages and configuration entry points are located at the top right of the page. You can set notification rules and alert recipients.

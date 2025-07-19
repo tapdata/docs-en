@@ -1,7 +1,4 @@
 # Manage External Storage
-import Content from '../../reuse-content/_enterprise-and-community-features.md';
-
-<Content />
 
 To facilitate the quick reading of task-related information subsequently, TapData stores necessary configurations, incremental logs of source tables, and other information related to the task in its internal MongoDB database. To store more data, you can create an external database to store relevant data.
 

@@ -10,9 +10,7 @@ keywords:
 
 # MongoDB Below 3.4
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [TapData](https://tapdata.io/) supports [MongoDB](https://www.mongodb.com/) (3.4 and earlier) as a data source, enabling real-time CDC sync, incremental replication, and flexible pipeline building.
 

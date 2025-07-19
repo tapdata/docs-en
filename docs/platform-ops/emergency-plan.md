@@ -1,9 +1,5 @@
 # Emergency Plans
 
-import Content from '../reuse-content/_enterprise-features.md';
-
-<Content />
-
 This document provides a comprehensive emergency handling process and contingency strategies for TapData products, aiming to help you respond quickly and effectively in the event of an emergency or product issue, thereby mitigating the impact of failures and enhancing the overall stability and security of the product.
 
 :::tip

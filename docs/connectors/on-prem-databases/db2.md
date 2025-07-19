@@ -1,8 +1,6 @@
 # Db2
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 [IBM Db2](https://www.ibm.com/docs/zh/db2) is a relational database known for its high performance, scalability, and reliability in managing structured data. TapData supports using Db2 as both a source and target database, helping you quickly build data pipelines. This guide will walk you through connecting a Db2 data source in TapData.
 

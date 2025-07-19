@@ -1,8 +1,6 @@
 # Enable Real-Time Data Hub
 
-import Content from '../../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Due to digital transformation, the presence of isolated data, data fragmentation, or data silos has emerged as a significant challenge. Moreover, there is a growing demand for data in business operations. However, traditional data delivery methods pose limitations, such as lengthy processes and substantial resource requirements. This situation calls for a solution that enables organizations to swiftly establish data flow pipelines and unlock the value of their data.
 

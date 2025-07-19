@@ -1,7 +1,4 @@
 # System Settings
-import Content from '../../reuse-content/_enterprise-features.md';
-
-<Content />
 
 The system settings feature is mainly used to configure some parameters of the system, such as logging, SMTP, API distribution, and more.
 

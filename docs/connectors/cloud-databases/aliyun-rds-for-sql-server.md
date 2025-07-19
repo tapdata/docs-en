@@ -1,8 +1,6 @@
 # Aliyun RDS for SQL Server
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Aliyun RDS for SQL Server is an on-demand database hosting service for SQL Server with automated monitoring, backup and disaster recovery capabilities.
 

@@ -1,8 +1,6 @@
 # Step 1: Launch TapData
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 TapData offers various deployment options to cater to diverse needs, from quick validation to highly secure on-premises deployment. This guide uses **TapData Cloud** as an example to help you get started quickly while briefly introducing other deployment methods.
 

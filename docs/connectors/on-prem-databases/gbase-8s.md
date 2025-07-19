@@ -1,8 +1,6 @@
 # GBase 8s
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 GBase 8s is a database developed based on Informix, retaining most of the native syntax, features, and field types, while also incorporating many advantages of Oracle. TapData supports using GBase 8s as a target database, helping you quickly build real-time data synchronization pipelines. In this article, we will explain how to add a GBase 8s in TapData.
 

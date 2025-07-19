@@ -1,9 +1,5 @@
 # PostgreSQL
 
-import Content1 from '../../reuse-content/_all-features.md';
-
-<Content />
-
 [PostgreSQL](https://www.postgresql.org/) is a powerful open-source object-relational database management system (ORDBMS). TapData supports using PostgreSQL as both a source and target database, helping you quickly build real-time data pipelines. This document will introduce how to connect PostgreSQL as a data source in the TapData platform.
 
 ```mdx-code-block

@@ -1,8 +1,6 @@
 # Connect to Data Sources
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 TapData supports nearly a hundred [diverse data sources](supported-data-sources.md), including commercial databases, open-source databases, cloud databases, data warehouses, data lakes, message queues, SaaS platforms, files, and custom data sources.
 

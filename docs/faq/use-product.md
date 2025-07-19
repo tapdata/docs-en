@@ -1,8 +1,6 @@
 # Product Features/Usage
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 This article lists common questions encountered while using TapData.
 
@@ -48,17 +46,9 @@ To avoid such issues, set the lifespan of uncommitted transactions in the source
 
 ## Does TapData support publishing tables as API services?
 
-import Content1 from '../reuse-content/_enterprise-features.md';
-
-<Content1 />
-
 Yes (for single tables), you can publish processed tables [as API services](../publish-apis/create-api-service.md) to allow other applications to easily access and retrieve data.
 
 ## How to publish complex multi-table queries as API services?
-
-import Content2 from '../reuse-content/_enterprise-features.md';
-
-<Content2 />
 
 For complex multi-table query scenarios, common solutions include materialized views and ad-hoc queries:
 

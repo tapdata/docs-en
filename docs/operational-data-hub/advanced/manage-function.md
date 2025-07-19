@@ -1,7 +1,4 @@
 # Manage Functions
-import Content from '../../reuse-content/_enterprise-and-community-features.md';
-
-<Content />
 
 TapData supports a wide range of functions to facilitate the definition of processing steps, allowing for their use in [JavaScript (JS) nodes](../../user-guide/data-development/process-node.md#js-process). Additionally, you can freely define custom functions or import third-party JAR packages to introduce new functions as needed.
 

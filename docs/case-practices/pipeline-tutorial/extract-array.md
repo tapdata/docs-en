@@ -1,7 +1,5 @@
 # Building an Array Extraction Link to Simplify Data Analysis
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In modern payment systems, the analysis of payment data is crucial for understanding user behavior, optimizing business processes, and making decisions. For database tables storing payment data, payment data is sometimes written as a JSON string in a field, complicating its structure and making subsequent analysis complex.
 

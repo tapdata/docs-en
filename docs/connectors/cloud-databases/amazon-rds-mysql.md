@@ -1,8 +1,6 @@
 # Amazon RDS for MySQL
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Follow the instructions below to successfully add and use Amazon RDS for MySQL database in TapData Cloud.
 

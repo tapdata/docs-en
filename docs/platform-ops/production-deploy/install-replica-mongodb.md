@@ -1,9 +1,5 @@
 # Deploy MongoDB Replica Set
 
-import Content from '../../reuse-content/_enterprise-and-community-features.md';
-
-<Content />
-
 To ensure high availability in production environments, deploying a MongoDB replica set is required before deploying TapData, as it stores essential configurations, shared cache, and other information in MongoDB databases. This document outlines the deployment process.
 
 ## Deployment Architecture

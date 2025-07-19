@@ -1,14 +1,12 @@
 # Task Log Error and Troubleshooting Guide
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 This document aims to provide you with a detailed guide for identifying and resolving common errors found in the logs of data synchronization tasks. We delve into the causes of various common errors and offer clear, practical troubleshooting steps to help users quickly locate and solve issues.
 
 ## Viewing Task Logs
 
-Task runtime logs can be viewed at the bottom of the [task monitoring page](../../user-guide/copy-data/monitor-task.md#error-code). For common issues, TapData has solidified them into specific [error codes](error-code.md) for your convenience, along with their causes and solutions. If the relevant error code is not found, you can also troubleshoot based on the log keywords provided in this document or contact technical support.
+Task runtime logs can be viewed at the bottom of the [task monitoring page](../../data-replication/monitor-task.md#error-code). For common issues, TapData has solidified them into specific [error codes](error-code.md) for your convenience, along with their causes and solutions. If the relevant error code is not found, you can also troubleshoot based on the log keywords provided in this document or contact technical support.
 
 ## Oracle
 

@@ -1,7 +1,5 @@
 # Real-Time Data Hub
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 The Real-Time Data Hub supports two modes, catering to different data governance needs.
 

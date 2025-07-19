@@ -1,7 +1,5 @@
 # Publish Data API
-import Content from '../reuse-content/_enterprise-features.md';
 
-<Content />
 
 TapData supports publishing table data as APIs, aiding enterprises in building a unified data services platform. Various applications can use these APIs to provide support for services such as push notifications. The recommended sequence of use is as follows:
 

@@ -1,8 +1,6 @@
 # Ensure Data Migration with Breakpoint Continuation
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In scenarios involving massive data migration, you can utilize TapData's full resumption from breakpoint feature to segment and migrate data, enhancing the reliability of data migration and ensuring successful execution of migration tasks.
 
@@ -127,7 +125,7 @@ In this case, we will demonstrate the specific configuration process for data mi
 
    :::tip
 
-   If the pre-check fails, adjust according to the log prompts on the current page. For more information, see [Task Pre-Check Explanation](../../user-guide/pre-check.md).
+   If the pre-check fails, adjust according to the log prompts on the current page. For more information, see [Task Pre-Check Explanation](../../connectors/pre-check.md).
 
    :::
 

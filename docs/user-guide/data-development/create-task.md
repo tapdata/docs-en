@@ -1,8 +1,6 @@
 # Create a Data Transformation Task
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In TapData, data transformation tasks provide the capability to incorporate processing nodes between source and target data nodes. These processing nodes serve as valuable tools for efficiently carrying out data processing tasks, such as merging multiple tables, splitting data, and adding or removing fields. 
 

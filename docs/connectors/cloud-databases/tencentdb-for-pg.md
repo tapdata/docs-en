@@ -1,8 +1,6 @@
 # TencentDB for PG
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 ## Supported Versions
 

@@ -1,9 +1,5 @@
 # Create Live Cache
 
-import Content from '../../reuse-content/_enterprise-and-community-features.md';
-
-<Content />
-
 Live Cache is primarily designed to alleviate the pressure on the source database by multiple tasks processing some hot data. By placing these data in the cache, it can be used by multiple tasks.
 
 ## Create Live Cache

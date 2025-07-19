@@ -1,7 +1,4 @@
 # Manage Agent
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
 
 TapData Cloud provides visual management and maintenance capabilities for Agents. You can manage installed Agents through the dedicated page or by executing commands.
 

@@ -1,8 +1,6 @@
 # Real-Time Data Hub Dashboard
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Once the data service platform mode is activated, the page will be organized according to the previously mentioned [hierarchy](daas-mode/enable-daas-mode.md). You can effortlessly drag the table to the next level, which will automatically create data replication tasks and streamline the data flow.
 

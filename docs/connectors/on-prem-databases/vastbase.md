@@ -1,8 +1,6 @@
 # Vastbase
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Vastbase is an enterprise-level relational database based on the open-source openGauss kernel. It adds numerous Oracle-compatible features and security enhancements to the original functionality, along with enterprise-level capabilities in specialized application areas such as GIS and stream computing. TapData supports using Vastbase as either a source or target database to build data pipelines. This document explains how to add a Vastbase data source in TapData.
 

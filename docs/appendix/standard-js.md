@@ -1,8 +1,5 @@
 # Standard JS Built-in Function
 
-import Content from '../reuse-content/_all-features.md';
-
-<Content />
 
 Standard JS nodes can only process and operate on data records. If you require the usage of system built-in functions for external calls, such as networking or database operations, you can utilize [enhanced JS nodes](enhanced-js.md).
 

@@ -1,8 +1,6 @@
 # Data Integration Dashboard
 
-import Content from '../../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 TapData's data console is designed with Data Integration Mode as its default setting. This mode is specifically designed for tasks such as data replication, synchronization, migrating data to the cloud, and building ETL pipelines. It offers a user-friendly interface where you can easily drag and drop the source table onto the target, allowing for the automatic creation of data replication tasks.
 

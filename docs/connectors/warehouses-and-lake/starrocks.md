@@ -1,9 +1,5 @@
 # StarRocks
 
-import Content1 from '../../reuse-content/_enterprise-features.md';
-
-<Content1 />
-
 StarRocks is a high-performance data warehouse designed for real-time analytics. It features a vectorized execution engine and an MPP architecture, supporting high concurrency, multidimensional analysis, and real-time data updates. Tapdata supports using StarRocks as a target in data pipelines to enable real-time data ingestion and analytics acceleration at scale.
 
 ```mdx-code-block

@@ -1,8 +1,6 @@
 # Lark-IM
 
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 Lark is an enterprise collaboration and management platform that integrates instant messaging, audio and video conferencing, and open applications. By configuring **Lark-IM (Lark chat messages)** as a target in Tapdata, you can push alert events, operational metrics, or custom notifications from data pipelines to Lark in real time, enabling real-time alerting, automated collaboration, and decision support for your teams.
 
