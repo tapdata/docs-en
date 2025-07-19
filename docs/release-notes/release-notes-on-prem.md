@@ -22,8 +22,8 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- Added status monitoring for incremental log mining plugins in the [Cluster Management](../user-guide/manage-system/manage-cluster.md) module to improve observability and troubleshooting efficiency.
-- Support for [customizing alert email content](../user-guide/other-settings/notification.md#mail-alert), enhancing readability and flexibility of notifications.
+- Added status monitoring for incremental log mining plugins in the [Cluster Management](../system-admin/manage-cluster.md) module to improve observability and troubleshooting efficiency.
+- Support for [customizing alert email content](../system-admin/other-settings/notification.md#mail-alert), enhancing readability and flexibility of notifications.
 - Support for importing/exporting [data verification task configurations](../design-incremental-views/validate-views.md), making it easier to migrate or reuse configurations between test and production environments.
 
 ### Enhancements
@@ -176,7 +176,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- Added support for restricting [single-session login](../user-guide/other-settings/system-settings.md#login) per account to enhance login security.
+- Added support for restricting [single-session login](../system-admin/other-settings/system-settings.md#login) per account to enhance login security.
 
 ### Enhancements
 
@@ -285,7 +285,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 * Doris, ClickHouse, KingBaseES-R6, PostgreSQL, SQL Server, and MongoDB have passed the TapData certification testing process and have been upgraded to [Certified Data Sources](../connectors/supported-data-sources.md), providing more advanced features and enhanced production stability.
-* Support for [user login authentication via LDAP](../user-guide/other-settings/system-settings.md#ldap) integration with Active Directory (AD), enabling unified user identity management.
+* Support for [user login authentication via LDAP](../system-admin/other-settings/system-settings.md#ldap) integration with Active Directory (AD), enabling unified user identity management.
 * When using PostgreSQL as a source, it is now possible to specify the time point for incremental data in task settings.
 
 ### Enhancements
@@ -458,7 +458,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* Added support for [granting data verification permissions](../user-guide/manage-system/manage-role.md) to users, enhancing permission management granularity.
+* Added support for [granting data verification permissions](../system-admin/manage-role.md) to users, enhancing permission management granularity.
 * Introduced Mock Source and Mock Target data sources for data migration testing scenarios.
 
 ### Enhancements
@@ -478,7 +478,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 * Added support for dynamically generating date suffixes for target table names when [configuring data transformation tasks](../user-guide/data-development/create-task.md#target-node-set), suitable for daily batch processing scenarios.
-* Added support for [integrating with third-party platforms via Webhook](../user-guide/other-settings/notification.md) to enable more alert notification channels.
+* Added support for [integrating with third-party platforms via Webhook](../system-admin/other-settings/notification.md) to enable more alert notification channels.
 * Added support for performing Hash validation between MySQL, Oracle, SQL Server, PostgreSQL, and GaussDB data sources when [configuring data validation tasks](../design-incremental-views/validate-views.md), improving validation efficiency.
 * Added support for setting partitions when configuring Doris data sources.
 * Added support for the Oracle mode of OceanBase data sources, with the data source name OceanBase(Oracle).
@@ -533,7 +533,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* Support for [assigning labels](../user-guide/manage-system/manage-cluster.md) to **sync governance services** (Agents), allowing for subsequent assignment of tasks to agents with specific labels.
+* Support for [assigning labels](../system-admin/manage-cluster.md) to **sync governance services** (Agents), allowing for subsequent assignment of tasks to agents with specific labels.
 * Supported real-time log parsing for [TiDB data sources](../connectors/on-prem-databases/tidb.md), meeting the needs for incremental data synchronization.
 * During the full synchronization phase from Oracle to MySQL, support for syncing unique indexes and regular indexes that do not utilize functions.
 * Added the ability to skip errors encountered during the last run when starting tasks.
@@ -711,12 +711,12 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-* Enhanced [data source error codes](../administration/troubleshooting/error-code.md), covering more scenarios and providing solutions.
+* Enhanced [data source error codes](../platform-ops/troubleshooting/error-code.md), covering more scenarios and providing solutions.
 
 ## V3.5.1
 
 ### New Features
-- Now when [creating a role](../user-guide/manage-system/manage-role.md), it supports the granular granting of functional and data rights.
+- Now when [creating a role](../system-admin/manage-role.md), it supports the granular granting of functional and data rights.
 
 ### Enhancements
 - Enhanced the UI prompts and guidance when setting up core data sources like PostgreSQL, Redis, etc.
@@ -759,7 +759,7 @@ import TabItem from '@theme/TabItem';
 - In data service platform mode, when dragging a data table to the platform cache layer to generate a task, it supports [setting the synchronization type of the task to be full or incremental](../user-guide/real-time-data-hub/daas-mode/create-daas-task.md#release330-task).
 
 ### Enhancements
-- Introduced [rolling upgrades](../administration/operation.md#release330-upgrade), which, compared to the downtime upgrade method, further reduces business impacts.
+- Introduced [rolling upgrades](../platform-ops/operation.md#release330-upgrade), which, compared to the downtime upgrade method, further reduces business impacts.
 - Post-error in [shared mining tasks](../operational-data-hub/advanced/share-mining.md), associated tasks now include alert prompts.
 - In the [row filter processing node](../user-guide/data-development/process-node.md), added usage examples when filtering with the DATE type.
 - [Time operation node](../user-guide/data-development/process-node.md#date-calculation) now displays adjusted fields.
@@ -820,7 +820,7 @@ import TabItem from '@theme/TabItem';
 - [Data panel functionality](../user-guide/real-time-data-hub/etl-mode) now supports table-level traceability capabilities. You can view data lineage relationships through table details.
 - When [configuring data copy tasks](../user-guide/copy-data/create-task.md#310-table-model), you can view the table model in the processing node.
 - Supports publishing API data services based on Doris data source [Release API Data Services](../publish-apis/create-api-service.md).
-- [Cluster management](../user-guide/manage-system/manage-cluster.md) page allows downloading thread resource monitoring and data source usage data.
+- [Cluster management](../system-admin/manage-cluster.md) page allows downloading thread resource monitoring and data source usage data.
 
 ### Enhancements
 

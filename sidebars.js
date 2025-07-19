@@ -59,6 +59,7 @@ const sidebars = {
          link: {type: 'doc', id: 'connectors/README'},
          items: [
                  'connectors/supported-data-sources',
+                 'connectors/manage-connection',
                  {
                   type: 'category',
                   label: 'Warehouses and Lakes',
@@ -263,7 +264,7 @@ const sidebars = {
           items: [
             'operational-data-hub/fdm-layer/replicate-data',
             'operational-data-hub/fdm-layer/validate-data-quality',
-            'operational-data-hub/fdm-layer/monitor-sync-task'
+            'operational-data-hub/fdm-layer/explore-fdm-tables'
           ],
         },
         {
@@ -307,6 +308,123 @@ const sidebars = {
                 ]
          },
       ],
+    },
+    {
+      type: 'category',
+      label: 'System Admin ',
+      link: {type: 'doc', id: 'system-admin/README'},
+      items:[
+             'system-admin/manage-user',
+             'system-admin/manage-role',
+             'system-admin/manage-cluster',
+             'system-admin/operation-log',
+            {
+              type: 'category',
+              label: 'Other Settings',
+              link: {type: 'doc', id: 'system-admin/other-settings/README'},
+              items:[
+                     'system-admin/other-settings/system-settings',
+                     'system-admin/other-settings/notification',
+                     'system-admin/other-settings/manage-license',
+                     'system-admin/other-settings/check-version',
+                    ]
+            },
+            ]
+    },
+    {
+     type: 'category',
+     label: 'Platform Operations',
+     link: {type: 'doc', id: 'platform-ops/README'},
+     items: [
+            {
+              type: 'category',
+              label: 'Production Deployment',
+              link: {type: 'doc', id: 'platform-ops/production-deploy/README'},
+              items:[
+                     'platform-ops/production-deploy/install-tapdata-ha',
+                     'platform-ops/production-deploy/install-tapdata-ha-with-3-node',
+                     'platform-ops/production-deploy/install-replica-mongodb',
+                    ]
+             },
+            'platform-ops/operation',
+            {
+              type: 'category',
+              label: 'Troubleshooting',
+              link: {type: 'doc', id: 'platform-ops/troubleshooting/README'},
+              items: [
+                     'platform-ops/troubleshooting/error-code',
+                     'platform-ops/troubleshooting/error-and-solutions',
+                     ]
+            },
+            'platform-ops/emergency-plan',
+        ]
+    },
+    {
+     type: 'category',
+     label: 'Practical Cases',
+     link: {type: 'doc', id: 'case-practices/README'},
+     items: [
+             {
+            type: 'category',
+            label: 'Data Pipeline Cases',
+            link: {type: 'doc', id: 'case-practices/pipeline-tutorial/README'},
+            items: [
+                    'case-practices/pipeline-tutorial/mysql-bi-directional-sync',
+                    'case-practices/pipeline-tutorial/excel-to-mysql',
+                    'case-practices/pipeline-tutorial/mysql-to-aliyun',
+                    'case-practices/pipeline-tutorial/mysql-to-bigquery',
+                    'case-practices/pipeline-tutorial/mysql-to-redis',
+                    'case-practices/pipeline-tutorial/oracle-to-kafka',
+                    'case-practices/pipeline-tutorial/oracle-to-tablestore',
+                    'case-practices/pipeline-tutorial/extract-array',
+                    ]
+            },
+            {
+             type: 'category',
+             label: 'Best Practices',
+             link: {type: 'doc', id: 'case-practices/best-practice/README'},
+             items: [
+                'case-practices/best-practice/data-sync',
+                'case-practices/best-practice/handle-schema-changes',
+                'case-practices/best-practice/heart-beat-task',
+                'case-practices/best-practice/alert-via-qqmail',
+                'case-practices/best-practice/full-breakpoint-resumption',
+                'case-practices/best-practice/raw-logs-solution',
+            ]
+        },
+        ]
+    },
+    {
+     type: 'category',
+     label: 'FAQs',
+     link: {type: 'doc', id: 'faq/README'},
+     items: [
+            'faq/use-product',
+            'faq/data-pipeline',
+            'faq/agent-installation',
+            'faq/data-security',
+        ]
+    },
+    {
+     type: 'category',
+     label: 'Reference',
+     link: {type: 'doc', id: 'appendix/README'},
+     items: [
+            'appendix/standard-js',
+            'appendix/enhanced-js',
+            'appendix/benchmark',
+            'appendix/support'
+        ]
+    },
+    {
+     type: 'category',
+     label: 'Release Notes',
+     link: {type: 'doc', id: 'release-notes/README'},
+     items: [
+            'release-notes/release-notes-cloud',
+            'release-notes/release-notes-on-prem',
+            'release-notes/release-notes-community'
+        ]
     },
     /*{
      type: 'category',
@@ -381,31 +499,7 @@ const sidebars = {
                      'user-guide/advanced-settings/manage-external-storage',
                     ]
              },
-             {
-              type: 'category',
-              label: 'Manage System',
-              link: {type: 'doc', id: 'user-guide/manage-system/README'},
-              items:[
-                     'user-guide/manage-system/manage-role',
-                     'user-guide/manage-system/manage-user',
-                     'user-guide/manage-system/manage-cluster',
-                    ]
-             },
-             {
-              type: 'category',
-              label: 'Other Settings',
-              link: {type: 'doc', id: 'user-guide/other-settings/README'},
-              items:[
-                     'user-guide/other-settings/system-settings',
-                     'user-guide/other-settings/notification',
-                     'user-guide/other-settings/manage-license',
-                     'user-guide/other-settings/check-version',
-                    ]
-             },
-             'user-guide/operation-log',
-             'user-guide/no-supported-data-type',
-        ]
-    },
+
     {
      type: 'category',
      label: 'MCP Server Guide (Preview)',
@@ -443,102 +537,8 @@ const sidebars = {
              ]
             },            
             ]
-    },  
-    {
-     type: 'category',
-     label: 'Admin & Operations',
-     link: {type: 'doc', id: 'administration/README'},
-     items: [
-            {
-              type: 'category',
-              label: 'Production Deployment',
-              link: {type: 'doc', id: 'administration/production-deploy/README'},
-              items:[
-                     'administration/production-deploy/install-tapdata-ha',
-                     'administration/production-deploy/install-tapdata-ha-with-3-node',
-                     'administration/production-deploy/install-replica-mongodb',
-                    ]
-             },
-            'administration/operation',
-            {
-              type: 'category',
-              label: 'Troubleshooting',
-              link: {type: 'doc', id: 'administration/troubleshooting/README'},
-              items: [
-                     'administration/troubleshooting/error-code',
-                     'administration/troubleshooting/error-and-solutions',
-                     ]
-            },
-            'administration/emergency-plan',
-        ]
     },
-    {
-     type: 'category',
-     label: 'Practical Cases',
-     link: {type: 'doc', id: 'case-practices/README'},
-     items: [
-             {
-            type: 'category',
-            label: 'Data Pipeline Cases',
-            link: {type: 'doc', id: 'case-practices/pipeline-tutorial/README'},
-            items: [
-                    'case-practices/pipeline-tutorial/mysql-bi-directional-sync',
-                    'case-practices/pipeline-tutorial/excel-to-mysql',
-                    'case-practices/pipeline-tutorial/mysql-to-aliyun',
-                    'case-practices/pipeline-tutorial/mysql-to-bigquery',
-                    'case-practices/pipeline-tutorial/mysql-to-redis',
-                    'case-practices/pipeline-tutorial/oracle-to-kafka',
-                    'case-practices/pipeline-tutorial/oracle-to-tablestore',
-                    'case-practices/pipeline-tutorial/extract-array',
-                    ]
-            },
-            {
-             type: 'category',
-             label: 'Best Practices',
-             link: {type: 'doc', id: 'case-practices/best-practice/README'},
-             items: [
-                'case-practices/best-practice/data-sync',
-                'case-practices/best-practice/handle-schema-changes',
-                'case-practices/best-practice/heart-beat-task',
-                'case-practices/best-practice/alert-via-qqmail',
-                'case-practices/best-practice/full-breakpoint-resumption',
-                'case-practices/best-practice/raw-logs-solution',
-            ]
-        },
-        ]
-    },
-    {
-     type: 'category',
-     label: 'FAQs',
-     link: {type: 'doc', id: 'faq/README'},
-     items: [
-            'faq/use-product',
-            'faq/data-pipeline',
-            'faq/agent-installation',
-            'faq/data-security',
-        ]
-    },
-    {
-     type: 'category',
-     label: 'Reference',
-     link: {type: 'doc', id: 'appendix/README'},
-     items: [
-            'appendix/standard-js',
-            'appendix/enhanced-js',
-            'appendix/benchmark',
-            'appendix/support'
-        ]
-    },
-    {
-     type: 'category',
-     label: 'Release Notes',
-     link: {type: 'doc', id: 'release-notes/README'},
-     items: [
-            'release-notes/release-notes-cloud',
-            'release-notes/release-notes-on-prem',
-            'release-notes/release-notes-community'
-        ]
-    },*/
+    */
  ]
 };
 

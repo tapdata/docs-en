@@ -46,9 +46,16 @@ Before you start, make sure you’re set up for a smooth experience:
 6. Click **Save & Run** to immediately start the replication.
    
     Tapdata will automatically create and launch a real-time replication task, continuously syncing your selected tables into the **FDM (Platform Cache) Layer** with built-in validation.
-     To monitor the task, click the <img src='/img/detail_icon.png'></img> icon next to the table name—this opens the job monitoring page with live status and performance metrics.
+    
+    To monitor the task, click the <img src='/img/detail_icon.png'></img> icon next to the table name—this opens the job monitoring page with live status and performance metrics.
     
     ![FDM Category](../../images/fdm_category.png)
+    
+    :::tip
+    
+    When multiple tables are selected from the same database source, Tapdata will group them into a single replication task by default. This makes it easier to manage schema changes and monitor task status consistently.
+    
+    :::
     
     Tapdata also helps keep things organized by automatically creating a **folder** in the Platform Cache named after your source connection. Your new replication task will appear inside this folder, making it easier to manage and find related tables from the same source.
     
@@ -67,5 +74,5 @@ After saving, locate your new task in the list, click its name, and configure th
 
 ## Next Step
 
-- [Monitor Sync Tasks](monitor-sync-task.md)
+- [Explore FDM Table Details](explore-fdm-tables.md)
 - [Data Validation](validate-data-quality.md)

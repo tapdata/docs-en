@@ -13,12 +13,12 @@ TapData Cloud is ideal for scenarios requiring quick deployment and low initial 
 
 ## TapData Enterprise
 
-TapData Enterprise supports deployment to local data centers and is suitable for scenarios with strict requirements on data sensitivity or network isolation. The TapData Enterprise platform is set up by administrators [following deployment steps](../backup-files/install-enterprise-edition/README.md), who then [assign accounts](../user-guide/manage-system/manage-user.md) and [grant permissions](../user-guide/manage-system/manage-role.md) based on business needs for users within the enterprise. Regular users need to contact their administrators to obtain the login URL and credentials.
+TapData Enterprise supports deployment to local data centers and is suitable for scenarios with strict requirements on data sensitivity or network isolation. The TapData Enterprise platform is set up by administrators [following deployment steps](../backup-files/install-enterprise-edition/README.md), who then [assign accounts](../system-admin/manage-user.md) and [grant permissions](../system-admin/manage-role.md) based on business needs for users within the enterprise. Regular users need to contact their administrators to obtain the login URL and credentials.
 
 ![Log in to TapData Enterprise](../images/login-on-prem.png)
 
 ## TapData Community
 
-TapData Community is an open-source data integration platform that offers basic data synchronization and transformation capabilities. It can be deployed with a single command using Docker, helping you to quickly explore and implement data integration projects. The default login is admin@admin.com with the password admin. Please change your password promptly after logging in to ensure security. Based on your business needs, you can also [assign accounts](../user-guide/manage-system/manage-user.md) to other users.
+TapData Community is an open-source data integration platform that offers basic data synchronization and transformation capabilities. It can be deployed with a single command using Docker, helping you to quickly explore and implement data integration projects. The default login is admin@admin.com with the password admin. Please change your password promptly after logging in to ensure security. Based on your business needs, you can also [assign accounts](../system-admin/manage-user.md) to other users.
 
 ![Login to TapData Community](../images/login-on-prem.png)

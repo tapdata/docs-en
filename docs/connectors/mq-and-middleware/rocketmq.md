@@ -15,7 +15,7 @@ import Content from '../../reuse-content/_all-features.md';
 
 Before configuring a RocketMQ connection, make sure your Tapdata platform or Agent version supports this connector. Otherwise, connection tests may return an error like `"the specified group is blank"`.
 
-- For Tapdata Enterprise/Community users: [upgrade the platform](../../administration/operation.md) to the latest version
+- For Tapdata Enterprise/Community users: [upgrade the platform](../../platform-ops/operation.md) to the latest version
 - For Tapdata Cloud users: [upgrade the Agent](../../user-guide/manage-agent.md) to the latest version
 
 ## Connect to RocketMQ

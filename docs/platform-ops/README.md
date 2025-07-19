@@ -1,4 +1,4 @@
-# Admin & Operations
+# Platform Operations
 
 import Content from '../reuse-content/_all-features.md';
 

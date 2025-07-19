@@ -21,7 +21,7 @@ Yes, in most cases, tasks will resume automatically under the following conditio
   - In the TapData Cloud, tasks continue running without impact. They will automatically resume after the network is restored.
   - In the TapData Enterprise, short interruptions have no effect. If the disconnection lasts longer than 10 minutes, tasks will automatically switch to another available engine. Full sync tasks will restart from the beginning, while incremental sync tasks will resume from the last checkpoint.
 - **Network interruption between the Engine and Data Source**:
-  - The system will attempt to reconnect within the configured [retry interval](../user-guide/other-settings/system-settings.md#task-setting). Once the connection is restored, the task will continue.
+  - The system will attempt to reconnect within the configured [retry interval](../system-admin/other-settings/system-settings.md#task-setting). Once the connection is restored, the task will continue.
   - If the network is not restored within the timeout period, the task will stop. After recovery, full sync tasks will restart from the beginning, and incremental tasks will resume from the last checkpoint.
 
 ### Does it support cross-region, cross-network data synchronization?

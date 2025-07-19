@@ -94,7 +94,7 @@ Building on the free offerings of TapData Community for developers, TapData Ente
     <td>Local</td>
   </tr>
   <tr>
-    <td><a href="../administration/production-deploy/install-tapdata-ha">Horizontal Scaling of Processing Engine</a></td>
+    <td><a href="../platform-ops/production-deploy/install-tapdata-ha">Horizontal Scaling of Processing Engine</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
@@ -249,20 +249,20 @@ Building on the free offerings of TapData Community for developers, TapData Ente
   <td>✅</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/other-settings/system-settings">System Settings</a></td>
+  <td><a href="../system-admin/other-settings/system-settings">System Settings</a></td>
   <td>✅</td>
   <td>➖</td>
   <td>➖</td>
   </tr>
   <tr>
   <td rowspan="2">Monitoring and Alerts</td>
-  <td><a href="../user-guide/other-settings/notification">Custom Notifications</a></td>
+  <td><a href="../system-admin/other-settings/notification">Custom Notifications</a></td>
   <td>✅</td>
   <td>✅</td>
   <td>✅</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/other-settings/notification">Custom Monitoring</a></td>
+  <td><a href="../system-admin/other-settings/notification">Custom Monitoring</a></td>
   <td>✅</td>
   <td>✅</td>
   <td>➖</td>

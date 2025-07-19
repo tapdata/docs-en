@@ -4,7 +4,7 @@ This guide explains how to quickly deploy TapData services on a Windows platform
 
 :::tip
 
-Stand-alone deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high-availability deployment](../../administration/production-deploy/install-tapdata-ha.md).
+Stand-alone deployment is suitable for functional testing scenarios. For production environments, it is recommended to use [high-availability deployment](../../platform-ops/production-deploy/install-tapdata-ha.md).
 
 :::
 
@@ -17,7 +17,7 @@ Stand-alone deployment is suitable for functional testing scenarios. For product
 
 ## Preparation
 
-1. [Install MongoDB](../../administration/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
+1. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
 
 2. Log in to the target device, install Java 1.8 and set environment variables.
 

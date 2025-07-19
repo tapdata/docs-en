@@ -381,4 +381,4 @@ a data replication task is used for scenarios that only synchronize incremental 
 * [Data Services](../publish-apis/README.md)
     * Deleting or taking an API offline will render it unavailable.
 * [System Management](../user-guide/manage-system/README.md)
-    * When [managing a cluster](../user-guide/manage-system/manage-cluster.md), only perform close or restart operations on related services when they are experiencing anomalies.
+    * When [managing a cluster](../system-admin/manage-cluster.md), only perform close or restart operations on related services when they are experiencing anomalies.

@@ -1,5 +1,5 @@
 # Manage Roles
-import Content from '../../reuse-content/_enterprise-features.md';
+import Content from '../reuse-content/_enterprise-features.md';
 
 <Content />
 
@@ -7,7 +7,7 @@ A role is a collection of one or more permissions. You can grant multiple operat
 
 ## Procedure
 
-1. [Log in to TapData Platform](../log-in.md) as a system administrator.
+1. [Log in to TapData Platform](../user-guide/log-in.md) as a system administrator.
 
 2. In the left navigation bar, select **System** > **Roles**.
 
@@ -24,7 +24,7 @@ A role is a collection of one or more permissions. You can grant multiple operat
 
       :::
 
-      ![Set Role Permissions](../../images/grant_data_srouce.png)
+      ![Set Role Permissions](../images/grant_data_srouce.png)
 
     * **Associate Users**: Click **Associate Users** for the target role. In the pop-up dialog, select the target user(s) (multiple selections allowed) and click **Confirm**. The user(s) will automatically inherit all permissions of the current role.
 

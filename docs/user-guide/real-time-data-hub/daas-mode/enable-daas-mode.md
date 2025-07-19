@@ -92,7 +92,7 @@ In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repos
 
 <TabItem value="TapData Enterprise">
 
-1. Prepare a MongoDB database (version 4.0 or above), then [connect this database](../../../connectors/on-prem-databases/mongodb.md) on the TapData platform, using it as the storage engine for the platform cache layer/platform processing layer. Deployment details can be seen in [deployment examples](../../../administration/production-deploy/install-replica-mongodb.md) or on the [MongoDB official website](https://www.mongodb.com/docs/manual/administration/install-on-linux/).
+1. Prepare a MongoDB database (version 4.0 or above), then [connect this database](../../../connectors/on-prem-databases/mongodb.md) on the TapData platform, using it as the storage engine for the platform cache layer/platform processing layer. Deployment details can be seen in [deployment examples](../../../platform-ops/production-deploy/install-replica-mongodb.md) or on the [MongoDB official website](https://www.mongodb.com/docs/manual/administration/install-on-linux/).
 
    :::tip
 

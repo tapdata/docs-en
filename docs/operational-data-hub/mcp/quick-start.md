@@ -17,9 +17,9 @@ To ensure platform security, you need to create and authorize a user account wit
 
 1. [Log in to the Tapdata Platform](../../user-guide/log-in.md).
 
-2. Go to **System Settings** > **Role Management** and create a role named `mcp` (case-insensitive). See [Manage Roles](../../user-guide/manage-system/manage-role.md).
+2. Go to **System Settings** > **Role Management** and create a role named `mcp` (case-insensitive). See [Manage Roles](../../system-admin/manage-role.md).
 
-3. Navigate to **System Settings** > **User Management**, and assign the `mcp` role to a user account. See [Manage Users](../../user-guide/manage-system/manage-user.md).
+3. Navigate to **System Settings** > **User Management**, and assign the `mcp` role to a user account. See [Manage Users](../../system-admin/manage-user.md).
 
 4. Log in to Tapdata using the authorized account, click your username in the top-right corner, and select **Account**. Copy the **Access Code**; you’ll need it in the next steps.
 

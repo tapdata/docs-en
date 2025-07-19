@@ -42,7 +42,7 @@ For data sources with weak Schema constraints, the Schema information of histori
 
 
 
-If a DDL synchronization error causes a data synchronization task to interrupt, you can either undo the relevant DDL operation in the source database or choose to [reload the source database's Schema](../../user-guide/manage-connection.md), then reset and restart the task to repair it.
+If a DDL synchronization error causes a data synchronization task to interrupt, you can either undo the relevant DDL operation in the source database or choose to [reload the source database's Schema](../../connectors/manage-connection.md), then reset and restart the task to repair it.
 
 Additionally, consulting the [task log](../../user-guide/copy-data/monitor-task.md) and [error codes](../../user-guide/error-code-solution.md) can aid in identifying and rectifying the root causes of the task failure. A normal DDL collection and application log example is as follows:
 

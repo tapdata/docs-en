@@ -25,7 +25,7 @@ To address these challenges, Tapdata provides the MCP service. It uses a standar
 - **Real-Time Acceleration with 100x Faster Query Performance**
   Powered by TapData’s caching and [materialized view](../../tapflow/tapflow-tutorial/build-real-time-wide-table.md) capabilities, MCP enables millisecond-level query responses without direct access to source systems—dramatically improving context retrieval and model inference speed.
 - **Secure Access with Trusted, Controlled Context**
-  Supports field-level [masking](../advanced/custom-node.md) and [role-based](../../user-guide/manage-system/manage-role.md) permissions. Combined with real-time sync and incremental updates, it ensures AI models access only fresh, authorized data during inference.
+  Supports field-level [masking](../advanced/custom-node.md) and [role-based](../../system-admin/manage-role.md) permissions. Combined with real-time sync and incremental updates, it ensures AI models access only fresh, authorized data during inference.
 - **Connect 100+ Data Sources with a Single MCP**
   One MCP instance can connect to [over 100 heterogeneous data sources](../../connectors/supported-data-sources.md), including major databases and SaaS platforms—breaking data silos and providing a unified foundation for context-aware AI.
 - **Built for LLM Agents with Seamless Integration**

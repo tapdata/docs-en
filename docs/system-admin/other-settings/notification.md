@@ -14,7 +14,7 @@ TapData supports custom system and alert settings and integrates with third-part
 
 ## Notification Settings
 
-After [logging into the TapData platform](../log-in.md), click the ![setting_icon](../../images/setting_icon.png) > **Notification Settings** at the top right corner. You can set up custom notification rules to automatically trigger notification processes. The main types are task operation notifications and Agent notifications. The specific notification items include:
+After [logging into the TapData platform](../../user-guide/log-in.md), click the ![setting_icon](../../images/setting_icon.png) > **Notification Settings** at the top right corner. You can set up custom notification rules to automatically trigger notification processes. The main types are task operation notifications and Agent notifications. The specific notification items include:
 
 ![Notification Settings](../../images/system_notification_1.png)
 

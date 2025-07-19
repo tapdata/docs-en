@@ -14,7 +14,7 @@ You can also integrate other email services (such as 163 Mail) in TapData platfo
 ## Notes
 
 Tapdata can monitor task status and trigger alerts when specific events occur.
-For configurable alert types, see [Alert Settings](../../user-guide/other-settings/notification.md). You can choose which events should trigger email notifications based on your needs.
+For configurable alert types, see [Alert Settings](../../system-admin/other-settings/notification.md). You can choose which events should trigger email notifications based on your needs.
 
 ## Step One: Obtain Email Authorization Code
 
