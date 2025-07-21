@@ -54,7 +54,7 @@ Before creating a data conversion task, you need to add the data source to which
 
 ## Procedure
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 2. Based on the product type, select the operation entry:
 
    * **TapData Cloud**: In the left navigation panel, click **Data Transformation**.

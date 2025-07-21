@@ -5,7 +5,7 @@ To better manage and distinguish API services, we can categorize them based on b
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation bar, select **Data Services** > **Application List**.
 

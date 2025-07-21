@@ -4,7 +4,7 @@ TapData supports a wide range of functions to facilitate the definition of proce
 
 ## Procedure
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, select **Advanced** > **Function List**.
 

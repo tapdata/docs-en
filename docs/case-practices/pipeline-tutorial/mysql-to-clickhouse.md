@@ -28,7 +28,7 @@ Before setting up a data sync pipeline on TapData Cloud, connect your data sourc
 
 ## Configure Task
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 

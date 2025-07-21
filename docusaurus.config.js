@@ -29,11 +29,11 @@ const config = {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
           // Configuring versioning behavior and label
-          lastVersion: 'current',
+          /*lastVersion: 'current',
           versions: {
             current: {label: '4.x', banner: 'none' },
             '3.0': { label: '3.x', banner: 'none' },
-          },
+          },*/
           editUrl:
             'https://github.com/tapdata/docs-en/tree/main',
         },
@@ -129,7 +129,7 @@ markdown: {
             items: [
               {
                 label: 'Tutorial',
-                to: '/quick-start',
+                to: '/getting-started',
               },
             ],
           },

@@ -3,7 +3,7 @@
 
 Service auditing is primarily used to view the access records of APIs. You can view the records of each request, including access type, personnel, IP address, access time, access result, failure reason, etc. You can also filter according to different conditions.
 
-[Log in to TapData Platform](../user-guide/log-in.md) and select **Data Services** > **Service Audit** on the left side of the page to view.
+Log in to TapData Platform and select **Data Services** > **Service Audit** on the left side of the page to view.
 
 ![](../images/audit_api_1.png)
 

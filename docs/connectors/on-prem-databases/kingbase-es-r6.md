@@ -197,7 +197,7 @@ When KingbaseES-R6 is used as a target, you can choose write strategies through 
 
 ## Connect to KingbaseES-R6
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left-hand navigation bar, click **Connections**.
 

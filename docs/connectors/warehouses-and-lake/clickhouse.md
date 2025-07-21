@@ -96,7 +96,7 @@ GRANT SELECT, INSERT, CREATE TABLE, ALTER TABLE, ALTER UPDATE, DROP TABLE, TRUNC
 
 ## Connect to ClickHouse
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Connections**.
 

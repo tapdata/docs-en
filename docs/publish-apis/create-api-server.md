@@ -5,7 +5,7 @@ API servers can be configured to expose API server addresses externally, and mul
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation bar, select **Data Services** > **API Servers**.
 

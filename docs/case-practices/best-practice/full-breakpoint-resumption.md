@@ -21,7 +21,7 @@ To address this issue, TapData introduces the full resumption from breakpoint fu
 
 In this case, we will demonstrate the specific configuration process for data migration between MongoDB instances.
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, select **Data Pipeline** > **Data Replication**.
 

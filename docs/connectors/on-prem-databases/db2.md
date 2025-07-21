@@ -135,7 +135,7 @@ Before connecting to a Db2 database, you need to complete account authorization 
 
 ## Connect to Db2
 
-1. [Log in to TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Connections**.
 

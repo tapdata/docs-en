@@ -59,7 +59,7 @@ In big data processing and analysis, merging and transforming data is a pivotal 
 
 **Procedure**:
 
-1. [Log in to TapData Platform](../log-in.md).
+1. Log in to TapData platform.
 
 2. On the left navigation bar, click **Data Transformation**.
 
@@ -113,7 +113,7 @@ Assume that we want to merge(Union) **student1** and **student2** tables with th
 
 **Operation**:
 
-1. [Log in to TapData Platform](../log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Data Transformation**.
 

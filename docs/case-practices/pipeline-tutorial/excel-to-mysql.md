@@ -23,7 +23,7 @@ Before you create a replication task, make sure you have configured the relevant
 
 ## Procedure
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 

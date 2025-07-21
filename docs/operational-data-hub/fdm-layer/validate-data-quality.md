@@ -20,7 +20,7 @@ Data validation is **not supported** for queue-based sources like Kafka.
 
 ## Configure a Validation Task
 
-1. [Log in to Tapdata](../../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left sidebar, select **Data Validation**.
 

@@ -72,7 +72,7 @@ To achieve incremental data reading, TapData requires Huawei Cloud GaussDB's [lo
 
 ## Connect to GaussDB
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Connection Management**.
 

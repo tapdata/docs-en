@@ -10,7 +10,7 @@ The data replication feature helps you achieve real-time synchronization between
   To build efficient and reliable data replication tasks, it is recommended to read <a href="../../../case-practices/best-practice/data-sync">Data Synchronization Best Practices</a> before starting to configure tasks.
 </details>
 
-1. [Log in to TapData platform](../log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Data Replication**.
 

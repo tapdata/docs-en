@@ -4,14 +4,14 @@ This guide walks you through enabling the [MCP (Model Context Protocol) service]
 
 ## Prerequisites
 
-- Requires Tapdata Enterprise or Community Edition to be [deployed](../backup-files/install.md).
+- Requires Tapdata Enterprise or Community Edition to be [deployed](../_backup-files/install.md).
 - You have an AI model service or tool that supports MCP with SSE protocol (e.g., Cursor or Trae).
 
 ## Step 1: Set Up User and Get Access Code
 
 To ensure platform security, you need to create and authorize a user account with permission to access data via the MCP protocol.
 
-1. [Log in to the Tapdata Platform](../user-guide/log-in.md).
+1. Log in to Tapdata Platform.
 
 2. Go to **System Settings** > **Role Management** and create a role named `mcp` (case-insensitive). See [Manage Roles](../system-admin/manage-role.md).
 

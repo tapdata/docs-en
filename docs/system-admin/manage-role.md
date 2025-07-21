@@ -4,7 +4,7 @@ A role is a collection of one or more permissions. You can grant multiple operat
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md) as a system administrator.
+1. Log in to TapData Platform as a system administrator.
 
 2. In the left navigation bar, select **System** > **Roles**.
 

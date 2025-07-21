@@ -10,7 +10,7 @@ The following article outlines the step-by-step process of creating data transfo
 
 As an example, we will show how to change the **birthdate** field's data type from **STRING** to **DATE** in the table structure without modifying the source table (**customer** table) and simultaneously filter out users born after **1991-01-01**, a data transformation task is created. The resulting table, **customer_new**, will reflect the updated table structure and filtered data.
 
-1. [Log in to TapData Platform](../log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation panel, click **Data Transformation**.
 

@@ -6,7 +6,7 @@ TapData Cloud provides visual management and maintenance capabilities for Agents
 
 ## Manage Agent by Web
 
-1. [Log in to TapData Platform](log-in.md).
+1. Log in to TapData platform.
 
 2. Click **Resource Management** in the left navigation panel, and then choose which operation to perform.
 

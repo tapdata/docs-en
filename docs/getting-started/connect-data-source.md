@@ -2,7 +2,7 @@
 
 
 
-Once you have [installed the Agent](../backup-files/install.md), you need to connect the Agent to the data sources through TapData, and you can create a data pipeline once the connection has been established.
+Once you have [installed the Agent](../_backup-files/install.md), you need to connect the Agent to the data sources through TapData, and you can create a data pipeline once the connection has been established.
 
 :::tip
 
@@ -12,7 +12,7 @@ Before connecting to the data sources, you also need to ensure that the network 
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Connections**.
 
@@ -64,4 +64,4 @@ Before connecting to the data sources, you also need to ensure that the network 
 
 ## Next step
 
-[Create a Data Pipeline](../backup-files/create-task.md)
+[Create a Data Pipeline](../_backup-files/create-task.md)

@@ -10,7 +10,7 @@ TapData Cloud is ideal for scenarios requiring quick deployment and low initial 
 
 ## TapData Enterprise
 
-TapData Enterprise supports deployment to local data centers and is suitable for scenarios with strict requirements on data sensitivity or network isolation. The TapData Enterprise platform is set up by administrators [following deployment steps](../backup-files/install-enterprise-edition/README.md), who then [assign accounts](../system-admin/manage-user.md) and [grant permissions](../system-admin/manage-role.md) based on business needs for users within the enterprise. Regular users need to contact their administrators to obtain the login URL and credentials.
+TapData Enterprise supports deployment to local data centers and is suitable for scenarios with strict requirements on data sensitivity or network isolation. The TapData Enterprise platform is set up by administrators [following deployment steps](../_backup-files/install-enterprise-edition/README.md), who then [assign accounts](../system-admin/manage-user.md) and [grant permissions](../system-admin/manage-role.md) based on business needs for users within the enterprise. Regular users need to contact their administrators to obtain the login URL and credentials.
 
 ![Log in to TapData Enterprise](../images/login-on-prem.png)
 

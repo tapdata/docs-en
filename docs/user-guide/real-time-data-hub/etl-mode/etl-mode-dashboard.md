@@ -14,7 +14,7 @@ To minimize the impact on source databases and align with the data hierarchical 
 
 ## Procedure
 
-1. [Log in to TapData Platform](../../log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Real-Time Data Hub**.
 

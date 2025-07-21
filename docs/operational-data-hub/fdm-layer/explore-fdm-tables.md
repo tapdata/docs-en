@@ -4,7 +4,7 @@ Explore comprehensive details for any table in the Platform Cache (FDM Layer), i
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left sidebar, select **Real-time Data Center**.
 

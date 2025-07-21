@@ -30,7 +30,7 @@ To address these challenges, TapData introduces **Incremental Data Validation**,
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. Create a data replication or transformation task.
 

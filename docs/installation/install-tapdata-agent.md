@@ -19,7 +19,7 @@ TapData Cloud offers pricing based on the specifications and quantity of subscri
 
 Next, let's create a free Agent instance.
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Resource Management**.
 

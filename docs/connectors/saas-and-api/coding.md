@@ -20,7 +20,7 @@ For more details on data structures and event support, refer to Coding's [offici
 
 ## Connect to Coding
 
-1. [Log in to Tapdata platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation panel, click **Connections**.
 

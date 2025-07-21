@@ -9,7 +9,7 @@ Currently, it supports Doris, MongoDB, MySQL, Oracle, PostgreSQL, SQL Server, an
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation bar, choose **Data Services** > **API List**.
 

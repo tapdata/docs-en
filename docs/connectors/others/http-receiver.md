@@ -6,7 +6,7 @@ With TapData Cloud's HTTP Receiver data source, you can receive data pushed from
 
 ## Connect to HTTP Receiver
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation pane, click on **Connection**.
 

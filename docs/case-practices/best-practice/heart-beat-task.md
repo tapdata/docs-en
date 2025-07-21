@@ -18,7 +18,7 @@ TapData uses heartbeat tables to write timestamp information to the source datab
 
 ## Enabling Heartbeat Tables for a Data Source
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to the TapData platform.
 
 2. In the left navigation bar, click **Connection Management**.
 

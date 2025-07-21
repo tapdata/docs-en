@@ -55,7 +55,7 @@ For more details, see the [Send message content structure](https://open.feishu.c
 
 ## Connect to Lark-IM
 
-1. [Log in to Tapdata platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Connections**.
 

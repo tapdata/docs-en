@@ -70,7 +70,7 @@ You can configure the write strategy in the **Advanced Settings** of the task no
 
 ## Connect to GBase 8a
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation panel, click **Connections**.
 

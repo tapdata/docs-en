@@ -643,7 +643,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 - Supports loading table comments for [Oracle data sources](connectors/on-prem-databases/oracle.md#advanced), which can be enabled in the advanced options during data source configuration, allowing quick identification of tables' business meanings through comments.
-- Supports deployment of TapData on [Windows platform](backup-files/install-enterprise-edition/install-on-windows.md), further expanding the range of supported deployment platforms.
+- Supports deployment of TapData on [Windows platform](_backup-files/install-enterprise-edition/install-on-windows.md), further expanding the range of supported deployment platforms.
 - In the task operation [monitoring page](data-replication/monitor-task.md), supports viewing RPS (Records Per Second) information based on the dimension of event size.
 
 ### Bug Fixes

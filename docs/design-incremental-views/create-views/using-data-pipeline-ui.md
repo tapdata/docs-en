@@ -18,7 +18,7 @@ If you haven’t set them up yet, see [Connect Data Sources](../../getting-start
 
 Follow these steps to design an advanced real-time view with nested user profiles and detailed order items.
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation panel, go to **Data Transformation** and open **Data Pipeline**.
 

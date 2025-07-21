@@ -10,7 +10,7 @@ This article explains the specific data replication process to help you quickly 
 
 Before you create a data replication task, you need to perform the following preparations:
 
-* [Install TapData](../backup-files/install.md)
+* [Install TapData](../_backup-files/install.md)
 * [Connect to a Data Source](../getting-started/connect-data-source.md)
 
 ## Procedure
@@ -22,7 +22,7 @@ As an example of creating a data replication task, the article demonstrates the 
   To build efficient and reliable data replication tasks, it is recommended to read the <a href="../../../case-practices/best-practice/data-sync">Data Synchronization Best Practices</a> before starting to configure tasks.
 </details>
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Data Replication**.
 

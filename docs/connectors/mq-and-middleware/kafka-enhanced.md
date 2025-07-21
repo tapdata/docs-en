@@ -59,7 +59,7 @@ Since Kafka as a message queue only supports append operations, avoid duplicate 
 
 ## Connect Kafka-Enhanced
 
-1. [Log in to Tapdata platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Connections**.
 

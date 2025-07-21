@@ -51,7 +51,7 @@ The email authorization code is a special password used by QQ Mail to log into t
 
 ## Step Two: Configure SMTP Service
 
-1. [Log in to TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the top right corner of the page, click the ![](../../images/setting.png) icon, then select **System Settings**.
 

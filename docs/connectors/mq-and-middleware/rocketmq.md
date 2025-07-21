@@ -18,7 +18,7 @@ Before configuring a RocketMQ connection, make sure your Tapdata platform or Age
 
 ## Connect to RocketMQ
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation panel, click **Connections**.
 

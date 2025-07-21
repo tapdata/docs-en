@@ -8,7 +8,7 @@ In this article, we will guide you on how to use custom nodes effectively and pr
 
 ## Create Custom Processors
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, select **Advanced** >  **User Defined Processors**.
 
@@ -50,7 +50,7 @@ To ensure information security, if you need to desensitize certain mobile phone 
 
 **Procedure:**
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, select **Advanced** >  **User Defined Processors**.
 

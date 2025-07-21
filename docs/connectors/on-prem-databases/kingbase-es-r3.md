@@ -72,7 +72,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE ON ALL TABLES IN SCHEMA schema_na
 
 ## Connect to KingbaseES-R3
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation panel, click **Connections**.
 

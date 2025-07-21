@@ -30,7 +30,7 @@ When creating the MongoDB connection, be sure to set the **connection role as bo
 
 Once your MongoDB database is ready and connected, follow these steps to enable the Operational Data Hub mode in Tapdata:
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+1. Log in to TapData Platform.
 
 2. Click **Realtime Data Center** in the left sidebar.
 

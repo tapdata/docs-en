@@ -21,7 +21,7 @@ Suppose you want to perform a union operation on two tables, **student1** and **
 
 **Operation Steps:**
 
-1. [Log in to the TapData platform](../log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Data Replication**.
 

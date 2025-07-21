@@ -275,7 +275,7 @@ After completing the configuration, be sure to securely store the certificate-re
 
 ## Connect to SQL Server
 
-1. [Log in to TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left-hand navigation bar, click **Connections**.
 

@@ -37,7 +37,7 @@ Before creating a data transformation task, ensure you have configured the neces
 
 ## Configure Task
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 

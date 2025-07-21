@@ -44,7 +44,7 @@ GRANT PROCESS ON *.* TO 'tapdata' IDENTIFIED BY 'password';
 
 ## Connect to SelectDB
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation panel, click **Connections**.
 

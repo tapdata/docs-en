@@ -406,7 +406,7 @@ To further enhance the security of the data pipeline, you can enable SSL (Secure
 
 ## Connect to PostgreSQL
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 1. In the left navigation bar, click **Connections**.
 

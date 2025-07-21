@@ -49,7 +49,7 @@ Follow the instructions in the document to complete the Binlog configuration and
 
 ## Operation Steps
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to the TapData platform.
 
 2. Based on the product type, select the operation entry:
 

@@ -6,7 +6,7 @@ TapData Cloud uses the operation log to record user actions while using the syst
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md) as a system administrator.
+1. Log in to TapData Platform as a system administrator.
 
 2. In the left navigation panel, click **Operation log**.
 

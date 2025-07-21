@@ -26,7 +26,7 @@ If you haven't set up these connections yet, see [Connect Data Sources](../../ge
 
 ## Procedure
 
-1. [Log in to the TapData Platform](../../log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, go to **Data Transformation**.
 

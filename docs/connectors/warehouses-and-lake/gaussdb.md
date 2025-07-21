@@ -113,7 +113,7 @@ In GaussDB (DWS), distribution columns determine how data is distributed across 
 
 ## Connect to GaussDB(DWS)
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Click **Connections** in the left navigation bar.
 

@@ -16,7 +16,7 @@ Next, we'll detail how to employ TapData's real-time materialized view feature i
 
 ## Procedure
 
-1. [Log in to TapData Platform](../log-in.md).
+1. Log in to TapData platform.
 2. In the left navigation panel, click **Data Transformation**.
 3. Click **Build Materialized View** on the right, leading you to the task configuration page.
 

@@ -142,7 +142,7 @@ When using MongoDB version 3.2, you also need to grant read permissions for the 
 
 ## Connect to MongoDB Below 3.4
 
-1. [Log in to TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click **Connections**.
 

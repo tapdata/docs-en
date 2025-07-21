@@ -44,7 +44,7 @@ You can choose the write policy in the **Advanced Configuration** of the task no
 
 ## Connect to GBase 8s
 
-1. [Log in to TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, click on **Connections**.
 

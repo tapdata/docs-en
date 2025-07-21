@@ -4,7 +4,7 @@ After TapData is deployed, a system administrator named `admin@admin.com` will b
 
 ## Procedure
 
-1. [Log in to TapData Platform](../user-guide/log-in.md) as a system administrator.
+1. Log in to TapData Platform as a system administrator.
 
 2. In the left navigation bar, select **System** > **Users**.
 

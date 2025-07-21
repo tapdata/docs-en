@@ -42,7 +42,7 @@ With the increase in the tasks carried by the source database, in order to minim
 
 In the Real-Time Data Hub, we need to prepare a MongoDB database as a data repository for the Data Cache Layer and Data Processing Layer.
 
-1. [Log in to TapData Platform](../../log-in.md).
+1. Log in to TapData Platform.
 
 2. In the left navigation panel, click **Real-Time Data Hub**.
 

@@ -35,7 +35,7 @@ Next, we will introduce the specific operational procedures.
 
 ## Steps
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 

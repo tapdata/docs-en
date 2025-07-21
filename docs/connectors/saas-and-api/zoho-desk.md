@@ -60,7 +60,7 @@ Before connecting Zoho Desk to TapData, follow these steps to retrieve authentic
 
 ## Connect to Zoho Desk
 
-1. [Log in to TapData](../../user-guide/log-in.md).
+1. Log in to TapData.
 
 2. From the left navigation panel, click **Connections**.
 
