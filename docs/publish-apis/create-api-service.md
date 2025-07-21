@@ -17,17 +17,24 @@ Currently, it supports Doris, MongoDB, MySQL, Oracle, PostgreSQL, SQL Server, an
 
    ![](../images/create_api_service.png)
 
-   * **Service Name**: Enter a service name with business significance for easy identification in the future.
-   * **Owner Application**: Select the affiliated application for convenient business category management. For more introduction, see [Application Management](manage-app.md).
-   * **Connection Type**, **Connection Name**, **Object Name**: Choose the object to query based on business needs.
-   * **Interface Type**: Choose between **Default Query** or **Custom Query**. When selecting **Custom Query**, you can set filters and set filtering/sorting conditions at the bottom of the page.
-   * **API Path Settings**: Choose according to business needs.
-      * **Default Path**: TapData randomly generates a unique access address.
-      * **Custom Path**: The access path consists of **Version**, **Prefix**, and **Basic Path**, formatted as `/api/version/prefix/basic_path`. It supports letters, numbers, underscores (_), and dollar signs ($), but cannot start with a number.
-   * **Input Parameters**: Allows modification of parameter default values.
-   * **Output Results**: Supports setting the fields contained in the output results.
+   * **Key Configuration Fields**
+     * **Service Name**: Give your API a meaningful name for easier identification and management.
+     * **Owner Application**: Select the business application this API belongs to. This helps categorize your APIs clearly. See [Application Management](manage-app.md) for more details.
+     * **Connection Type**, **Connection Name**, **Object Name**: Choose the data source and object (e.g. a view like `orders-wide-view`) that the API will query.
+   - **Interface Type**: TapData provides two modes for querying data via APIs:
+     - **Default Query**: Includes three default input parameters—`page`, `limit`, and `filter`. This lets clients control pagination and filtering dynamically during runtime. If no filter is passed, the API returns the full dataset (default: 20 records per page). Suitable for general-purpose data access.
+     - **Custom Query**: Gives you more control over the API behavior. You can define fixed filter and sort conditions, specify output fields, and add custom input parameters (e.g., `region`, `startDate`, `userLevel`). Unlike the Default mode, `filter` is not included by default—but you can manually add it to support dynamic filtering if needed. Ideal for delivering domain-specific or constrained endpoints.
 
-4. Click **Save** at the top right of the page, then click **Generate** at the bottom right of the page.
+   - **API Path Settings**: Your API’s path is structured as `/api/{version}/{prefix}/{base_path}`.
+     - `version` and `prefix` are optional for versioning or business labeling (e.g. `/api/v1/orders/summary`)
+     - `base_path` is required and uniquely identifies the endpoint (auto-generated if left blank)
+   - **Input Parameters**: Define the parameters clients can pass when calling this API.
+     * If you choose **Default Query**, the system provides three built-in parameters—`page`, `limit`, and `filter`. This allows the client to dynamically control pagination and filtering at runtime. Custom parameters are not allowed in this mode.
+     * In contrast, **Custom Query** lets you design more structured APIs. You can define your own input parameters (e.g. `region`, `startDate`, `userLevel`) and bind them to filter or sort conditions in the UI. The filtering logic is handled entirely on the server side, and no `filter` object is exposed to the client. This gives you full control over how the data is queried and returned. For supported types and configuration rules, see [API Query Parameters](api-query-params.md).
+   - **Output Results**: By default, all fields from the selected object are returned. You can manually adjust the list to return only selected fields.
+   
+
+4. Click **Save** at the top right of the page.
 
 5. Find the service you just created and click **Publish** on its right to use the related service.
 

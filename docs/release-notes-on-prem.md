@@ -1,6 +1,4 @@
-# TapData Enterprise Release Notes
-
-
+# What's New
 
 This article provides release notes for TapData Enterprise, including new features, improvements, and bug fixes.
 

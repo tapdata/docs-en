@@ -50,13 +50,12 @@ Authorization: bearer eyJhbGciOiJIUzI1NiJ9.eyJjbGllbnRJ********
 
 ## Common Response Status Codes
 
-| Response Code | Description                                                                 |
-| ------------- | --------------------------------------------------------------------------- |
+| Response Code | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
 | 200           | Successful return for findById, findPage, create, custom methods, and requests. |
-| 204           | Successful return for updateById, deleteById requests.                      |
 | 500           | Internal server error, common errors include violating unique constraints, MongoDB Validate failure, etc. |
-| 401           | Authentication failure, access token expired or not provided.               |
-| 404           | Operation data does not exist, such as deleting, updating, or querying non-existent records. |
+| 401           | Authentication failure, access token expired or not provided. |
+| 404           | Operation data does not exist, such as querying non-existent records. |
 
 ## Recommended Reading
 

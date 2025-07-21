@@ -14,6 +14,7 @@ This MongoDB instance will serve two critical roles:
 :::tip
 
 When creating the MongoDB connection, be sure to set the **connection role as both Source and Target**, so it can support full read/write capabilities across Tapdata’s layers. For step-by-step setup, refer to [Connect On-Premises MongoDB](../connectors/on-prem-databases/mongodb.md).
+:::
 
 <details><summary>Recommended best practices</summary>
 

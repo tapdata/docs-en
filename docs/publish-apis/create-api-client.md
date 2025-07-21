@@ -13,8 +13,20 @@ To manage and create API calls, an API client is required. Applications that dev
 
    ![](../images/create_api_client.png)
 
-   :::tip
+   - **Client name**: A meaningful name to identify the client. For example, `Client_for_BI`.
 
-   The client secret is an important basis for client applications to obtain API access authorization and should be properly stored to avoid transmission in public network environments.
+   - **Grant Type**: The OAuth2 grant types supported by this client. You can select one or more from:– **Implicit**– **Client Credentials**– **Refresh Token**. Choose based on how the client will authenticate.
 
-   :::
+   - **Client Secret**: Auto-generated credential used by the client to authenticate. Click **Generate** to create one.
+   
+     :::tip
+   
+     The client secret is an important basis for client applications to obtain API access authorization and should be properly stored to avoid transmission in public network environments.
+   
+     :::
+   
+   - **Permission scope**  Assign the [role(s)](../system-admin/manage-role.md) this client should inherit (e.g. `DefaultRoleForNewUser`, `admin`). This determines what APIs and resources the client can access.
+   
+   - **Redirect URI**  The URI to which the system redirects after a successful authorization. Typically used in OAuth2 flows.
+   
+   - **Show to the menu**  Choose **Yes** to display this client in the app’s client list; choose **No** to hide it from the default view.

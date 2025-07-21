@@ -1,48 +1,59 @@
 # Query API through RESTful
 
+TapData allows you to expose real-time data as secure RESTful APIs. Once an API service is published, you can query it directly from within the platform using the built-in debugger, or externally using tools like Postman. This guide walks you through both methods.
 
-RESTful API is an application programming interface (API or Web API) that adheres to REST architectural specifications. TapData supports integrated RESTful API services, allowing you to execute requests through the API service address and obtain managed data information.
+## Before You Begin
 
-In this article, we will introduce how to use the Postman to invoke API requests.
+Make sure the API you want to query has already been [created and published](create-api-service.md).
 
-## Procedure
+## Query via Built-in Debugger
 
-1. [Log in to TapData Platform](../user-guide/log-in.md).
+You can test and preview your API directly in TapData—no need for external tools.
 
-2. In the left navigation bar, select **Data Services** > **API List**.
+1. Log in to TapData
 
-3. Obtain the service access address and Access Token authentication information.
+2. Go to **Data Services** > **API List** in the left navigation menu.
 
-   1. Locate and click on the target service name.
+3. Find your published API and click the service name.
 
-   2. Scroll down to the service access area in the right-hand panel and get the address for service access. In this case, we will demonstrate the procedure using a **GET** type service as an example.
+4. In the right panel, scroll to the **Access URL** section to copy the service endpoint.
 
-      ![Get Service Access Address](../images/obtain_restful_address.png)
+   ![Get Service Access Address](../images/obtain_restful_address.png)
 
-   3. Click the **Debug** tab, scroll down to **Example Code**, and obtain the Access Token authentication information.
+5. Click the **Debug** tab.
 
-      ![Get Access Token](../images/obtain_access_token.png)
+6. Scroll to the **Example Code** section to get a sample request and the authentication token.
 
-4. Open the [Postman tool](https://www.postman.com/), and click **Workspaces** at the top of the software page, and select your Workspace.
+   ![Get Access Token](../images/obtain_access_token.png)
 
-5. Click **New**, and in the pop-up dialog box, select **HTTP Request**.
+7. Click the **Query** button to test your API.
+
+:::tip
+Need to filter results? You can add query parameters to the request URL. See [API Query Parameters](api-query-params.md) for details.
+:::
+
+
+
+## Query via Postman (Optional)
+
+If you'd prefer to use an external tool or automate API testing, [Postman](https://www.postman.com/) is a great option.
+
+1. Open Postman and select your **Workspace** at the top.
+
+2. Click **New** and choose **HTTP Request**.
 
    ![Create HTTP Request](../images/create_restful_request.png)
 
-6. In the Request URL text box, enter the API query request address you obtained in step 3.
+3. In the request URL field, paste the API endpoint you copied from TapData.
 
-7. (Optional) Click **Query Params** below the text box and set the query request parameters. For an introduction to the supported request parameters, please refer to step 3.
+4. (Optional) Click **Query Params** to add filter conditions to your request.
 
-8. Click **Authorization** below the text box, select **Type** as **Bearer Token**, and fill in the Access Token authentication information obtained in step 3.
+   For supported query parameters, see [API Query Parameters](api-query-params.md).
+
+5. Click **Authorization**, select **Bearer Token**, and paste the Access Token you got from TapData.
 
    ![Set Authorization Information](../images/restful_authorization.png)
 
-9. Click **Query**, the return example is shown below.
+6. Click **Send**. You’ll get a real-time response from the API.
 
    ![Query Result](../images/restful_api_query_result.png)
-
-   :::tip
-
-   TapData supports adding query conditions to the URL query string to quickly filter query results. For specific operations, see [API Query Parameter Description](api-query-params.md).
-
-   :::
