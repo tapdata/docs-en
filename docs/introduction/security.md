@@ -12,11 +12,6 @@ As we embrace cloud services, the safety of our data has become a top priority. 
 <details><summary>What is the role of  Agent?</summary>
 The TapData Agent plays a crucial role in data synchronization, handling data heterogeneity, and supporting data transformation scenarios. It is responsible for extracting data from the source system, performing necessary processing, and transmitting it to the target system. The TapData Agent is centrally managed by TapData Cloud.
 </details>
-
----
-
-
-
 ## Systematic Security Design
 
 ### Account Access Control

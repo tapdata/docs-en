@@ -30,6 +30,6 @@ In an e-commerce scenario, you might organize your Master Data Model around **co
 
 ## Next Steps
 
-- [Prepare and Transform Data](https://chatgpt.com/prepare-and-transform.md)
-- [Create Real-Time Materialized Views](https://chatgpt.com/create-imv.md)
+- [Prepare and Transform Data](prepare-and-transform.md)
+- [Create Real-Time Materialized Views](build-view-in-odh.md)
 

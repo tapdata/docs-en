@@ -26,11 +26,12 @@ const sidebars = {
      items: [
              'introduction/architecture',
              'introduction/features',
-             'introduction/benefits',
              'introduction/use-cases',
              'introduction/compare-editions',
              'introduction/change-data-capture-mechanism',
              'introduction/security',
+             'introduction/tapdata-vs-kafka',
+             'introduction/tapdata-vs-informatica',
              'introduction/terms',
        ]
     },

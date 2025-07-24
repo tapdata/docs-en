@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 - Make sure you've already connected your **source MySQL database** and **target MongoDB database** in TapData.
 
-  If you need help setting up connections, see [Connect Data Sources](https://chatgpt.com/getting-started/connect-data-source.md) for detailed instructions.
+  If you need help setting up connections, see [Connect Data Sources](../../getting-started/connect-data-source.md) for detailed instructions.
 
 ## Procedure
 

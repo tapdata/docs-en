@@ -36,12 +36,12 @@ Tapdata's ODH design breaks this journey into clear, manageable layers:
 
 ![Tapdata's Layered Approach](../images/odh_architecture.png)
 
-| Layer                        | Purpose                                                      |
-| ---------------------------- | ------------------------------------------------------------ |
-| **Source Data Layer**        | Connect to and abstract data from all business systems and sources, without disrupting existing operations. |
-| **Platform Cache (FDM)**     | Use real-time change data capture (CDC) to mirror source tables safely, reducing load on critical systems. |
-| **Processing Layer (MDM)**   | Transform, clean, and model data into standardized business entities and wide tables for consistent consumption. |
-| **Delivery & Service (ADM)** | Expose processed data to consuming systems and teams via APIs, real-time feeds, or batch exports. |
+| Layer                                               | Purpose                                                      |
+| --------------------------------------------------- | ------------------------------------------------------------ |
+| **[Source Data Layer](../connectors/README.md)**    | Connect to and abstract data from all business systems and sources, without disrupting existing operations. |
+| **[Platform Cache (FDM)](fdm-layer/README.md)**     | Use real-time change data capture (CDC) to [mirror source tables](fdm-layer/replicate-data.md) safely, reducing load on critical systems. |
+| [**Processing Layer (MDM)**](mdm-layer/README.md)   | [Transform, clean, and model data](mdm-layer/prepare-and-transform.md) into standardized business entities and wide tables for consistent consumption. |
+| [**Delivery & Service (ADM)**](adm-layer/README.md) | Expose processed data to consuming systems and teams via [APIs](../publish-apis/README.md), real-time [pipelines](adm-layer/sync-downstream.md), or event-driven delivery. |
 
 This approach aligns with best practices for **Master Data Management (MDM)** as defined by Gartner: enabling IT and business teams to work together to ensure consistency, accuracy, governance, and shared understanding of core business data.
 
