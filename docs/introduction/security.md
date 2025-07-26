@@ -59,9 +59,6 @@ Clear guidelines have been established for the usage and retention of user data.
 
 - All database and API credentials you provide are encrypted stringently. Apart from the application, no one has access to these details.
 - Support for SSL or SSH tunnel encrypted connections to data sources, safeguarding data connectivity and transmission. HTTPS encrypted connections to SaaS-type data sources are also available.
-- Both fully managed and semi-managed [Agent deployment modes](../billing/purchase.md) are available to meet diverse data transfer requirements:
-    - *Semi-Managed:* All of your data, whether in its raw form or has been processed, is stored and managed within your private environment exclusively. The Agent handles data orchestration and processing tasks in-house, ensuring that no data is ever uploaded to TapData Cloud.
-    - *Fully Managed:* During any task execution, your data only travels between the source database, the Agent, and the destination database. At no point will data be uploaded to TapData Cloud. The Agent provides a securely managed external service address, allowing you to bolster security measures through database whitelists or specific firewall rules.
 
 ### Account Password Security Policies
 

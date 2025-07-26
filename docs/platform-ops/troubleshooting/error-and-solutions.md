@@ -141,4 +141,4 @@ Host:9200/_all/_settings -d '{"index.mapping.total_fields.limit": 5000}'
 
 **Scenario**: When syncing from MongoDB to ElasticSearch, after running for a while, the task stops with the above error message in the logs.
 
-**Solution**: In MongoDB, the same field has NaN and float types, and ElasticSearch cannot complete the data write causing the error. Add a [JS Processing Node](../../user-guide/data-development/process-node.md#js-process) to the task's pipeline with content `MapUtils.removeNullValue(record);`, then restart the task.
+**Solution**: In MongoDB, the same field has NaN and float types, and ElasticSearch cannot complete the data write causing the error. Add a [JS Processing Node](../../operational-data-hub/mdm-layer/process-node.md#js-process) to the task's pipeline with content `MapUtils.removeNullValue(record);`, then restart the task.

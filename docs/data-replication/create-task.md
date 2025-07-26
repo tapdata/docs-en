@@ -10,7 +10,7 @@ This article explains the specific data replication process to help you quickly 
 
 Before you create a data replication task, you need to perform the following preparations:
 
-* [Install TapData](../_backup-files/install.md)
+* [Install TapData](../getting-started/install-and-setup/README.md)
 * [Connect to a Data Source](../getting-started/connect-data-source.md)
 
 ## Procedure
@@ -40,7 +40,7 @@ As an example of creating a data replication task, the article demonstrates the 
 
    :::tip
 
-   In addition to adding data nodes, you can also add processing nodes to complete more complex tasks, such as filtering data, adding or subtracting fields, etc. For more information, see [processing nodes](../data-development/process-node.md).
+   In addition to adding data nodes, you can also add processing nodes to complete more complex tasks, such as filtering data, adding or subtracting fields, etc. For more information, see [processing nodes](../operational-data-hub/mdm-layer/process-node.md).
 
    :::
 

@@ -42,7 +42,7 @@ Before you start, make sure you’re set up for a smooth experience:
     Tapdata automatically generates the FDM-layer naming pattern for you, which typically includes the `FDM_` prefix plus your table name.
     Here you can add your **source system identifier** to make it easier for business teams to recognize the origin of the data.
     
-    For more naming best practices, see [Plan Your Operational Data Hub](../replicate-data.md).
+    For more naming best practices, see [Plan Your Operational Data Hub](../plan-data-platform.md).
     
 6. Click **Save & Run** to immediately start the replication.
    

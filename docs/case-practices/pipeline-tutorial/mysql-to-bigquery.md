@@ -13,7 +13,7 @@ Before you create a replication task, make sure you have configured the relevant
 1. [Configure MySQL Connection](../../connectors/on-prem-databases/mysql.md)
 2. [Configure BigQuery Connection](../../connectors/warehouses-and-lake/big-query.md)
 
-Also note the reference [data type support](../../user-guide/no-supported-data-type.md).
+Also note the reference [data type support](../../faq/no-supported-data-type.md).
 
 ## Configure Task
 

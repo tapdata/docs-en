@@ -242,6 +242,7 @@ const sidebars = {
           items: [
             'operational-data-hub/mdm-layer/define-data-categories',
             'operational-data-hub/mdm-layer/prepare-and-transform',
+            'operational-data-hub/mdm-layer/process-node',
             'operational-data-hub/mdm-layer/build-view-in-odh'
           ],
         },
@@ -269,6 +270,17 @@ const sidebars = {
       ],
     },
     {
+     type: 'category',
+     label: 'Data Replication',
+     link: {type: 'doc', id: 'data-replication/README'},
+     items: [
+            'data-replication/create-task',
+            'data-replication/incremental-check',
+            'data-replication/manage-task',
+            'data-replication/monitor-task'
+            ]
+     },    
+    {
       type: 'category',
       label: 'Design Incremental Materialized Views',
       link: { type: 'doc', id: 'design-incremental-views/README' },
@@ -289,17 +301,6 @@ const sidebars = {
         'design-incremental-views/manage-task',
       ],
     },
-    {
-     type: 'category',
-     label: 'Data Replication',
-     link: {type: 'doc', id: 'data-replication/README'},
-     items: [
-            'data-replication/create-task',
-            'data-replication/incremental-check',
-            'data-replication/manage-task',
-            'data-replication/monitor-task'
-            ]
-     },
     {
       type: 'category',
       label: 'Publish Data as APIs ',
@@ -449,6 +450,8 @@ const sidebars = {
             'faq/data-pipeline',
             'faq/agent-installation',
             'faq/data-security',
+            'faq/no-supported-data-type',
+            'faq/error-code-solution',
         ]
     },
     {

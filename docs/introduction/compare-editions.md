@@ -39,7 +39,7 @@ TapData Cloud adopts a SaaS (Software as a Service) model. Register for a [TapDa
 **Features:**
 
 - **Quick Deployment**: No complex installation and configuration; get up and running in minutes.
-- **Low Upfront Investment**: No need to purchase and maintain hardware; provides one free Agent instance and pay-as-you-go [pricing](../billing/billing-overview.md).
+- **Low Upfront Investment**: No need to purchase and maintain hardware; provides one free Agent instance and pay-as-you-go pricing.
 - **Automated Operations**: The system automatically updates and maintains versions, allowing you to focus on business development.
 - **High Availability**: Cloud architecture provides high availability and scalability, ensuring the continuity and security of data integration services.
 
@@ -86,7 +86,7 @@ Building on the free offerings of TapData Community for developers, TapData Ente
 <tbody>
   <tr>
     <td rowspan="4">Basic Features</td>
-    <td><a href="../getting-started/install">Deployment Method</a></td>
+    <td><a href="../getting-started/install-and-setup">Deployment Method</a></td>
     <td>Local</td>
     <td><a href="https://cloud.tapdata.net/console/v3/">Register and Use</a></td>
     <td>Local</td>
@@ -104,94 +104,94 @@ Building on the free offerings of TapData Community for developers, TapData Ente
     <td>✅</td>
   </tr>
 <tr>
-  <td><a href="../connectors/supported-databases">Supported Databases</a></td>
+  <td><a href="../connectors/supported-data-sources">Supported Databases</a></td>
   <td><span style={{ color: 'blue' }}>100+</span></td>
   <td><span style={{ color: 'blue' }}>100+</span></td>
   <td><span style={{ color: 'grey' }}>16</span></td>
 </tr>
   <tr>
     <td rowspan="5">Data Pipeline</td>
-    <td><a href="../user-guide/copy-data">Data Replication</a></td>
+    <td><a href="../data-replication">Data Replication</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/data-development">Data Transformation</a></td>
+    <td><a href="../design-incremental-views">Data Transformation</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="user-guide/data-development/create-materialized-view">Real-time Materialized Views</a></td>
+    <td><a href="../design-incremental-views/create-views">Real-time Materialized Views</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/data-development/process-node">Table Processing Nodes</a></td>
+    <td><a href="../operational-data-hub/mdm-layer/process-node">Table Processing Nodes</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/copy-data/create-task#310-table-model">Node Alerts</a></td>
+    <td><a href="../data-replication/create-task#310-table-model">Node Alerts</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
   </tr>
   <tr>
-    <td rowspan="4"><a href="../user-guide/real-time-data-hub">Real-time Data Center</a></td>
-    <td><a href="../user-guide/real-time-data-hub/etl-mode">Data Integration Platform Mode</a></td>
+    <td rowspan="4"><a href="../operational-data-hub">Real-time Data Center</a></td>
+    <td>Data Integration Platform Mode</td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/real-time-data-hub/daas-mode">Data Service Platform Mode</a></td>
+    <td><a href="../operational-data-hub">Data Service Platform Mode</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard">Table Lineage</a></td>
+    <td><a href="../operational-data-hub/fdm-layer/explore-fdm-tables">Table Lineage</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard">Switch Directory View</a></td>
+    <td><a href="..operational-data-hub/mdm-layer/define-data-categories">Switch Directory View</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
   </tr>
   <tr>
     <td rowspan="6">Advanced Features</td>
-    <td><a href="../user-guide/verify-data">Data Verification</a></td>
+    <td><a href="../operational-data-hub/fdm-layer/validate-data-quality">Data Verification</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/advanced-settings/share-cache">Shared Cache</a></td>
+    <td><a href="../operational-data-hub/advanced/share-cache">Shared Cache</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/advanced-settings/manage-function">Function Management</a></td>
+    <td><a href="../operational-data-hub/advanced/manage-function">Function Management</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/advanced-settings/custom-node">Custom Nodes</a></td>
+    <td><a href="../operational-data-hub/advanced/custom-node">Custom Nodes</a></td>
     <td>✅</td>
     <td>➖</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../user-guide/advanced-settings/share-mining">Shared Mining</a></td>
+    <td><a href="../operational-data-hub/advanced/share-mining">Shared Mining</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
@@ -235,13 +235,13 @@ Building on the free offerings of TapData Community for developers, TapData Ente
   <td>➖</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/manage-system/manage-cluster">Component Management</a></td>
+  <td><a href="../system-admin/manage-cluster">Component Management</a></td>
   <td>✅</td>
   <td>✅</td>
   <td>➖</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/advanced-settings/manage-external-storage">External Storage Management</a></td>
+  <td><a href="../operational-data-hub/advanced/manage-external-storage">External Storage Management</a></td>
   <td>✅</td>
   <td>✅</td>
   <td>✅</td>

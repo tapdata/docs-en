@@ -52,7 +52,7 @@ In big data processing and analysis, merging and transforming data is a pivotal 
 
 :::tip
 
-- When using the Master Slave Merge, it's essential to [upgrade the Agent instance](../manage-agent.md) to version 3.5.1. Additionally, the target database should be either a self-deployed MongoDB or MongoDB Atlas.
+- When using the Master Slave Merge, it's essential to upgrade TapData to version 3.5.1. Additionally, the target database should be either a self-deployed MongoDB or MongoDB Atlas.
 - Tables participating in the merge must contain one or more fields that form a logical unique identifier, ensuring data uniqueness.
 
 :::

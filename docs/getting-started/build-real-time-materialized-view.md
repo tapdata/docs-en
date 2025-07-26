@@ -22,7 +22,7 @@ With **TapData’s real-time materialized views**, you can automatically join yo
 
 Make sure you have already connected your **source MySQL database** and **target MongoDB database** in TapData.
 
-If you haven't set up these connections yet, see [Connect Data Sources](../../getting-started/connect-data-source.md) for detailed instructions.
+If you haven't set up these connections yet, see [Connect Data Sources](connect-data-source.md) for detailed instructions.
 
 ## Procedure
 
@@ -134,5 +134,5 @@ Because the view updates in real time, any new orders from users will automatica
 ## See also
 
 * [Publish View as APIs](publish-imv-as-api.md)
-* [Validate View Results](../design-incremental-views/validate-views.md)
+* [Validate View Results](../operational-data-hub/fdm-layer/validate-data-quality.md)
 * [View Design Considerations](../design-incremental-views/design-considerations.md)

@@ -54,8 +54,6 @@ To simplify the usage process, the TapData TiDB connector integrates with the [T
 
   * TapData engine must be deployed on an **arm or amd** system architecture.
 
-  * Due to communication restrictions between TiDB components, when using the Tapdata Cloud product, the deployed Agent must be a [semi-managed instance](../../billing/purchase.md).
-
 ## <span id="prerequisite">Prerequisites</span>
 
 1. Log in to the TiDB database and create a user account for data synchronization/transformation tasks using the following command:

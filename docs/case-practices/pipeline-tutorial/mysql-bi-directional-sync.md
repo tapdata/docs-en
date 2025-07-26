@@ -121,7 +121,7 @@ Follow the instructions in the document to complete the Binlog configuration and
 
    :::tip
 
-   For Tapdata Enterprise, you can use the [data verification](../../design-incremental-views/validate-views.md) to continuously verify the data of the two bi-directional sync tasks, better meeting your business needs.
+   For Tapdata Enterprise, you can use the [data verification](../../operational-data-hub/fdm-layer/validate-data-quality.md) to continuously verify the data of the two bi-directional sync tasks, better meeting your business needs.
 
    :::
 

@@ -1,6 +1,6 @@
 # Deploy TapData Enterprise
 
-The Enterprise Edition supports both single-node and high-availability deployments. This article explains how to quickly deploy it locally on Linux and Windows platforms (single-node architecture). For production environments, it is recommended to use the [high-availability deployment](../../../administration/production-deploy/install-tapdata-ha.md) approach.
+The Enterprise Edition supports both single-node and high-availability deployments. This article explains how to quickly deploy it locally on Linux and Windows platforms (single-node architecture). For production environments, it is recommended to use the [high-availability deployment](../../platform-ops/production-deploy/install-tapdata-ha.md) approach.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -45,7 +45,7 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
       yum -y install java-1.8.0-openjdk
       ```
 
-   2. [Install MongoDB](../../../administration/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
+   2. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
 
 3. Download the TapData installation package (contact us at [team@tapdata.io](mailto:team@tapdata.io) to obtain it) and upload it to the target device.
 
@@ -263,4 +263,4 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
 
 ## Next Steps
 
-[Connect a Data Source](../../connect-database.md)
+[Connect a Data Source](../connect-data-source.md)

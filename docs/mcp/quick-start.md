@@ -4,7 +4,7 @@ This guide walks you through enabling the [MCP (Model Context Protocol) service]
 
 ## Prerequisites
 
-- Requires Tapdata Enterprise or Community Edition to be [deployed](../_backup-files/install.md).
+- Requires Tapdata Enterprise or Community Edition to be [deployed](../getting-started/install-and-setup/README.md).
 - You have an AI model service or tool that supports MCP with SSE protocol (e.g., Cursor or Trae).
 
 ## Step 1: Set Up User and Get Access Code

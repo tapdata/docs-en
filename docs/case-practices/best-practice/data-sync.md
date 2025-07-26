@@ -12,13 +12,8 @@ Analyzing the data sources is fundamental to data synchronization. It helps asse
 | **Number of Tables to Synchronize** | Estimate the scale and complexity of the synchronization task based on this data. If there are many tables, create data synchronization tasks in batches or prioritize synchronizing key data. |
 | **Volume of Data Changes**          | Estimate the daily data change volume to adjust the synchronization frequency and performance parameters, ensuring real-time or near-real-time data updates. |
 | **Primary Keys/Unique Indexes**     | Primary keys or unique indexes play a crucial role in synchronization performance and data consistency. If absent, special configurations may be needed for these tables in subsequent task settings. |
-| **Target Database Type**            | Confirm the type of target database. For heterogeneous data synchronization, ensure data type compatibility. For more information, see [Data Type Support](../../user-guide/no-supported-data-type.md). |
+| **Target Database Type**            | Confirm the type of target database. For heterogeneous data synchronization, ensure data type compatibility. For more information, see [Data Type Support](../../faq/no-supported-data-type.md). |
 
-:::tip
-
-When subscribe an instance, you can choose the specifications based on the estimated scale of table data and data change volume. For more details, see [Specification Description](../../billing/billing-overview.md#spec).
-
-:::
 
 ## Configure and Optimize Tasks
 

@@ -10,7 +10,7 @@ Before you create a replication task, make sure you have configured the relevant
 1. [Configure Oracle Connection](../../connectors/on-prem-databases/oracle.md)
 2. [Configure Tablestore Connection](../../connectors/warehouses-and-lake/tablestore.md)
 
-Also note the reference [data type support](../../user-guide/no-supported-data-type.md).
+Also note the reference [data type support](../../faq/no-supported-data-type.md).
 
 ## Configure Task
 
@@ -31,7 +31,7 @@ Also note the reference [data type support](../../user-guide/no-supported-data-t
 
    :::tip
 
-   Since the number of columns in a single table in Tablestore cannot exceed 32, if the number of columns in the Oracle tables to be synchronized exceeds 32, you can address this limitation by adding a **Field Edit** node between the Oracle and Tablestore data sources. This node allows you to handle the situation and selectively exclude business-independent columns from the synchronization process. For more information, see [Processing Node](../../user-guide/data-development/process-node.md).
+   Since the number of columns in a single table in Tablestore cannot exceed 32, if the number of columns in the Oracle tables to be synchronized exceeds 32, you can address this limitation by adding a **Field Edit** node between the Oracle and Tablestore data sources. This node allows you to handle the situation and selectively exclude business-independent columns from the synchronization process. For more information, see [Processing Node](../../operational-data-hub/mdm-layer/process-node.md).
 
    :::
 

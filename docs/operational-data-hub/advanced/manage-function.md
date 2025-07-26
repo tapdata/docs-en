@@ -1,6 +1,6 @@
 # Manage Functions
 
-TapData supports a wide range of functions to facilitate the definition of processing steps, allowing for their use in [JavaScript (JS) nodes](../../user-guide/data-development/process-node.md#js-process). Additionally, you can freely define custom functions or import third-party JAR packages to introduce new functions as needed.
+TapData supports a wide range of functions to facilitate the definition of processing steps, allowing for their use in [JavaScript (JS) nodes](../mdm-layer/process-node.md#js-process). Additionally, you can freely define custom functions or import third-party JAR packages to introduce new functions as needed.
 
 ## Procedure
 

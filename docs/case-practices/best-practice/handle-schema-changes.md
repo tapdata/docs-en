@@ -6,7 +6,7 @@ During data migration and synchronization with TapData Cloud, recognizing the im
 
 To ensure the high availability and fault tolerance of data replication/transformation tasks, by default, TapData does not synchronize the DDL statements from the source database to the target database. If you need to enable this feature, please follow these steps:
 
-1. When creating or editing a [data replication](../../data-replication/create-task.md) or [data transformation](../../user-guide/data-development/create-task.md) task, go to the configuration page of the source database node.
+1. When creating or editing a [data replication](../../data-replication/create-task.md) or [data transformation](../../design-incremental-views/create-views/README.md) task, go to the configuration page of the source database node.
 
 2. Find the **Advanced Settings** tab and check if the **Sync DDL Events** option is available.
 
@@ -26,7 +26,7 @@ To ensure the high availability and fault tolerance of data replication/transfor
 
 | DDL Collection          | DDL Apply                                                    |
 | ----------------------- | ------------------------------------------------------------ |
-| Add Fields              | TapData will automatically adapt the field type when adding fields to the target database, for example, converting from MySQL's **INT** to Oracle's **NUMBER(38,0)**. If there are [unsupported column types](../../user-guide/no-supported-data-type.md), this may lead to the failure of adding fields. |
+| Add Fields              | TapData will automatically adapt the field type when adding fields to the target database, for example, converting from MySQL's **INT** to Oracle's **NUMBER(38,0)**. If there are [unsupported column types](../../faq/no-supported-data-type.md), this may lead to the failure of adding fields. |
 | Modify Field Names      | TapData will automatically complete this operation in the target database, be aware of the target database's field naming restrictions. |
 | Modify Field Attributes | When synchronizing between different types of databases (for example, from MySQL to Oracle), ensure that the target database supports the changed data types and attributes. Otherwise, this may lead to errors or interruptions in the synchronization task. |
 | Delete Fields           | Deleting columns from the source table can have a severe impact on the data pipeline, especially when the column is a key part of the data processing logic, such as a primary key or as a field for update conditions in the synchronization link. Before making such changes, ensure that other components in the data pipeline no longer depend on this column. |

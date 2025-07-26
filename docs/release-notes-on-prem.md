@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 - Added status monitoring for incremental log mining plugins in the [Cluster Management](system-admin/manage-cluster.md) module to improve observability and troubleshooting efficiency.
 - Support for [customizing alert email content](system-admin/other-settings/notification.md#mail-alert), enhancing readability and flexibility of notifications.
-- Support for importing/exporting [data verification task configurations](design-incremental-views/validate-views.md), making it easier to migrate or reuse configurations between test and production environments.
+- Support for importing/exporting [data verification task configurations](operational-data-hub/fdm-layer/validate-data-quality.md), making it easier to migrate or reuse configurations between test and production environments.
 
 ### Enhancements
 
@@ -100,7 +100,7 @@ import TabItem from '@theme/TabItem';
 
 - Added support for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints** in [MySQL](connectors/on-prem-databases/mysql.md)-to-MySQL, [PostgreSQL](connectors/on-prem-databases/postgresql.md)-to-PostgreSQL, and [SQL Server](connectors/on-prem-databases/sqlserver.md)-to-PostgreSQL scenarios, ensuring data structure consistency.
 - Enabled foreign key constraint synchronization in [Sybase](connectors/on-prem-databases/sybase.md)-to-PostgreSQL tasks, further enhancing data consistency.
-- Enhanced the **[primary-secondary merge node](user-guide/data-development/process-node.md#pri-sec-merged)** functionality to allow subsequent connections with other processing nodes (including JS nodes), improving workflow flexibility.
+- Enhanced the **[primary-secondary merge node](operational-data-hub/mdm-layer/process-node.md#pri-sec-merged)** functionality to allow subsequent connections with other processing nodes (including JS nodes), improving workflow flexibility.
 
 ### Enhancements
 
@@ -131,7 +131,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 - Added support for the [Sybase to PostgreSQL](connectors/on-prem-databases/sybase.md) sync scenario, now supporting synchronization of default values, enumerated types, and sequences.
-- Enabled the ability to define a primary key for tables without a primary key when configuring [Primary-Secondary Merge Nodes](user-guide/data-development/process-node.md#pri-sec-merged), ensuring data synchronization consistency and improving merge efficiency.
+- Enabled the ability to define a primary key for tables without a primary key when configuring [Primary-Secondary Merge Nodes](operational-data-hub/mdm-layer/process-node.md#pri-sec-merged), ensuring data synchronization consistency and improving merge efficiency.
 
 ### Enhancements
 
@@ -191,7 +191,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- In the **[Data Verification](design-incremental-views/validate-views.md)** task's advanced settings, a "**Custom Collate**" option has been added, allowing you to specify the sorting rules for both the source and target databases to ensure consistent character sorting during verification.
+- In the **[Data Verification](operational-data-hub/fdm-layer/validate-data-quality.md)** task's advanced settings, a "**Custom Collate**" option has been added, allowing you to specify the sorting rules for both the source and target databases to ensure consistent character sorting during verification.
 
 ### Enhancements
 
@@ -356,7 +356,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 - Added table name and API address display functionality in the [Service Management List Page](publish-apis/create-api-service.md), supporting quick search and filtering by keywords.
-- Enhanced [Data Transformation Task Configuration](user-guide/data-development/create-task.md) to support reloading of single table models in the source node model preview area, improving loading efficiency.
+- Enhanced [Data Transformation Task Configuration](design-incremental-views/create-views/README.md) to support reloading of single table models in the source node model preview area, improving loading efficiency.
 - Introduced time detection functionality that automatically detects the time difference between the engine deployment server and the database server and displays it on the task monitoring page.
 
 ### Enhancements
@@ -376,7 +376,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- [Data Verification](design-incremental-views/validate-views.md) feature now allows downloading detailed discrepancy data from the verification task details page for in-depth analysis.
+- [Data Verification](operational-data-hub/fdm-layer/validate-data-quality.md) feature now allows downloading detailed discrepancy data from the verification task details page for in-depth analysis.
 - Added a [Union Node](user-guide/copy-data/process-node.md#union-node) to data replication tasks, enabling the merging (UNION) of multiple tables within the same database. This is useful for data integration and analysis scenarios.
 - [Doris](connectors/warehouses-and-lake/doris.md) data source now supports certificate-free HTTPS connections.
 - MySQL, Oracle, OpenGauss, SQL Server, and PostgreSQL data sources now support enabling the **Hash Sharding** feature in the advanced settings of nodes during task configuration, significantly improving the full data sync speed for large tables.
@@ -405,7 +405,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* [Data Verification](design-incremental-views/validate-views.md) now includes differential data repair capabilities, enhancing data consistency and accuracy.
+* [Data Verification](operational-data-hub/fdm-layer/validate-data-quality.md) now includes differential data repair capabilities, enhancing data consistency and accuracy.
 * Added a new button for using CDC log Caching when creating [Live Cache](operational-data-hub/advanced/share-cache.md), simplifying cache task configuration and improving the efficiency and flexibility of cache sharing.
 
 ### Enhancements
@@ -436,7 +436,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 * Enhanced [TiDB](connectors/on-prem-databases/tidb.md) data source capabilities with support for real-time incremental synchronization.
-* [Data Validation](design-incremental-views/validate-views.md) now supports automatic difference checking, allowing real-time tasks to automatically perform difference checks based on incremental delay.
+* [Data Validation](operational-data-hub/fdm-layer/validate-data-quality.md) now supports automatic difference checking, allowing real-time tasks to automatically perform difference checks based on incremental delay.
 
 ### Enhancements
 
@@ -473,9 +473,9 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* Added support for dynamically generating date suffixes for target table names when [configuring data transformation tasks](user-guide/data-development/create-task.md#target-node-set), suitable for daily batch processing scenarios.
+* Added support for dynamically generating date suffixes for target table names when [configuring data transformation tasks](design-incremental-views/create-views/README.md#target-node-set), suitable for daily batch processing scenarios.
 * Added support for [integrating with third-party platforms via Webhook](system-admin/other-settings/notification.md) to enable more alert notification channels.
-* Added support for performing Hash validation between MySQL, Oracle, SQL Server, PostgreSQL, and GaussDB data sources when [configuring data validation tasks](design-incremental-views/validate-views.md), improving validation efficiency.
+* Added support for performing Hash validation between MySQL, Oracle, SQL Server, PostgreSQL, and GaussDB data sources when [configuring data validation tasks](operational-data-hub/fdm-layer/validate-data-quality.md), improving validation efficiency.
 * Added support for setting partitions when configuring Doris data sources.
 * Added support for the Oracle mode of OceanBase data sources, with the data source name OceanBase(Oracle).
 
@@ -497,12 +497,12 @@ import TabItem from '@theme/TabItem';
 * Support for bidirectional data synchronization between MySQL instances and between PostgreSQL instances, better meeting the needs of active-active and disaster recovery scenarios.
 * Support for importing files from [MongoDB Relmig](https://www.mongodb.com/docs/relational-migrator/) version 1.3.0 and above, further enhancing ecosystem integration capabilities.
 * Support for synchronizing MongoDB [Oplog](https://www.mongodb.com/docs/manual/core/replica-set-oplog/) (operation log) data.
-* Support for filtering the time field of tables in the source node’s **[Advanced Settings](user-guide/data-development/create-task.md#full-sql-query)** when configuring data transformation tasks (e.g., relative dates).
+* Support for filtering the time field of tables in the source node’s **[Advanced Settings](design-incremental-views/create-views/README.md#full-sql-query)** when configuring data transformation tasks (e.g., relative dates).
 * Display milestone information for tasks on the [Task List](design-incremental-views/manage-task.md) page, helping users quickly understand key progress statuses.
 
 ### Enhancements
 
-* Improved [Unwind Node](user-guide/data-development/process-node.md#unwind) functionality, allowing users to set expansion modes, such as **Embedded Objects** or **Flatten Fields**.
+* Improved [Unwind Node](operational-data-hub/mdm-layer/process-node.md#unwind) functionality, allowing users to set expansion modes, such as **Embedded Objects** or **Flatten Fields**.
 * Enhanced full synchronization detail page display, supporting quick table name filtering.
 
 ### Bug Fixes
@@ -552,8 +552,8 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* When [configuring data verification tasks](design-incremental-views/validate-views.md), custom filtering based on time fields is now available for MongoDB aggregation queries.
-* Supported [hash verification](design-incremental-views/validate-views.md) for MySQL/Oracle homogeneous data source synchronization.
+* When [configuring data verification tasks](operational-data-hub/fdm-layer/validate-data-quality.md), custom filtering based on time fields is now available for MongoDB aggregation queries.
+* Supported [hash verification](operational-data-hub/fdm-layer/validate-data-quality.md) for MySQL/Oracle homogeneous data source synchronization.
 
 ### Bug Fixes
 
@@ -567,7 +567,7 @@ import TabItem from '@theme/TabItem';
 
 * Support for sending email reminders one week before the license expires (once a day), which can be combined with [configuring SMTP email services](case-practices/best-practice/alert-via-qqmail.md) to enhance operational convenience.
 * New options in [DDL synchronization settings](case-practices/best-practice/handle-schema-changes.md): **Stop Task on DDL Error** and **Automatically Ignore All DDLs**, catering to different business scenario needs.
-* Added a [time field injection](user-guide/data-development/process-node.md#time_injection) node, allowing the addition of a custom timestamp field to data during synchronization. This provides a more flexible way to capture incremental changes from the source database.
+* Added a [time field injection](operational-data-hub/mdm-layer/process-node.md#time_injection) node, allowing the addition of a custom timestamp field to data during synchronization. This provides a more flexible way to capture incremental changes from the source database.
 * Support for setting the expiration time and size of engine logs, enabling automatic log cleanup.
 
 ### Enhancements
@@ -592,7 +592,7 @@ import TabItem from '@theme/TabItem';
 
 ### Bug Fixes
 
-* Fixed the issue where the final data does not match the expectation when the primary and secondary table key conditions change in [Primary-Secondary Merge Node](user-guide/data-development/process-node.md#pri-sec-merged).
+* Fixed the issue where the final data does not match the expectation when the primary and secondary table key conditions change in [Primary-Secondary Merge Node](operational-data-hub/mdm-layer/process-node.md#pri-sec-merged).
 
 ## V3.5.10
 
@@ -643,7 +643,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 - Supports loading table comments for [Oracle data sources](connectors/on-prem-databases/oracle.md#advanced), which can be enabled in the advanced options during data source configuration, allowing quick identification of tables' business meanings through comments.
-- Supports deployment of TapData on [Windows platform](_backup-files/install-enterprise-edition/install-on-windows.md), further expanding the range of supported deployment platforms.
+- Supports deployment of TapData on [Windows platform](getting-started/install-and-setup/install-enterprise-edition.md), further expanding the range of supported deployment platforms.
 - In the task operation [monitoring page](data-replication/monitor-task.md), supports viewing RPS (Records Per Second) information based on the dimension of event size.
 
 ### Bug Fixes
@@ -656,7 +656,7 @@ import TabItem from '@theme/TabItem';
 ### Enhancements
 
 - Optimized [data source connections](connectors/README.md), with MySQL, PostgreSQL, Kafka, TiDB, MariaDB, etc., supporting SSL connections to further enhance data security.
-- Enhanced the filtering function of [data verification](design-incremental-views/validate-views.md), supporting custom query and aggregation query filtering through SQL.
+- Enhanced the filtering function of [data verification](operational-data-hub/fdm-layer/validate-data-quality.md), supporting custom query and aggregation query filtering through SQL.
 - Optimized interface interaction logic.
 - For non-primary key update conditions, created a unique index to solve the problem of data duplication.
 
@@ -671,7 +671,7 @@ import TabItem from '@theme/TabItem';
 
 - Newly supports Hive3 as a target.
 - When MongoDB is the target, newly supports [automatic creation of sharded collections](data-replication/create-task.md#advanced-settings).
-- Newly added [Unwind Processing Node](user-guide/data-development/process-node.md#Unwind), helping you efficiently "unwind" elements in an array, converting each element into a separate data row.
+- Newly added [Unwind Processing Node](operational-data-hub/mdm-layer/process-node.md#Unwind), helping you efficiently "unwind" elements in an array, converting each element into a separate data row.
 - When configuring tasks, newly supports the ability to disable nodes. Hovering over a node now offers this functionality, helping to reduce the cost of data flow in the process.
 
 ### Enhancements
@@ -695,14 +695,14 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-- [Data verification](design-incremental-views/validate-views.md) feature field filtering experience optimization.
+- [Data verification](operational-data-hub/fdm-layer/validate-data-quality.md) feature field filtering experience optimization.
 - Supported quick node targeting at the top of the data replication/data transformation configuration page through node search.
 
 ## V3.5.2
 
 ### New Features
 
-* Added [Python Processing Node](user-guide/data-development/process-node.md#python), supporting custom data processing logic through Python scripts, offering performance improvements compared to JS processing nodes.
+* Added [Python Processing Node](operational-data-hub/mdm-layer/process-node.md#python), supporting custom data processing logic through Python scripts, offering performance improvements compared to JS processing nodes.
 * Added support for data synchronization between Redis instances.
 
 ### Enhancements
@@ -727,7 +727,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 - When task configurations are set for full + incremental sync, there's now support to turn on the [scheduled periodic task feature](data-replication/create-task.md#task-attr). The task will automatically stop, reset, and run again at the set time.
-- For the [add/remove field node](user-guide/data-development/process-node.md#add-and-del-cols), field order adjustment is now supported.
+- For the [add/remove field node](operational-data-hub/mdm-layer/process-node.md#add-and-del-cols), field order adjustment is now supported.
 - A new feature to [dynamically adjust memory](data-replication/create-task.md#task-attr) has been introduced (enabled by default). During the full synchronization phase, it identifies memory usage and auto-adjusts the memory queue, effectively preventing memory overflow scenarios.
 - The data panel has been renamed to the [Real-time Data Center](user-guide/real-time-data-hub/README.md), with added guidance on usage and task creation.
 - Introduced a target write strategy, where if an update event does not exist, it can be written to a local log.
@@ -751,14 +751,14 @@ import TabItem from '@theme/TabItem';
 - [Kafka data source](connectors/mq-and-middleware/kafka.md) now supports custom message body formats.
 - Added the [API interface documentation export feature](publish-apis/create-api-service.md#release330-export-api) to help teams quickly establish and enhance API usage documents.
 - Shared mining functionality supports [configuring task alerts](operational-data-hub/advanced/share-mining.md#release330-alert), allowing alerts via system notifications or emails for better task monitoring.
-- The [data validation function](design-incremental-views/validate-views.md) allows setting data filters, enabling validation of specific conditional data only, reducing validation scope and increasing efficiency.
+- The [data validation function](operational-data-hub/fdm-layer/validate-data-quality.md) allows setting data filters, enabling validation of specific conditional data only, reducing validation scope and increasing efficiency.
 - In data service platform mode, when dragging a data table to the platform cache layer to generate a task, it supports [setting the synchronization type of the task to be full or incremental](user-guide/real-time-data-hub/daas-mode/create-daas-task.md#release330-task).
 
 ### Enhancements
 - Introduced [rolling upgrades](platform-ops/operation.md#release330-upgrade), which, compared to the downtime upgrade method, further reduces business impacts.
 - Post-error in [shared mining tasks](operational-data-hub/advanced/share-mining.md), associated tasks now include alert prompts.
-- In the [row filter processing node](user-guide/data-development/process-node.md), added usage examples when filtering with the DATE type.
-- [Time operation node](user-guide/data-development/process-node.md#date-calculation) now displays adjusted fields.
+- In the [row filter processing node](operational-data-hub/mdm-layer/process-node.md), added usage examples when filtering with the DATE type.
+- [Time operation node](operational-data-hub/mdm-layer/process-node.md#date-calculation) now displays adjusted fields.
 - Optimized algorithm for estimating remaining time for full synchronization.
 - Field processing nodes now support one-click copy and paste for configurations.
 
@@ -777,9 +777,9 @@ import TabItem from '@theme/TabItem';
 - In the data platform mode, it can directly [display the relationship of table-level traceability](user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard.md#release320-daas), helping you to visually show the link relationship of data tables.
 - In the data platform mode, it supports [deleting tables from the platform processing layer](user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard.md#release320-daas).
 - When configuring the target node of a task, it supports [adjusting field length by a coefficient](data-replication/create-task.md#release320-col-length) to avoid data write failures due to different character encodings.
-- [Data verification](design-incremental-views/validate-views.md) feature supports SelectDB data source.
+- [Data verification](operational-data-hub/fdm-layer/validate-data-quality.md) feature supports SelectDB data source.
 - In scenarios where Redis is the target node, and data is stored in List or Hash format with a single key, it [supports writing the source table schema into a Hash key](case-practices/pipeline-tutorial/mysql-to-redis.md) (default name is `-schema-key-`). The value is used to store the source table's table name and column name information.
-- Added [**type filter**](user-guide/data-development/process-node.md#release320-type-filter) processing node, which can quickly filter columns of the same type. Filtered fields will not be passed to the next node.
+- Added [**type filter**](operational-data-hub/mdm-layer/process-node.md#release320-type-filter) processing node, which can quickly filter columns of the same type. Filtered fields will not be passed to the next node.
 - **Field editing** processing node supports conversion between snake_case and camelCase naming.
 - Data copy tasks, data conversion tasks, data panels, and caching creation support [displaying table description information](data-replication/create-task.md#310-table-model), defaulting to table comment information.
 
@@ -822,8 +822,8 @@ import TabItem from '@theme/TabItem';
 
 - Shared mining task management improved, supporting [starting/stopping mining tasks for individual tables](operational-data-hub/advanced/share-mining.md#release310-share-mining).
 - [Shared cache](operational-data-hub/advanced/share-cache.md), [functions](operational-data-hub/advanced/manage-function.md), [API data services](publish-apis/create-api-service.md) support import/export functions.
-- [Data verification](design-incremental-views/validate-views.md) supports configuring alert rules and notification methods.
-- Auto-fill table logic for [data verification](design-incremental-views/validate-views.md) has been optimized.
+- [Data verification](operational-data-hub/fdm-layer/validate-data-quality.md) supports configuring alert rules and notification methods.
+- Auto-fill table logic for [data verification](operational-data-hub/fdm-layer/validate-data-quality.md) has been optimized.
 - Frontend added explanations for the distinction between [standard JS](appendix/standard-js.md) and [enhanced JS](appendix/enhanced-js.md).
 - JS processor standardization, JS usage, and trial run have been restructured.
 - In all processing nodes supporting JS scripting, typing `record.` automatically prompts for the current model's field names.
@@ -856,14 +856,14 @@ import TabItem from '@theme/TabItem';
 
 - [Integrated GraphQL capability](publish-apis/query-via-graphql.md), enriching API query methods.
 - Added [application categorization capability for APIs](publish-apis/create-api-service.md), facilitating categorization based on business.
-- Introduced [time calculation processing node](user-guide/data-development/process-node.md#time-calculation) for flexible handling of discrepancies in source and destination database time zones.
+- Introduced [time calculation processing node](operational-data-hub/mdm-layer/process-node.md#time-calculation) for flexible handling of discrepancies in source and destination database time zones.
 - Introduced [full-scale partitioning capability](case-practices/best-practice/full-breakpoint-resumption.md), currently only supported for MongoDB.
 
 ### Enhancements
 
 - [Shared cache function](operational-data-hub/advanced/share-mining.md) improved, offering an observable page to monitor mining progress and troubleshoot failures.
-- [Full custom query function](user-guide/data-development/create-task.md#full-sql-query) relaxed the restriction of only using JS nodes, now allowing the addition of other processing nodes with the node model directly utilizing the source table's model.
-- The field [processing node](user-guide/data-development/process-node.md) supporting operations like adding/deleting fields, type modifications, and renaming fields now includes a field search function.
+- [Full custom query function](design-incremental-views/create-views/README.md#full-sql-query) relaxed the restriction of only using JS nodes, now allowing the addition of other processing nodes with the node model directly utilizing the source table's model.
+- The field [processing node](operational-data-hub/mdm-layer/process-node.md) supporting operations like adding/deleting fields, type modifications, and renaming fields now includes a field search function.
 - Adjusted wording for Schema loading frequency configuration in connection settings.
 - Optimization of table name modification logic in the **Table Editing Node**; removed the apply button for direct configuration effectiveness.
 - During the startup of the management process (frontend), it now includes heapDump and stackTrace parameters, similar to the synchronization governance process.

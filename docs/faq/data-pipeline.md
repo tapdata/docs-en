@@ -289,7 +289,7 @@ Yes, you need to turn on the corresponding switch during task configuration. Add
 
 ### If manual deletion of a field in the target table causes an error during incremental synchronization, how can it be fixed?
 
-You can edit the task, add an [add/remove field node](../user-guide/data-development/process-node.md#add-and-del-cols) before the target node, filter out the deleted field, and then restart the task.
+You can edit the task, add an [add/remove field node](../operational-data-hub/mdm-layer/process-node.md#add-and-del-cols) before the target node, filter out the deleted field, and then restart the task.
 
 :::tip
 
