@@ -30,7 +30,7 @@ Transform your data on the fly with a zero-code interface or flexible custom log
 
 ## Data Delivery: Serve Real-Time Data Anywhere
 
-Distribute trusted, real-time data to [downstream systems](../operational-data-hub/adm-layer/sync-downstream.md), [APIs](../adm-layer/integrate-apis.md), and apps—no ETL required.
+Distribute trusted, real-time data to [downstream systems](../operational-data-hub/adm-layer/sync-downstream.md), [APIs](../operational-data-hub/adm-layer/integrate-apis.md), and apps—no ETL required.
 
 - **Multi-Protocol Outputs**
   Automatically expose your datasets as [REST](../publish-apis/query-via-restful.md)/[GraphQL](../publish-apis/query-via-graphql.md) APIs, publish to Kafka, or sync directly to data warehouses like Snowflake or Delta Lake.

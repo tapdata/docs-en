@@ -49,6 +49,17 @@ We welcome contributions to help improve the documentation! Here is the steps:
    npm run start
    ```
 
+5. (Optional) Check broken links.
+
+   ```bash
+   cd tools
+   # Quick Check
+   npm run check-links:quick
+   
+   # or Detailed Check
+   npm run check-links
+   ```
+
 5. Create a pull request.
 
 ## Project structure

@@ -71,7 +71,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- The [Cluster Overview](user-guide/workshop.md) page on the homepage now displays task distribution by node, helping you better understand cluster workload.
+- The Cluster Overview page on the homepage now displays task distribution by node, helping you better understand cluster workload.
 - [OceanBase (MySQL Mode)](connectors/on-prem-databases/oceanbase.md), [OceanBase (Oracle Mode)](connectors/on-prem-databases/oceanbase-oracle.md), and [GaussDB (DWS)](connectors/warehouses-and-lake/gaussdb.md) have passed Tapdata certification and are now classified as [Certified Data Sources](connectors/supported-data-sources.md), offering enhanced features and improved production-level stability.
 - Data replication tasks now support writing multiple tables to the same Kafka topic, expanding compatibility with more write scenarios.
 
@@ -377,7 +377,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 
 - [Data Verification](operational-data-hub/fdm-layer/validate-data-quality.md) feature now allows downloading detailed discrepancy data from the verification task details page for in-depth analysis.
-- Added a [Union Node](user-guide/copy-data/process-node.md#union-node) to data replication tasks, enabling the merging (UNION) of multiple tables within the same database. This is useful for data integration and analysis scenarios.
+- Added a [Union Node](operational-data-hub/mdm-layer/process-node.md#union-node) to data replication tasks, enabling the merging (UNION) of multiple tables within the same database. This is useful for data integration and analysis scenarios.
 - [Doris](connectors/warehouses-and-lake/doris.md) data source now supports certificate-free HTTPS connections.
 - MySQL, Oracle, OpenGauss, SQL Server, and PostgreSQL data sources now support enabling the **Hash Sharding** feature in the advanced settings of nodes during task configuration, significantly improving the full data sync speed for large tables.
 - Added support for [VastBase](connectors/on-prem-databases/vastbase.md) data source, with a maturity level of Beta, further enriching the variety of data sources.
@@ -410,7 +410,7 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-* Optimized features in the [Real-Time Data Hub](user-guide/real-time-data-hub/README.md):
+* Optimized features in the [Real-Time Data Hub](operational-data-hub/plan-data-platform.md):
   * The data processing layer now displays all models in the database.
   * The platform cache layer and platform processing layer can be configured with different connections, which cannot be adjusted after setting.
   * Added an API publishing entry.
@@ -688,7 +688,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- Added [building materialized views](user-guide/data-development/create-materialized-view.md) feature, enabling quick construction of real-time data models.
+- Added [building materialized views](design-incremental-views/create-views/using-imv-guide.md) feature, enabling quick construction of real-time data models.
 - Added support for configuring source nodes of [shared mining](operational-data-hub/advanced/share-mining.md) tasks, including settings for enabling **incremental multi-threaded writing** and **supplementing updated data with complete fields**.
 - Kafka data source added support for [setting the number of replicas and partitions](case-practices/pipeline-tutorial/oracle-to-kafka.md).
 - Added support for the `$unset` operation during synchronization between MongoDB instances.
@@ -729,7 +729,7 @@ import TabItem from '@theme/TabItem';
 - When task configurations are set for full + incremental sync, there's now support to turn on the [scheduled periodic task feature](data-replication/create-task.md#task-attr). The task will automatically stop, reset, and run again at the set time.
 - For the [add/remove field node](operational-data-hub/mdm-layer/process-node.md#add-and-del-cols), field order adjustment is now supported.
 - A new feature to [dynamically adjust memory](data-replication/create-task.md#task-attr) has been introduced (enabled by default). During the full synchronization phase, it identifies memory usage and auto-adjusts the memory queue, effectively preventing memory overflow scenarios.
-- The data panel has been renamed to the [Real-time Data Center](user-guide/real-time-data-hub/README.md), with added guidance on usage and task creation.
+- The data panel has been renamed to the [Real-time Data Center](operational-data-hub/plan-data-platform.md), with added guidance on usage and task creation.
 - Introduced a target write strategy, where if an update event does not exist, it can be written to a local log.
 
 ### Enhancements
@@ -752,7 +752,7 @@ import TabItem from '@theme/TabItem';
 - Added the [API interface documentation export feature](publish-apis/create-api-service.md#release330-export-api) to help teams quickly establish and enhance API usage documents.
 - Shared mining functionality supports [configuring task alerts](operational-data-hub/advanced/share-mining.md#release330-alert), allowing alerts via system notifications or emails for better task monitoring.
 - The [data validation function](operational-data-hub/fdm-layer/validate-data-quality.md) allows setting data filters, enabling validation of specific conditional data only, reducing validation scope and increasing efficiency.
-- In data service platform mode, when dragging a data table to the platform cache layer to generate a task, it supports [setting the synchronization type of the task to be full or incremental](user-guide/real-time-data-hub/daas-mode/create-daas-task.md#release330-task).
+- In data service platform mode, when dragging a data table to the platform cache layer to generate a task, it supports [setting the synchronization type of the task to be full or incremental](operational-data-hub/set-up-odh.md).
 
 ### Enhancements
 - Introduced [rolling upgrades](platform-ops/operation.md#release330-upgrade), which, compared to the downtime upgrade method, further reduces business impacts.
@@ -774,8 +774,8 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- In the data platform mode, it can directly [display the relationship of table-level traceability](user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard.md#release320-daas), helping you to visually show the link relationship of data tables.
-- In the data platform mode, it supports [deleting tables from the platform processing layer](user-guide/real-time-data-hub/daas-mode/daas-mode-dashboard.md#release320-daas).
+- In the data platform mode, it can directly display the relationship of table-level traceability, helping you to visually show the link relationship of data tables.
+- In the data platform mode, it supports deleting tables from the platform processing layer.
 - When configuring the target node of a task, it supports [adjusting field length by a coefficient](data-replication/create-task.md#release320-col-length) to avoid data write failures due to different character encodings.
 - [Data verification](operational-data-hub/fdm-layer/validate-data-quality.md) feature supports SelectDB data source.
 - In scenarios where Redis is the target node, and data is stored in List or Hash format with a single key, it [supports writing the source table schema into a Hash key](case-practices/pipeline-tutorial/mysql-to-redis.md) (default name is `-schema-key-`). The value is used to store the source table's table name and column name information.
@@ -785,7 +785,7 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-- Product menu adjustments: data development is renamed to [data conversion](user-guide/data-development/). Some functions have been moved to [advanced settings](user-guide/advanced-settings/) (e.g., shared cache).
+- Product menu adjustments: data development is renamed to [data conversion](design-incremental-views/README.md). Some functions have been moved to [advanced settings](operational-data-hub/advanced/manage-function.md) (e.g., shared cache).
 - Improved interaction for tables without primary keys, e.g., [support for filtering non-primary key tables and adding primary key table identification](data-replication/create-task.md#310-table-model) when configuring data copy tasks.
 - For external storage configurations of MongoDB data sources, [connection testing capability](operational-data-hub/advanced/manage-external-storage.md#320-external-storage) has been added.
 - When creating a new external storage and choosing MongoDB, it supports [using SSL connections](operational-data-hub/advanced/manage-external-storage.md#320-external-storage).
@@ -813,7 +813,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- [Data panel functionality](user-guide/real-time-data-hub/etl-mode) now supports table-level traceability capabilities. You can view data lineage relationships through table details.
+- Data panel functionality now supports table-level traceability capabilities. You can view data lineage relationships through table details.
 - When [configuring data copy tasks](data-replication/create-task.md#310-table-model), you can view the table model in the processing node.
 - Supports publishing API data services based on Doris data source [Release API Data Services](publish-apis/create-api-service.md).
 - [Cluster management](system-admin/manage-cluster.md) page allows downloading thread resource monitoring and data source usage data.

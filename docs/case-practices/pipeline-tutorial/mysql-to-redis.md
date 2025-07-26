@@ -139,4 +139,4 @@ Then in Redis, we query the corresponding data:
 
 On the task list page, you can start/stop, monitor, edit, copy, reset, delete, etc. tasks.
 
-For detailed operations, refer to [Manage Tasks](../../user-guide/data-development/monitor-task.md).
+For detailed operations, refer to [Manage Tasks](../../design-incremental-views/manage-task).

@@ -160,7 +160,7 @@ Building on the free offerings of TapData Community for developers, TapData Ente
     <td>➖</td>
   </tr>
   <tr>
-    <td><a href="..operational-data-hub/mdm-layer/define-data-categories">Switch Directory View</a></td>
+    <td><a href="../operational-data-hub/mdm-layer/define-data-categories">Switch Directory View</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>
@@ -223,13 +223,13 @@ Building on the free offerings of TapData Community for developers, TapData Ente
   </tr>
   <tr>
   <td rowspan="5">Platform Management</td>
-  <td><a href="../user-guide/manage-system/manage-role">Role and Permission Management</a></td>
+  <td><a href="../system-admin/manage-role">Role and Permission Management</a></td>
   <td>✅</td>
   <td>➖</td>
   <td>➖</td>
   </tr>
   <tr>
-  <td><a href="../user-guide/manage-system/manage-cluster">Cluster Management</a></td>
+  <td><a href="../system-admin/manage-cluster">Cluster Management</a></td>
   <td>✅</td>
   <td>Not Required</td>
   <td>➖</td>

@@ -11,10 +11,10 @@
 
 ## Considerations
 
-Before configuring a RocketMQ connection, make sure your Tapdata platform or Agent version supports this connector. Otherwise, connection tests may return an error like `"the specified group is blank"`.
+After logging into the TapData platform, click the ![setting_icon](../../images/setting_icon.png) > **Notification Settings** at the top right corner. You can set up custom notification rules to automatically trigger notification processes. The main types are task operation notifications and Agent notifications. The specific notification items include:
 
-- For Tapdata Enterprise/Community users: [upgrade the platform](../../platform-ops/operation.md) to the latest version
-- For Tapdata Cloud users: [upgrade the Agent](../../user-guide/manage-agent.md) to the latest version
+- For Tapdata Enterprise/Community users: upgrade the platform to the latest version
+- For Tapdata Cloud users: upgrade the Agent to the latest version
 
 ## Connect to RocketMQ
 

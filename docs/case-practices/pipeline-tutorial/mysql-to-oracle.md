@@ -64,4 +64,4 @@ Before building the data sync pipeline, we first need to establish a connection 
 
 ## See also
 
-For more advanced features like table merging or building wide tables, you can [create data transformation task](../../design-incremental-views/create-views/README.md.md) on TapData. Additionally, you can explore the [Real-Time Data Hub](../../operational-data-hub/set-up-odh.md), simply drag the source table to generate a data pipeline, which will then automatically start the task. This greatly simplifies the task configuration process.
+For more advanced features like table merging or building wide tables, you can [create data transformation task](../../design-incremental-views/create-views/README.md) on TapData. Additionally, you can explore the [Real-Time Data Hub](../../operational-data-hub/set-up-odh.md), simply drag the source table to generate a data pipeline, which will then automatically start the task. This greatly simplifies the task configuration process.

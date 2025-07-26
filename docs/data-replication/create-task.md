@@ -19,7 +19,7 @@ As an example of creating a data replication task, the article demonstrates the 
 
 <details>
   <summary>Best Practices</summary>
-  To build efficient and reliable data replication tasks, it is recommended to read the <a href="../../../case-practices/best-practice/data-sync">Data Synchronization Best Practices</a> before starting to configure tasks.
+  To build efficient and reliable data replication tasks, it is recommended to read the <a href="../case-practices/best-practice/data-sync">Data Synchronization Best Practices</a> before starting to configure tasks.
 </details>
 
 1. Log in to TapData Platform.

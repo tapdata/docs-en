@@ -131,9 +131,7 @@ You need to add the following parameters to the PostgreSQL connection string dur
 autosave=always&cleanupSavePoints=true
 ```
 
-![](../images/postgresql
-
-_autosave.png)
+![](../images/postgresql_autosave.png)
 
 ### What if testing the MySQL connection indicates: The server time zone value ' 'is unrecognized?
 
@@ -303,7 +301,7 @@ During task configuration, you can open the advanced settings in the source node
 
 :::tip
 
-This feature requires that the target node be a weak scheme-type data source (such as MongoDB/Kafka), etc. If you need to perform data filtering rules during both the full and incremental phases, you can add a [row filter](../user-guide/data-development/process-node.md) to achieve this.
+This feature requires that the target node be a weak scheme-type data source (such as MongoDB/Kafka), etc. If you need to perform data filtering rules during both the full and incremental phases, you can add a [row filter](../operational-data-hub/mdm-layer/process-node.md) to achieve this.
 
 :::
 

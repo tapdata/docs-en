@@ -259,4 +259,4 @@ Processed a total of 1 messages
 
 On the task list page, you can also start/stop, monitor, edit, copy, reset, delete, and perform other operations on the task.
 
-For more information, see [Managing Tasks](../../user-guide/data-development/monitor-task.md).
+For more information, see [Managing Tasks](../../design-incremental-views/manage-task.md).

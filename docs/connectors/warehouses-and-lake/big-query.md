@@ -8,7 +8,7 @@ This article serves as a comprehensive guide, providing step-by-step instruction
 
 ## Precautions
 
-[Agent](../../installation/install-tapdata-agent.md)'s machine can access to Google Cloud Services.
+TapData Platform's machine can access to Google Cloud Services.
 
 
 

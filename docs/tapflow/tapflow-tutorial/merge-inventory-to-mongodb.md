@@ -129,7 +129,7 @@ This guide demonstrates how to consolidate regional inventory data into MongoDB 
    inventoryFlow.start();
    ```
 
-6. (Optional) During task execution, use `status Inventory_Merge` to check the task's status and statistics or monitor the task via the [Web UI](../../user-guide/data-development/monitor-task).
+6. (Optional) During task execution, use `status Inventory_Merge` to check the task's status and statistics or monitor the task via the [Web UI](../../design-incremental-views/monitor-view-tasks.md).
 
    ```python
    # Example task status output

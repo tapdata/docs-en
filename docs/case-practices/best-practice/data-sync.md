@@ -27,7 +27,7 @@ Based on the understanding of the data source, the next step is to configure dat
 
 ## Monitor and Maintain
 
-After starting the task, regularly check the task [monitoring page](../../data-replication/monitor-task.md) for details such as the synchronization rate during the full synchronization phase and changes in the source database data, so you can ensure timely identification and resolution of any issues. If you encounter task anomalies, consult the task logs for detailed [Error Codes and Solutions](../../user-guide/error-code-solution.md) to facilitate troubleshooting.
+After starting the task, regularly check the task [monitoring page](../../data-replication/monitor-task.md) for details such as the synchronization rate during the full synchronization phase and changes in the source database data, so you can ensure timely identification and resolution of any issues. If you encounter task anomalies, consult the task logs for detailed [Error Codes and Solutions](../../faq/error-code-solution.md) to facilitate troubleshooting.
 
 Additionally, during the task execution, you can log into the TapData server and use commands like `top` or `free` to monitor whether the server's compute or memory resources have reached their limits.
 

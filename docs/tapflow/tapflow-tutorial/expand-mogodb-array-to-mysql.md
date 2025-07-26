@@ -103,7 +103,7 @@ Next, we demonstrate how to expand the `order_payments` array and rename fields 
 
 7. While the task runs, you can check the task status and statistics using the command `status MySQL_to_MongoDB_Order`.
 
-   Additionally, you can [monitor the task status through the Web UI](../../user-guide/data-development/monitor-task).
+   Additionally, you can [monitor the task status through the Web UI](../../design-incremental-views/monitor-view-tasks.md).
 
 </TabItem>
 <TabItem value="Using Python Script">

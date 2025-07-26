@@ -140,7 +140,7 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
 
 This example uses Windows Server 2019 to demonstrate the deployment process.
 
-1. [Install MongoDB](../../../administration/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
+1. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
 
 2. Log in to the target device, install Java 1.8 and set environment variables.
 
