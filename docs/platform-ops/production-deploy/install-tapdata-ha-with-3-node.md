@@ -3,6 +3,10 @@
 
 To ensure the reliability of business operations in a production environment, a high availability (HA) deployment is recommended. This guide explains how to deploy TapData services using three servers to achieve high availability.
 
+## Preparation
+
+[Capacity Planning](capacity-planning.md)
+
 ## Deployment Architecture
 
 In this example, we have three servers (as illustrated in the architecture below), each configured with an IP address or hostname. We will deploy **MongoDB services** (to store information required for TapData operations) and complete **TapData services** (including management services, data synchronization governance services, and API services) on each of these servers to achieve overall service high availability.

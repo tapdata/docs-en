@@ -310,6 +310,7 @@ const sidebars = {
              'publish-apis/create-api-service',
              'publish-apis/create-api-client',
              'publish-apis/create-api-server',
+             'publish-apis/manage-api-versions',
              'publish-apis/audit-api',
              'publish-apis/monitor-api-request',
              'publish-apis/api-auth',
@@ -388,6 +389,7 @@ const sidebars = {
               label: 'Production Deployment',
               link: {type: 'doc', id: 'platform-ops/production-deploy/README'},
               items:[
+                     'platform-ops/production-deploy/capacity-planning',
                      'platform-ops/production-deploy/install-tapdata-ha',
                      'platform-ops/production-deploy/install-tapdata-ha-with-3-node',
                      'platform-ops/production-deploy/install-replica-mongodb',

@@ -2,6 +2,10 @@
 
 To ensure reliability in production environments, we recommend deploying TapData in a high-availability setup. This guide will show you how to quickly deploy a high-availability TapData service on a local Linux platform.
 
+## Preparation
+
+[Capacity Planning](capacity-planning.md)
+
 ## Software & Hardware Requirements
 
 * CPU: 8 cores
