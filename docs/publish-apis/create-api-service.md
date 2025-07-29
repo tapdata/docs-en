@@ -22,15 +22,14 @@ Currently, it supports Doris, MongoDB, MySQL, Oracle, PostgreSQL, SQL Server, an
      * **Owner Application**: Select the business application this API belongs to. This helps categorize your APIs clearly. See [Application Management](manage-app.md) for more details.
      * **Connection Type**, **Connection Name**, **Object Name**: Choose the data source and object (e.g. a view like `orders-wide-view`) that the API will query.
    - **Interface Type**: TapData provides two modes for querying data via APIs:
-     - **Default Query**: Includes three default input parameters—`page`, `limit`, and `filter`. This lets clients control pagination and filtering dynamically during runtime. If no filter is passed, the API returns the full dataset (default: 20 records per page). Suitable for general-purpose data access.
-     - **Custom Query**: Gives you more control over the API behavior. You can define fixed filter and sort conditions, specify output fields, and add custom input parameters (e.g., `region`, `startDate`, `userLevel`). Unlike the Default mode, `filter` is not included by default—but you can manually add it to support dynamic filtering if needed. Ideal for delivering domain-specific or constrained endpoints.
-
-   - **API Path Settings**: Your API’s path is structured as `/api/{version}/{prefix}/{base_path}`.
-     - `version` and `prefix` are optional for versioning or business labeling (e.g. `/api/v1/orders/summary`)
-     - `base_path` is required and uniquely identifies the endpoint (auto-generated if left blank)
+     - **Default Query**: A general-purpose mode with built-in pagination and filtering, suitable for client-driven access.
+     - **Custom Query**: A structured mode that enables domain-specific APIs with full control over query logic, sorting, and inputs.
+   - **API Path Settings**: Your API path follows the format `/api/{version}/{prefix}/{base_path}`.
+     - `version` and `prefix` are optional and can be used for versioning or business labeling (e.g., `/api/v1/orders/summary`).
+     - `base_path` is required and uniquely identifies the endpoint. It is auto-generated if left blank.
    - **Input Parameters**: Define the parameters clients can pass when calling this API.
-     * If you choose **Default Query**, the system provides three built-in parameters—`page`, `limit`, and `filter`. This allows the client to dynamically control pagination and filtering at runtime. Custom parameters are not allowed in this mode.
-     * In contrast, **Custom Query** lets you design more structured APIs. You can define your own input parameters (e.g. `region`, `startDate`, `userLevel`) and bind them to filter or sort conditions in the UI. The filtering logic is handled entirely on the server side, and no `filter` object is exposed to the client. This gives you full control over how the data is queried and returned. For supported types and configuration rules, see [API Query Parameters](api-query-params.md).
+     - For **Default Query**, the platform automatically includes three built-in parameters: `page`, `limit`, and `filter`. This allows dynamic pagination and filtering by the client; custom parameters are **not** supported.
+     - For **Custom Query**, you can define your own parameters (such as `region`, `startDate`, or `userLevel`), and map them to specific filter or sort conditions in the UI. In this mode, all filtering is managed server-side; the `filter` parameter is not included unless you explicitly add it. For supported types and configuration rules, see [API Query Parameters](api-query-params.md).
    - **Output Results**: By default, all fields from the selected object are returned. You can manually adjust the list to return only selected fields.
    
 4. Click **Save** at the top right of the page.

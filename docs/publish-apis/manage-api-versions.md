@@ -23,7 +23,7 @@ If your original API endpoint is `/e_commerce_orders`, by assigning version `v1`
 
 :::tip
 
-You can create versioned APIs by dragging a target table from the [ADM Layer](../operational-data-hub/adm-layer/integrate-apis.md) into the API builder, or by opening the Data Service section and clicking [Create API](create-api-service.md). From there, you’ll define the endpoint path and assign a version to it.
+You can create versioned APIs by [dragging a target table](../operational-data-hub/adm-layer/integrate-apis.md) from the FDM or MDM Layer into the API builder, or by opening the Data Service section and clicking [Create API](create-api-service.md). From there, you’ll define the endpoint path and assign a version to it.
 
 :::
 

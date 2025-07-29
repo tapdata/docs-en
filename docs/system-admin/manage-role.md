@@ -1,6 +1,12 @@
 # Manage Roles
 
-A role is a collection of one or more permissions. You can grant multiple operation permissions to a role, and then grant the role to a [user](manage-user.md), who will inherit all the permissions within that role. Based on this design, you can pre-create roles based on business needs and then directly assign roles to users when creating them, without the need to configure permissions for each user, thereby simplifying operational management and enhancing security.
+A role is a collection of one or more permissions. It controls access to features and data across the TapData platform.
+ Roles can be assigned to both:
+
+- **[Users](manage-user.md)**, to control what operations they can perform in the TapData UI.
+- **[Clients](../publish-apis/create-api-client.md)**, to control which APIs they are authorized to access under API Services.
+
+By pre-defining roles for typical use cases, you can quickly assign them to users or clients without configuring individual permissions each time—streamlining management and enhancing security.
 
 ## Procedure
 
