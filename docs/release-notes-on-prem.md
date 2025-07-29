@@ -854,7 +854,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-- [Integrated GraphQL capability](publish-apis/query-via-graphql.md), enriching API query methods.
+- [Integrated GraphQL capability](publish-apis/query/query-via-graphql.md), enriching API query methods.
 - Added [application categorization capability for APIs](publish-apis/create-api-service.md), facilitating categorization based on business.
 - Introduced [time calculation processing node](operational-data-hub/mdm-layer/process-node.md#time-calculation) for flexible handling of discrepancies in source and destination database time zones.
 - Introduced [full-scale partitioning capability](case-practices/best-practice/full-breakpoint-resumption.md), currently only supported for MongoDB.

@@ -4,7 +4,7 @@ TapData allows you to expose real-time data as secure RESTful APIs. Once an API 
 
 ## Before You Begin
 
-Make sure the API you want to query has already been [created and published](create-api-service.md).
+Make sure the API you want to query has already been [created and published](../create-api-service.md).
 
 ## Query via Built-in Debugger
 
@@ -18,13 +18,13 @@ You can test and preview your API directly in TapData—no need for external too
 
 4. In the right panel, scroll to the **Access URL** section to copy the service endpoint.
 
-   ![Get Service Access Address](../images/obtain_restful_address.png)
+   ![Get Service Access Address](../../images/obtain_restful_address.png)
 
 5. Click the **Debug** tab.
 
 6. Scroll to the **Example Code** section to get a sample request and the authentication token.
 
-   ![Get Access Token](../images/obtain_access_token.png)
+   ![Get Access Token](../../images/obtain_access_token.png)
 
 7. Click the **Query** button to test your API.
 
@@ -42,7 +42,7 @@ If you'd prefer to use an external tool or automate API testing, [Postman](https
 
 2. Click **New** and choose **HTTP Request**.
 
-   ![Create HTTP Request](../images/create_restful_request.png)
+   ![Create HTTP Request](../../images/create_restful_request.png)
 
 3. In the request URL field, paste the API endpoint you copied from TapData.
 
@@ -52,8 +52,8 @@ If you'd prefer to use an external tool or automate API testing, [Postman](https
 
 5. Click **Authorization**, select **Bearer Token**, and paste the Access Token you got from TapData.
 
-   ![Set Authorization Information](../images/restful_authorization.png)
+   ![Set Authorization Information](../../images/restful_authorization.png)
 
 6. Click **Send**. You’ll get a real-time response from the API.
 
-   ![Query Result](../images/restful_api_query_result.png)
+   ![Query Result](../../images/restful_api_query_result.png)

@@ -306,6 +306,7 @@ const sidebars = {
       label: 'Publish Data as APIs ',
       link: {type: 'doc', id: 'publish-apis/README'},
       items:[
+             'publish-apis/api-design-considerations',
              'publish-apis/manage-app',
              'publish-apis/create-api-service',
              'publish-apis/create-api-client',
@@ -313,10 +314,17 @@ const sidebars = {
              'publish-apis/manage-api-versions',
              'publish-apis/audit-api',
              'publish-apis/monitor-api-request',
-             'publish-apis/api-auth',
-             'publish-apis/query-via-restful',
-             'publish-apis/query-via-graphql',
-             'publish-apis/api-query-params',
+             {
+               type: 'category',
+               label: 'Query APIs',
+               link: {type: 'doc', id: 'publish-apis/query/README'},
+               items: [
+                 'publish-apis/query/api-auth',
+                 'publish-apis/query/query-via-restful',
+                 'publish-apis/query/query-via-graphql',
+                 'publish-apis/query/api-query-params',
+               ],
+             },
              ]
     },
     {

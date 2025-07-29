@@ -33,7 +33,7 @@ Transform your data on the fly with a zero-code interface or flexible custom log
 Distribute trusted, real-time data to [downstream systems](../operational-data-hub/adm-layer/sync-downstream.md), [APIs](../operational-data-hub/adm-layer/integrate-apis.md), and apps—no ETL required.
 
 - **Multi-Protocol Outputs**
-  Automatically expose your datasets as [REST](../publish-apis/query-via-restful.md)/[GraphQL](../publish-apis/query-via-graphql.md) APIs, publish to Kafka, or sync directly to data warehouses like Snowflake or Delta Lake.
+  Automatically expose your datasets as [REST](../publish-apis/query/query-via-restful.md)/[GraphQL](../publish-apis/query/query-via-graphql.md) APIs, publish to Kafka, or sync directly to data warehouses like Snowflake or Delta Lake.
 - **Virtual Data Products**
   Publish curated business views (e.g., `user_profile`, `finance.revenue`) with access controls, lineage, and usage monitoring—ideal for MDM, analytics, or API-based consumption.
 

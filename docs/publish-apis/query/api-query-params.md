@@ -9,7 +9,7 @@ When invoking published API interfaces, it's possible to add query conditions in
 - **[Skip Filter (Skip Specified Record Count Filter)](#skip)**: Skips a specified number of rows in the returned data.
 - **[Where Filter (Query Condition Filter)](#where)**: Queries and returns data based on a set of logically related conditions, similar to SQL's WHERE clause.
 
-In this case, we have published the `customer` table [as an API service](create-api-service.md), and the data comes from a randomly generated source. Its table structure and data sample are as follows:
+In this case, we have published the `customer` table [as an API service](../create-api-service.md), and the data comes from a randomly generated source. Its table structure and data sample are as follows:
 
 ```sql
 mysql> SELECT * FROM customer LIMIT 1\G;
@@ -31,7 +31,7 @@ registry_date: 02-04-1978
 
 You can also use the Postman tool for a visualized invocation as shown in the following figure:
 
-![Query Example](../images/query_api.png)
+![Query Example](../../images/query_api.png)
 
 Next, we will introduce how to use various filters and provide examples, i.e., setting **Query Params** in the figure above, which corresponds to parameters after the question mark in the request URL.
 

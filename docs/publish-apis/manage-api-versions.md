@@ -1,4 +1,4 @@
-# Managing API Versions
+# Manage API Versions
 
 Managing API versions is essential when multiple applications rely on your APIs. Proper versioning ensures stability, prevents downtime, and facilitates smooth updates across your ecosystem.
 
