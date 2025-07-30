@@ -12,28 +12,29 @@ Whether you're modernizing legacy systems, building customer-facing services, or
 
 ## Why Choose TapData?
 
-Transform all your data assets—legacy CRM, ERP, databases, and SaaS—into a single, governed Operational Data Hub. Break down data silos, eliminate batch latency, and unlock real-time value for your business.
+Transform all your data assets—legacy CRM, ERP, databases, and SaaS—into a single, governed Operational Data Hub (or DaaS). Break down data silos, eliminate batch latency, and unlock real-time value for your business.
 
 <iframe width="100%" height="539" src="https://www.youtube.com/embed/hlJKo6u3UnA?si=6Df9Yzv8jXf5EFE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## When to use TapData
 
+- **Build Operational Data Hub**: A modern, centralied data integration architecture.
 - **Active Master Data Management (MDM):** Unify customers, products, and transactions into a single source of truth.
-- **Real-Time Data Integration:** Seamlessly stream data from on-prem and cloud sources with Change Data Capture (CDC).
-- **360° Business Views:** Quickly build up-to-date, analysis-ready wide tables for any entity.
+- **Real-Time Data Integration**: Change Data Capture (CDC) based database replications and transformations, in cloud or on-prem.
+- **Real-Time Single View**: Quickly build up-to-date, analysis-ready wide tables for customer or product.
 - **Query Acceleration:** Power complex analytics with incremental materialized views—no performance hit on production databases.
 - **Microservices Data Sync:** Keep distributed services and APIs in sync with live, event-driven data.
 
 ## Key Features
 
-- **Sub-Second Data Sync:** CDC delivers up-to-date data from 20+ sources, including RDBMS, SaaS, and APIs.
-- **Real-Time Materialized Views:** Instantly combine and serve data for BI, reporting, or operational dashboards.
-- **Flexible Architecture:** Supports end-to-end sync, hub-and-spoke, REST API gateway, or event streaming.
+- **Sub-Second Data Sync:** Sync data from 30+ database sources using CDC, lightning fast.
+- **Real-Time Materialized Views:**  continuously refreshed materialized views, always in sync with source tables. 
+- **Flexible Architecture:** Supports point-to-point, hub-and-spoke, REST API, and event streaming.
 - **Developer & Analyst Friendly:** Visual drag-and-drop pipelines, plus Python SDK for data engineers.
 - **Enterprise-Grade:** Scales to millions of daily transactions, with built-in monitoring and full data lineage.
 
 
-## Why Modern Enterprises Need a Live Data Platform
+## Why Real-Time Operational Data Platform Matters
 
 - **No More Stale Data**
 
@@ -49,7 +50,7 @@ Transform all your data assets—legacy CRM, ERP, databases, and SaaS—into a s
 
 - **Cut Complexity**
 
-  Visual pipelines and rule-based logic replace custom connectors and fragile scripts.
+  Visual pipelines and simple inline Javascript to replace complex Java coding.
 
 
 ## New to TapData?

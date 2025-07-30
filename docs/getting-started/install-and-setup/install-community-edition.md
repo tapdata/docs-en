@@ -86,7 +86,15 @@ TapData Community includes the following main components:
 
    For example, for version 3.5.16, the command would be: `tar -zxvf tapdata-v3.5.16-663b7b11.tar.gz && cd tapdata`
 
-3. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 or later). TapData will use it as an intermediary database to store tasks and metadata.
+3. Install environmental dependencies.
+
+   1. Install Java 1.8 version.
+
+      ```bash
+      yum -y install java-1.8.0-openjdk
+      ```
+
+   2. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
 
 3. Execute the following command to specify the [URI connection string](https://www.mongodb.com/docs/v5.0/reference/connection-string/#standard-connection-string-format) of the MongoDB instance you just deployed.
 
