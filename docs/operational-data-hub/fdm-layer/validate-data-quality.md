@@ -58,6 +58,8 @@ Click the **Result** link for any validation task to view its results in depth. 
 - Use **One-Click Repair** to automatically align data between source and target.
 - Download detailed mismatch reports for further analysis.
 
+Additionally, you can **generate repair SQL** for in-depth analysis or execute it manually in the database to fix the issue.
+
 ![View validation Results](../../images/check_data_result_en.png)
 
 For **Full Table Value Validation** or **Key Field Value Validation**, you can also click **Diff Validation** in the top-right corner to re-run validation only on the previously identified differences, confirming whether they have been resolved.

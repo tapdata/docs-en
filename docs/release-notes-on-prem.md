@@ -14,6 +14,29 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.4.0
+
+### New Features
+
+- [Incremental data validation](data-replication/incremental-check.md) now supports tables without primary keys, along with manual repair. This expands validation coverage and helps ensure data consistency.
+- Added [alert notifications](system-admin/other-settings/notification.md#alert-settings) during task retries to improve visibility and responsiveness in failure scenarios.
+- Introduced "Node Data Preview" in the task editor, allowing you to view sample fields instantly while configuring tasks—speeding up design and troubleshooting.
+
+### Enhancements
+
+- Improved data source monitoring: Added connection status and performance metrics for Sybase and PostgreSQL, enhancing system observability.
+
+## 4.3.0
+
+### New Features
+
+- [Data validation](operational-data-hub/fdm-layer/validate-data-quality.md) now supports exporting repair SQL for inconsistent results, with compatibility for PostgreSQL, Sybase, and **SQL Server**. This makes offline auditing and rollback easier for ops teams.
+- JS Processor Node now supports the `unset` operation, enabling targeted field removal in MongoDB. Ideal for cleanup and payload optimization.
+
+### Enhancements
+
+- Refined logic for marking full sync tasks as completed: now based on whether all writes to the target are finished—more aligned with real business completion.
+
 ## 4.2.0
 
 ### New Features

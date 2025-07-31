@@ -2,10 +2,6 @@
 
 Incremental data validation is a real-time mechanism designed to enhance data accuracy and consistency. It periodically samples and compares newly inserted or updated records between the source and target systems to detect and automatically correct inconsistencies.
 
-## Prerequisites
-
-Tables selected for incremental validation must have a primary key or a unique index.
-
 ## Background
 
 As real-time data synchronization and integration become core demands across modern enterprises, ensuring consistent data flow between heterogeneous systems has grown increasingly critical. However, real-time sync is often prone to issues such as network latency, system errors, and failed writes, which can result in inconsistencies between source and target databases—ultimately impacting business decisions and operational efficiency.
