@@ -1,4 +1,4 @@
-# Deliver Data (ADM Layer)
+# Deliver Data
 
 import DocCardList from '@theme/DocCardList';
 

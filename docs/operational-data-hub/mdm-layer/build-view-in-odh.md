@@ -32,7 +32,7 @@ The creation process is the same as described in [Build Incremental Materialized
 Once your view is running in real time, you can:
 
 - **Expose it via API** with TapData’s built-in API Service
-- **Sync it to the ADM layer** for BI dashboards or reporting
+- **Sync it to the Downstream Services** for BI dashboards or reporting
 - **Use it as input** in additional MDM pipelines
 
 For example, the *[Unified User View](prepare-and-transform.md)* we created earlier can now be enriched with order data to produce a wide, real-time customer profile—ideal for dashboards, personalization, or marketing automation.

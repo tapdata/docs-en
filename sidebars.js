@@ -247,7 +247,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Deliver Data (ADM Layer)',
+          label: 'Deliver Data',
           link: { type: 'doc', id: 'operational-data-hub/adm-layer/README' },
           items: [
             'operational-data-hub/adm-layer/integrate-apis',
