@@ -89,7 +89,7 @@ import TabItem from '@theme/TabItem';
 
    Register and log in to [TapData Cloud](https://cloud.tapdata.net/). Click your username in the upper-right corner and select **User Center** to obtain the Access Key and Secret Key.
 
-   ![Obtain TapData Cloud AK](../images/obtain_cloud_ak.png)
+   ![Obtain TapData Cloud AK](../../images/obtain_cloud_ak.png)
 
    </TabItem>
 
@@ -97,7 +97,7 @@ import TabItem from '@theme/TabItem';
 
    Contact your administrator for the TapData Enterprise login address. After logging in, click your username in the upper-right corner and select **Personal Settings** to get the access code.
 
-   ![Obtain TapData Enterprise Access Code](../images/obtain_enterprise_ak.png)
+   ![Obtain TapData Enterprise Access Code](../../images/obtain_enterprise_ak.png)
 
    </TabItem>
    </Tabs>     
@@ -178,7 +178,7 @@ Next, configure your data sources via TapShell. In this example, we’ll use MyS
 
    :::tip
 
-   - TapData supports [many popular data sources](../connectors/supported-data-sources.md), with slight configuration differences depending on the source. For more on permissions and parameters, see [Connecting Data Sources](../connectors/README.md).
+   - TapData supports [many popular data sources](../../connectors/supported-data-sources.md), with slight configuration differences depending on the source. For more on permissions and parameters, see [Connecting Data Sources](../../connectors/README.md).
    - If you receive a “**load schema status: error**” error, it’s typically a permission or configuration issue. Retrying with the same name will overwrite the previous configuration with “**database MongoDB_ECommerce exists, will update its config**.”
 
    :::

@@ -35,7 +35,7 @@ In this example, an e-commerce company aims to conduct independent analysis of o
 
 To support traditional relational analysis requirements, we propose a solution using TapFlow to expand MongoDB’s nested order arrays (e.g., `order_payments`) into independent rows in MySQL, ensuring that analytical teams can leverage SQL queries to generate efficient reports and perform data mining. The flow is as follows:
 
-![Real-Time Expansion of MongoDB Arrays with TapFlow](../../images/unwind_mongodb_array.png)
+![Real-Time Expansion of MongoDB Arrays with TapFlow](../../../images/unwind_mongodb_array.png)
 
 Additionally, TapFlow’s real-time sync capabilities ensure that MySQL reflects the latest data from MongoDB, helping the company improve query performance while maintaining data freshness, thus enabling the analytics team to access timely business data and make informed decisions.
 
@@ -103,7 +103,7 @@ Next, we demonstrate how to expand the `order_payments` array and rename fields 
 
 7. While the task runs, you can check the task status and statistics using the command `status MySQL_to_MongoDB_Order`.
 
-   Additionally, you can [monitor the task status through the Web UI](../../design-incremental-views/monitor-view-tasks.md).
+   Additionally, you can [monitor the task status through the Web UI](../../../design-incremental-views/monitor-view-tasks.md).
 
 </TabItem>
 <TabItem value="Using Python Script">

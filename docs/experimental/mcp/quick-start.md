@@ -4,7 +4,7 @@ This guide walks you through enabling the [MCP (Model Context Protocol) service]
 
 ## Prerequisites
 
-- Requires Tapdata Enterprise or Community Edition to be [deployed](../getting-started/install-and-setup/README.md).
+- Requires Tapdata Enterprise or Community Edition to be [deployed](../../getting-started/install-and-setup/README.md).
 - You have an AI model service or tool that supports MCP with SSE protocol (e.g., Cursor or Trae).
 
 ## Step 1: Set Up User and Get Access Code
@@ -13,23 +13,23 @@ To ensure platform security, you need to create and authorize a user account wit
 
 1. Log in to Tapdata Platform.
 
-2. Go to **System Settings** > **Role Management** and create a role named `mcp` (case-insensitive). See [Manage Roles](../system-admin/manage-role.md).
+2. Go to **System Settings** > **Role Management** and create a role named `mcp` (case-insensitive). See [Manage Roles](../../system-admin/manage-role.md).
 
-3. Navigate to **System Settings** > **User Management**, and assign the `mcp` role to a user account. See [Manage Users](../system-admin/manage-user.md).
+3. Navigate to **System Settings** > **User Management**, and assign the `mcp` role to a user account. See [Manage Users](../../system-admin/manage-user.md).
 
 4. Log in to Tapdata using the authorized account, click your username in the top-right corner, and select **Account**. Copy the **Access Code**; you’ll need it in the next steps.
 
-   ![Obtain Access Code](../images/obtain_enterprise_ak.png)
+   ![Obtain Access Code](../../images/obtain_enterprise_ak.png)
 
 ## Step 2: Configure MCP Server in Agent Tool
 
 Next, we’ll use **Cursor** as an example to show how to configure and connect to the Tapdata MCP Server:
 
-1. Open and log in to the Cursor app. Click the top-right ![Settings](../images/setting.png) icon.
+1. Open and log in to the Cursor app. Click the top-right ![Settings](../../images/setting.png) icon.
 
 2. Click **MCP** on the left menu, then click **Add new global MCP Server**.
 
-   ![Add MCP Server](../images/add_mcp_server.png)
+   ![Add MCP Server](../../images/add_mcp_server.png)
 
 3. In the `mcp.json` config file that opens, add the Tapdata MCP service config using the structure below:
 
@@ -63,7 +63,7 @@ Next, we’ll use **Cursor** as an example to show how to configure and connect 
 
 4. Save and close the configuration file. Return to the MCP settings section. When the status light on the left turns green, the connection to Tapdata MCP Server is successful.
 
-   ![MCP Connection Ready](../images/mcp_connection_ready.png)
+   ![MCP Connection Ready](../../images/mcp_connection_ready.png)
 
 5. When you interact with the AI model in Cursor, it will automatically fetch context data from Tapdata MCP Server. You can also guide the model via prompts to help it access data efficiently.
 

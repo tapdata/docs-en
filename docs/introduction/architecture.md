@@ -4,37 +4,38 @@ Discover how TapData’s unified, real-time architecture brings together data in
 
 ## Live Data Platform Overview
 
-TapData brings real-time and batch processing together through a unified pipeline architecture—designed for modern, agile data operations.
+TapData Live Data Platorm turns fragmented data into real-time, deliver actionable data services in three simple steps:
 
-![Product Architecture](https://20778419.s21i.faiusr.com/3/2/ABUIABADGAAgtLr-lgYotInUhwYwgA84uAg.gif)
+![Product Architecture](../images/tapdata_architecture.png)
 
-### Connector Layer (Ingest)
+1. Connect
+   Seamlessly ingest data from any source—databases (Oracle, MSSQL, MySQL etc),  or event streams (Kafka)—using built-in no-code connectors based on CDC (Change Data Capture) technology
+2. Transform
+   Design data flows with drag-and-drop transformations: merge, clean, or enrich data without writing code. Need custom logic? Add JavaScript customer script node in the pipeline in seconds.
+3. Serve
+   Instantly expose data as REST/GraphQL APIs, sync to downstream systems, or push to analytics platforms—all with sub-second latency.
+
+### Tap CDC: Connector Layer (Ingest)
 
 - **100+ Ready-to-Use Connectors**
    Connect to databases (PostgreSQL, MySQL, Oracle with CDC), SaaS apps (Salesforce, Workday), and event streams (Kafka, Debezium).
 - **Change Data Capture (CDC)**
-   Log-based (binlog, WAL) or trigger-based sync with sub-second latency for critical systems.
+   Log-based (binlog, WAL) sync with sub-second latency for critical systems.
 
-### Processing Engine (Transform)
+### Tap Flow: Processing layer (Transform)
 
 - **Streaming-Native Pipelines**
    In-memory execution enables millisecond-level transformations.
 - **Visual Orchestration**
-   Drag-and-drop operators to filter, join, mask, and aggregate—no code required.
+   Drag-and-drop operators to filter, join, mask—no code required.
 
 ### Serving Layer (Deliver)
 
-- **Multi-Channel Delivery**
-   Output to REST/GraphQL APIs, Kafka topics, or direct cloud warehouse sync.
+- **Multi-Model Data Serving / Delivering**
+   Deliver real-time data via APIs, supports reverse sync to databases, and integrates with LLMs through MCP Server.
 - **Virtual Data Products**
    Package and expose trusted datasets (e.g., `UserProfile`) with built-in access control.
 
-### Control Plane (Manage)
-
-- **Full Observability**
-   Monitor pipeline lag, throughput, and errors with end-to-end lineage.
-- **Cloud-Native & Hybrid Ready**
-   Kubernetes-based deployment for cloud, on-prem, or hybrid environments.
 
 ## Key Concepts
 

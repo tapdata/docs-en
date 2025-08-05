@@ -52,7 +52,7 @@ Distribute trusted, real-time data to [downstream systems](../operational-data-h
 
 Whether you're building pipelines or extending the platform, TapData offers tools for full lifecycle automation.
 
-- **[API-First Control](../tapflow/introduction.md)**
+- **[API-First Control](../experimental/tapflow/introduction.md)**
   Manage pipelines via declarative configs (YAML/JSON), CLI, or Terraform.
 - [**Custom Extensions**](../operational-data-hub/advanced/README.md)
   Build your own connectors in Java/JS. Extend pipeline logic with plugin architecture.
@@ -72,7 +72,7 @@ Unlock natural language access to curated data views—no SQL required.
 
 :::tip
 
-[Try Chat with Data via MCP (Preview) →](../mcp/introduction.md)
+[Try Chat with Data via MCP (Preview) →](../experimental/mcp/introduction.md)
 
 :::
 

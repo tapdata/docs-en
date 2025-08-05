@@ -271,7 +271,7 @@ source.enableDDL()
 
 :::tip
 
-To enable DDL synchronization, the target database must also support DDL application. You can check the [list of supported data sources](../../connectors/supported-data-sources.md) for each database's support for DDL events. For more details, see [Best Practices for Handling Schema Changes](../../case-practices/best-practice/handle-schema-changes.md).
+To enable DDL synchronization, the target database must also support DDL application. You can check the [list of supported data sources](../../../connectors/supported-data-sources.md) for each database's support for DDL events. For more details, see [Best Practices for Handling Schema Changes](../../../case-practices/best-practice/handle-schema-changes.md).
 
 :::
 
@@ -711,7 +711,7 @@ Here, `ecom_orders` is the main table, `order_payments` is the related table, jo
 
 #### JS Processing
 
-**Node Description**: Embeds JavaScript code within the data flow task to allow custom processing of data from the source. For more details, refer to [Standard](../../appendix/standard-js.md) / [Enhanced](../../appendix/standard-js.md) JS built-in functions.
+**Node Description**: Embeds JavaScript code within the data flow task to allow custom processing of data from the source. For more details, refer to [Standard](../../../appendix/standard-js.md) / [Enhanced](../../../appendix/standard-js.md) JS built-in functions.
 
 **Example**: The following example adds a confirmation status field to delivered orders in a JavaScript processing node. The processed records are then written to the `updatedCollection` collection in MongoDB.
 

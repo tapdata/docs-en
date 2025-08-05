@@ -32,7 +32,6 @@ const sidebars = {
              'introduction/security',
              'introduction/tapdata-vs-kafka',
              'introduction/tapdata-vs-informatica',
-             'introduction/performance',
              'introduction/terms',
        ]
     },
@@ -329,42 +328,49 @@ const sidebars = {
     },
     {
      type: 'category',
-     label: 'Chat with Data via MCP',
-     link: {type: 'doc', id: 'mcp/README'},
+     label: 'Experimental Features',
+     link: {type: 'doc', id: 'experimental/README'},
      items: [
-            'mcp/introduction',
-            'mcp/quick-start'
-            ]
+            {
+             type: 'category',
+             label: 'Chat with Data via MCP',
+             link: {type: 'doc', id: 'experimental/mcp/README'},
+             items: [
+                    'experimental/mcp/introduction',
+                    'experimental/mcp/quick-start'
+                    ]
+             },
+            {
+            type: 'category',
+            label: 'TapFlow Developer Guide',
+            link: {type: 'doc', id: 'experimental/tapflow/README'},
+            items: [
+                   'experimental/tapflow/introduction',
+                   'experimental/tapflow/quick-start',
+                   {
+                    type: 'category',
+                    label: 'TapFlow API Reference',
+                    link: {type: 'doc', id: 'experimental/tapflow/api-reference/README'},
+                    items: [
+                           'experimental/tapflow/api-reference/data-source',
+                           'experimental/tapflow/api-reference/data-flow',
+                    ]
+                   },
+                   'experimental/tapflow/tapshell-reference',
+                   {
+                    type: 'category',
+                    label: 'Typical Use Cases',
+                    link: {type: 'doc', id: 'experimental/tapflow/tapflow-tutorial/README'},
+                    items: [
+                           'experimental/tapflow/tapflow-tutorial/build-real-time-wide-table',
+                           'experimental/tapflow/tapflow-tutorial/expand-mogodb-array-to-mysql',
+                           'experimental/tapflow/tapflow-tutorial/merge-inventory-to-mongodb',
+                    ]
+                   },
+                   ]
+           },
+          ]
      },
-    {
-     type: 'category',
-     label: 'TapFlow Developer Guide',
-     link: {type: 'doc', id: 'tapflow/README'},
-     items: [
-            'tapflow/introduction',
-            'tapflow/quick-start',
-            {
-             type: 'category',
-             label: 'TapFlow API Reference',
-             link: {type: 'doc', id: 'tapflow/api-reference/README'},
-             items: [
-                    'tapflow/api-reference/data-source',
-                    'tapflow/api-reference/data-flow',
-             ]
-            },
-            'tapflow/tapshell-reference',
-            {
-             type: 'category',
-             label: 'Typical Use Cases',
-             link: {type: 'doc', id: 'tapflow/tapflow-tutorial/README'},
-             items: [
-                    'tapflow/tapflow-tutorial/build-real-time-wide-table',
-                    'tapflow/tapflow-tutorial/expand-mogodb-array-to-mysql',
-                    'tapflow/tapflow-tutorial/merge-inventory-to-mongodb',
-             ]
-            },
-            ]
-    },
     {
       type: 'category',
       label: 'System Admin ',

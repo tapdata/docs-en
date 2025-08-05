@@ -15,7 +15,7 @@ As the business and data volume grows, the e-commerce company **XYZ** faces chal
 - **Data Inconsistency**: Ensuring data consistency across multiple tables in high-concurrency scenarios is challenging, increasing the risk of inconsistencies.
 - **Lack of Real-Time Updates**: Changes in order status or inventory are not reflected promptly, making it difficult for users to access up-to-date information.
 
-![Typical E-commerce Table Structure](../../images/er_graph.png)
+![Typical E-commerce Table Structure](../../../images/er_graph.png)
 
 To address these challenges, the company uses **TapFlow** to build a real-time wide table, consolidating order, customer, payment, and product data in MongoDB to support high-concurrency mobile API queries. Here’s an overview of the process:
 
@@ -23,7 +23,7 @@ To address these challenges, the company uses **TapFlow** to build a real-time w
 2. **Wide Table Generation**: TapFlow's lookup feature combines data from multiple tables into a single wide table, embedding customer, product, and payment information into the order record for simplified queries.
 3. **Real-Time Updates**: When source data changes, TapFlow synchronizes incremental updates to the MongoDB wide table, ensuring the query content is always up-to-date.
 
-![Building a Real-Time Wide Table](../../images/real_time_wide_table.gif)
+![Building a Real-Time Wide Table](../../../images/real_time_wide_table.gif)
 
 By using TapFlow, XYZ enables real-time synchronization and fast querying of order and inventory information. Operations staff can access the latest order data instantly, significantly improving the user experience. The wide table consolidates order, customer, product, and logistics information in MongoDB, reducing cross-table join resource consumption and improving query efficiency and system performance.
 
@@ -313,4 +313,4 @@ The following steps simulate data flow in a real-world business scenario by manu
 
 ## See also
 
-[Publish Data as API](../../publish-apis/create-api-service.md)
+[Publish Data as API](../../../publish-apis/create-api-service.md)

@@ -4,7 +4,7 @@ Both TapData and Informatica help you manage master data—but with very differe
 
 This guide helps you compare both, and shows when TapData’s **Active MDM** offers the modern alternative.
 
-## Why TapData Stands Out
+## Comparing TapData and Informatica MDM
 
 | Capability              | **TapData Active MDM**                     | **Informatica MDM**                        |
 | ----------------------- | ------------------------------------------ | ------------------------------------------ |
@@ -52,44 +52,3 @@ Use TapData when:
  “Unify customer records across SAP, Salesforce, and MongoDB, validate the data, resolve conflicts, and publish a GraphQL API—all in under 1 hour.” 
 
 > With traditional tools, delivering the same result could take **weeks of work**—and a cross-functional team juggling ETL tools, job schedulers, and backend API code.
-
-
-
-## When Informatica Excels
-
-Informatica MDM fits when:
-
-- You need strict governance and audit controls
-- You manage complex enterprise hierarchies (e.g. global subsidiaries)
-- You work in regulated industries like pharma or banking
-- You’re comfortable with batch cycles and ETL-based ops
-
-**Example:**
- “Manage global product hierarchy with scheduled weekly refreshes and audit logging.”
-
-
-
-## Performance Benchmarks
-
-TapData offers significantly better real-time performance than traditional MDM tools like Informatica. Below is a side-by-side comparison across three key dimensions.
-
-![Performance Benchmarks](../images/tapdata_vs_informatica_pef.png)
-
-*Tested with 50M records across 12 source systems. See detailed comparisons below.*
-
-| Metric                | **TapData**     | **Informatica** | TapData Advantage |
-| --- | --- | --- | --- |
-| Record Update Latency | 820 ms (P99)    | 47 minutes      | **3,400x** faster |
-| Throughput            | 22K updates/sec | 3K updates/sec  | **7.3x** higher |
-| Recovery Time (K8s)   | 10 seconds      | 30+ minutes     | **180x** faster |
-
-
-
-## Final Takeaways
-
-1. **TapData = Real-Time MDM for Modern Teams**
-    Live golden records, APIs, and CDC pipelines—all in one UI.
-2. **Informatica = Governance-First, Batch-Oriented**
-    Best suited for strict hierarchy management and legacy systems.
-3. **TapData Reduces MDM Complexity**
-    From onboarding to data delivery, everything is faster, lighter, and cloud-ready.

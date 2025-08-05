@@ -71,7 +71,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* Introduced [Tapdata MCP (Model Context Protocol)](mcp/introduction.md), enabling integration of multi-source data into real-time contextual views consumable by LLMs and AI Agents. This feature is ideal for scenarios with high demands on data freshness and compliance, such as financial risk control.
+* Introduced [Tapdata MCP (Model Context Protocol)](experimental/mcp/introduction.md), enabling integration of multi-source data into real-time contextual views consumable by LLMs and AI Agents. This feature is ideal for scenarios with high demands on data freshness and compliance, such as financial risk control.
 * Added support for using **StarRocks** as a target database, allowing faster construction of real-time data warehouses for high-concurrency, multi-dimensional analytics use cases.
 * Added the ability to choose from multiple data structures(e.g. Flink) when syncing to **[Kafka-Enhanced](connectors/mq-and-middleware/kafka-enhanced.md)**, enhancing compatibility and integration efficiency with downstream systems.
 

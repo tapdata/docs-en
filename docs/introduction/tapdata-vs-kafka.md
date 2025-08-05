@@ -2,11 +2,11 @@
 
 Both TapData and Apache Kafka enable real-time data movement—but they’re designed for different audiences and use cases.
 
-**Kafka** is a powerful foundation for custom, developer-built event systems. **TapData** is a streamlined platform for data teams to turn live data into APIs, analytical views, and data products—without writing code.
+**Kafka** is a powerful foundation for custom, developer-built event systems that typically require development effort. **TapData** is data integration platform designed with no code or low code data engineering in mind.
 
 This guide helps you decide which fits your goals—or how they can work together.
 
-## Why TapData Stands Out
+## Comparing TapData and Apache Kafka
 
 | Capability              | **TapData**                                         | **Apache Kafka**                          |
 | ----- | --- | ----- |
