@@ -32,6 +32,7 @@ const sidebars = {
              'introduction/security',
              'introduction/tapdata-vs-kafka',
              'introduction/tapdata-vs-informatica',
+             'introduction/performance',
              'introduction/terms',
        ]
     },
