@@ -22,6 +22,17 @@ TapData Live Data Platorm turns fragmented data into real-time, deliver actionab
 - **Change Data Capture (CDC)**
    Log-based (binlog, WAL) sync with sub-second latency for critical systems.
 
+### Tap Store: Storage Layer (Persist & Model)
+
+- **High-Availability Storage**
+  Built on MongoDB’s replica set architecture, Tap Store ensures data durability and automatic failover—keeping your pipelines running even if a node goes down.
+- **Materialized Views & Data Models**
+  Persist processed datasets and Incremental Materialized Views (IMVs) for instant query access.
+- **Schema Flexibility**
+  Store structured, semi-structured, or nested JSON data without complex schema migrations.
+- **Query-Ready**
+  Expose stored data via SQL, REST, or GraphQL APIs, enabling fast lookups for applications, analytics, and AI/ML workloads.
+
 ### Tap Flow: Processing layer (Transform)
 
 - **Streaming-Native Pipelines**

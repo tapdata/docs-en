@@ -49,6 +49,6 @@ Use TapData when:
 - You prefer low maintenance, no batch jobs or ETL
 
 **Example:**
- “Unify customer records across SAP, Salesforce, and MongoDB, validate the data, resolve conflicts, and publish a GraphQL API—all in under 1 hour.” 
+ “Unify customer records across Salesforce, and MongoDB, validate the data, resolve conflicts, and publish a GraphQL API.” 
 
 > With traditional tools, delivering the same result could take **weeks of work**—and a cross-functional team juggling ETL tools, job schedulers, and backend API code.

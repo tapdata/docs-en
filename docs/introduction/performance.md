@@ -9,28 +9,9 @@ A high-level snapshot of TapData’s performance across full sync, incremental C
 ![Performance Benchmark Overview](../images/performanc_benchmark.png)
 
 :::tip
+
 ClickHouse supports append-only operations and is excluded from CDC and DML tests.
-:::
 
-## Test Scope
-
-This benchmark evaluates TapData’s performance across key replication and transformation scenarios:
-
-- Full sync throughput (initial batch replication)
-- Incremental CDC read/write performance
-- Mixed write throughput (DML: INSERT, UPDATE, DELETE)
-- Engine scalability under concurrent workloads
-
-## Test Environment
-
-Performance tests were conducted using TapData v3.7.0, deployed on the following hardware:
-
-* **TapData Version**: v3.7.0 
-* **Instance Type**: 16 vCPU, 32 GB RAM, 300 GB ESSD
-* **Engine Memory Allocation**: 16 GB
-
-:::tip
-Only the TapData engine environment is shown here. Source and target systems were deployed separately with sufficient resources to avoid bottlenecks.
 :::
 
 ## Full Sync Throughput
@@ -87,6 +68,23 @@ Under synthetic loads with 1KB records, a single TapData engine instance sustain
 - **Mixed DML support**: Stable performance for real-world transactional workloads
 - **Flexible CDC modes**: Choose Oracle parsing mode based on performance/ops needs
 
+
 ## About This Report
 
-This report is based on TapData v3.7.0, tested under typical enterprise configurations. Results may vary depending on hardware, deployment mode, and connector settings. It serves as a reference for evaluating TapData's real-time data integration performance at scale.
+These results are based on **TapData v3.7.0**, tested under typical enterprise configurations.
+
+This benchmark evaluates TapData’s performance across full sync, incremental CDC, and mixed DML workloads—validating its ability to handle high-throughput, low-latency pipelines at scale.
+
+**Test Scope**
+- Full sync throughput (initial batch replication)
+- Incremental CDC read/write performance
+- Mixed write throughput (DML: INSERT, UPDATE, DELETE in a 1:1:1 ratio)
+- Engine scalability under concurrent workloads
+
+**Test Environment**
+- **TapData Version**: v3.7.0
+- **Instance Type**: 16 vCPU, 32 GB RAM, 300 GB ESSD
+- **Engine Memory Allocation**: 16 GB  
+  *(Source and target systems had sufficient resources to avoid bottlenecks)*
+
+Results may vary depending on hardware, deployment mode, and connector settings.

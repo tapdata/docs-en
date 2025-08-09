@@ -22,11 +22,15 @@ A technique that captures insert, update, and delete operations from source syst
 
 Also known as the **Platform Cache Layer**, FDM mirrors raw source tables using CDC. It reduces the load on operational databases while preserving data fidelity. The FDM layer maintains source-like schemas and provides a real-time foundation for modeling and transformation.
 
-## MDM (Master Data Management)
+## MDM (Master Data Model)
 
-The layer where raw replicated data from FDM is transformed into standardized, trusted business entities. MDM organizes data into reusable wide tables (e.g., `Customer`, `Product`) through cleaning, enrichment, and unification—enabling consistent consumption across teams and tools.
+A Master Data Model in TapData is a standardized data model that defines the structure, attributes, relationships for core business entities (e.g., Customer, Product) to ensure consistency, accuracy, and reusability across integrated systems. It serves as the single source of truth for master data in real-time synchronization, data pipelines, and API-based data services.
 
-## ADM (Analytical Data Mart)
+Master data model is typically created based on FDM models, using TapData's real time pipeline. TapData uses JSON to store master data model, hence these pipelines typically reads data from multiple FDM tables and merge them into a rich structured master data model.
+
+The master data model in TapData is continuously updated by every insert/update/delete change from each of the contributing tables.
+
+## ADM (Application Data Model)
 
 The delivery layer where curated data is served to consuming systems. TapData supports low-latency delivery via REST/GraphQL APIs, Kafka streams, and direct sync to analytical databases. ADM enables real-time consumption of cleaned and modeled data across platforms.
 
