@@ -1,41 +1,34 @@
 # Getting Started
 
+Welcome to TapData! This quick-start guide walks you through building a real-time data pipeline—from connecting sources to publishing analysis-ready APIs.
 
+TapData’s **Incremental Materialized Views (IMVs)** let you define joins and transformations once, and automatically keep the results fresh in real time—ideal for analytics, applications, and APIs.
 
-Welcome to TapData! This guide will help you go from zero to delivering real-time, analysis-ready data services—without heavy ETL pipelines or complex SQL joins.
+:::tip
+If you’re looking to build a complete **Operational Data Hub (ODH)**, see the [ODH Handbook](../operational-data-hub/plan-data-platform.md) for the full architecture and design approach.  
+For now, this guide gives you a fast way to experience TapData’s core capabilities.
+:::
 
-TapData makes it easy to move, transform, and publish data so it's always fresh, consistent, and ready to power your analytics, applications, and APIs.
-
-## Why Use Incremental Materialized Views?
-
-Imagine you’re a data professional in a growing business. Your team needs up-to-date insights—like combining customer profiles with transaction data or blending operational records with product information—to drive reporting, automate workflows, and deliver better customer experiences.
-
-In traditional databases, joining and transforming data across multiple systems often requires writing complex SQL queries or managing fragile ETL jobs. As data volumes grow, these processes can get slower and harder to maintain, impacting both performance and agility.
-
-With TapData's **Incremental Materialized Views (IMVs)**, you can define joins and transformations once, and TapData will continuously keep the results updated in real time. Your BI dashboards, internal tools, or customer-facing applications can query a single, analysis-ready view—no manual ETL, no production impact.
 
 ## What Will You Do?
 
 You'll learn how to:
 
-1. **Install and Set Up TapData**  
-   Deploy TapData and get your environment ready.
+1. **[Install and Set Up TapData](install-and-setup/README.md)**  
+   Deploy TapData and prepare your environment.
 
-2. **Connect Your Data Sources**  
-   Add connections to your **source databases** (like MySQL) and **target MongoDB database** so TapData can sync and transform your data.
+2. **[Connect Your Data Sources](connect-data-source.md)**  
+   Add connections to your **source databases** (like MySQL) and a **target MongoDB database** to sync and transform data.
 
-3. **Create a Real-Time Incremental Materialized View**  
-   Use the visual Guide to combine tables into a single, always-up-to-date view—making analysis simple and consistent.
+3. **[Create a Real-Time Incremental Materialized View](build-real-time-materialized-view.md)**  
+   Use the visual designer to combine tables into a single, always-up-to-date view—ready for instant querying.
 
-4. **Publish Your View as an API**  
-   Expose your real-time data as a secure API endpoint, ready for dashboards, CRM systems, or any downstream applications.
+4. **[Publish Your View as an API](publish-imv-as-api.md)**  
+   Expose your real-time data as a secure API endpoint for dashboards, CRM systems, or downstream apps.
 
-
-
-Ready to get started? Follow the sections below to build your real-time data pipeline from source to API.
-
-
+Ready to try it out? Follow the steps below to create your first real-time data pipeline.
 
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
+
