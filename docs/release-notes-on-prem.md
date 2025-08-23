@@ -14,6 +14,35 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.6.0
+
+### New Features
+
+* Added support for defining business aliases for fields when [creating APIs](publish-apis/create-api-service.md), improving semantic readability and standardization of field names.
+* When publishing a Custom Query API, you can now preview and edit the generated SQL statement, and reference user-defined parameters—offering a more flexible API configuration experience.
+
+### Enhancements
+
+* Added an **“Ignore Update Events”** option for child table merge logic, reducing redundant triggers and minimizing unnecessary data updates.
+* Support for customizing license alert levels and email templates, helping enterprises meet compliance and notification requirements.
+* Added a Set API Access option on the role management page, enabling quick assignment of API access permissions to roles, improving authorization efficiency.
+
+### Bug Fixes
+
+* Fixed an issue where the maximum number of rows returned by an API did not take effect in system settings.
+* Fixed a display error in the API audit page.
+
+## 4.5.0
+
+### Enhancements
+
+* Improved write performance when using [Feishu Bitable](connectors/saas-and-api/feishu-bitable.md) as a target database.
+* Optimized the source and target configuration interfaces to make interactions clearer, improving usability and configuration efficiency.
+
+### Bug Fixes
+
+* Fixed an issue where **specified return fields for APIs** were not applied correctly.
+
 ## 4.4.0
 
 ### New Features
