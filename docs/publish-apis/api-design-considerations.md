@@ -12,7 +12,7 @@ Change is inevitable. A great API strategy acknowledges that both the data and b
 
 :::tip
 
-**Best Practice:** Only introduce a new major version for breaking changes. Additive, backward-compatible enhancements can stay in the same version. For more information, see [Manage AIP Versions](manage-api-versions.md).
+**Best Practice:** Only introduce a new major version for breaking changes. Additive, backward-compatible enhancements can stay in the same version. For more information, see [Manage API Versions](manage-api-versions.md).
 
 :::
 

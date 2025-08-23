@@ -4,7 +4,7 @@ Discover how TapData’s unified, real-time architecture brings together data in
 
 ## Live Data Platform Overview
 
-TapData Live Data Platorm turns fragmented data into real-time, deliver actionable data services in three simple steps:
+TapData Live Data Platform turns fragmented data into real-time, deliver actionable data services in three simple steps:
 
 ![Product Architecture](../images/tapdata_architecture.png)
 

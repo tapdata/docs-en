@@ -18,7 +18,7 @@ Transform all your data assets—legacy CRM, ERP, databases, and SaaS—into a s
 
 ## When to use TapData
 
-- **Build Operational Data Hub**: A modern, centralied data integration architecture.
+- **Build Operational Data Hub**: A modern, centralized data integration architecture.
 - **Active Master Data Management (MDM):** Unify customers, products, and transactions into a single source of truth.
 - **Real-Time Data Integration**: Change Data Capture (CDC) based database replications and transformations, in cloud or on-prem.
 - **Real-Time Single View**: Quickly build up-to-date, analysis-ready wide tables for customer or product.

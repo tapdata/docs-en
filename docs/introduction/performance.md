@@ -6,7 +6,7 @@ This benchmark summarizes TapData's real-world performance across mainstream dat
 
 A high-level snapshot of TapData’s performance across full sync, incremental CDC, and mixed DML workloads.
 
-![Performance Benchmark Overview](../images/performanc_benchmark.png)
+![Performance Benchmark Overview](../images/performance_benchmark.png)
 
 :::tip
 
