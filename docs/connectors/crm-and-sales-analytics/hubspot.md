@@ -29,7 +29,7 @@ HubSpot's CRM platform contains the marketing, sales, service, operations, and w
 
    After completing the operation, the page will automatically return to the data source configuration page, displaying **Successfully Authorized**.
 
-7. Click **Connection Test**. After passing the test, click **Save**.
+7. Click **Test**. After passing the test, click **Save**.
 
    :::tip
 
