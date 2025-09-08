@@ -27,12 +27,12 @@ Transform all your data assets—legacy CRM, ERP, databases, and SaaS—into a s
 
 ## Key Features
 
-- **Sub-Second Data Sync:** Sync data from 30+ database sources using CDC, lightning fast.
-- **Real-Time Materialized Views:**  continuously refreshed materialized views, always in sync with source tables. 
-- **Flexible Architecture:** Supports point-to-point, hub-and-spoke, REST API, and event streaming.
-- **Developer & Analyst Friendly:** Visual drag-and-drop pipelines, plus Python SDK for data engineers.
-- **Enterprise-Grade:** Scales to millions of daily transactions, with built-in monitoring and full data lineage.
-
+- **50+ Pre-Built CDC Connctors**: Oracle, DB2, Sybase, MSSQL, PostgreSQL, MySQL and cloud variations
+- **Sub-Second Data Capture & Sync**: Instant detect and capture changes from source databases and sync to destination
+- **Real-Time Materialized Views**: continuously refreshed materialized views, always in sync with source tables.
+- **Flexible Architecture**: Supports point-to-point, hub-and-spoke, REST API, and event streaming.
+- **Developer Friendly**: Visual drag-and-drop pipelines, plus Python SDK for data engineers.
+- **Enterprise-Grade**: Scales to millions of daily transactions, with built-in monitoring and full data lineage.
 
 ## Why Real-Time Operational Data Platform Matters
 

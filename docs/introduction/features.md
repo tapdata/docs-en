@@ -57,37 +57,22 @@ Whether you're building pipelines or extending the platform, TapData offers tool
 - [**Custom Extensions**](../operational-data-hub/advanced/README.md)
   Build your own connectors in Java/JS. Extend pipeline logic with plugin architecture.
 
-## Smart Interaction: Chat with Your Data (Preview)
+## AI Agent Integration: Connect LLMs to Live Data (Preview)
 
 ![TapData MCP Server Overview](../images/tapdata_mcp_server_introduction.png)
 
-Unlock natural language access to curated data views—no SQL required.
+Empower AI models and agents with real-time business context through standardized protocols.
 
-- **Chat-Based Exploration**
-  Let business users query data using natural language. Powered by metadata, lineage, and field-level descriptions from your Virtual Data Products.
-- **MCP-Powered Understanding**
-  MCP (Metadata-Centric Platform) maps user intent to live datasets, resolving ambiguity using field names, data types, and context.
-- **Preview Mode**
-  Ideal for customer service, marketing, and internal ops teams to explore data quickly without BI tools or dashboards.
-
-:::tip
-
-[Try Chat with Data via MCP (Preview) →](../experimental/mcp/introduction.md)
-
-:::
-
-## Why Choose TapData?
-
-| **Your Need**             | **TapData Solution**                      | **Legacy Alternative**           |
-| ------------------------- | ----------------------------------------- | -------------------------------- |
-| Real-time customer data   | CDC-powered 360° views                    | Batch ETL + stale aggregates     |
-| Agile analytics           | Incremental materialized views (IMV)      | Nightly Data Warehouse refreshes |
-| Microservices integration | Auto-generated APIs                       | Hand-coded Kafka consumers       |
-| Compliance & auditability | In-flight masking + full lineage tracking | Manual audit scripts             |
+- **LLM & Agent Integration**
+  Connect popular AI tools like Cursor, Claude, and custom agents to your live data through Model Context Protocol (MCP).
+- **Real-Time Context Delivery**
+  MCP provides structured, real-time business data to AI models, enhancing inference accuracy and reducing hallucinations.
+- **Enterprise-Ready Security**
+  Field-level masking, role-based permissions, and controlled access ensure AI models get only authorized, fresh data during inference.
 
 :::tip
 
-[See All Connectors →](../connectors/supported-data-sources.md) | [Explore Architecture →](architecture.md)
+[Try AI Agent Integration via MCP (Preview) →](../experimental/mcp/introduction.md)
 
 :::
 

@@ -334,7 +334,7 @@ const sidebars = {
      items: [
             {
              type: 'category',
-             label: 'Chat with Data via MCP',
+             label: 'AI Agent Integration',
              link: {type: 'doc', id: 'experimental/mcp/README'},
              items: [
                     'experimental/mcp/introduction',
