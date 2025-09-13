@@ -27,7 +27,7 @@ Transform all your data assets—legacy CRM, ERP, databases, and SaaS—into a s
 
 ## Key Features
 
-- **50+ Pre-Built CDC Connctors**: Oracle, DB2, Sybase, MSSQL, PostgreSQL, MySQL and cloud variations
+- **50+ Pre-Built CDC Connectors**: Oracle, DB2, Sybase, MSSQL, PostgreSQL, MySQL and cloud variations
 - **Sub-Second Data Capture & Sync**: Instant detect and capture changes from source databases and sync to destination
 - **Real-Time Materialized Views**: continuously refreshed materialized views, always in sync with source tables.
 - **Flexible Architecture**: Supports point-to-point, hub-and-spoke, REST API, and event streaming.
