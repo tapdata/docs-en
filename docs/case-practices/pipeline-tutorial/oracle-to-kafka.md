@@ -108,7 +108,7 @@ Before creating a data transformation task, ensure you have configured the neces
 
        :::tip
 
-       For more information on how to use the JS node and supported functions, see [Process Node](../../operational-data-hub/mdm-layer/process-node.md).
+       For more information on how to use the JS node and supported functions, see [Process Node](../../data-transformation/process-node.md).
 
        :::
 
@@ -259,4 +259,4 @@ Processed a total of 1 messages
 
 On the task list page, you can also start/stop, monitor, edit, copy, reset, delete, and perform other operations on the task.
 
-For more information, see [Managing Tasks](../../design-incremental-views/manage-task.md).
+For more information, see [Managing Tasks](../../data-transformation/manage-task.md).

@@ -9,7 +9,7 @@ Lark is an enterprise collaboration and management platform that integrates inst
 - The maximum size for a text message request body is **150 KB**, and the maximum size for a card or rich text message request body is **30 KB**.
 
 - Typically, upstream sources (such as databases or logs) do not produce data in the message body structure required by Lark.
-   Therefore, you usually need to add a [JavaScript](../../operational-data-hub/mdm-layer/process-node.md#js-process) or [Python](../../operational-data-hub/mdm-layer/process-node.md#python) processing node in the data pipeline to clean and format the raw data into a JSON structure like the one below:
+   Therefore, you usually need to add a [JavaScript](../../data-transformation/process-node.md#js-process) or [Python](../../data-transformation/process-node.md#python) processing node in the data pipeline to clean and format the raw data into a JSON structure like the one below:
 
   ```json
   [

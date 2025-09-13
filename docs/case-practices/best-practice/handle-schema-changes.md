@@ -6,7 +6,7 @@ During data migration and synchronization with TapData Cloud, recognizing the im
 
 To ensure the high availability and fault tolerance of data replication/transformation tasks, by default, TapData does not synchronize the DDL statements from the source database to the target database. If you need to enable this feature, please follow these steps:
 
-1. When creating or editing a [data replication](../../data-replication/create-task.md) or [data transformation](../../design-incremental-views/create-views/README.md) task, go to the configuration page of the source database node.
+1. When creating or editing a [data replication](../../data-replication/create-task.md) or [data transformation](../../data-transformation/create-views/README.md) task, go to the configuration page of the source database node.
 
 2. Find the **Advanced Settings** tab and check if the **Sync DDL Events** option is available.
 

@@ -43,8 +43,8 @@ In this section, we’ll also share tips for optimizing performance and designin
 
 TapData offers multiple ways to design and build your IMVs, so you can choose the approach that best suits your needs and technical comfort level:
 
-- [Using IMV Guide](create-views/using-imv-guide.md): A step-by-step wizard for quickly creating even complex joins, with a streamlined setup that doesn't require extra processing nodes.
-- [Using Data Pipeline](create-views/using-data-pipeline-ui.md): A visual, flow-based interface that lets you define joins, choose fields, and insert transformation nodes for cleaning or enriching your data.
-- [Using TapFlow](create-views/using-tapflow.md): A code-friendly approach designed for developers and advanced users who want full control and automation via API or CLI.
+- [Using IMV Guide](using-imv-guide.md): A step-by-step wizard for quickly creating even complex joins, with a streamlined setup that doesn't require extra processing nodes.
+- [Using Data Pipeline](using-data-pipeline-ui.md): A visual, flow-based interface that lets you define joins, choose fields, and insert transformation nodes for cleaning or enriching your data.
+- [Using TapFlow](using-tapflow.md): A code-friendly approach designed for developers and advanced users who want full control and automation via API or CLI.
 
 Choose the approach that works best for you and start building real-time, analysis-ready data views tailored to your business.

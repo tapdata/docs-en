@@ -129,4 +129,4 @@ Follow the instructions in the document to complete the Binlog configuration and
 
 In the task list page, you can start/stop, monitor, edit, copy, reset, and delete tasks.
 
-For detailed operations, see [Manage Tasks](../../design-incremental-views/manage-task.md).
+For detailed operations, see [Manage Tasks](../../data-transformation/manage-task.md).

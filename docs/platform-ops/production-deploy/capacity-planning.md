@@ -5,7 +5,7 @@ This document provides a comprehensive capacity planning reference to help users
 
 ## Terminology
 
-* **Data Pipeline**: A data pipeline can replicate one or multiple tables from a source database to a target database. During the synchronization process, data can also be [transformed and processed](../../operational-data-hub/mdm-layer/process-node.md) (e.g., data filtering) to ensure that the target database receives accurate and optimized data.
+* **Data Pipeline**: A data pipeline can replicate one or multiple tables from a source database to a target database. During the synchronization process, data can also be [transformed and processed](../../data-transformation/process-node.md) (e.g., data filtering) to ensure that the target database receives accurate and optimized data.
 * **RPS (Records Per Second)**: A metric that measures data transfer speed and system processing capability, reflecting the number of records the system processes per second.
 
 ## Pipeline Resource Requirements

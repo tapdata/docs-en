@@ -133,4 +133,4 @@ Because the view updates in real time, any new orders from users will automatica
 
 * [Publish View as APIs](publish-imv-as-api.md)
 * [Validate View Results](../operational-data-hub/fdm-layer/validate-data-quality.md)
-* [View Design Considerations](../design-incremental-views/design-considerations.md)
+* [View Design Considerations](../data-transformation/design-considerations.md)

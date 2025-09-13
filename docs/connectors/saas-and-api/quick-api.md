@@ -25,7 +25,7 @@ You need to add some standardized labels to this API name on the corresponding t
 which contains the following keywords:
 
 - A、 TAP_ TABLE: the table creation keyword, which indicates that the data obtained by the current API will form a data table.
-- B. [Tickets]: Specify the table name, generally the same as TAP_ The TABLE keyword appears together, specifying the table name after the table is created and the data obtained by the API is stored in this table. A text wrapped with []. Please organize the table name reasonably. It is not recommended to use special characters. For example, using one of the two characters [] in the table name will affect the table name after the table is created.
+- B. Tickets: Specify the table name, generally the same as TAP_ The TABLE keyword appears together, specifying the table name after the table is created and the data obtained by the API is stored in this table. A text wrapped with []. Please organize the table name reasonably. It is not recommended to use special characters. For example, using one of the two characters [] in the table name will affect the table name after the table is created.
 - C. (PAGE_LIMIT: data) The LIMIT paging type queries the data, indicating that the API is paging based on the record index and intra page offset. The specific paging type needs to be indicated after you analyze the API interface, otherwise it will affect the query results and cause data errors. The following page types are provided. You can specify the page types according to the relevant API features:
 
 ```

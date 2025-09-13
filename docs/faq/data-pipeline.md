@@ -287,7 +287,7 @@ Yes, you need to turn on the corresponding switch during task configuration. Add
 
 ### If manual deletion of a field in the target table causes an error during incremental synchronization, how can it be fixed?
 
-You can edit the task, add an [add/remove field node](../operational-data-hub/mdm-layer/process-node.md#add-and-del-cols) before the target node, filter out the deleted field, and then restart the task.
+You can edit the task, add an [add/remove field node](../data-transformation/process-node.md#add-and-del-cols) before the target node, filter out the deleted field, and then restart the task.
 
 :::tip
 
@@ -301,7 +301,7 @@ During task configuration, you can open the advanced settings in the source node
 
 :::tip
 
-This feature requires that the target node be a weak scheme-type data source (such as MongoDB/Kafka), etc. If you need to perform data filtering rules during both the full and incremental phases, you can add a [row filter](../operational-data-hub/mdm-layer/process-node.md) to achieve this.
+This feature requires that the target node be a weak scheme-type data source (such as MongoDB/Kafka), etc. If you need to perform data filtering rules during both the full and incremental phases, you can add a [row filter](../data-transformation/process-node.md) to achieve this.
 
 :::
 

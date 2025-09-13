@@ -59,12 +59,12 @@ In TapData, you can solidify complex multi-table queries into a materialized vie
 
 **Real-Time View Strategy**
 
-Suitable for scenarios where SQL statements are relatively simple and there is a high requirement for data timeliness. The core idea is to use various [process nodes](../operational-data-hub/mdm-layer/process-node.md) to implement specific operations in SQL statements (such as joins), ultimately synchronizing the processed data to a new table in real-time and then creating and publishing an API service based on that table.
+Suitable for scenarios where SQL statements are relatively simple and there is a high requirement for data timeliness. The core idea is to use various [process nodes](../data-transformation/process-node.md) to implement specific operations in SQL statements (such as joins), ultimately synchronizing the processed data to a new table in real-time and then creating and publishing an API service based on that table.
 
 Steps include:
 
-1. [Create a data transformation task](../design-incremental-views/create-views/README.md).
-2. Replace specific operations in the SQL statement with process nodes. For example, as shown in the image below, we pre-join **customer** and **company** tables (implemented through a [join node](../operational-data-hub/mdm-layer/process-node.md#join)) and store the results in the **join_result** table.
+1. [Create a data transformation task](../data-transformation/create-views/README.md).
+2. Replace specific operations in the SQL statement with process nodes. For example, as shown in the image below, we pre-join **customer** and **company** tables (implemented through a [join node](../data-transformation/process-node.md#join)) and store the results in the **join_result** table.
    ![Join Table](../images/join_table_for_api.png)
 3. Start the task to implement real-time data synchronization.
 4. Based on the new table (join_result), [create and publish an API service](../publish-apis/create-api-service.md).
@@ -75,7 +75,7 @@ For extremely complex SQL statements (e.g., SQL nesting, complex joins), you can
 
 Steps include:
 
-1. [Create a data transformation task](../design-incremental-views/create-views/README.md).
+1. [Create a data transformation task](../data-transformation/create-views/README.md).
 2. Add source and target nodes on the canvas.
    :::tip
    The target node should be a weak Schema class data source, such as MongoDB or Kafka.

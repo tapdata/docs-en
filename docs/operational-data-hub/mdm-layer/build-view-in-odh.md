@@ -17,7 +17,7 @@ Defining views at this stage helps you clearly separate **core data modeling** f
 
 ### How to Create a View
 
-The creation process is the same as described in [Build Incremental Materialized Views](../../design-incremental-views/create-views/using-data-pipeline-ui.md), with only the **starting point** and **source tables** being different:
+The creation process is the same as described in [Build Incremental Materialized Views](../../data-transformation/create-views/using-data-pipeline-ui.md), with only the **starting point** and **source tables** being different:
 
 - **Start here**: Go to **Real-Time Data Hub > MDM**, then click the ![Create Task](../../images/build_mv_in_mdm.png) icon to create a new Materialized View.
 

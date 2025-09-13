@@ -40,7 +40,7 @@ As an example of creating a data replication task, the article demonstrates the 
 
    :::tip
 
-   In addition to adding data nodes, you can also add processing nodes to complete more complex tasks, such as filtering data, adding or subtracting fields, etc. For more information, see [processing nodes](../operational-data-hub/mdm-layer/process-node.md).
+   In addition to adding data nodes, you can also add processing nodes to complete more complex tasks, such as filtering data, adding or subtracting fields, etc. For more information, see [processing nodes](../data-transformation/process-node.md).
 
    :::
 
@@ -114,5 +114,5 @@ As an example of creating a data replication task, the article demonstrates the 
 
 ## See also
 
-[Monitor or Manage Tasks](../design-incremental-views/manage-task.md)
+[Monitor or Manage Tasks](../data-transformation/manage-task.md)
 

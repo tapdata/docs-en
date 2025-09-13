@@ -107,4 +107,4 @@ Next, we will introduce the specific operational procedures.
 
 In the task list page, you can also start/stop, monitor, edit, copy, reset, or delete tasks.
 
-For detailed operations, see [Manage Tasks](../../design-incremental-views/manage-task.md).
+For detailed operations, see [Manage Tasks](../../data-transformation/manage-task.md).

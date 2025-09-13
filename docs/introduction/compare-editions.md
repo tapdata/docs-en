@@ -117,19 +117,19 @@ Building on the free offerings of TapData Community for developers, TapData Ente
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../design-incremental-views">Data Transformation</a></td>
+    <td><a href="../data-transformation">Data Transformation</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../design-incremental-views/create-views">Real-time Materialized Views</a></td>
+    <td><a href="../data-transformation/create-views">Real-time Materialized Views</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
   </tr>
   <tr>
-    <td><a href="../operational-data-hub/mdm-layer/process-node">Table Processing Nodes</a></td>
+    <td><a href="../data-transformation/process-node">Table Processing Nodes</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>

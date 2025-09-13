@@ -2,7 +2,7 @@
 
 
 
-If you encounter an issue with a task, you can view related log information at the bottom of the task's [monitoring page](../../design-incremental-views/monitor-view-tasks.md). For common issues, TapData has defined specific error codes for easier identification, along with their causes and solutions.
+If you encounter an issue with a task, you can view related log information at the bottom of the task's [monitoring page](../../data-transformation/monitor-view-tasks.md). For common issues, TapData has defined specific error codes for easier identification, along with their causes and solutions.
 
 
 ## Common Processor

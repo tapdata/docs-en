@@ -24,7 +24,7 @@ Explore comprehensive details for any table in the Platform Cache (FDM Layer), i
 
      ![Schema Info](../../images/schema_in_fdm.png)
 
-   - **Tasks**: Review all replication tasks associated with this table, along with their current statuses. Click any task name to open its detailed monitoring page with metrics like sync performance, incremental delay, and logs. For more details, see [Monitor Tasks](../../design-incremental-views/monitor-view-tasks.md).
+   - **Tasks**: Review all replication tasks associated with this table, along with their current statuses. Click any task name to open its detailed monitoring page with metrics like sync performance, incremental delay, and logs. For more details, see [Monitor Tasks](../../data-transformation/monitor-view-tasks.md).
 
      ![Related Tasks](../../images/related_task_in_fdm.png)
 

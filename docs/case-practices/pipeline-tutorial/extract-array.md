@@ -72,7 +72,7 @@ Before creating a data conversion task, you need to add the data source to which
 
    ![Select Source Table](../../images/select_fin_oper_settle.png)
 
-   For more configuration introductions, see [Create Data Transform Task](../../design-incremental-views/create-views/README.md).
+   For more configuration introductions, see [Create Data Transform Task](../../data-transformation/create-views/README.md).
 
 6. Click the middle Standard JS node and enter the following code in the script text box on the right.
 
@@ -119,7 +119,7 @@ Before creating a data conversion task, you need to add the data source to which
 
    ![Select Target Table](../../images/select_settle_analyze.png)
 
-   For more configuration introductions, see [Create Data Transform Task](../../design-incremental-views/create-views/README.md).
+   For more configuration introductions, see [Create Data Transform Task](../../data-transformation/create-views/README.md).
 
 9. After the configuration is complete, click **Save** in the lower right corner. Name the task and select the relevant directory to save. Click **Start**.
 

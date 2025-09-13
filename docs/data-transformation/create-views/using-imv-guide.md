@@ -6,7 +6,7 @@ Use TapData’s IMV Guide to design real-time, incremental materialized views th
 
 :::tip
 
-This step-by-step guide builds on the real-world ecommerce scenario described in [Design Incremental Materialized Views](../overview.md) and shows you how to implement it with the IMV Guide.
+This step-by-step guide builds on the real-world ecommerce scenario described in [Design Incremental Materialized Views](overview.md) and shows you how to implement it with the IMV Guide.
 
 :::
 

@@ -3,7 +3,7 @@
 Use TapData’s Data Pipeline to build real-time, incremental materialized views with flexible, visual workflows—perfect for adding rich processing steps and custom transformations.
 
 :::tip
-This guide expands on the example in [Design Incremental Materialized Views](../overview.md) and shows you how to build it using the visual Data Pipeline.
+This guide expands on the example in [Design Incremental Materialized Views](overview.md) and shows you how to build it using the visual Data Pipeline.
 :::
 
 TapData’s Data Pipeline also supports rich processing nodes between your source and target. You can add steps for field renaming, row filtering, and more—all without writing complex SQL or maintaining separate ETL jobs.

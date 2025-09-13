@@ -9,7 +9,7 @@
  Create as many sidebars as you want.
  */
 
-// @ts-check
+// @ts-nocheck
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
@@ -219,6 +219,40 @@ const sidebars = {
          ]
     },
     {
+     type: 'category',
+     label: 'Data Replication',
+     link: {type: 'doc', id: 'data-replication/README'},
+     items: [
+            'data-replication/create-task',
+            'data-replication/incremental-check',
+            'data-replication/manage-task',
+            'data-replication/monitor-task'
+            ]
+     },    
+    {
+      type: 'category',
+      label: 'Data Transformation',
+      link: { type: 'doc', id: 'data-transformation/README' },
+      items: [
+        'data-transformation/create-task',
+        'data-transformation/process-node',
+        {
+          type: 'category',
+          label: 'Create Incremental Materialized Views',
+          link: { type: 'doc', id: 'data-transformation/create-views/README' },
+          items: [
+            'data-transformation/create-views/overview',
+            'data-transformation/create-views/using-imv-guide',
+            'data-transformation/create-views/using-data-pipeline-ui',
+            'data-transformation/create-views/using-tapflow',
+          ],
+        },
+        /*'design-incremental-views/design-considerations',*/
+        'data-transformation/monitor-view-tasks',
+        'data-transformation/manage-task',
+      ],
+    },
+{
       type: 'category',
       label: 'Operational Data Hub',
       link: { type: 'doc', id: 'operational-data-hub/README' },
@@ -242,7 +276,6 @@ const sidebars = {
           items: [
             'operational-data-hub/mdm-layer/define-data-categories',
             'operational-data-hub/mdm-layer/prepare-and-transform',
-            'operational-data-hub/mdm-layer/process-node',
             'operational-data-hub/mdm-layer/build-view-in-odh'
           ],
         },
@@ -267,38 +300,6 @@ const sidebars = {
             'operational-data-hub/advanced/share-mining'
           ],
         },
-      ],
-    },
-    {
-     type: 'category',
-     label: 'Data Replication',
-     link: {type: 'doc', id: 'data-replication/README'},
-     items: [
-            'data-replication/create-task',
-            'data-replication/incremental-check',
-            'data-replication/manage-task',
-            'data-replication/monitor-task'
-            ]
-     },    
-    {
-      type: 'category',
-      label: 'Design Incremental Materialized Views',
-      link: { type: 'doc', id: 'design-incremental-views/README' },
-      items: [
-        'design-incremental-views/overview',
-        {
-          type: 'category',
-          label: 'Create Views',
-          link: { type: 'doc', id: 'design-incremental-views/create-views/README' },
-          items: [
-            'design-incremental-views/create-views/using-imv-guide',
-            'design-incremental-views/create-views/using-data-pipeline-ui',
-            'design-incremental-views/create-views/using-tapflow',
-          ],
-        },
-        /*'design-incremental-views/design-considerations',*/
-        'design-incremental-views/monitor-view-tasks',
-        'design-incremental-views/manage-task',
       ],
     },
     {
