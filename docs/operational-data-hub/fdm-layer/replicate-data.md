@@ -35,6 +35,12 @@ Before you start, make sure you’re set up for a smooth experience:
 
     ![Drag table to FMD](../../images/drag_table_to_fdm.png)
     
+    :::tip Alternative Approach
+    
+    You can also replicate data using the traditional [Data Replication](../../data-replication/create-task.md) approach, which provides more granular control over source-to-target configurations and processing nodes. However, the FDM layer approach shown here is specifically optimized for building an operational data hub with standardized naming and governance.
+    
+    :::
+    
 5. In the configuration dialog, set a **table prefix** and choose the replication mode (**Full and Incremental Sync** or **Full Sync**).
    
     ![Setting FDM task](../../images/choose_replication_mode.png)
