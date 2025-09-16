@@ -15,7 +15,7 @@ Tapdata is a real-time data platform that unifies change capture, in-memory proc
 - **Schema Version Tracking & Drift Detection**
   Track schema changes and detect metric drift before it affects downstream analytics.
 
-### Real-Time Integration (No Kafka Glue Code)
+### Real-Time Integration
 
 - **Zero/Low-Code Pipeline Builder**
   Drag-and-drop to connect 100+ sources (DBs, SaaS, APIs) with built-in CDC and sub-second sync.

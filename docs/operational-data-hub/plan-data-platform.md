@@ -38,8 +38,11 @@ Tapdata's ODH design breaks this journey into clear, manageable layers:
 | --------------------------------------------------- | ------------------------------------------------------------ |
 | **[Source Data Layer](../connectors/README.md)**    | Connect to and abstract data from all business systems and sources, without disrupting existing operations. |
 | **[Platform Cache (FDM)](fdm-layer/README.md)**     | Use real-time change data capture (CDC) to [mirror source tables](fdm-layer/replicate-data.md) safely, reducing load on critical systems. |
-| [**Processing Layer (MDM)**](mdm-layer/README.md)   | [Transform, clean, and model data](mdm-layer/prepare-and-transform.md) into standardized business entities and wide tables for consistent consumption. |
-| [**Delivery & Service (ADM)**](adm-layer/README.md) | Expose processed data to consuming systems and teams via [APIs](../publish-apis/README.md), real-time [pipelines](adm-layer/sync-downstream.md), or event-driven delivery. |
+| **[Curated Data Layer (MDM)](mdm-layer/README.md)**   | [Transform, clean, and model data](mdm-layer/prepare-and-transform.md) into standardized business entities and wide tables for consistent consumption. |
+
+**Delivering Real-time Data to Business Systems**
+
+Once your data is processed and modeled in the MDM layer, you can deliver it to downstream business systems through [API Services](../publish-apis/README.md), [Data Replication](../data-replication/README.md), [Data Transformation](../data-transformation/README.md), Event Streaming, or Direct Database Access.
 
 This approach aligns with best practices for **Master Data Management (MDM)** as defined by Gartner: enabling IT and business teams to work together to ensure consistency, accuracy, governance, and shared understanding of core business data.
 

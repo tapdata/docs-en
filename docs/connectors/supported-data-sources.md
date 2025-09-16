@@ -1,7 +1,6 @@
 # Supported Data Sources
 
 
-
 TapData supports rich data sources as follows:
 
 :::tip
@@ -10,17 +9,16 @@ If you need to synchronize DDL operations, you need to enable DDL collection and
 
 :::
 
-### Synchronization Types
+### Data Source Types
 
-TapData supports two types of synchronization: **full synchronization** and **incremental synchronization**, covering both one-way and two-way synchronization scenarios. It is compatible with a variety of data sources, as described below:
+TapData supports various data sources that can serve different roles in data synchronization:
 
-- **One-Way Synchronization**: Data is synchronized from the source to the target data source. For detailed support information on incremental synchronization, refer to the data source support table in this document.
-- **Two-Way Synchronization**: Enables real-time bidirectional data flow between source and target data sources, ensuring data consistency on both ends. For detailed configuration steps, see [Bidirectional Synchronization Case](../case-practices/pipeline-tutorial/mysql-bi-directional-sync.md). Currently, the following data sources support **Two-Way Synchronization**, applicable to both full and incremental synchronization scenarios:
-  - MySQL ↔ MySQL
-  - PostgreSQL ↔ PostgreSQL
-  - MongoDB ↔ MongoDB
-  - PostgreSQL ↔ MySQL
-  - SQL Server ↔ SQL Server
+- **Source**: The origin database or system from which data is read and synchronized
+- **Target**: The destination database or system where data is written and stored
+
+TapData supports both **full synchronization** and **incremental synchronization** between these data sources. For detailed support information, refer to the data source support table below.
+
+
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -476,7 +474,7 @@ The beta version of the data sources is in public preview and has passed the bas
   </tr>
   <tr>
   <tr>
-    <td>Huawei's Cloud GaussDB</td>
+    <td>Huawei Cloud GaussDB</td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>

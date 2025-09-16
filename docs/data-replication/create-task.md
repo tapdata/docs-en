@@ -1,10 +1,15 @@
 # Create a Data Replication Task
 
 
-
-The data replication function can help you to achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](../introduction/use-cases.md). 
+The data replication function can help you to achieve real-time synchronization between the same/heterogeneous data sources, which is suitable for data migration/synchronization, data disaster recovery, reading performance expansion, and other [business scenarios](../introduction/use-cases.md).
 
 This article explains the specific data replication process to help you quickly become familiar with creating, monitoring, and managing data replication tasks.
+
+:::tip
+
+TapData supports both one-way and bidirectional synchronization. For bidirectional synchronization, the following data source combinations are supported: MySQL ↔ MySQL, PostgreSQL ↔ PostgreSQL, MongoDB ↔ MongoDB, PostgreSQL ↔ MySQL, and SQL Server ↔ SQL Server. For detailed configuration steps, see [Bidirectional Synchronization Case](../case-practices/pipeline-tutorial/mysql-bi-directional-sync.md).
+
+:::
 
 ## Prerequisites
 

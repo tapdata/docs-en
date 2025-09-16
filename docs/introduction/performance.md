@@ -83,8 +83,30 @@ This benchmark evaluates TapData’s performance across full sync, incremental C
 
 **Test Environment**
 - **TapData Version**: v3.7.0
-- **Instance Type**: 16 vCPU, 32 GB RAM, 300 GB ESSD
+- **TapData Server**: Alibaba Cloud ecs.u1-c1m2.4xlarge (16 vCPU, 32 GB RAM, 300 GB ESSD)
+- **Database Servers**: Most databases use ecs.u1-c1m2.2xlarge (8 vCPU, 16 GB RAM) except Oracle which uses ecs.ebmhfc6.20xlarge (80 vCPU, 192 GB RAM)
 - **Engine Memory Allocation**: 16 GB  
   *(Source and target systems had sufficient resources to avoid bottlenecks)*
+
+**Database Configurations**
+
+All databases use ESSD storage and are configured with the following system optimizations:
+```bash
+ulimit -n 655350
+sysctl -w net.core.somaxconn=1024
+sysctl -w net.core.netdev_max_backlog=5000
+sysctl -w net.ipv4.tcp_max_syn_backlog=8192
+```
+
+**Database-Specific Settings:**
+- **Oracle 11g** (Single node): Online redo log files increased to 4GB (vs. default 512MB) for smoother writes and stable incremental read performance
+- **ClickHouse 24.5.3.5** (Single node): Memory usage limit increased to 10GB
+- **MongoDB 6.0.15** (Replica set, single node): Storage cache memory set to 12GB
+- **MySQL 8.0** (Single node): InnoDB buffer pool set to 8GB with optimized log and flush settings
+- **Kafka 3.6** (Single broker with ZooKeeper): Compression set to Snappy, PLAIN transport (no encryption), ACK set to write to primary partition only
+- **SQL Server 2016** (Windows OS, Single node): Default configuration
+- **PostgreSQL 12** (Single node): Default configuration with Pgoutput as CDC plugin
+- **Elasticsearch 7** (Single node): Default configuration
+- **Redis 7** (Single node): Default configuration
 
 Results may vary depending on hardware, deployment mode, and connector settings.
