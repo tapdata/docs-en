@@ -84,9 +84,9 @@ This benchmark evaluates TapData’s performance across full sync, incremental C
 **Test Environment**
 - **TapData Version**: v3.7.0
 - **TapData Server**: Alibaba Cloud ecs.u1-c1m2.4xlarge (16 vCPU, 32 GB RAM, 300 GB ESSD)
+- **TapData Memory Allocation**: JVM configured via -Xmx with 16 GB for engine, 8 GB for management; metadata database allocated 4 GB via --wiredTigerCacheSizeGB
 - **Database Servers**: Most databases use ecs.u1-c1m2.2xlarge (8 vCPU, 16 GB RAM) except Oracle which uses ecs.ebmhfc6.20xlarge (80 vCPU, 192 GB RAM)
-- **Engine Memory Allocation**: 16 GB  
-  *(Source and target systems had sufficient resources to avoid bottlenecks)*
+
 
 **Database Configurations**
 
