@@ -18,21 +18,21 @@ Transform all your data assets—legacy CRM, ERP, databases, and SaaS—into a s
 
 ## When to use TapData
 
-- **Build Operational Data Hub**: A modern, centralized data integration architecture.
-- **Active Master Data Management (MDM):** Unify customers, products, and transactions into a single source of truth.
-- **Real-Time Data Integration**: Change Data Capture (CDC) based database replications and transformations, in cloud or on-prem.
-- **Real-Time Single View**: Quickly build up-to-date, analysis-ready wide tables for customer or product.
+- **[Build Operational Data Hub](operational-data-hub/plan-data-platform.md)**: A modern, centralized data integration architecture.
+- **[Active Master Data Management (MDM)](operational-data-hub/mdm-layer/prepare-and-transform.md):** Unify customers, products, and transactions into a single source of truth.
+- **[Real-Time Data Integration](introduction/change-data-capture-mechanism.md)**: Change Data Capture (CDC) based database replications and transformations, in cloud or on-prem.
+- **[Real-Time Single View](getting-started/build-real-time-materialized-view.md)**: Quickly build up-to-date, analysis-ready wide tables for customer or product.
 - **Query Acceleration:** Power complex analytics with incremental materialized views—no performance hit on production databases.
 - **Microservices Data Sync:** Keep distributed services and APIs in sync with live, event-driven data.
 
 ## Key Features
 
-- **50+ Pre-Built CDC Connectors**: Oracle, DB2, Sybase, MSSQL, PostgreSQL, MySQL and cloud variations
-- **Sub-Second Data Capture & Sync**: Instant detect and capture changes from source databases and sync to destination
-- **Real-Time Materialized Views**: continuously refreshed materialized views, always in sync with source tables.
+- **[50+ Pre-Built CDC Connectors](connectors/supported-data-sources.md)**: Oracle, DB2, Sybase, MSSQL, PostgreSQL, MySQL and cloud variations
+- **[Sub-Second Data Capture & Sync](introduction/change-data-capture-mechanism.md)**: Instant detect and capture changes from source databases and sync to destination
+- **[Real-Time Materialized Views](data-transformation/create-views/overview.md)**: continuously refreshed materialized views, always in sync with source tables.
 - **Flexible Architecture**: Supports point-to-point, hub-and-spoke, REST API, and event streaming.
-- **Developer Friendly**: Visual drag-and-drop pipelines, plus Python SDK for data engineers.
-- **Enterprise-Grade**: Scales to millions of daily transactions, with built-in monitoring and full data lineage.
+- **Developer Friendly**: Visual [drag-and-drop pipelines](getting-started/build-real-time-materialized-view.md), plus [Python SDK](experimental/tapflow/introduction.md) for data engineers.
+- **Enterprise-Grade**: Scales to millions of daily transactions, with [built-in monitoring](data-replication/monitor-task.md) and [full data lineage](operational-data-hub/fdm-layer/explore-fdm-tables.md).
 
 ## Why Real-Time Operational Data Platform Matters
 
