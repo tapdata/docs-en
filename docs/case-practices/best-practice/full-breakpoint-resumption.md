@@ -1,8 +1,6 @@
 # Ensure Data Migration with Breakpoint Continuation
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In scenarios involving massive data migration, you can utilize TapData's full resumption from breakpoint feature to segment and migrate data, enhancing the reliability of data migration and ensuring successful execution of migration tasks.
 
@@ -17,13 +15,13 @@ To address this issue, TapData introduces the full resumption from breakpoint fu
 ## Prerequisites
 
 * The full resumption from breakpoint is currently only supported for MongoDB data sources, i.e., the source database must be MongoDB.
-* Before creating a data transformation task, ensure you have configured the relevant data sources, see [Configuring MongoDB Connection](../../prerequisites/on-prem-databases/mongodb.md) for details.
+* Before creating a data transformation task, ensure you have configured the relevant data sources, see [Configuring MongoDB Connection](../../connectors/on-prem-databases/mongodb.md) for details.
 
 ## Procedure
 
 In this case, we will demonstrate the specific configuration process for data migration between MongoDB instances.
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the left navigation bar, select **Data Pipeline** > **Data Replication**.
 
@@ -127,7 +125,7 @@ In this case, we will demonstrate the specific configuration process for data mi
 
    :::tip
 
-   If the pre-check fails, adjust according to the log prompts on the current page. For more information, see [Task Pre-Check Explanation](../../user-guide/pre-check.md).
+   If the pre-check fails, adjust according to the log prompts on the current page. For more information, see [Task Pre-Check Explanation](../../connectors/pre-check.md).
 
    :::
 

@@ -1,7 +1,5 @@
 # MySQL to Alibaba Cloud Real-Time Sync
-import Content from '../../reuse-content/_enterprise-and-cloud-features.md';
 
-<Content />
 
 As cloud computing evolves and becomes more prevalent, an increasing number of enterprises are looking to migrate their business from on-premises data centers to the cloud to leverage benefits such as lower operational costs and flexible scalability. For businesses with an on-premises MySQL database, migrating to the cloud is a critical step.
 
@@ -25,7 +23,7 @@ Next, we will introduce the specific operational procedures.
 
 ## Preparation
 
-1. [Connect to your on-prem MySQL database](../../prerequisites/on-prem-databases/mysql.md).
+1. [Connect to your on-prem MySQL database](../../connectors/on-prem-databases/mysql.md).
 
    :::tip
 
@@ -33,11 +31,11 @@ Next, we will introduce the specific operational procedures.
 
    :::
 
-2. [Connect to Alibaba Cloud RDS MySQL](../../prerequisites/cloud-databases/aliyun-rds-for-mysql.md).
+2. [Connect to Alibaba Cloud RDS MySQL](../../connectors/cloud-databases/aliyun-rds-for-mysql.md).
 
 ## Steps
 
-1. [Log in to the TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 
@@ -109,4 +107,4 @@ Next, we will introduce the specific operational procedures.
 
 In the task list page, you can also start/stop, monitor, edit, copy, reset, or delete tasks.
 
-For detailed operations, see [Manage Tasks](../../user-guide/copy-data/manage-task.md).
+For detailed operations, see [Manage Tasks](../../data-transformation/manage-task.md).

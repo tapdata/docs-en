@@ -1,7 +1,5 @@
 # Building an Array Extraction Link to Simplify Data Analysis
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In modern payment systems, the analysis of payment data is crucial for understanding user behavior, optimizing business processes, and making decisions. For database tables storing payment data, payment data is sometimes written as a JSON string in a field, complicating its structure and making subsequent analysis complex.
 
@@ -52,11 +50,11 @@ Next, we will introduce how to use the built-in **Standard JS** node in TapData 
 
 ## Prerequisites
 
-Before creating a data conversion task, you need to add the data source to which the settlement table belongs to TapData. Also, you need to add a data source (such as a MySQL database) as the target database. For specific operations, see [Configure MySQL Connection](../../prerequisites/on-prem-databases/mysql.md).
+Before creating a data conversion task, you need to add the data source to which the settlement table belongs to TapData. Also, you need to add a data source (such as a MySQL database) as the target database. For specific operations, see [Configure MySQL Connection](../../connectors/on-prem-databases/mysql.md).
 
 ## Procedure
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 2. Based on the product type, select the operation entry:
 
    * **TapData Cloud**: In the left navigation panel, click **Data Transformation**.
@@ -74,7 +72,7 @@ Before creating a data conversion task, you need to add the data source to which
 
    ![Select Source Table](../../images/select_fin_oper_settle.png)
 
-   For more configuration introductions, see [Create Data Transform Task](../../user-guide/data-development/create-task.md).
+   For more configuration introductions, see [Create Data Transform Task](../../data-transformation/create-views/README.md).
 
 6. Click the middle Standard JS node and enter the following code in the script text box on the right.
 
@@ -121,7 +119,7 @@ Before creating a data conversion task, you need to add the data source to which
 
    ![Select Target Table](../../images/select_settle_analyze.png)
 
-   For more configuration introductions, see [Create Data Transform Task](../../user-guide/data-development/create-task.md).
+   For more configuration introductions, see [Create Data Transform Task](../../data-transformation/create-views/README.md).
 
 9. After the configuration is complete, click **Save** in the lower right corner. Name the task and select the relevant directory to save. Click **Start**.
 

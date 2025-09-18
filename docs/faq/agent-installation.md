@@ -1,9 +1,5 @@
 # Deploy and Manage Agent
 
-import Content from '../reuse-content/_cloud-features.md';
-
-<Content />
-
 This article lists common problems encountered by TapData Agent in deployment and operation.
 
 ## Deploy Agent
@@ -24,7 +20,7 @@ TapData Agent obtains data from the source, processes and transforms it, then se
 
 The TapData Agent should be installed in the local network where the database is located since data flow is usually time-sensitive.
 
-See [Deploying TapData Agent](../installation/install-tapdata-agent.md) for more information.
+
 
 ### How many agents need to be deployed?
 
@@ -50,9 +46,7 @@ To change the Agent for a task when an exception occurs, you can edit the task a
 
 When Oracle is in RAC mode with two nodes, the TapData Agent can be deployed on a separate device as long as it can establish a connection to the SCAN/VIP of the RAC environment. It is not necessary for the Agent to be deployed on the same device with Oracle.
 
-### What should I do if the test fails after installing Docker on Windows (64-bit)?
 
-The best way to [deploy Agent](../installation/install-tapdata-agent.md) is directly through Docker.
 
 ### How do I get the tokens needed for deployment again?
 

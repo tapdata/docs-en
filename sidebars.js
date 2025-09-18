@@ -9,7 +9,7 @@
  Create as many sidebars as you want.
  */
 
-// @ts-check
+// @ts-nocheck
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
@@ -26,213 +26,473 @@ const sidebars = {
      items: [
              'introduction/architecture',
              'introduction/features',
-             'introduction/benefits',
              'introduction/use-cases',
              'introduction/compare-editions',
              'introduction/change-data-capture-mechanism',
              'introduction/security',
+             'introduction/tapdata-vs-kafka',
+             'introduction/tapdata-vs-informatica',
+             'introduction/performance',
              'introduction/terms',
        ]
     },
     {
      type: 'category',
-     label: 'Quick Start',
-     link: {type: 'doc', id: 'quick-start/README'},
-     items: [
-            'quick-start/install',
-            'quick-start/connect-database',
-            'quick-start/create-task',
-     ]
-    },
-    {
-     type: 'category',
-     label: 'Installation',
-     link: {type: 'doc', id: 'installation/README'},
+     label: 'Getting Started',
+     link: {type: 'doc', id: 'getting-started/README'},
      items: [
             {
             type: 'category',
-            label: 'TapData Enterprise',
-            link: {type: 'doc', id: 'installation/install-tapdata-enterprise/README'},
+            label: 'Step 1: Install and Setup',
+            link: {type: 'doc', id: 'getting-started/install-and-setup/README'},
             items: [
-                     'installation/install-tapdata-enterprise/install-tapdata-stand-alone',
-                     'installation/install-tapdata-enterprise/install-on-windows',
+                     'getting-started/install-and-setup/install-enterprise-edition',
+                     'getting-started/install-and-setup/install-community-edition',
                      ]
             },
-            'installation/install-tapdata-community',
-            'installation/install-tapdata-agent',
-            ]
+            'getting-started/connect-data-source',
+            'getting-started/build-real-time-materialized-view',
+            'getting-started/publish-imv-as-api',
+     ]
     },
     {
-     type: 'category',
-     label: 'Billing',
-     link: {type: 'doc', id: 'billing/README'},
-     items: [
-             'billing/billing-overview',
-             'billing/purchase',
-             'billing/renew-subscribe',
-             'billing/expiration',
-             'billing/refund',
-       ]
-    },
-{
          type: 'category',
          label: 'Connect Data Sources',
-         link: {type: 'doc', id: 'prerequisites/README'},
+         link: {type: 'doc', id: 'connectors/README'},
          items: [
-                 'prerequisites/supported-databases',
+                 'connectors/supported-data-sources',
                  {
                   type: 'category',
                   label: 'Warehouses and Lakes',
-                  link: {type: 'doc', id: 'prerequisites/warehouses-and-lake/README'},
+                  link: {type: 'doc', id: 'connectors/warehouses-and-lake/README'},
                   items: [
-                          'prerequisites/warehouses-and-lake/big-query',
-                          'prerequisites/warehouses-and-lake/clickhouse',
-                          'prerequisites/warehouses-and-lake/databend',
-                          'prerequisites/warehouses-and-lake/doris',
-                          'prerequisites/warehouses-and-lake/gaussdb',
-                          'prerequisites/warehouses-and-lake/greenplum',
-                          'prerequisites/warehouses-and-lake/hudi',
-                          'prerequisites/warehouses-and-lake/selectdb',
-                          'prerequisites/warehouses-and-lake/starrocks',
-                          'prerequisites/warehouses-and-lake/tablestore',
-                          'prerequisites/warehouses-and-lake/yashandb',
+                          'connectors/warehouses-and-lake/big-query',
+                          'connectors/warehouses-and-lake/clickhouse',
+                          'connectors/warehouses-and-lake/databend',
+                          'connectors/warehouses-and-lake/doris',
+                          'connectors/warehouses-and-lake/gaussdb',
+                          'connectors/warehouses-and-lake/greenplum',
+                          'connectors/warehouses-and-lake/hudi',
+                          'connectors/warehouses-and-lake/selectdb',
+                          'connectors/warehouses-and-lake/starrocks',
+                          'connectors/warehouses-and-lake/tablestore',
+                          'connectors/warehouses-and-lake/yashandb',
                          ]
                   },
                  {
                   type: 'category',
                   label: 'On-Prem Databases',
-                  link: {type: 'doc', id: 'prerequisites/on-prem-databases/README'},
+                  link: {type: 'doc', id: 'connectors/on-prem-databases/README'},
                   items: [
-                          'prerequisites/on-prem-databases/dameng',
-                          'prerequisites/on-prem-databases/db2',
-                          'prerequisites/on-prem-databases/elasticsearch',
-                          'prerequisites/on-prem-databases/gbase-8a',
-                          'prerequisites/on-prem-databases/gbase-8s',
-                          'prerequisites/on-prem-databases/hive1',
-                          'prerequisites/on-prem-databases/hive3',
-                          'prerequisites/on-prem-databases/informix',
-                          'prerequisites/on-prem-databases/kingbase-es-r3',
-                          'prerequisites/on-prem-databases/kingbase-es-r6',
-                          'prerequisites/on-prem-databases/mariadb',
-                          'prerequisites/on-prem-databases/mongodb',
-                          'prerequisites/on-prem-databases/mongodb-below34',
-                          'prerequisites/on-prem-databases/mrs-hive3',
-                          'prerequisites/on-prem-databases/mysql',
-                          'prerequisites/on-prem-databases/mysql-pxc',
-                          'prerequisites/on-prem-databases/oceanbase',
-                          'prerequisites/on-prem-databases/oceanbase-oracle',
-                          'prerequisites/on-prem-databases/opengauss',
-                          'prerequisites/on-prem-databases/oracle',
-                          'prerequisites/on-prem-databases/postgresql',
-                          'prerequisites/on-prem-databases/redis',
-                          'prerequisites/on-prem-databases/sqlserver',
-                          'prerequisites/on-prem-databases/sybase',
-                          'prerequisites/on-prem-databases/tdengine',
-                          'prerequisites/on-prem-databases/tidb',
-                          'prerequisites/on-prem-databases/vastbase',
+                          'connectors/on-prem-databases/dameng',
+                          'connectors/on-prem-databases/db2',
+                          'connectors/on-prem-databases/elasticsearch',
+                          'connectors/on-prem-databases/gbase-8a',
+                          'connectors/on-prem-databases/gbase-8s',
+                          'connectors/on-prem-databases/hive1',
+                          'connectors/on-prem-databases/hive3',
+                          'connectors/on-prem-databases/informix',
+                          'connectors/on-prem-databases/kingbase-es-r3',
+                          'connectors/on-prem-databases/kingbase-es-r6',
+                          'connectors/on-prem-databases/mariadb',
+                          'connectors/on-prem-databases/mongodb',
+                          'connectors/on-prem-databases/mongodb-below34',
+                          'connectors/on-prem-databases/mrs-hive3',
+                          'connectors/on-prem-databases/mysql',
+                          'connectors/on-prem-databases/mysql-pxc',
+                          'connectors/on-prem-databases/oceanbase',
+                          'connectors/on-prem-databases/oceanbase-oracle',
+                          'connectors/on-prem-databases/opengauss',
+                          'connectors/on-prem-databases/oracle',
+                          'connectors/on-prem-databases/postgresql',
+                          'connectors/on-prem-databases/redis',
+                          'connectors/on-prem-databases/sqlserver',
+                          'connectors/on-prem-databases/sybase',
+                          'connectors/on-prem-databases/tdengine',
+                          'connectors/on-prem-databases/tidb',
+                          'connectors/on-prem-databases/vastbase',
                           ]
                   },
                   {
                    type: 'category',
                    label: 'Cloud Databases',
-                   link: {type: 'doc', id: 'prerequisites/cloud-databases/README'},
+                   link: {type: 'doc', id: 'connectors/cloud-databases/README'},
                    items: [
-                           'prerequisites/cloud-databases/aliyun-adb-mysql',
-                           'prerequisites/cloud-databases/aliyun-adb-postgresql',
-                           'prerequisites/cloud-databases/aliyun-mongodb',
-                           'prerequisites/cloud-databases/aliyun-rds-for-mariadb',
-                           'prerequisites/cloud-databases/aliyun-rds-for-mongodb',
-                           'prerequisites/cloud-databases/aliyun-rds-for-mysql',
-                           'prerequisites/cloud-databases/aliyun-rds-for-pg',
-                           'prerequisites/cloud-databases/aliyun-rds-for-sql-server',
-                           'prerequisites/cloud-databases/amazon-rds-mysql',
-                           'prerequisites/cloud-databases/huawei-cloud-gaussdb',
-                           'prerequisites/cloud-databases/mongodb-atlas',
-                           'prerequisites/cloud-databases/polardb-mysql',
-                           'prerequisites/cloud-databases/polardb-postgresql',
-                           'prerequisites/cloud-databases/tencentdb-for-mariadb',
-                           'prerequisites/cloud-databases/tencentdb-for-mongodb',
-                           'prerequisites/cloud-databases/tencentdb-for-mysql',
-                           'prerequisites/cloud-databases/tencentdb-for-pg',
-                           'prerequisites/cloud-databases/tencentdb-for-sql-server',
+                           'connectors/cloud-databases/aliyun-adb-mysql',
+                           'connectors/cloud-databases/aliyun-adb-postgresql',
+                           'connectors/cloud-databases/aliyun-mongodb',
+                           'connectors/cloud-databases/aliyun-rds-for-mariadb',
+                           'connectors/cloud-databases/aliyun-rds-for-mongodb',
+                           'connectors/cloud-databases/aliyun-rds-for-mysql',
+                           'connectors/cloud-databases/aliyun-rds-for-pg',
+                           'connectors/cloud-databases/aliyun-rds-for-sql-server',
+                           'connectors/cloud-databases/amazon-rds-mysql',
+                           'connectors/cloud-databases/huawei-cloud-gaussdb',
+                           'connectors/cloud-databases/mongodb-atlas',
+                           'connectors/cloud-databases/polardb-mysql',
+                           'connectors/cloud-databases/polardb-postgresql',
+                           'connectors/cloud-databases/tencentdb-for-mariadb',
+                           'connectors/cloud-databases/tencentdb-for-mongodb',
+                           'connectors/cloud-databases/tencentdb-for-mysql',
+                           'connectors/cloud-databases/tencentdb-for-pg',
+                           'connectors/cloud-databases/tencentdb-for-sql-server',
                           ]
                    },
                   {
                    type: 'category',
                    label: 'MQ and Middleware',
-                   link: {type: 'doc', id: 'prerequisites/mq-and-middleware/README'},
+                   link: {type: 'doc', id: 'connectors/mq-and-middleware/README'},
                    items: [
-                           'prerequisites/mq-and-middleware/activemq',
-                           'prerequisites/mq-and-middleware/ai-chat',
-                           'prerequisites/mq-and-middleware/bes-channels',
-                           'prerequisites/mq-and-middleware/hazelcast-cloud',
-                           'prerequisites/mq-and-middleware/kafka-enhanced',
-                           'prerequisites/mq-and-middleware/kafka',
-                           'prerequisites/mq-and-middleware/rabbitmq',
-                           'prerequisites/mq-and-middleware/rocketmq',
+                           'connectors/mq-and-middleware/activemq',
+                           'connectors/mq-and-middleware/ai-chat',
+                           'connectors/mq-and-middleware/bes-channels',
+                           'connectors/mq-and-middleware/hazelcast-cloud',
+                           'connectors/mq-and-middleware/kafka-enhanced',
+                           'connectors/mq-and-middleware/kafka',
+                           'connectors/mq-and-middleware/rabbitmq',
+                           'connectors/mq-and-middleware/rocketmq',
                           ]
                    },
                    {
                    type: 'category',
                    label: 'CRM and Sales Analytics',
-                   link: {type: 'doc', id: 'prerequisites/crm-and-sales-analytics/README'},
+                   link: {type: 'doc', id: 'connectors/crm-and-sales-analytics/README'},
                    items: [
-                           'prerequisites/crm-and-sales-analytics/hubspot',
-                           'prerequisites/crm-and-sales-analytics/metabase',
-                           'prerequisites/crm-and-sales-analytics/salesforce',
-                           'prerequisites/crm-and-sales-analytics/zoho-crm',
+                           'connectors/crm-and-sales-analytics/hubspot',
+                           'connectors/crm-and-sales-analytics/metabase',
+                           'connectors/crm-and-sales-analytics/salesforce',
+                           'connectors/crm-and-sales-analytics/zoho-crm',
                           ]
                    },
                    {
                     type: 'category',
                     label: 'SaaS and APIs',
-                    link: {type: 'doc', id: 'prerequisites/saas-and-api/README'},
+                    link: {type: 'doc', id: 'connectors/saas-and-api/README'},
                     items: [
-                            'prerequisites/saas-and-api/coding',
-                            'prerequisites/saas-and-api/feishu-bitable',
-                            'prerequisites/saas-and-api/github',
-                            'prerequisites/saas-and-api/lark-approval',
-                            'prerequisites/saas-and-api/lark-doc',
-                            'prerequisites/saas-and-api/lark-im',
-                            'prerequisites/saas-and-api/lark-task',
-                            'prerequisites/saas-and-api/quick-api',
-                            'prerequisites/saas-and-api/vika',
-                            'prerequisites/saas-and-api/zoho-desk',
+                            'connectors/saas-and-api/coding',
+                            'connectors/saas-and-api/feishu-bitable',
+                            'connectors/saas-and-api/github',
+                            'connectors/saas-and-api/lark-approval',
+                            'connectors/saas-and-api/lark-doc',
+                            'connectors/saas-and-api/lark-im',
+                            'connectors/saas-and-api/lark-task',
+                            'connectors/saas-and-api/quick-api',
+                            'connectors/saas-and-api/vika',
+                            'connectors/saas-and-api/zoho-desk',
                            ]
                    },
                    {
                     type: 'category',
                     label: 'E-Commerce',
-                    link: {type: 'doc', id: 'prerequisites/e-commerce/README'},
+                    link: {type: 'doc', id: 'connectors/e-commerce/README'},
                     items: [
-                            'prerequisites/e-commerce/alibaba-1688',
-                            'prerequisites/e-commerce/shein',
+                            'connectors/e-commerce/alibaba-1688',
+                            'connectors/e-commerce/shein',
                            ]
                    },
                    {
                     type: 'category',
                     label: 'Files',
-                    link: {type: 'doc', id: 'prerequisites/files/README'},
+                    link: {type: 'doc', id: 'connectors/files/README'},
                     items: [
-                            'prerequisites/files/csv',
-                            'prerequisites/files/excel',
-                            'prerequisites/files/json',
-                            'prerequisites/files/xml',
+                            'connectors/files/csv',
+                            'connectors/files/excel',
+                            'connectors/files/json',
+                            'connectors/files/xml',
                            ]
                    },
                    {
                     type: 'category',
                     label: 'Others',
-                    link: {type: 'doc', id: 'prerequisites/others/README'},
+                    link: {type: 'doc', id: 'connectors/others/README'},
                     items: [
-                            'prerequisites/others/custom-connection',
-                            'prerequisites/others/dummy',
-                            'prerequisites/others/http-receiver',
-                            'prerequisites/others/mock-source',
-                            'prerequisites/others/mock-target',
+                            'connectors/others/custom-connection',
+                            'connectors/others/dummy',
+                            'connectors/others/http-receiver',
+                            'connectors/others/mock-source',
+                            'connectors/others/mock-target',
                            ]
                    },
+                   'connectors/manage-connection',
+                   'connectors/pre-check',
+                   'connectors/trouble-shooting-connection',
          ]
+    },
+    {
+     type: 'category',
+     label: 'Data Replication',
+     link: {type: 'doc', id: 'data-replication/README'},
+     items: [
+            'data-replication/create-task',
+            'data-replication/incremental-check',
+            'data-replication/manage-task',
+            'data-replication/monitor-task'
+            ]
+     },    
+    {
+      type: 'category',
+      label: 'Data Transformation',
+      link: { type: 'doc', id: 'data-transformation/README' },
+      items: [
+        'data-transformation/create-task',
+        'data-transformation/process-node',
+        {
+          type: 'category',
+          label: 'Create Incremental Materialized Views',
+          link: { type: 'doc', id: 'data-transformation/create-views/README' },
+          items: [
+            'data-transformation/create-views/overview',
+            'data-transformation/create-views/using-imv-guide',
+            'data-transformation/create-views/using-data-pipeline-ui',
+            'data-transformation/create-views/using-tapflow',
+          ],
+        },
+        /*'design-incremental-views/design-considerations',*/
+        'data-transformation/monitor-view-tasks',
+        'data-transformation/manage-task',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Publish Data as APIs ',
+      link: {type: 'doc', id: 'publish-apis/README'},
+      items:[
+             'publish-apis/api-design-considerations',
+             'publish-apis/manage-app',
+             'publish-apis/create-api-service',
+             'publish-apis/create-api-client',
+             'publish-apis/create-api-server',
+             'publish-apis/manage-api-versions',
+             'publish-apis/audit-api',
+             'publish-apis/monitor-api-request',
+             {
+               type: 'category',
+               label: 'Query APIs',
+               link: {type: 'doc', id: 'publish-apis/query/README'},
+               items: [
+                 'publish-apis/query/api-auth',
+                 'publish-apis/query/query-via-restful',
+                 'publish-apis/query/query-via-graphql',
+                 'publish-apis/query/api-query-params',
+               ],
+             },
+             ]
+    },
+    {
+      type: 'category',
+      label: 'Operational Data Hub',
+      link: { type: 'doc', id: 'operational-data-hub/README' },
+      items: [
+        'operational-data-hub/plan-data-platform',
+        'operational-data-hub/set-up-odh',
+        {
+          type: 'category',
+          label: 'Ingest and Sync Data (FDM Layer)',
+          link: { type: 'doc', id: 'operational-data-hub/fdm-layer/README' },
+          items: [
+            'operational-data-hub/fdm-layer/replicate-data',
+            'operational-data-hub/fdm-layer/validate-data-quality',
+            'operational-data-hub/fdm-layer/explore-fdm-tables'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Design and Transform Data (MDM Layer)',
+          link: { type: 'doc', id: 'operational-data-hub/mdm-layer/README' },
+          items: [
+            'operational-data-hub/mdm-layer/define-data-categories',
+            'operational-data-hub/mdm-layer/prepare-and-transform',
+            'operational-data-hub/mdm-layer/build-view-in-odh'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Deliver Data',
+          link: { type: 'doc', id: 'operational-data-hub/adm-layer/README' },
+          items: [
+            'operational-data-hub/adm-layer/integrate-apis',
+            'operational-data-hub/adm-layer/sync-downstream'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Advanced Features & Extensions',
+          link: { type: 'doc', id: 'operational-data-hub/advanced/README' },
+          items: [
+            'operational-data-hub/advanced/custom-node',
+            'operational-data-hub/advanced/manage-external-storage',
+            'operational-data-hub/advanced/manage-function',
+            'operational-data-hub/advanced/share-cache',
+            'operational-data-hub/advanced/share-mining'
+          ],
+        },
+      ],
+    },    
+    {
+     type: 'category',
+     label: 'Experimental Features',
+     link: {type: 'doc', id: 'experimental/README'},
+     items: [
+            {
+             type: 'category',
+             label: 'AI Agent Integration',
+             link: {type: 'doc', id: 'experimental/mcp/README'},
+             items: [
+                    'experimental/mcp/introduction',
+                    'experimental/mcp/quick-start'
+                    ]
+             },
+            {
+            type: 'category',
+            label: 'TapFlow Developer Guide',
+            link: {type: 'doc', id: 'experimental/tapflow/README'},
+            items: [
+                   'experimental/tapflow/introduction',
+                   'experimental/tapflow/quick-start',
+                   {
+                    type: 'category',
+                    label: 'TapFlow API Reference',
+                    link: {type: 'doc', id: 'experimental/tapflow/api-reference/README'},
+                    items: [
+                           'experimental/tapflow/api-reference/data-source',
+                           'experimental/tapflow/api-reference/data-flow',
+                    ]
+                   },
+                   'experimental/tapflow/tapshell-reference',
+                   {
+                    type: 'category',
+                    label: 'Typical Use Cases',
+                    link: {type: 'doc', id: 'experimental/tapflow/tapflow-tutorial/README'},
+                    items: [
+                           'experimental/tapflow/tapflow-tutorial/build-real-time-wide-table',
+                           'experimental/tapflow/tapflow-tutorial/expand-mogodb-array-to-mysql',
+                           'experimental/tapflow/tapflow-tutorial/merge-inventory-to-mongodb',
+                    ]
+                   },
+                   ]
+           },
+          ]
+     },
+    {
+      type: 'category',
+      label: 'System Admin ',
+      link: {type: 'doc', id: 'system-admin/README'},
+      items:[
+             'system-admin/manage-user',
+             'system-admin/manage-role',
+             'system-admin/manage-cluster',
+             'system-admin/operation-log',
+            {
+              type: 'category',
+              label: 'Other Settings',
+              link: {type: 'doc', id: 'system-admin/other-settings/README'},
+              items:[
+                     'system-admin/other-settings/system-settings',
+                     'system-admin/other-settings/notification',
+                     'system-admin/other-settings/manage-license',
+                     'system-admin/other-settings/check-version',
+                    ]
+            },
+            ]
+    },
+    {
+     type: 'category',
+     label: 'Platform Operations',
+     link: {type: 'doc', id: 'platform-ops/README'},
+     items: [
+            {
+              type: 'category',
+              label: 'Production Deployment',
+              link: {type: 'doc', id: 'platform-ops/production-deploy/README'},
+              items:[
+                     'platform-ops/production-deploy/capacity-planning',
+                     'platform-ops/production-deploy/install-tapdata-ha',
+                     'platform-ops/production-deploy/install-tapdata-ha-with-3-node',
+                     'platform-ops/production-deploy/install-replica-mongodb',
+                    ]
+             },
+            'platform-ops/operation',
+            {
+              type: 'category',
+              label: 'Troubleshooting',
+              link: {type: 'doc', id: 'platform-ops/troubleshooting/README'},
+              items: [
+                     'platform-ops/troubleshooting/error-code',
+                     'platform-ops/troubleshooting/error-and-solutions',
+                     ]
+            },
+            'platform-ops/emergency-plan',
+        ]
+    },
+    {
+     type: 'category',
+     label: 'Practical Cases',
+     link: {type: 'doc', id: 'case-practices/README'},
+     items: [
+             {
+            type: 'category',
+            label: 'Data Pipeline Cases',
+            link: {type: 'doc', id: 'case-practices/pipeline-tutorial/README'},
+            items: [
+                    'case-practices/pipeline-tutorial/mysql-bi-directional-sync',
+                    'case-practices/pipeline-tutorial/excel-to-mysql',
+                    'case-practices/pipeline-tutorial/mysql-to-aliyun',
+                    'case-practices/pipeline-tutorial/mysql-to-bigquery',
+                    'case-practices/pipeline-tutorial/mysql-to-redis',
+                    'case-practices/pipeline-tutorial/oracle-to-kafka',
+                    'case-practices/pipeline-tutorial/oracle-to-tablestore',
+                    'case-practices/pipeline-tutorial/extract-array',
+                    ]
+            },
+            {
+             type: 'category',
+             label: 'Best Practices',
+             link: {type: 'doc', id: 'case-practices/best-practice/README'},
+             items: [
+                'case-practices/best-practice/data-sync',
+                'case-practices/best-practice/handle-schema-changes',
+                'case-practices/best-practice/heart-beat-task',
+                'case-practices/best-practice/alert-via-qqmail',
+                'case-practices/best-practice/full-breakpoint-resumption',
+                'case-practices/best-practice/raw-logs-solution',
+            ]
+        },
+        ]
+    },
+    {
+     type: 'category',
+     label: 'FAQs',
+     link: {type: 'doc', id: 'faq/README'},
+     items: [
+            'faq/use-product',
+            'faq/data-pipeline',
+            'faq/agent-installation',
+            'faq/data-security',
+            'faq/no-supported-data-type',
+            'faq/error-code-solution',
+        ]
+    },
+    {
+     type: 'category',
+     label: 'Reference',
+     link: {type: 'doc', id: 'appendix/README'},
+     items: [
+            'appendix/standard-js',
+            'appendix/enhanced-js',
+            'appendix/benchmark',
+            'appendix/support'
+        ]
+    },
+    'release-notes-on-prem',
+    /*{
+     type: 'category',
+     label: 'Release Notes',
+     link: {type: 'doc', id: 'release-notes/README'},
+     items: [
+            'release-notes/release-notes-cloud',
+            'release-notes/release-notes-on-prem',
+            'release-notes/release-notes-community'
+        ]
     },
     {
      type: 'category',
@@ -294,7 +554,6 @@ const sidebars = {
                      ]
                },
              'user-guide/incremental-check',
-             'user-guide/verify-data',
              'user-guide/pre-check',
              {
               type: 'category',
@@ -308,48 +567,7 @@ const sidebars = {
                      'user-guide/advanced-settings/manage-external-storage',
                     ]
              },
-             {
-              type: 'category',
-              label: 'Publish Data API ',
-              link: {type: 'doc', id: 'user-guide/data-service/README'},
-              items:[
-                     'user-guide/data-service/manage-app',
-                     'user-guide/data-service/create-api-service',
-                     'user-guide/data-service/create-api-client',
-                     'user-guide/data-service/create-api-server',
-                     'user-guide/data-service/audit-api',
-                     'user-guide/data-service/monitor-api-request',
-                     'user-guide/data-service/api-auth',
-                     'user-guide/data-service/query-via-restful',
-                     'user-guide/data-service/query-via-graphql',
-                     'user-guide/data-service/api-query-params',
-                    ]
-             },
-             {
-              type: 'category',
-              label: 'Manage System',
-              link: {type: 'doc', id: 'user-guide/manage-system/README'},
-              items:[
-                     'user-guide/manage-system/manage-role',
-                     'user-guide/manage-system/manage-user',
-                     'user-guide/manage-system/manage-cluster',
-                    ]
-             },
-             {
-              type: 'category',
-              label: 'Other Settings',
-              link: {type: 'doc', id: 'user-guide/other-settings/README'},
-              items:[
-                     'user-guide/other-settings/system-settings',
-                     'user-guide/other-settings/notification',
-                     'user-guide/other-settings/manage-license',
-                     'user-guide/other-settings/check-version',
-                    ]
-             },
-             'user-guide/operation-log',
-             'user-guide/no-supported-data-type',
-        ]
-    },
+
     {
      type: 'category',
      label: 'MCP Server Guide (Preview)',
@@ -359,130 +577,7 @@ const sidebars = {
             'mcp/quick-start',
             ]
      },
-    {
-     type: 'category',
-     label: 'TapFlow Developer Guide (Preview)',
-     link: {type: 'doc', id: 'tapflow/README'},
-     items: [
-            'tapflow/introduction',
-            'tapflow/quick-start',            
-            {
-             type: 'category',
-             label: 'TapFlow API Reference',
-             link: {type: 'doc', id: 'tapflow/api-reference/README'},
-             items: [
-                    'tapflow/api-reference/data-source',
-                    'tapflow/api-reference/data-flow',
-             ]
-            },
-            'tapflow/tapshell-reference',
-            {
-             type: 'category',
-             label: 'Typical Use Cases',
-             link: {type: 'doc', id: 'tapflow/tapflow-tutorial/README'},
-             items: [
-                    'tapflow/tapflow-tutorial/build-real-time-wide-table',
-                    'tapflow/tapflow-tutorial/expand-mogodb-array-to-mysql',
-                    'tapflow/tapflow-tutorial/merge-inventory-to-mongodb',
-             ]
-            },            
-            ]
-    },  
-    {
-     type: 'category',
-     label: 'Admin & Operations',
-     link: {type: 'doc', id: 'administration/README'},
-     items: [
-            {
-              type: 'category',
-              label: 'Production Deployment',
-              link: {type: 'doc', id: 'administration/production-deploy/README'},
-              items:[
-                     'administration/production-deploy/install-tapdata-ha',
-                     'administration/production-deploy/install-tapdata-ha-with-3-node',
-                     'administration/production-deploy/install-replica-mongodb',
-                    ]
-             },
-            'administration/operation',
-            {
-              type: 'category',
-              label: 'Troubleshooting',
-              link: {type: 'doc', id: 'administration/troubleshooting/README'},
-              items: [
-                     'administration/troubleshooting/error-code',
-                     'administration/troubleshooting/error-and-solutions',
-                     ]
-            },
-            'administration/emergency-plan',
-        ]
-    },
-    {
-     type: 'category',
-     label: 'Practical Cases',
-     link: {type: 'doc', id: 'case-practices/README'},
-     items: [
-             {
-            type: 'category',
-            label: 'Data Pipeline Cases',
-            link: {type: 'doc', id: 'case-practices/pipeline-tutorial/README'},
-            items: [
-                    'case-practices/pipeline-tutorial/mysql-bi-directional-sync',
-                    'case-practices/pipeline-tutorial/excel-to-mysql',
-                    'case-practices/pipeline-tutorial/mysql-to-aliyun',
-                    'case-practices/pipeline-tutorial/mysql-to-bigquery',
-                    'case-practices/pipeline-tutorial/mysql-to-redis',
-                    'case-practices/pipeline-tutorial/oracle-to-kafka',
-                    'case-practices/pipeline-tutorial/oracle-to-tablestore',
-                    'case-practices/pipeline-tutorial/extract-array',
-                    ]
-            },
-            {
-             type: 'category',
-             label: 'Best Practices',
-             link: {type: 'doc', id: 'case-practices/best-practice/README'},
-             items: [
-                'case-practices/best-practice/data-sync',
-                'case-practices/best-practice/handle-schema-changes',
-                'case-practices/best-practice/heart-beat-task',
-                'case-practices/best-practice/alert-via-qqmail',
-                'case-practices/best-practice/full-breakpoint-resumption',
-                'case-practices/best-practice/raw-logs-solution',
-            ]
-        },
-        ]
-    },
-    {
-     type: 'category',
-     label: 'FAQs',
-     link: {type: 'doc', id: 'faq/README'},
-     items: [
-            'faq/use-product',
-            'faq/data-pipeline',
-            'faq/agent-installation',
-            'faq/data-security',
-        ]
-    },
-    {
-     type: 'category',
-     label: 'Reference',
-     link: {type: 'doc', id: 'appendix/README'},
-     items: [
-            'appendix/standard-js',
-            'appendix/enhanced-js',
-            'appendix/benchmark',
-            'appendix/support'
-        ]
-    },
-    {
-     type: 'category',
-     label: 'Release Notes',
-     link: {type: 'doc', id: 'release-notes/README'},
-     items: [
-            'release-notes/release-notes-cloud',
-            'release-notes/release-notes-on-prem',
-            'release-notes/release-notes-community'
-        ]
-    },
+    */
  ]
 };
 

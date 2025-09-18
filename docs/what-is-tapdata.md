@@ -5,72 +5,65 @@ slug: /
 
 # What is TapData?
 
-TapData is a real-time data platform provide by TapData that integrates data replication and data transformation. It can provide millisecond-level real-time data synchronization and data fusion services in scenarios that span across clouds, regions, and multiple types of databases.
+TapData is a real-time operational data platform that unifies, standardizes, and delivers trusted business data across your enterprise—fueling analytics, APIs, and digital applications with always-fresh, consistent information.
+
+Whether you're modernizing legacy systems, building customer-facing services, or accelerating analytics, TapData gives you the agility and transparency to put your data to work—right now.
+
+
+## Why Choose TapData?
+
+Transform all your data assets—legacy CRM, ERP, databases, and SaaS—into a single, governed Operational Data Hub (or DaaS). Break down data silos, eliminate batch latency, and unlock real-time value for your business.
 
 <iframe width="100%" height="539" src="https://www.youtube.com/embed/hlJKo6u3UnA?si=6Df9Yzv8jXf5EFE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+## When to use TapData
 
-## Why Choose TapData
+- **Build Operational Data Hub**: A modern, centralized data integration architecture.
+- **Active Master Data Management (MDM):** Unify customers, products, and transactions into a single source of truth.
+- **Real-Time Data Integration**: Change Data Capture (CDC) based database replications and transformations, in cloud or on-prem.
+- **Real-Time Single View**: Quickly build up-to-date, analysis-ready wide tables for customer or product.
+- **Query Acceleration:** Power complex analytics with incremental materialized views—no performance hit on production databases.
+- **Microservices Data Sync:** Keep distributed services and APIs in sync with live, event-driven data.
 
-Compared to traditional data migration/synchronization tools, TapData offers a feature-rich, easy-to-use, secure, and reliable data flow service. It also supports instant API publishing to enhance data development efficiency.
+## Key Features
 
-* **[Rich Database Support](prerequisites/supported-databases.md)**
+- **50+ Pre-Built CDC Connectors**: Oracle, DB2, Sybase, MSSQL, PostgreSQL, MySQL and cloud variations
+- **Sub-Second Data Capture & Sync**: Instant detect and capture changes from source databases and sync to destination
+- **Real-Time Materialized Views**: continuously refreshed materialized views, always in sync with source tables.
+- **Flexible Architecture**: Supports point-to-point, hub-and-spoke, REST API, and event streaming.
+- **Developer Friendly**: Visual drag-and-drop pipelines, plus Python SDK for data engineers.
+- **Enterprise-Grade**: Scales to millions of daily transactions, with built-in monitoring and full data lineage.
 
-  Supports mainstream databases, including commercial databases, open-source databases, cloud databases, SaaS platform data sources, file data sources, and allows for custom data sources.
+## Why Real-Time Operational Data Platform Matters
 
-* **[Reliable Data Consistency](user-guide/verify-data.md)**
+- **No More Stale Data**
 
-  Ensures high consistency between target data and source data through various proprietary technologies, supports multiple verification methods, and meets the stringent requirements of production environments.
+  Move beyond nightly batches. With CDC, every dashboard, report, and app sees the latest data, always.
 
-* **[Low-latency Collection Performance](user-guide/advanced-settings/share-mining.md)**
+- **Unified Operations**
 
-  Based on proprietary CDC log parsing technology, it enables real-time data collection with zero intrusion and virtually no impact on the source database. Every new piece of data that enters the platform is responded to, computed, processed, and written into the target table within seconds. Additionally, it supports sharing incremental data to avoid repeated reads of source database incremental logs.
+  Merge fragmented systems into a single, real-time source of operational truth.
 
-* **[Efficient Data Flow Programming Framework](tapflow/README.md)**
+- **Event-Driven Business**
 
-  Provides a real-time data processing framework (TapFlow) for developers, enabling fully code-based task definitions. With a rich set of APIs and command-line tools (Tap Shell), it supports task scheduling, data cleansing, and processing. Ideal for complex business scenarios and script-based management, TapFlow significantly enhances development efficiency and flexibility.
+  Instantly trigger workflows, webhooks, or API calls as data changes—no more polling or lag.
 
-* **[Unified Real-Time Data Hub](user-guide/real-time-data-hub/README.md)**
+- **Cut Complexity**
 
-  Based on the concept of layered data governance, it synchronizes data scattered across different business systems to a unified platform cache layer. This minimizes the impact of data extraction on business and provides foundational data for subsequent data processing and business, thus building a consistent, real-time data platform and bridging data silos.
+  Visual pipelines and simple inline Javascript to replace complex Java coding.
 
-* **[Modernized User Interface](user-guide/workshop.md)**
-
-  Offers a visual interface where tasks like renaming tables can be completed with simple drag-and-drop actions. Additionally, TapData supports JavaScript-based UDF (User-Defined Functionality) to meet flexible customization requirements.
-
-  
-
-## Product Pricing
-
-TapData offers two deployment modes, **Cloud**, **Enterprise** and **Community** , to meet your diversified needs:
-
-| Product         | Applicable Scenarios                                                                                                                                                                                                                                                                                                                                  | Pricing Details                                               |
-|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
-| TapData Cloud   | Using the SaaS (Software as a Service) model, sign up for a [TapData Cloud](https://cloud.tapdata.net/console/v3/) account for use. Suitable for scenarios requiring rapid deployment and low initial investment, helping you focus more on business development rather than infrastructure management.                                               | Provides 1 SMALL specification Agent instance for free (semi-managed mode). You can also subscribe to higher specifications or more Agent instances according to business needs. For more information, see [Product Billing](billing/billing-overview.md). |
-| TapData Enterprise | Supports deployment to local data centers. Suitable for scenarios with strict requirements on data sensitivity or network isolation, such as financial institutions, government departments, or large enterprises that want full control over their data.                                                                                             | Pay the subscription fee annually based on the number of deployed server nodes. Before purchasing, you can click “[Apply for a Trial](https://tapdata.net/tapdata-on-prem/demo.html)” and a TapData engineer will contact you and assist with the trial. For more information, see [Product Pricing](https://tapdata.net/pricing.html). |
-| TapData Community | An open-source data integration platform that provides basic data synchronization and transformation capabilities. This helps you quickly explore and implement data integration projects. As your project or business grows, you can seamlessly upgrade to TapData Cloud or TapData Enterprise to access more advanced features and service support. | [Open Source](https://github.com/tapdata/tapdata) |
-
-:::tip
-
-For more information, see [Edition Comparison](introduction/compare-editions.md).
-
-:::
 
 ## New to TapData?
 
-No worries, with TapData's graphical operation platform, follow our [Quick Start](quick-start/README.md) tutorial, and you can easily get started in just a few minutes. Moreover, we have prepared a wealth of tutorials to help you quickly meet your data flow requirements.
-
-:::tip
-
-While browsing the documentation, please pay attention to the "**Applicable to**" badge at the top of each document to ensure the information you read corresponds to the version you require.
-
-:::
+No worries. With TapData’s graphical platform, just follow our [Quick Start](getting-started/README.md) tutorial to launch your first pipeline in minutes.  
+We’ve also prepared step-by-step guides to help you meet your data integration and delivery needs.
 
 
-## See also
+## See Also
 
 - [Product Architecture and Workflow](introduction/architecture.md)
 - [Features](introduction/features.md)
 - [Use Cases](introduction/use-cases.md)
-- [Supported Databases](prerequisites/supported-databases.md)
+- [Supported Databases](connectors/supported-data-sources.md)
 - [FAQ](faq/README.md)
+

@@ -1,7 +1,5 @@
 # Real-time Heterogeneous Sync from MySQL to Oracle
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 With the rapid development of modern enterprises, data has become one of the most important assets. In many organizations, to meet a variety of business and technical requirements, various types of databases might be in use. Through a real case of migration from Oracle to MySQL, this article introduces how to achieve real-time synchronization of heterogeneous databases through TapData. This helps to quickly complete data flow between databases of different types, structures, and technologies, building a unified data service platform and preventing data silos.
 
@@ -24,12 +22,12 @@ Having understood the differences between TapData and traditional solutions, we 
 
 Before building the data sync pipeline, we first need to establish a connection to the data source on TapData. The specific steps are as follows:
 
-1. [Connect to MySQL](../../prerequisites/on-prem-databases/mysql.md)
-2. [Connect to Oracle](../../prerequisites/on-prem-databases/oracle.md)
+1. [Connect to MySQL](../../connectors/on-prem-databases/mysql.md)
+2. [Connect to Oracle](../../connectors/on-prem-databases/oracle.md)
 
 ## Configure Task
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 
@@ -66,4 +64,4 @@ Before building the data sync pipeline, we first need to establish a connection 
 
 ## See also
 
-For more advanced features like table merging or building wide tables, you can [create data transformation task](../../user-guide/data-development/create-task.md) on TapData. Additionally, you can explore the [Real-Time Data Hub](../../user-guide/real-time-data-hub/daas-mode/enable-daas-mode.md), simply drag the source table to generate a data pipeline, which will then automatically start the task. This greatly simplifies the task configuration process.
+For more advanced features like table merging or building wide tables, you can [create data transformation task](../../data-transformation/create-views/README.md) on TapData. Additionally, you can explore the [Real-Time Data Hub](../../operational-data-hub/set-up-odh.md), simply drag the source table to generate a data pipeline, which will then automatically start the task. This greatly simplifies the task configuration process.

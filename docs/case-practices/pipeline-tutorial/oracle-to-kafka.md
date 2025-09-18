@@ -1,7 +1,5 @@
 # Real-Time Oracle to Kafka Synchronization
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In the era of big data, more and more enterprises need to synchronize data from traditional relational databases to big data processing platforms to support real-time data processing, data lake construction, and alternative data warehousing scenarios. Oracle, widely used in enterprise applications, increasingly requires synchronization to big data platforms.
 
@@ -34,12 +32,12 @@ In this case, we aim to read real-time data from the car insurance claims table 
 
 Before creating a data transformation task, ensure you have configured the necessary data sources:
 
-1. [Configure Oracle Connection](../../prerequisites/on-prem-databases/oracle.md)
-2. [Configure Kafka Connection](../../prerequisites/mq-and-middleware/kafka.md)
+1. [Configure Oracle Connection](../../connectors/on-prem-databases/oracle.md)
+2. [Configure Kafka Connection](../../connectors/mq-and-middleware/kafka.md)
 
 ## Configure Task
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 
@@ -110,7 +108,7 @@ Before creating a data transformation task, ensure you have configured the neces
 
        :::tip
 
-       For more information on how to use the JS node and supported functions, see [Process Node](../../user-guide/data-development/process-node.md).
+       For more information on how to use the JS node and supported functions, see [Process Node](../../data-transformation/process-node.md).
 
        :::
 
@@ -261,4 +259,4 @@ Processed a total of 1 messages
 
 On the task list page, you can also start/stop, monitor, edit, copy, reset, delete, and perform other operations on the task.
 
-For more information, see [Managing Tasks](../../user-guide/data-development/monitor-task.md).
+For more information, see [Managing Tasks](../../data-transformation/manage-task.md).

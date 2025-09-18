@@ -1,7 +1,5 @@
 # Oracle to Tablestore Real-Time Sync
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [Alibaba Cloud Tablestore](https://www.alibabacloud.com/help/en/tablestore) is a serverless table storage service designed for handling large volumes of structured data. It also provides a comprehensive solution for IoT scenarios, offering optimized data storage capabilities. TapData enables real-time synchronization of Oracle data to Tablestore, providing seamless data flow and facilitating easy adaptation to data architecture changes and big data analysis scenarios.
 
@@ -9,14 +7,14 @@ import Content from '../../reuse-content/_all-features.md';
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
-1. [Configure Oracle Connection](../../prerequisites/on-prem-databases/oracle.md)
-2. [Configure Tablestore Connection](../../prerequisites/warehouses-and-lake/tablestore.md)
+1. [Configure Oracle Connection](../../connectors/on-prem-databases/oracle.md)
+2. [Configure Tablestore Connection](../../connectors/warehouses-and-lake/tablestore.md)
 
-Also note the reference [data type support](../../user-guide/no-supported-data-type.md).
+Also note the reference [data type support](../../faq/no-supported-data-type.md).
 
 ## Configure Task
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 
@@ -33,7 +31,7 @@ Also note the reference [data type support](../../user-guide/no-supported-data-t
 
    :::tip
 
-   Since the number of columns in a single table in Tablestore cannot exceed 32, if the number of columns in the Oracle tables to be synchronized exceeds 32, you can address this limitation by adding a **Field Edit** node between the Oracle and Tablestore data sources. This node allows you to handle the situation and selectively exclude business-independent columns from the synchronization process. For more information, see [Processing Node](../../user-guide/data-development/process-node.md).
+   Since the number of columns in a single table in Tablestore cannot exceed 32, if the number of columns in the Oracle tables to be synchronized exceeds 32, you can address this limitation by adding a **Field Edit** node between the Oracle and Tablestore data sources. This node allows you to handle the situation and selectively exclude business-independent columns from the synchronization process. For more information, see [Processing Node](../../data-transformation/process-node.md).
 
    :::
 
@@ -47,4 +45,4 @@ Also note the reference [data type support](../../user-guide/no-supported-data-t
 
 On the Task List page, you can also start, stop, monitor, edit, copy, reset, and delete tasks.
 
-For more information, See [Management Tasks](../../user-guide/copy-data/manage-task.md).
+For more information, See [Management Tasks](../../data-transformation/manage-task.md).

@@ -1,110 +1,112 @@
 # Application Scenarios
-
-import Content from '../reuse-content/_all-features.md';
-
-<Content />
-
-TapData is a next-generation real-time data platform that centralizes core enterprise data in real-time into a centralized data platform. It supports downstream interactive applications, microservices, or interactive analytics by providing real-time data through APIs or reverse synchronization.
-
-## Build Real-time Data Pipelines
-
-Traditional master data management retrieves source data from business systems in a T+1 manner, processes it into standard enterprise data, and delivers it to business systems via export. This approach's limitation lies in the lag in data updates. Challenges such as CDC data collection errors and Kafka blockages make troubleshooting difficult in real-time data pipeline constructions using CDC + Kafka + Flink.
-
-TapData offers a one-stop real-time data synchronization experience, enabling you to build complete data collection and flow pipelines in just a few steps, with the following advantages:
-
-* Supports a rich array of [data sources](../prerequisites/supported-databases.md) for data synchronization between homogeneous/heterogeneous data sources.
-* Supports event-triggered data processing logic and multiple data verification methods to ensure high reliability and low latency.
-* Enables deduplication, rule judgment, and other master data governance functions through powerful UDF capabilities.
-* Supports low-code [API services](../user-guide/data-service/README.md) deployment for end-to-end data consumption.
-
-## Extract/Transform/Load Data (ETL)
-
-Traditional approaches use tools like Kettle, Informatica, or Python to process and transfer data to new business system databases. These ETL solutions often have complex links, are non-reusable, and can significantly impact source system performance.
-
-TapData's real-time data services can perform a final ETL of data, synchronizing it to a distributed data platform based on MongoDB. Combined with no-code APIs, it provides quick data API support directly from the data platform for many downstream businesses, offering the following advantages:
-
-* Drag-and-drop-based next-generation data development simplifies processes.
-* Distributed deployment capabilities provide higher processing performance.
-* JS or Python-based UDF features infinitely extend processing capabilities.
-* Supports rapid expansion of data processing and refining capabilities through custom operators.
+Tapdata is a real-time data platform that unifies change capture, in-memory processing, and API/service delivery. Below are the most common scenarios—organized by who cares and what outcome they need.
 
 
-## Seamless Database Migration with Zero Downtime
+## Technical Use Cases
 
-Traditional migration methods often require stopping data writing to the source database, resulting in downtime during the migration process to ensure data consistency. This downtime can last for hours or even days, significantly impacting business operations.
+*(What engineers can build and accelerate using TapData’s real-time architecture)*
 
-TapData offers a downtime-free migration solution that minimizes the impact on your business. The downtime only occurs when switching from the source instance to the target instance, and the rest of the time your business can continue to operate normally, with downtime reduced to the minute level. The migration process consists of two stages: full data synchronization and incremental data synchronization. During the incremental data synchronization stage, data from the source instance is continuously synchronized to the target instance in real-time. You can validate your business in the target database and once verified, smoothly switch your operations to the target database for a seamless migration.
+### Active Master Data & Operational Data Hub
 
-## Cloud Migration/Cross-cloud Synchronization
+- **Real-Time CDC Merge Across Databases**
+  Sync core entities（e.g., customers, products）across heterogeneous systems—powering a continuously updated MDM or ODH layer.
+- **Quality Gates at Ingest**
+  Apply validation, standardization, deduplication, and schema checks as data flows in—no downstream surprises.
+- **Schema Version Tracking & Drift Detection**
+  Track schema changes and detect metric drift before it affects downstream analytics.
 
-For scenarios from offline to cloud, cloud to offline, or across cloud platforms, TapData can provide seamless data migration and synchronization.
+### Real-Time Integration
 
-## Enhance Query Performance
+- **Zero/Low-Code Pipeline Builder**
+  Drag-and-drop to connect 100+ sources (DBs, SaaS, APIs) with built-in CDC and sub-second sync.
+- **Unified Streaming + Batch**
+  Seamlessly combine historical backfills with CDC updates in the same logical pipeline—no need to juggle Airflow + Kafka.
+- **One-Stop Schema & Transformation Handling**
+  Eliminate the need for Kafka, Flink, and schema registries—TapData handles the full transformation lifecycle natively.
 
-In scenarios with heavy read and light write operations, a single database may not handle all read pressures. By synchronizing data to another database and routing read requests to these read-only databases, you can horizontally expand overall read performance and relieve pressure on the primary database.
+### Query Acceleration with Incremental Materialized Views
 
-Moreover, you can choose to synchronize data to Redis, MongoDB, ElasticSearch, and other next-generation NoSQL databases to provide high-concurrency, low-latency query capabilities for your system.
+- **Hot Path Joins**
+  Pre-join operational tables (e.g., Orders + Customers) to reduce OLAP query times.
+- **IMV (Incremental Materialized Views)**
+  Cache pre-defined aggregations (e.g., revenue by day), auto-refreshed on source change—define once, no orchestration needed.
+- **Optional Federated Pushdown**
+  Push filters and joins to source systems to reduce duplication and latency.
 
-## Accelerate Full-text Searching
+### API Services & Data Productization
 
-Traditional relational databases accelerate data retrieval by indexing, but cannot support the need for full-text data retrieval. TapData offers a solution by enabling seamless data synchronization from relational databases to Elastic-Search, empowering users to effortlessly retrieve data using full-text search capabilities.
+- **Auto-Generated REST & GraphQL APIs**
+  Expose curated views or datasets as APIs with Swagger/OpenAPI—no backend code required.
+- **Modernize Legacy with JSON Wrappers**
+  Wrap mainframes, COBOL, or flat-file systems with real-time APIs—avoid risky rewrites.
+- **Row/Field-Level Access Control**
+  Enforce granular ACLs on exposed APIs to protect sensitive data while enabling secure sharing.
 
-## Cache Update Without Development
+### Zero-Downtime Migration & Multi-Cloud Sync
 
-To enhance business efficiency and optimize user experience, it is a common practice to introduce a cache layer in the business architecture, improving access speed and read concurrency. However, as cache data cannot be permanently stored, abnormal cache exits can result in data loss, impacting business stability and reliability. TapData's data synchronization function addresses this challenge by enabling real-time synchronization from the business database to the cached database. This facilitates a lightweight cache update strategy, simplifies the application architecture, and ensures both simplicity and safety.
+- **Full + Incremental Sync for Seamless Cutovers**
+  Migrate data across systems or clouds with parallel real-time sync and instant switch-over.
+- **Hybrid & Cross-Region Deployments**
+  Keep databases in sync across regions, on-prem to cloud, or cloud to cloud—ideal for HA, DR, or modernization projects.
 
+## Business Use Cases
 
-## Accelerate Access with Read/Write Separation
+*(Outcome-focused: what the platform delivers for ops, product & execs)*
 
-In cross-regional/cross-border businesses, relying on a single-region deployment in traditional architectures leads to significant access delays and poor user experiences when users access services from different regions. To address this, TapData optimizes the deployment architecture and adjusts access logic. All write requests from users across regions are directed to the main business center, while real-time synchronization via TapData ensures that the data is replicated to the respective sub-business centers. Furthermore, read requests from users in various regions are routed to the nearest sub-business center, eliminating remote access and greatly enhancing the speed of business access.
+### Unified Customer Operations (Customer 360)
 
+- Merge CRM, ticketing, and order systems into one live API.
 
+- Trigger personalization within **milliseconds** based on user actions.
 
-## Empower Reading Capacity with Horizontal Scaling
+### Real-Time Risk & Transaction Monitoring
 
-In scenarios with a high volume of read requests, a single database instance may not be able to handle the entire read load effectively. To address this, you can utilize the real-time synchronization feature of DFS (Distributed File System) to establish read-only instances. By redirecting read requests to these read-only instances, you can achieve elastic scalability of the read capacity while reducing the load on the primary database instance.
+- Payment/fintech: update balances, detect fraud, and block suspicious transactions instantly.
 
+- IT/production: stream metrics to alerting systems for immediate anomaly detection.
 
-## Offsite Data Disaster Recovery
+### Omni-Channel Inventory & Order Visibility
 
-In order to mitigate the risk of business unavailability resulting from service disruptions, many enterprises are adopting a multi-region or multi-cloud deployment strategy. By spreading their business across different regions or public clouds, they can minimize the impact of any single point of failure. To further enhance service availability and mitigate risks at the Availability Zone level, establishing off-site Disaster Recovery Centers is a recommended approach. These centers serve as backup locations and are equipped to quickly restore service in the event of a failure at the primary business center. Real-time data synchronization through DFS ensures data consistency between the disaster recovery center and the primary business center.
+- Sync ERP/WMS across regions; prevent overselling with live stock updates.
 
-You can seamlessly redirect the business traffic to the Disaster Recovery Center, enabling a swift restoration of services. This proactive measure helps minimize downtime and ensures uninterrupted service delivery.
+- Push disruption alerts (Slack/Kafka) on stock-outs or fulfillment delays.
 
+### AI/ML Feature Freshness
 
+- Stream user events to feature stores (e.g., Feast/Tecton) for model retraining.
 
-## Geo-redundancy
+- Align batch vs. online feature generation to avoid serving/training skew.
 
-With the rapid development of the business and the growth of the number of users, if the business is deployed in a single region, it may face the following problems:
+### Geo-Redundancy & Disaster Recovery
 
-- The user is widely distributed in the geographical location, and the user access delay is higher in the geographical distance, which affects the user experience.
-- The capacity of the infrastructure of a single geography limits business expansion, such as power supply capacity, network bandwidth building capacity, and so on.
+- Real-time replication across regions/clouds to ensure continuity.
 
-To solve the above problems, you can use TapData to synchronize data in real time between multiple business units built in the same city/off-site to ensure global data consistency. When any unit fails, just switch the traffic to other available units automatically, effectively guaranteeing the high availability of the service.
-
-## Build Materialized Views (Wide Tables)
-
-From big data analysis to data warehouse construction to data dashboards, data engineers often need to use batch processing tasks to display and analyze wide tables or views, consuming significant resources and causing data updates to lag. TapData supports incremental wide table construction capabilities to provide the latest data at minimal cost.
-
-## Real-time Metrics Calculation
-
-Utilize TapData's real-time aggregation calculation capabilities for statistical calculations on logs, click streams, or database events in a streaming manner, producing various operational metrics such as login counts and conversion funnels.
+- Automatic failover by redirecting traffic when a primary site fails.
 
 
 
+## Technical Differentiation
+
+| Use Case           | TapData Approach                                  | Legacy Alternative                      |
+| ------------------ | ------------------------------------------------- | --------------------------------------- |
+| Master Data Sync   | CDC-based merge with SCD2 support                 | Nightly batch reconciliation            |
+| API Services       | Auto-generated APIs from live DB schemas          | Hand-coded API middleware               |
+| Query Acceleration | In-memory pre-joins + incremental materialization | ETL to DWH + scheduled aggregation jobs |
+
+→ [Explore Architecture](architecture.md) ‖ [Talk to Solutions Engineers](https://tapdata.feishu.cn/share/base/form/shrcnoYXtxkXe7L4wu3vKDYzUUc)
 
 
-## **Balance Updates in Financial Transaction Systems**  
-TapData enables real-time updates to account balances upon transaction completion, allowing users to instantly view the latest account status, meeting high consistency requirements.
 
-## Real-Time Inventory Management Systems
-E-commerce platforms use TapData to manage cross-platform inventory updates, ensuring that displayed inventory reflects recent sales or returns, preventing overselling.
+**Why It Matters**
 
-## Real-Time Monitoring and Alert Systems
-In IT and production monitoring systems, TapData promptly synchronizes monitoring metrics, ensuring that alert systems operate on the latest data to quickly respond to anomalies.
+- **Engineer-Centric Design** 
 
-## Customer Real-Time Status in CRM Systems
-TapData enables real-time updates of customer interactions and order status in CRM systems, allowing sales teams to make timely decisions and respond based on up-to-date customer information.
+  Uses real-world patterns like `SCD2`, `Feast/Tecton`, `pushdown`, and `materialization`—resonating with modern data engineers.
 
-## User Behavior Updates in Recommendation Systems
-E-commerce and content recommendation platforms use TapData to process real-time user behavior data, dynamically generating personalized recommendations that reflect users’ current interests and preferences.
+- **Business-to-Tech Mapping**
+
+  Each use case links to clear business value: 
+  _e.g., MDM → real-time compliance, API services → product agility_.
+
+- **Real-Time Advantage** 
+  Outperforms batch-based stacks (like Kafka + Flink + DWH) by simplifying architecture and minimizing latency (<500ms typical).

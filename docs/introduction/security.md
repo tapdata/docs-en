@@ -1,8 +1,6 @@
 # Data Security
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 As we embrace cloud services, the safety of our data has become a top priority. This concern not only relates to the regulatory compliance of enterprise data services, but more crucially, to the protection of vital business data. Recognizing this, TapData was designed with security at its core. From architectural design, technical implementation, and operational procedures, strict safeguards have been put in place, ensuring a safe and secure user experience.
 
@@ -14,11 +12,6 @@ As we embrace cloud services, the safety of our data has become a top priority. 
 <details><summary>What is the role of  Agent?</summary>
 The TapData Agent plays a crucial role in data synchronization, handling data heterogeneity, and supporting data transformation scenarios. It is responsible for extracting data from the source system, performing necessary processing, and transmitting it to the target system. The TapData Agent is centrally managed by TapData Cloud.
 </details>
-
----
-
-
-
 ## Systematic Security Design
 
 ### Account Access Control
@@ -66,9 +59,6 @@ Clear guidelines have been established for the usage and retention of user data.
 
 - All database and API credentials you provide are encrypted stringently. Apart from the application, no one has access to these details.
 - Support for SSL or SSH tunnel encrypted connections to data sources, safeguarding data connectivity and transmission. HTTPS encrypted connections to SaaS-type data sources are also available.
-- Both fully managed and semi-managed [Agent deployment modes](../billing/purchase.md) are available to meet diverse data transfer requirements:
-    - *Semi-Managed:* All of your data, whether in its raw form or has been processed, is stored and managed within your private environment exclusively. The Agent handles data orchestration and processing tasks in-house, ensuring that no data is ever uploaded to TapData Cloud.
-    - *Fully Managed:* During any task execution, your data only travels between the source database, the Agent, and the destination database. At no point will data be uploaded to TapData Cloud. The Agent provides a securely managed external service address, allowing you to bolster security measures through database whitelists or specific firewall rules.
 
 ### Account Password Security Policies
 

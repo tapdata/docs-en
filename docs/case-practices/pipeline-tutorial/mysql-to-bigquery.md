@@ -1,8 +1,6 @@
 # MySQL to BigQuery Real-Time Sync
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 [BigQuery](https://cloud.google.com/bigquery/docs?hl=zh-cn) is a fully serverless and cost-effective enterprise data warehouse that operates seamlessly across different cloud platforms and effortlessly scales with your data. It incorporates business intelligence, machine learning, and AI functionalities. TapData, on the other hand, enables real-time synchronization of multiple data sources with BigQuery, facilitating smooth data flow and effectively accommodating changes in data architecture or big data analysis requirements.
 
@@ -12,14 +10,14 @@ To illustrate this synchronization process, let's consider MySQL as the source d
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
-1. [Configure MySQL Connection](../../prerequisites/on-prem-databases/mysql.md)
-2. [Configure BigQuery Connection](../../prerequisites/warehouses-and-lake/big-query.md)
+1. [Configure MySQL Connection](../../connectors/on-prem-databases/mysql.md)
+2. [Configure BigQuery Connection](../../connectors/warehouses-and-lake/big-query.md)
 
-Also note the reference [data type support](../../user-guide/no-supported-data-type.md).
+Also note the reference [data type support](../../faq/no-supported-data-type.md).
 
 ## Configure Task
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 
@@ -83,7 +81,7 @@ Also note the reference [data type support](../../user-guide/no-supported-data-t
 
 On the Task List page, you can also start, stop, monitor, edit, copy, reset, and delete tasks.
 
-For more information, See [Management Tasks](../../user-guide/copy-data/manage-task.md).
+For more information, See [Management Tasks](../../data-transformation/manage-task.md).
 
 
 

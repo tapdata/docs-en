@@ -1,8 +1,6 @@
 # Data Pipelines
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 This article lists potential issues and solutions encountered when constructing data pipelines, including data replication tasks, data transformation tasks, and data validation modules.
 
@@ -21,7 +19,7 @@ Yes, in most cases, tasks will resume automatically under the following conditio
   - In the TapData Cloud, tasks continue running without impact. They will automatically resume after the network is restored.
   - In the TapData Enterprise, short interruptions have no effect. If the disconnection lasts longer than 10 minutes, tasks will automatically switch to another available engine. Full sync tasks will restart from the beginning, while incremental sync tasks will resume from the last checkpoint.
 - **Network interruption between the Engine and Data Source**:
-  - The system will attempt to reconnect within the configured [retry interval](../user-guide/other-settings/system-settings.md#task-setting). Once the connection is restored, the task will continue.
+  - The system will attempt to reconnect within the configured [retry interval](../system-admin/other-settings/system-settings.md#task-setting). Once the connection is restored, the task will continue.
   - If the network is not restored within the timeout period, the task will stop. After recovery, full sync tasks will restart from the beginning, and incremental tasks will resume from the last checkpoint.
 
 ### Does it support cross-region, cross-network data synchronization?
@@ -133,9 +131,7 @@ You need to add the following parameters to the PostgreSQL connection string dur
 autosave=always&cleanupSavePoints=true
 ```
 
-![](../images/postgresql
-
-_autosave.png)
+![](../images/postgresql_autosave.png)
 
 ### What if testing the MySQL connection indicates: The server time zone value ' 'is unrecognized?
 
@@ -155,7 +151,7 @@ The topic expression is a regular expression used to match the name of the messa
 
 ### If Oracle synchronizes to SQL Server, is the Select permission sufficient?
 
-Oracle needs some additional permissions for CDC. For specific configuration and authorization, see [Oracle Preparation Work](../prerequisites/on-prem-databases/oracle.md).
+Oracle needs some additional permissions for CDC. For specific configuration and authorization, see [Oracle Preparation Work](../connectors/on-prem-databases/oracle.md).
 
 ### Can changes be made during task execution, such as adding tables to be synchronized?
 
@@ -291,7 +287,7 @@ Yes, you need to turn on the corresponding switch during task configuration. Add
 
 ### If manual deletion of a field in the target table causes an error during incremental synchronization, how can it be fixed?
 
-You can edit the task, add an [add/remove field node](../user-guide/data-development/process-node.md#add-and-del-cols) before the target node, filter out the deleted field, and then restart the task.
+You can edit the task, add an [add/remove field node](../data-transformation/process-node.md#add-and-del-cols) before the target node, filter out the deleted field, and then restart the task.
 
 :::tip
 
@@ -305,7 +301,7 @@ During task configuration, you can open the advanced settings in the source node
 
 :::tip
 
-This feature requires that the target node be a weak scheme-type data source (such as MongoDB/Kafka), etc. If you need to perform data filtering rules during both the full and incremental phases, you can add a [row filter](../user-guide/data-development/process-node.md) to achieve this.
+This feature requires that the target node be a weak scheme-type data source (such as MongoDB/Kafka), etc. If you need to perform data filtering rules during both the full and incremental phases, you can add a [row filter](../data-transformation/process-node.md) to achieve this.
 
 :::
 

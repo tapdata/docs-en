@@ -1,62 +1,79 @@
 # Terminology
 
-import Content from '../reuse-content/_all-features.md';
-
-<Content />
-
 This article introduces common terms used in TapData to help you quickly understand product and feature concepts.
-
-## Full Data Synchronization
-
-Database migration or cloning, within the data flow task, is ideal for business scenarios involving complete data migration between different library-level data sources. This includes instances where data needs to be migrated, moved up or down the cloud, or when databases need to be split and expanded.
-
-## Incremental Data Synchronization
-
-In the data flow task, the real-time synchronization of data among multiple data sources through specific association relationships or processing is suitable for meeting user scenarios such as data analysis, processing, and disaster recovery without impacting user business operations.
 
 ## Data Source
 
-The data sources that can be connected to the TapData system from external sources include databases, and in the future, there are plans to gradually expand the support for other types such as files, GridFS, RestAPI, Dummy, Custom, UDP, Cache, and more.
-
-## Data Replication
-Also known as database replication/cloning, involves full or real-time incremental migration of data between various levels of data sources in data flow tasks. Applicable for instance data migration, cloud migration, database splitting, and expansion scenarios.
-
-## Data Transformation
-In data flow tasks, real-time synchronization of data between multiple tables or other types of data through specific association or processing. Suitable for scenarios such as data analysis, processing, and disaster recovery without affecting user operations.
-
-## Data Service
-In data flow tasks, generating a new model from one or more tables' different fields and publishing it externally via an API. Users can obtain data content through the API.
-
-
+A system or platform from which TapData can ingest data. This includes relational databases (MySQL, PostgreSQL, Oracle), NoSQL databases (MongoDB, Redis), SaaS platforms (Salesforce), message queues (Kafka), and more. Support for additional types such as files, GridFS, UDP, and custom plugins is planned.
 
 ## Connection
-Also known as a data source, it refers to the database that connects externally to the TapData system. Currently supported connections include: MySQL, Oracle, MongoDB, SQL Server, PostgreSQL, Kafka, Redis, etc.
 
-## Node
-Refers to the general term for data sources and processing methods selected in the data task arrangement page.
+A configured instance of a data source, including credentials, host information, and metadata access. Connections are the entry point for TapData to interact with external systems.
 
-## Processing Node
-Refers to nodes for various processing functions to meet data synchronization needs. Currently supported processing nodes include: JavaScript/Java processing, database table filtering, field processing, row-level processing, etc.
+## ODH (Operational Data Hub)
 
-## Source Node
-In data tasks, among any two adjacent connected nodes, it refers to the node that is at the source/end generating the connection.
+A real-time architecture pattern built atop FDM and MDM. TapData’s ODH delivers continuously updated, query-ready views of key business entities, breaking down data silos. It powers analytics, APIs, and business logic with a live, unified source of truth.
 
-## Target Node
-In data tasks, among any two adjacent connected nodes, it refers to the node that is at the target/end being pointed to by the connection.
+## CDC (Change Data Capture)
 
-## Shared Mining
-Refers to the sharing of incremental logs. When the feature is enabled, shared mining extracts incremental logs, eliminating the need for multiple incremental tasks to start a log collection process from the same source, significantly alleviating resource consumption and wastage on the source database.
+A technique that captures insert, update, and delete operations from source systems in real time. TapData supports both log-based (e.g., binlog, WAL) and trigger-based CDC methods, enabling sub-second latency. CDC serves as the foundation for all downstream layers: FDM, MDM, and ADM.
 
-## Shared Cache
-Refers to storing some commonly used data from tables into the cache for different tasks to call and process, eliminating the need to retrieve data from the source, thereby improving efficiency.
+## FDM (Foundational Data Model)
+
+Also known as the **Platform Cache Layer**, FDM mirrors raw source tables using CDC. It reduces the load on operational databases while preserving data fidelity. The FDM layer maintains source-like schemas and provides a real-time foundation for modeling and transformation.
+
+## MDM (Master Data Model)
+
+A Master Data Model in TapData is a standardized data model that defines the structure, attributes, relationships for core business entities (e.g., Customer, Product) to ensure consistency, accuracy, and reusability across integrated systems. It serves as the single source of truth for master data in real-time synchronization, data pipelines, and API-based data services.
+
+Master data model is typically created based on FDM models, using TapData's real time pipeline. TapData uses JSON to store master data model, hence these pipelines typically reads data from multiple FDM tables and merge them into a rich structured master data model.
+
+The master data model in TapData is continuously updated by every insert/update/delete change from each of the contributing tables.
+
+## ADM (Application Data Model)
+
+The delivery layer where curated data is served to consuming systems. TapData supports low-latency delivery via REST/GraphQL APIs, Kafka streams, and direct sync to analytical databases. ADM enables real-time consumption of cleaned and modeled data across platforms.
 
 ## Initialization
-In data migration or synchronization tasks, the mode of migrating or synchronizing existing data in the data source node.
+
+The process of synchronizing historical (existing) data before switching to real-time incremental sync (CDC). Initialization typically uses full data replication.
+
+## Full Data Synchronization
+
+A one-time or scheduled process that copies all data from a source to a target. Often used for initial loads, cloud migrations, database sharding, or offline backups.
+
+## Incremental Data Synchronization 
+
+Continuously captures changes (insert/update/delete) from source systems and applies them to the target in real time—typically powered by Change Data Capture (CDC). Enables real-time analytics, disaster recovery, and low-latency data integration.
+
+## Data Replication
+
+A general term for both full and incremental data synchronization. It refers to the process of copying data from one system to another, either completely (full load) or incrementally (CDC-based).
+
+## Data Transformation
+
+The process of modifying, enriching, or reshaping data in motion—between ingestion and delivery. Includes operations like field mapping, joins, filtering, deduplication, data masking, and schema validation.
+
+## Processing Node
+
+A logical unit in the pipeline used to apply transformations or rules. Examples include JavaScript/Java processors, field mappers, row-level filters, deduplicators, and anomaly detectors.
+
+## Source Node / Target Node
+
+In any pipeline, the source node provides the data, while the target node receives it after transformation. Every connection between two nodes is directional and reflects this source-target relationship.
+
+## Shared Mining
+
+A feature that allows multiple pipelines to reuse a single CDC log extraction stream from the same source database. Reduces performance overhead and avoids redundant log parsing.
+
+## Shared Cache
+
+Caches frequently accessed lookup tables or static datasets across pipelines to reduce source load and improve processing speed.
 
 ## TapData Agent
 
-Refers to the execution program that runs the synchronization task, and is responsible for obtaining the task from the management side, connecting the source data source, performing data conversion, and outputting to the target data source.
+A lightweight runtime component that executes pipelines. It connects to data sources and targets, performs transformations, and ensures reliable data delivery.
 
-## TCM Management Side
+## TCM (TapData Control Manager)
 
-The TapData management console enables users to define custom orchestration synchronization tasks and deploy these tasks to synchronization instances for execution.
+The centralized management plane for pipeline orchestration, configuration, monitoring, and deployment. Users interact with TCM to create, modify, and observe pipelines.

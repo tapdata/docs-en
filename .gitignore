@@ -24,3 +24,8 @@ yarn-error.log*
 .idea/workspace.xml
 .idea/workspace.xml
 .idea/workspace.xml
+
+# Broken links reports
+broken-links-report-*.json
+broken-links-report-*.csv
+quick-broken-links-*.csv

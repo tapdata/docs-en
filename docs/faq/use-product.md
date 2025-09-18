@@ -1,14 +1,12 @@
 # Product Features/Usage
 
-import Content from '../reuse-content/_all-features.md';
 
-<Content />
 
 This article lists common questions encountered while using TapData.
 
 ## What data sources does TapData support?
 
-TapData supports a wide range of databases, including common relational, non-relational, and queue-based data sources. For details, see [Supported Databases](../prerequisites/supported-databases.md).
+TapData supports a wide range of databases, including common relational, non-relational, and queue-based data sources. For details, see [Supported Databases](../connectors/supported-data-sources.md).
 
 ## Does TapData offer a trial?
 
@@ -20,12 +18,12 @@ TapData offers two deployment options, **Cloud** and **Enterprise**, to meet you
 
 | Product            | Applicable Scenarios                                         | Pricing Information                                          |
 | ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| TapData Cloud      | Register an account on [TapData Cloud](https://cloud.tapdata.net/console/v3/) to use, suitable for scenarios requiring quick deployment and low initial investment. Helps you focus more on business development rather than infrastructure management. | Provides one SMALL specification Agent instance for free (semi-managed mode). You can also subscribe to higher specifications or more Agent instances based on business needs. See more at [Product Billing](../billing/billing-overview.md). |
+| TapData Cloud      | Register an account on [TapData Cloud](https://cloud.tapdata.net/console/v3/) to use, suitable for scenarios requiring quick deployment and low initial investment. Helps you focus more on business development rather than infrastructure management. | Provides one SMALL specification Agent instance for free (semi-managed mode). You can also subscribe to higher specifications or more Agent instances based on business needs.  |
 | TapData Enterprise | Supports deployment to local data centers, suitable for scenarios requiring sensitive data handling or strict network isolation, such as financial institutions, government departments, or large enterprises wanting full control over their data. | Based on the number of server nodes deployed, pay the corresponding subscription fees annually. Before making a purchase, you can click “[Apply for a Trial](https://tapdata.net/tapdata-on-prem/demo.html)” and a TapData engineer will assist you with the trial. See more at [Product Pricing](https://tapdata.net/pricing.html). |
 
 ## What to do if the connection test fails?
 
-When creating a data connection, refer to the connection configuration help on the right side of the page and complete the settings according to the guide. You can also refer to [Preparation Work](../prerequisites) to complete the setup.
+When creating a data connection, refer to the connection configuration help on the right side of the page and complete the settings according to the guide. You can also refer to [Preparation Work](../connectors) to complete the setup.
 
 ## When configuring a replication task, why is the target node inference result abnormal?
 
@@ -48,17 +46,9 @@ To avoid such issues, set the lifespan of uncommitted transactions in the source
 
 ## Does TapData support publishing tables as API services?
 
-import Content1 from '../reuse-content/_enterprise-features.md';
-
-<Content1 />
-
-Yes (for single tables), you can publish processed tables [as API services](../user-guide/data-service/create-api-service.md) to allow other applications to easily access and retrieve data.
+Yes (for single tables), you can publish processed tables [as API services](../publish-apis/create-api-service.md) to allow other applications to easily access and retrieve data.
 
 ## How to publish complex multi-table queries as API services?
-
-import Content2 from '../reuse-content/_enterprise-features.md';
-
-<Content2 />
 
 For complex multi-table query scenarios, common solutions include materialized views and ad-hoc queries:
 
@@ -69,15 +59,15 @@ In TapData, you can solidify complex multi-table queries into a materialized vie
 
 **Real-Time View Strategy**
 
-Suitable for scenarios where SQL statements are relatively simple and there is a high requirement for data timeliness. The core idea is to use various [process nodes](../user-guide/data-development/process-node.md) to implement specific operations in SQL statements (such as joins), ultimately synchronizing the processed data to a new table in real-time and then creating and publishing an API service based on that table.
+Suitable for scenarios where SQL statements are relatively simple and there is a high requirement for data timeliness. The core idea is to use various [process nodes](../data-transformation/process-node.md) to implement specific operations in SQL statements (such as joins), ultimately synchronizing the processed data to a new table in real-time and then creating and publishing an API service based on that table.
 
 Steps include:
 
-1. [Create a data transformation task](../user-guide/data-development/create-task.md).
-2. Replace specific operations in the SQL statement with process nodes. For example, as shown in the image below, we pre-join **customer** and **company** tables (implemented through a [join node](../user-guide/data-development/process-node.md#join)) and store the results in the **join_result** table.
+1. [Create a data transformation task](../data-transformation/create-views/README.md).
+2. Replace specific operations in the SQL statement with process nodes. For example, as shown in the image below, we pre-join **customer** and **company** tables (implemented through a [join node](../data-transformation/process-node.md#join)) and store the results in the **join_result** table.
    ![Join Table](../images/join_table_for_api.png)
 3. Start the task to implement real-time data synchronization.
-4. Based on the new table (join_result), [create and publish an API service](../user-guide/data-service/create-api-service.md).
+4. Based on the new table (join_result), [create and publish an API service](../publish-apis/create-api-service.md).
 
 **Batch View Strategy**
 
@@ -85,7 +75,7 @@ For extremely complex SQL statements (e.g., SQL nesting, complex joins), you can
 
 Steps include:
 
-1. [Create a data transformation task](../user-guide/data-development/create-task.md).
+1. [Create a data transformation task](../data-transformation/create-views/README.md).
 2. Add source and target nodes on the canvas.
    :::tip
    The target node should be a weak Schema class data source, such as MongoDB or Kafka.
@@ -93,4 +83,4 @@ Steps include:
 3. In the source node settings, turn on the custom query switch for full sync and add the SQL query statement needed during the full data sync phase (does not affect the incremental phase).
    ![Custom Query](../images/query_table_for_api.png)
 4. After setting up the target node, click the settings in the upper right corner of the page, set the synchronization type to **full**, and then set a regular scheduling strategy based on real-time requirements.
-5. Start the task and wait for it to run to completion before creating and publishing an API service based on the new table [create and publish an API service](../user-guide/data-service/create-api-service.md).
+5. Start the task and wait for it to run to completion before creating and publishing an API service based on the new table [create and publish an API service](../publish-apis/create-api-service.md).

@@ -1,8 +1,6 @@
 # How to Build a Real-time Data Warehouse by Syncing MySQL to ClickHouse
 
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 ClickHouse® is an open-source column-oriented database management system that allows generating analytical data reports in real-time. Its official ClickHouse Cloud offers scalable, real-time analytical processing without the need to manage infrastructure. With storage and computation decoupled, ClickHouse Cloud can auto-scale to accommodate modern workloads, ensuring high-speed query processing.
 
@@ -25,12 +23,12 @@ Recognizing the demand for data migration, TapData introduced ClickHouse as a sy
 
 Before setting up a data sync pipeline on TapData Cloud, connect your data sources:
 
-1. [Connect to MySQL](../../prerequisites/on-prem-databases/mysql.md)
-2. [Connect to ClickHouse](../../prerequisites/warehouses-and-lake/clickhouse.md)
+1. [Connect to MySQL](../../connectors/on-prem-databases/mysql.md)
+2. [Connect to ClickHouse](../../connectors/warehouses-and-lake/clickhouse.md)
 
 ## Configure Task
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 
@@ -67,4 +65,4 @@ Before setting up a data sync pipeline on TapData Cloud, connect your data sourc
 
 ## See also
 
-For more advanced features like table merging or building wide tables, you can [create data transformation task](../../user-guide/data-development/create-task.md) on TapData Cloud. Additionally, you can explore the [Real-Time Data Hub](../../user-guide/real-time-data-hub/daas-mode/enable-daas-mode.md), simply drag the source table to generate a data pipeline, which will then automatically start the task. This greatly simplifies the task configuration process.
+For more advanced features like table merging or building wide tables, you can [create data transformation task](../../data-transformation/create-views/README.md) on TapData Cloud. Additionally, you can explore the [Real-Time Data Hub](../../operational-data-hub/set-up-odh.md), simply drag the source table to generate a data pipeline, which will then automatically start the task. This greatly simplifies the task configuration process.

@@ -1,7 +1,5 @@
 # SQL Server to BigQuery Real-Time Sync
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 In today's age of rapidly expanding data, companies are increasingly turning to [BigQuery](https://cloud.google.com/bigquery/docs)  in order to extract valuable insights and further modernize their data analysis strategies. Through BigQuery, they aim to run large-scale critical business applications, optimizing operations, enhancing customer experience, and reducing overall costs.
 
@@ -31,16 +29,16 @@ To fully tap into these advantages, the initial step is to ensure effective sync
 
 Before you create a replication task, make sure you have configured the relevant data source:
 
-1. [Configure SQL Server Connection](../../prerequisites/on-prem-databases/sqlserver.md)
-2. [Configure BigQuery Connection](../../prerequisites/warehouses-and-lake/big-query.md)
+1. [Configure SQL Server Connection](../../connectors/on-prem-databases/sqlserver.md)
+2. [Configure BigQuery Connection](../../connectors/warehouses-and-lake/big-query.md)
 
-Also note the reference [data type support](../../user-guide/no-supported-data-type.md).
+Also note the reference [data type support](../../faq/no-supported-data-type.md).
 
 
 
 ## Configure Task
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 

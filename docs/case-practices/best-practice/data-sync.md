@@ -1,7 +1,5 @@
 # Data Sync Best Practices
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 This guide aims to provide best practices for data synchronization using TapData Cloud. We will discuss in detail aspects like data source analysis, task configuration, and monitoring, to help you build efficient and reliable data synchronization tasks.
 
@@ -14,13 +12,8 @@ Analyzing the data sources is fundamental to data synchronization. It helps asse
 | **Number of Tables to Synchronize** | Estimate the scale and complexity of the synchronization task based on this data. If there are many tables, create data synchronization tasks in batches or prioritize synchronizing key data. |
 | **Volume of Data Changes**          | Estimate the daily data change volume to adjust the synchronization frequency and performance parameters, ensuring real-time or near-real-time data updates. |
 | **Primary Keys/Unique Indexes**     | Primary keys or unique indexes play a crucial role in synchronization performance and data consistency. If absent, special configurations may be needed for these tables in subsequent task settings. |
-| **Target Database Type**            | Confirm the type of target database. For heterogeneous data synchronization, ensure data type compatibility. For more information, see [Data Type Support](../../user-guide/no-supported-data-type.md). |
+| **Target Database Type**            | Confirm the type of target database. For heterogeneous data synchronization, ensure data type compatibility. For more information, see [Data Type Support](../../faq/no-supported-data-type.md). |
 
-:::tip
-
-When subscribe an instance, you can choose the specifications based on the estimated scale of table data and data change volume. For more details, see [Specification Description](../../billing/billing-overview.md#spec).
-
-:::
 
 ## Configure and Optimize Tasks
 
@@ -34,11 +27,11 @@ Based on the understanding of the data source, the next step is to configure dat
 
 ## Monitor and Maintain
 
-After starting the task, regularly check the task [monitoring page](../../user-guide/copy-data/monitor-task.md) for details such as the synchronization rate during the full synchronization phase and changes in the source database data, so you can ensure timely identification and resolution of any issues. If you encounter task anomalies, consult the task logs for detailed [Error Codes and Solutions](../../user-guide/error-code-solution.md) to facilitate troubleshooting.
+After starting the task, regularly check the task [monitoring page](../../data-replication/monitor-task.md) for details such as the synchronization rate during the full synchronization phase and changes in the source database data, so you can ensure timely identification and resolution of any issues. If you encounter task anomalies, consult the task logs for detailed [Error Codes and Solutions](../../faq/error-code-solution.md) to facilitate troubleshooting.
 
 Additionally, during the task execution, you can log into the TapData server and use commands like `top` or `free` to monitor whether the server's compute or memory resources have reached their limits.
 
 ## See also
 
-* [Create Data Replication Tasks](../../user-guide/copy-data/README.md)
+* [Create Data Replication Tasks](../../data-replication/README.md)
 * [Frequently Asked Questions](../../faq/README.md)

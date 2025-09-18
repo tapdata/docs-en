@@ -1,7 +1,5 @@
 # MySQL to Redis Real-Time Sync
-import Content from '../../reuse-content/_all-features.md';
 
-<Content />
 
 Redis is an in-memory key-value database, suitable for scenarios such as data caching, event publishing/subscribing, and high-speed queues. TapData allows you to sync data from relational databases (Oracle, MySQL, MongoDB, PostgreSQL, SQL Server) to Redis in real-time, helping you complete data flows quickly.
 
@@ -9,7 +7,7 @@ This article explains how to sync data from MySQL to Redis using a data transfor
 
 :::tip
 
-If you need to sync a table from the source MySQL to Redis at the same time, you can [create a data replication task](../../user-guide/copy-data/create-task.md). The setup process is similar to this article.
+If you need to sync a table from the source MySQL to Redis at the same time, you can [create a data replication task](../../data-replication/create-task.md). The setup process is similar to this article.
 
 :::
 
@@ -17,12 +15,12 @@ If you need to sync a table from the source MySQL to Redis at the same time, you
 
 Before creating a data transformation task, make sure you have set up the relevant data sources:
 
-1. [Configure MySQL connection](../../prerequisites/on-prem-databases/mysql.md)
-2. [Configure Redis connection](../../prerequisites/on-prem-databases/redis.md)
+1. [Configure MySQL connection](../../connectors/on-prem-databases/mysql.md)
+2. [Configure Redis connection](../../connectors/on-prem-databases/redis.md)
 
 ## Procedure
 
-1. [Log in to TapData Platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. Based on the product type, select the operation entry:
 
@@ -141,4 +139,4 @@ Then in Redis, we query the corresponding data:
 
 On the task list page, you can start/stop, monitor, edit, copy, reset, delete, etc. tasks.
 
-For detailed operations, refer to [Manage Tasks](../../user-guide/data-development/monitor-task.md).
+For detailed operations, refer to [Manage Tasks](../../data-transformation/manage-task).

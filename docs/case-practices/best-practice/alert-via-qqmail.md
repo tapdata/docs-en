@@ -1,7 +1,4 @@
 # Send Alert Emails via QQ Mail
-import Content from '../../reuse-content/_enterprise-features.md';
-
-<Content />
 
 TapData supports sending alert emails through SMTP protocol, enabling users to receive timely notifications in their commonly used email accounts, thus helping you promptly perceive operational anomalies and ensure the stability and reliability of task operations.
 
@@ -14,7 +11,7 @@ You can also integrate other email services (such as 163 Mail) in TapData platfo
 ## Notes
 
 Tapdata can monitor task status and trigger alerts when specific events occur.
-For configurable alert types, see [Alert Settings](../../user-guide/other-settings/notification.md). You can choose which events should trigger email notifications based on your needs.
+For configurable alert types, see [Alert Settings](../../system-admin/other-settings/notification.md). You can choose which events should trigger email notifications based on your needs.
 
 ## Step One: Obtain Email Authorization Code
 
@@ -54,7 +51,7 @@ The email authorization code is a special password used by QQ Mail to log into t
 
 ## Step Two: Configure SMTP Service
 
-1. [Log in to TapData platform](../../user-guide/log-in.md).
+1. Log in to TapData platform.
 
 2. In the top right corner of the page, click the ![](../../images/setting.png) icon, then select **System Settings**.
 
