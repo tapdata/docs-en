@@ -14,6 +14,35 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.8.0
+
+### New Features
+
+* Added support for detecting and [comparing target data models](case-practices/best-practice/compare-data-model.md) to ensure greater data consistency.
+
+### Enhancements
+
+* Enabled rolling upgrades for the API service to ensure uninterrupted availability during updates.
+
+### Bug Fixes
+
+* Fixed an issue where the audit log could not identify client information when the token had expired.
+* Fixed an issue where the `Limit` parameter in API requests was not being applied correctly.
+
+## 4.7.0
+
+### New Features
+
+* Added support for configuring field masking rules when [creating APIs](publish-apis/create-api-service.md). Masked fields will also appear masked in audit logs and debug results, improving data security.
+* When publishing custom query APIs, users can now preview and edit the final query statement and use custom parameter values.
+* API responses now support returning only specific fields from nested documents or arrays, reducing data redundancy and improving performance.
+
+### Enhancements
+
+* Added the ability to configure API database timeout settings in the system settings. When a request times out, clear log messages are generated to simplify troubleshooting.
+* Improved the generated API Swagger documentation to fully include request bodies, response formats, and error codes, enhancing integration efficiency and consistency.
+
+
 ## 4.6.0
 
 ### New Features

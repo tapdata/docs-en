@@ -20,7 +20,6 @@ Currently, it supports Doris, MongoDB, MySQL, Oracle, PostgreSQL, SQL Server, an
    * **Key Configuration Fields**
      * **Service Name**: Give your API a meaningful name for easier identification and management.
      * **Owner Application**: Select the business application this API belongs to. This helps categorize your APIs clearly. See [Application Management](manage-app.md) for more details.
-     * **Connection Type**, **Connection Name**, **Object Name**: Choose the data source and object (e.g. a view like `orders-wide-view`) that the API will query.
    - **Interface Type**: TapData provides two modes for querying data via APIs:
      - **Default Query**: A general-purpose mode with built-in pagination and filtering, suitable for client-driven access.
      - **Custom Query**: A structured mode that enables domain-specific APIs with full control over query logic, sorting, and inputs.
@@ -30,7 +29,7 @@ Currently, it supports Doris, MongoDB, MySQL, Oracle, PostgreSQL, SQL Server, an
    - **Input Parameters**: Define the parameters clients can pass when calling this API.
      - For **Default Query**, the platform automatically includes three built-in parameters: `page`, `limit`, and `filter`. This allows dynamic pagination and filtering by the client; custom parameters are **not** supported.
      - For **Custom Query**, you can define your own parameters (such as `region`, `startDate`, or `userLevel`), and map them to specific filter or sort conditions in the UI. In this mode, all filtering is managed server-side; the `filter` parameter is not included unless you explicitly add it. For supported types and configuration rules, see [API Query Parameters](query/api-query-params.md).
-   - **Output Results**: By default, all fields from the selected object are returned. You can manually adjust the list to return only selected fields.
+   - **Output Results**: By default, the response will include all fields of the selected object. You can also manually adjust the response to return only specific fields, assign aliases to fields, or apply data masking rules.
    
 4. Click **Save** at the top right of the page.
 

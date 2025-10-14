@@ -100,7 +100,8 @@ As an example of creating a data replication task, the article demonstrates the 
      * **Data Source Exclusive Configuration**: Choose whether to save deleted data.
      * **Synchronize Partition Properties**: When this feature is enabled, TapData will automatically create a sharded collection in the target database. This function is only effective when both the source and target databases are MongoDB clusters.
    * **Data Model**
-     Displays table structure information of the target table, including field names and field types.
+     Displays table structure information of the target table, including field names and field types. When the inferred model differs from the target table structure, Tapdata will prompt you and guide you to select an automatic handling strategy to ensure stable task execution. For details, see [Compare Data Models](../case-practices/best-practice/compare-data-model.md).
+
    * **Alert Settings**
      Defaults as per source node alert settings.
 
