@@ -412,6 +412,7 @@ const sidebars = {
                     ]
              },
             'platform-ops/operation',
+            'platform-ops/monitor-with-prometheus',
             {
               type: 'category',
               label: 'Troubleshooting',
