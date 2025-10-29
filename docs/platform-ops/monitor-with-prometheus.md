@@ -17,6 +17,10 @@ TapData relies on MongoDB for metadata storage. For unified monitoring, use the 
 
 This approach creates a robust monitoring system covering TapData services and dependencies, enhancing observability and operational efficiency.
 
+## Prerequisites
+
+TapData version should be 4.9.0 or higher.
+
 ## Step 1: Enable Monitoring
 
 ### 1.1 Enable TapData Service Monitoring
