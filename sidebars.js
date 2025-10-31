@@ -285,6 +285,7 @@ const sidebars = {
       items: [
         'operational-data-hub/plan-data-platform',
         'operational-data-hub/set-up-odh',
+        'operational-data-hub/evaluate-mongodb-oplog-size',
         {
           type: 'category',
           label: 'Ingest and Sync Data (FDM Layer)',
