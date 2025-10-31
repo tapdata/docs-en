@@ -21,7 +21,11 @@ When creating the MongoDB connection, be sure to set the **connection role as bo
 
 - You can use one shared database for both FDM and MDM layers, or create dedicated databases for better isolation and scalability.
 - Deploy MongoDB as a [replica set](../platform-ops/production-deploy/install-replica-mongodb.md) to ensure high availability and fault tolerance.
-- Ensure the MongoDB instance has enough disk space and a 14-day Oplog retention to support stable real-time synchronization and CDC.
+- Ensure the MongoDB instance has enough disk space Oplog retention to support stable real-time synchronization and CDC.
+
+:::tip
+Need help sizing your MongoDB Oplog? Check out our [MongoDB Oplog Sizing Guide](mongodb-oplog-sizing-guide.md) for detailed calculations and best practices.
+:::
 
 </details>
 
