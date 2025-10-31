@@ -13,7 +13,7 @@ The oplog (operations log) is a special capped collection in MongoDB that record
 
 * **Data Replication**: The primary node logs write operations in the oplog, which secondary nodes read and apply to stay in sync.
 * **Change Data Capture (CDC)**: Tools like TapData rely on the oplog to detect real-time changes for CDC tasks.
-* **Fault Recovery**: If a secondary node goes offline, the oplog provides a "window" for it to catch up without a full resync.
+* **Fault Recovery**: If a secondary node goes offline, the oplog provides a "window" for it to catch up without a full re-sync.
 * **Rollback Support**: During primary node elections, the oplog helps undo inconsistent operations.
 
 In TapData's [ODH setup](set-up-odh.md), MongoDB acts as the metadata store, and the oplog ensures reliable real-time syncing between FDM and MDM layers. An undersized or overwritten oplog can cause data loss or sync failures, so accurate sizing is essential—aim for at least 72 hours of retention for stable operations.

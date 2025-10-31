@@ -24,7 +24,7 @@ When creating the MongoDB connection, be sure to set the **connection role as bo
 - Ensure the MongoDB instance has enough disk space Oplog retention to support stable real-time synchronization and CDC.
 
 :::tip
-Need help sizing your MongoDB Oplog? Check out our [MongoDB Oplog Sizing Guide](mongodb-oplog-sizing-guide.md) for detailed calculations and best practices.
+Need help sizing your MongoDB Oplog? Check out our [MongoDB Oplog Sizing Guide](evaluate-mongodb-oplog-size.md) for detailed calculations and best practices.
 :::
 
 </details>
