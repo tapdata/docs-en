@@ -142,10 +142,15 @@ CREATE USER username IDENTIFIED BY password CONTAINER=all;
 
 ```sql
 -- Replace 'username' with the actual username
+-- Grant V_$DATABASE view permission
+GRANT 
+    SELECT ON V_$DATABASE 
+TO username;
+
 -- Under the user's own Schema
 GRANT 
     CREATE SESSION
-    TO username;
+TO username;
 
 -- Under other Schemas (recommended)
 GRANT
@@ -161,6 +166,11 @@ TO username;
 
 ```sql
 -- Replace 'username' with the actual username
+-- Grant V_$DATABASE view permission
+GRANT 
+    SELECT ON V_$DATABASE 
+TO username;
+
 GRANT CREATE SESSION,
       ALTER SESSION,
       EXECUTE_CATALOG_ROLE,
