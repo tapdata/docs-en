@@ -89,7 +89,7 @@ As an example, we will show how to change the **birthdate** field's data type fr
         * **Maximum Wait Time per Batch Write**: Set the maximum waiting time based on the target database’s performance and network latency, measured in milliseconds.
         * **Full Multi-Threaded Write**: The number of concurrent threads for writing full data. The default is **8**; adjust based on the target end's write performance.
         * **Incremental Multi-Threaded  Write**: The number of concurrent threads for writing incremental data. By default, it is not enabled. Enable and adjust based on the target end's write performance.
-        * **Schema**: Displays the source table structure information, including field names and field types.
+        * **Data Model**: Displays the target table structure information, including field names and field types. When the inferred model differs from the target table structure, Tapdata will prompt you and guide you to select an automatic handling strategy to ensure stable task execution. For details, see [Compare Data Models](../case-practices/best-practice/compare-data-model.md).
       * **Advanced Settings**
         Choose the data writing mode according to business needs:
         * **Handle by Event Type**: After selecting this option, you need to also choose the data writing strategy for insert, update, and delete events.

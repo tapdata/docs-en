@@ -700,5 +700,23 @@ pingtime
 reconfig
 RTO
 wtimeout
-
+bfd
+currentopmetrics
+daguozb
+dbstats
+dbstatsfreestorage
+diagnosticdata
+grafana
+indexstats
+jvm
+Metaspace
+nohup
+pbm
+percona
+pid
+replicasetconfig
+replicasetstatus
+topmetrics
+tsdb
+xzvf
 

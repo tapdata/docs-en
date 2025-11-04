@@ -413,6 +413,7 @@ const sidebars = {
                     ]
              },
             'platform-ops/operation',
+            'platform-ops/monitor-with-prometheus',
             {
               type: 'category',
               label: 'Troubleshooting',
@@ -451,6 +452,7 @@ const sidebars = {
              link: {type: 'doc', id: 'case-practices/best-practice/README'},
              items: [
                 'case-practices/best-practice/data-sync',
+                'case-practices/best-practice/compare-data-model',
                 'case-practices/best-practice/handle-schema-changes',
                 'case-practices/best-practice/heart-beat-task',
                 'case-practices/best-practice/alert-via-qqmail',
