@@ -92,7 +92,7 @@ Building on the free offerings of TapData Community for developers, TapData Ente
     <td>Local</td>
   </tr>
   <tr>
-    <td><a href="../platform-ops/production-deploy/install-tapdata-ha">Horizontal Scaling of Processing Engine</a></td>
+    <td><a href="../platform-ops/production-deploy/install-tapdata-ha-with-3-node">Horizontal Scaling of Processing Engine</a></td>
     <td>✅</td>
     <td>✅</td>
     <td>➖</td>

@@ -4,7 +4,7 @@ This document provides a comprehensive emergency handling process and contingenc
 
 :::tip
 
-TapData supports both standalone and high-availability deployments. For production environments, it is recommended to use a [high-availability deployment](production-deploy/install-tapdata-ha.md) method.
+TapData supports both standalone and high-availability deployments. For production environments, it is recommended to use a [high-availability deployment](production-deploy/install-tapdata-ha-with-3-node.md) method.
 
 :::
 
@@ -39,7 +39,7 @@ Facing engine service exceptions, our goal is to minimize business impact and qu
 
 #### High-Availability (HA) Deployment
 
-In a [high-availability environment](production-deploy/install-tapdata-ha.md), tasks from a single exceptional engine are expected to be gradually taken over by other engines within 10 minutes to minimize task impact, while attempts to automatically recover the exceptional engine will be made in the background.
+In a [high-availability environment](production-deploy/install-tapdata-ha-with-3-node.md), tasks from a single exceptional engine are expected to be gradually taken over by other engines within 10 minutes to minimize task impact, while attempts to automatically recover the exceptional engine will be made in the background.
 
 #### Single Engine Deployment
 
@@ -58,7 +58,7 @@ Facing management end exceptions, our goal is to ensure business continuity and 
 
 #### High-Availability (HA) Deployment
 
-In a [high-availability environment](production-deploy/install-tapdata-ha.md), as long as at least one management end is running normally, all tasks will continue to run unaffected. If all management ends are exceptional, the recovery strategy is the same as for a single management end deployment.
+In a [high-availability environment](production-deploy/install-tapdata-ha-with-3-node.md), as long as at least one management end is running normally, all tasks will continue to run unaffected. If all management ends are exceptional, the recovery strategy is the same as for a single management end deployment.
 
 #### Single Management End Deployment
 

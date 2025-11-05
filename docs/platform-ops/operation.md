@@ -225,7 +225,7 @@ If the memory allocation is small but the task load is heavy, the Java program m
 
 ## How Does TapData Achieve High Availability?
 
-You can [deploy TapData on multiple machines](production-deploy/install-tapdata-ha.md) to achieve high availability. If one node experiences an anomaly, other nodes can continue to provide services. Tasks that have entered the incremental phase will resume from the breakpoint, and tasks can be automatically balanced and distributed.
+You can [deploy TapData on multiple machines](production-deploy/install-tapdata-ha-with-3-node.md) to achieve high availability. If one node experiences an anomaly, other nodes can continue to provide services. Tasks that have entered the incremental phase will resume from the breakpoint, and tasks can be automatically balanced and distributed.
 
 
 ## A Task Encounters an Exception, How to Troubleshoot?
