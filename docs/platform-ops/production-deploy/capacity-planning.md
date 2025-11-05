@@ -66,7 +66,7 @@ This document provides a comprehensive capacity planning reference to help users
 </table>
 ## High Availability Configuration Recommendations
 
-In [High Availability (HA) deployment](install-tapdata-ha.md) scenarios, at least two TapData instances are typically deployed to ensure failover and business continuity. During failover, all pipelines from one instance will automatically transfer to the other instance. In this case, the remaining instance will bear additional load. To avoid excessive load, it is recommended to configure the number of pipelines at 50% ~ 75% of the server capacity to maintain the necessary performance buffer.
+In [High Availability (HA) deployment](install-tapdata-ha-with-3-node.md) scenarios, at least two TapData instances are typically deployed to ensure failover and business continuity. During failover, all pipelines from one instance will automatically transfer to the other instance. In this case, the remaining instance will bear additional load. To avoid excessive load, it is recommended to configure the number of pipelines at 50% ~ 75% of the server capacity to maintain the necessary performance buffer.
 
 For example, if a 16-core server is configured to run 16 pipelines, in an HA setup, it is advisable to run only 8 ~ 12 pipelines to ensure system stability and high availability.
 

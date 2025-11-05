@@ -165,7 +165,7 @@ We recommend using MongoDB version 4.0 or higher. This example uses CentOS 7 to 
 
 ## Next Steps
 
-[Deploying High-Availability TapData](install-tapdata-ha.md)
+[Deploying High-Availability TapData](install-tapdata-ha-with-3-node.md)
 
 ## See Also
 

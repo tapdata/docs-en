@@ -1,6 +1,6 @@
 # Deploy TapData Enterprise
 
-The Enterprise Edition supports both single-node and high-availability deployments. This article explains how to quickly deploy it locally on Linux and Windows platforms (single-node architecture). For production environments, it is recommended to use the [high-availability deployment](../../platform-ops/production-deploy/install-tapdata-ha.md) approach.
+The Enterprise Edition supports both single-node and high-availability deployments. This article explains how to quickly deploy it locally on Linux and Windows platforms (single-node architecture). For production environments, it is recommended to use the [high-availability deployment](../../platform-ops/production-deploy/install-tapdata-ha-with-3-node.md) approach.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
