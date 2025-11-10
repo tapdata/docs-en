@@ -37,7 +37,7 @@ After logging into the TapData platform, click the ![setting_icon](../../images/
 
 ## <span id="mail-alert">Alert Settings</span>
 
-In the **Alert Settings**, you can configure which task events should trigger alert notifications, how the notifications are sent (e.g., via email), and the notification interval.
+Through alert settings, you can configure alert rules for tasks, nodes, and API services. Notifications can be triggered by various events, with customizable notification methods (such as email) and configurable sending intervals.
 
 ![](../../images/system_notification_2.png)
 

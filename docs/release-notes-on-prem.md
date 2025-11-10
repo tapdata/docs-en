@@ -14,6 +14,27 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.9.0
+
+### New Features
+
+* [Added Prometheus integration](platform-ops/monitor-with-prometheus.md), allowing you to connect Tapdata to your existing monitoring stack, and build custom visual dashboards with Grafana.
+* Introduced new API monitoring metrics with support for [email alert configuration](system-admin/other-settings/notification.md#alert-settings).
+* Added support for [one-click API duplication](publish-apis/create-api-service.md#release330-export-api), making it easier to quickly create APIs with the same configuration.
+* Added the ability to [set task startup priority using tags](data-replication/manage-task.md); when starting tasks in bulk, execution will follow the defined priority order.
+
+### Enhancements
+
+* While [creating APIs](publish-apis/create-api-service.md), parameters now support the `IN` operator (e.g., `caseType IN ('I', 'A')`). Custom queries now support required/optional parameter settings and field filtering.
+* Optimized QPS metrics display on the task monitoring page, now including CPU and memory usage trend charts.
+* UI enhancements across the platform for a better user experience.
+
+### Bug Fixes
+
+* Fixed an issue where setting group tags in user management could incorrectly set the user status to “Reject.”
+* Fixed a problem in multi-node deployments where license updates on the frontend were not propagated to all nodes.
+
+
 ## 4.8.0
 
 ### New Features
