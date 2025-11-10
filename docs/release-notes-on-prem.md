@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 ### Enhancements
 
-* While [creating APIs](../user-guide/data-service/create-api-service.md), parameters now support the `IN` operator (e.g., `caseType IN ('I', 'A')`). Custom queries now support required/optional parameter settings and field filtering.
+* While [creating APIs](publish-apis/create-api-service.md), parameters now support the `IN` operator (e.g., `caseType IN ('I', 'A')`). Custom queries now support required/optional parameter settings and field filtering.
 * Optimized QPS metrics display on the task monitoring page, now including CPU and memory usage trend charts.
 * UI enhancements across the platform for a better user experience.
 
