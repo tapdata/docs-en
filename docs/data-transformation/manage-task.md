@@ -6,7 +6,7 @@ Once the data transformation task is created, you can manage it in the task list
 
 | Operation | Description |
 | ----------------- | ------------------------------------------------------------ |
-| **Set Tag** | Click the ![tag_icon](../images/tag_icon.png) icon at the top left of the task list to expand the tag information. You can quickly set tags by clicking and dragging the task name to the desired tag. |
+| **Set Tag** | Click the ![tag_icon](../images/tag_icon.png) icon at the top left of the task list to expand the tag information. You can quickly set tags by clicking and dragging the task name to the desired tag.  <br />When creating a new task tag, you can set its name and priority. The higher the priority, the earlier the task will be executed during batch startup.|
 | **Set category** | Choose the target task and categorize it based on the business perspective.  |
 | **Start**/**Stop** | After stopping the task, the next start will continue to replicate the data based on the last stopped incremental point in time. |
 | **Edit** | Configure the task, including node settings, synchronized tables, task start schedule, and other information. Please note that the task cannot be altered during execution. |

@@ -39,7 +39,7 @@ Currently, it supports Doris, MongoDB, MySQL, Oracle, PostgreSQL, SQL Server, an
 
    ![Try Query API](../images/try_query_api.png)
 
-7. (Optional) For the data services you have created, you can <span id="release330-export-api">select and export them</span> for backup or sharing with other team members. You can also import data services.
+7. (Optional) For existing data services, you can <span id="release330-export-api">duplicate, select/export</span> them for backup or to share with other team members. You can also import data services as needed.
 
    ![Import/Export API Services](../images/import_export_api.png)
 
