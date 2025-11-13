@@ -57,6 +57,10 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
 
    For example: `tar -zxvf tapdata-release-v2.14.tar.gz && cd tapdata`
 
+   :::tip
+   If you need to copy the extracted program files to another directory for deployment, use the `cp -a` command to copy the entire directory. Avoid using the `*` wildcard to match files, as this may omit hidden files and cause startup failures.
+   :::
+
 5. Prepare the License file.
 
    1. Execute the following command to obtain the SID information required for the application.
