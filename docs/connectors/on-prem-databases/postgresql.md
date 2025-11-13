@@ -143,6 +143,10 @@ When using PostgreSQL as the target database or obtaining incremental data via t
      CREATE PUBLICATION dbz_publication_root FOR ALL TABLES WITH (PUBLISH_VIA_PARTITION_ROOT = TRUE);
      CREATE PUBLICATION dbz_publication FOR ALL TABLES;
      ```
+     :::tip
+     When creating the connection, selecting the Pgoutput plugin enables **Partial Publication**, eliminating the need to set REPLICA IDENTITY FULL for tables without primary keys during updates/deletes. Note that the synchronization account needs `CREATE PUBLICATION` permission and `OWNER` privileges on target tables.
+     :::
+
    - [Decoderbufs](https://github.com/debezium/postgres-decoderbufs): Suitable for PostgreSQL 9.6 and above, uses Google Protocol Buffers to parse WAL logs but requires more complex configuration.
    - [Walminer](https://gitee.com/movead/XLogMiner/tree/master/): Does not rely on logical replication, doesn't require setting `wal_level` to `logical`, or adjusting replication slot configuration, but requires superuser permissions.
 
@@ -428,6 +432,7 @@ To further enhance the security of the data pipeline, you can enable SSL (Secure
       * **User**: Database username.
       * **Password**: Password corresponding to the database username.
       * **Log Plugin Name**: To read data changes from PostgreSQL and achieve incremental data synchronization, you need to follow the guidance in the [Preparation](#prerequisites) section to select and install the appropriate plugin.
+      * **Partial Publication**: Available only when **Pgoutput** is selected as the log plugin. This creates individual publications for each table, eliminating the global publication restriction that requires `REPLICA IDENTITY FULL` for tables without primary keys during updates/deletes. Requires database account with `CREATE PUBLICATION` permission and `OWNER` privileges on target tables.
    * **Advanced Settings**
       * **ExtParams**: Additional connection parameters, default is empty.
       * **Timezone**: Defaults to timezone 0. You can also specify it manually according to business needs. Configuring a different timezone will affect timezone-related fields, such as DATE, TIMESTAMP, TIMESTAMP WITH TIME ZONE, etc.
@@ -457,6 +462,7 @@ When configuring data synchronization/conversion tasks, you can use PostgreSQL a
   * **Hash Sharding**: When enabled, all table data will be split into multiple shards based on hash values during the full synchronization phase, allowing concurrent data reading. This significantly improves reading performance but also increases the database load. The maximum number of shards can be manually set after enabling this option.
   * **Partition Table CDC Root Table**: Supported only in PostgreSQL 13 and above, and when selecting the pgoutput log plugin. When enabled, only CDC events for root tables will be detected; when disabled, only CDC events for child tables will be detected.
   * **Max Queue Size**: Specifies the queue size for reading incremental data in PostgreSQL. The default value is **8000**. If the downstream synchronization is slow or individual table records are too large, consider lowering this value.
+  * **Split Update Unique Key**: Enabled by default. When updating unique key fields, this splits UPDATE into DELETE + INSERT events to improve target compatibility. Disable this if you need to preserve original UPDATE events (e.g., for auditing or change tracking).
 * As a Target Node
   * **Ignore NotNull**: Default is off, meaning NOT NULL constraints will be ignored when creating tables in the target database.
   * **Specify Table Owner**: When synchronizing to PostgreSQL, you can specify the owner of automatically created tables. Ensure that the account used for data synchronization has the necessary permissions. If not, log in to the database as an administrator and execute `ALTER USER <tapdataUser> INHERIT;` and `GRANT <tableOwner> TO <tapdataUser>;`.

@@ -82,6 +82,9 @@ The following operations need to be **performed separately on each of the three 
    # Extract the installation package (replace the package name with the actual name)
    tar -zxvf installation-package-name -C /data/tapdata
    ```
+   :::tip
+   If you need to copy the extracted program files to another directory for deployment, use the `cp -a` command to copy the entire directory. Avoid using the `*` wildcard to match files, as this may omit hidden files and cause startup failures.
+   :::
 
 4. Navigate to the extracted directory and run the `./tapdata start` command to start the TapData deployment process. Follow the command line prompts to set up TapData's login address, API service port, MongoDB connection authentication, and other settings. An example setup is provided below:
 

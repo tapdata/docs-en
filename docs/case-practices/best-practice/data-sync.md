@@ -14,6 +14,12 @@ Analyzing the data sources is fundamental to data synchronization. It helps asse
 | **Primary Keys/Unique Indexes**     | Primary keys or unique indexes play a crucial role in synchronization performance and data consistency. If absent, special configurations may be needed for these tables in subsequent task settings. |
 | **Target Database Type**            | Confirm the type of target database. For heterogeneous data synchronization, ensure data type compatibility. For more information, see [Data Type Support](../../faq/no-supported-data-type.md). |
 
+:::caution Tables Without Primary Keys
+
+For tables without primary keys or unique identifiers, TapData cannot distinguish between duplicate rows. When the source updates or deletes some duplicate rows, all identical rows in the target will be affected. To ensure accurate synchronization, add a primary key or unique index to source tables, or select column combinations that can uniquely identify rows. Also avoid creating tables with many identical rows.
+
+:::
+
 
 ## Configure and Optimize Tasks
 

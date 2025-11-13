@@ -85,7 +85,7 @@ import TabItem from '@theme/TabItem';
 
    1. [Deploy OBProxy](https://en.oceanbase.com/docs/common-odp-doc-en-10000000002135940): the proxy layer that handles client connections and load balancing.
    
-   2. [Deploy oblogproxy](https://en.oceanbase.com/docs/community-obd-en-10000000002136450): the incremental log proxy that connects to OceanBase and fetches CDC logs.
+   2. Contact OceanBase technical support to obtain and install the enterprise edition **obcdc** component for transaction log conversion.
    
    3. Contact the [Tapdata team](../../appendix/support.md) to obtain the `OB-Log-Decoder` installation package.
    
