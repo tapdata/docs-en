@@ -1,3 +1,8 @@
+---
+pdkId: db2i
+---
+
+
 # Db2 for i
 
 
