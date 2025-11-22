@@ -719,5 +719,6 @@ replicasetstatus
 topmetrics
 tsdb
 xzvf
+addregister
 bson
 

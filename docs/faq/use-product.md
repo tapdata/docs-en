@@ -84,3 +84,10 @@ Steps include:
    ![Custom Query](../images/query_table_for_api.png)
 4. After setting up the target node, click the settings in the upper right corner of the page, set the synchronization type to **full**, and then set a regular scheduling strategy based on real-time requirements.
 5. Start the task and wait for it to run to completion before creating and publishing an API service based on the new table [create and publish an API service](../publish-apis/create-api-service.md).
+
+
+## How do I add/register a data source in TapData Community Edition?
+
+TapData Community Edition comes with built-in support for commonly used data sources such as MySQL, PostgreSQL, and MongoDB. For the complete list, see [Supported Data Sources](../connectors/supported-data-sources.md).
+
+If you need additional data sources, clone the [TapData Connectors](https://github.com/tapdata/tapdata-connectors) repository, build it following the tutorial in repository README, and register the new connector with your local Community Edition instance.

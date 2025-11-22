@@ -130,4 +130,5 @@ TapData Community includes the following main components:
 
 ## Next Steps
 
-[Connect to a Database](../connect-data-source.md)
+- [Connect to a Database](../connect-data-source.md)
+- [Add/Register a Data Source](../../faq/use-product.md#how-do-i-addregister-a-data-source-in-tapdata-community-edition)
