@@ -73,6 +73,7 @@ const sidebars = {
                           'connectors/warehouses-and-lake/gaussdb',
                           'connectors/warehouses-and-lake/greenplum',
                           'connectors/warehouses-and-lake/hudi',
+                          'connectors/warehouses-and-lake/paimon',
                           'connectors/warehouses-and-lake/selectdb',
                           'connectors/warehouses-and-lake/starrocks',
                           'connectors/warehouses-and-lake/tablestore',

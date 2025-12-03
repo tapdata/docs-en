@@ -93,7 +93,9 @@ As an example of creating a data replication task, the article demonstrates the 
      * **Incremental Multi-thread Writing**: The number of concurrent threads for writing incremental data.
      * **Batch Write Item Quantity**: The number of items written per batch during full synchronization.
      * **Max Wait Time per Batch Write**: Set the maximum waiting time per batch write, evaluated based on the target database’s performance and network latency, in milliseconds.
-   * <span id="advanced-settings">**Advanced Settings**</span>
+
+   * **<span id="advanced-settings">Advanced Settings</span>**
+
      * **Data Writing Mode**: Select according to business needs.
        * **Process by Event Type**: If you choose this, you also need to select data writing strategies for insert, update, and delete events.
        * **Statistical Append Write**: Only processes insert events, discarding update and delete events.
