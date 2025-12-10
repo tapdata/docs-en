@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
 ### New Features
 - Added [API](publish-apis/README.md) multi-node high-availability to improve service stability.
 - In Operational Data Hub [table-detail lineage view](operational-data-hub/fdm-layer/validate-views.md), task lag is now displayed so you can spot pipeline delays at a glance.
-- [Incremental data validation](data-replication/incremental-check.md) can now generate custom repair SQL, letting DBAs review and apply fixes selectively.
+- [Incremental data validation](data-replication/incremental-check.md) can now generate custom repair SQL, letting DBA review and apply fixes selectively.
 
 ### Enhancements
 - PostgreSQL sources without a primary key but with multiple unique indexes now auto-pick one as the replica-identity key (shown as “coreUnique” in the UI).
