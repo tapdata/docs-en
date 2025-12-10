@@ -57,3 +57,7 @@ To address these challenges, TapData introduces **Incremental Data Validation**,
    Click **Details** next to the number of differences to view detailed discrepancy information in the popup window, including the values from both the source and target tables.
 
    ![Discrepancy Details](../images/review_incr_check_details.png)
+
+   :::tip
+   When differences are found, click “Generate Custom Repair SQL” in the upper-right corner to export the diff SQL for DBA review and targeted fixes.
+   :::
