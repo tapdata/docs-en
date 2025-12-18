@@ -55,6 +55,8 @@ Hover your mouse pointer over a node to display key metrics for that node, and c
 
 ## ④ Task Log Display Area
 
+![Error code](../images/error_log_code.png)
+
 Click the ![](../images/view_log_icon.png) icon at the top of the page, then you can view the progress, logs, alert list, and associated task information for a task run. You can filter the logs using keywords, periods, and levels, or download them for local analysis on the **Log** tab.
 
 
