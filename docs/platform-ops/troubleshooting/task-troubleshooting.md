@@ -114,7 +114,61 @@ Before you start, open the data-hub lineage to confirm which tasks feed the tabl
 3. Restart the task. The child table is fully resynced automatically; the task then resumes incremental sync for all tables.
 
 
+## How to Handle Data Anomalies
 
-## 相关文档
-- [数据链路常见问题处理](../../faq/data-pipeline.md)
-- [产品特性问题解答](../../faq/use-product.md)
+TapData’s real-time data hub replicates first and refines later. If a downstream application reports bad data, trace the lineage upstream one layer at a time until you reach the source; the steps below will help you isolate the fault quickly.
+
+:::tip
+If you are using data replication/transform tasks, skip the lineage and layer concepts and jump straight to task config and data validation.
+:::
+
+1. Locate the table and open its lineage.
+   
+   ![Data lineage](../../images/lineage_for_fdm.png)
+   
+   In the [Data Hub Dashboard](../../operational-data-hub/README.md) search for the table that raised the alarm. The lineage shows every layer and task that feeds it. Check whether any task is stopped, retrying, or lagging.
+   
+   - FDM layers are usually 1:1 mirrors—row count and column values should match the source.  
+   - MDM layers may join, filter, dedupe or compute—some “anomalies” are simply the intended result of business rules; always cross-check the logic before treating them as errors.
+
+2. Run a quick data validation.
+   
+   Open [Verify Data](../../operational-data-hub/fdm-layer/validate-data-quality.md), create a job for the table and start with **row count** to quickly spot order-of-magnitude gaps.  
+   Then choose the check that suits the layer:
+   - **Primary-key check** – recommended for MDM layers; verifies whether key records are missing or duplicated.  
+   - **Full-value check** – recommended for FDM layers; pinpoints column-level value differences.
+   
+   **Production tip:** schedule nightly validations during low traffic and enable [incremental verify](../../data-replication/incremental-check.md) to catch drift early.
+
+3. Classify the anomaly.
+   
+   - **Row-count gap**  
+     * FDM Layer should match the source exactly; check for lost CDC events or unprocessed deletes.  
+     * MDM Layer counts can change because of joins/filters; confirm the logic is still correct and no rule was accidentally tightened.
+   
+   - **Column-value error**  
+     Trace the field in the task UI: which table does it come from? Is it mapped correctly? Does it pass through a JS or field-calc node? Compare layer by layer until the value first diverges.  
+     Usual suspects: missing mapping, wrong data-type, stale JS, schema change not back-filled.
+   
+   - **Child/nested-structure error**  
+     Verify the join key and confirm the child table is fully synced in FDM. A bad key, missing index, or unexpanded array will leave the nested document empty or partially populated.
+
+4. If the master table is the culprit, drill down in this order:
+
+   1. **Task-status check**: Look for alerts, abnormal termination, event retries or lag backlogs in task monitoring.  
+   2. **Intermediate-landing check**: Connect directly to TapData’s underlying MongoDB, confirm the data have been written, are complete, and contain no abnormal documents.  
+   3. **Nested-structure check**: Verify that nested fields are mapped or unfolded correctly.  
+   4. **Task-configuration check**: Review field-mapping tables, primary-key settings, and the logic inside any JS or Python processing nodes to ensure they still meet business requirements.  
+   5. **Historical-replay check**: When a schema change or new field was introduced, confirm that a full sync was executed to back-fill (resync) the data.  
+   6. **CDC-capture check**: Compare source change logs with the MongoDB oplog to ensure every change event was captured and processed.  
+   7. **Repair evaluation**: After correcting the configuration, decide whether you can simply resume or whether the task must be reset and fully re-synced.
+
+
+Most anomalies are found within minutes by following the path above. Add critical validations to [daily monitoring](../monitor-with-prometheus.md) and [alerting](../../case-practices/best-practice/alert-via-qqmail.md) to catch the next one before users do.
+
+If you are still stuck, collect the table name, owning task, processing logic, logs (with errors), and a sample bad row, then open a ticket with [TapData support](../../appendix/support.md).
+
+## See also
+
+- [Data Pipeline FAQ](../../faq/data-pipeline.md)
+- [Product Features FAQ](../../faq/use-product.md)
