@@ -726,5 +726,8 @@ HCFS
 namenode
 paimon
 upserts
+resync
+resynced
+
 
 
