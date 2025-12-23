@@ -719,6 +719,29 @@ replicasetstatus
 topmetrics
 tsdb
 xzvf
+AUT
+CHGOBJOWN
+CRTLIB
+CRTUSRPRF
+DECFLOAT
+DSPJRN
+GRTOBJAUT
+INLMNU
+INLPGM
+JRN
+LMTCPB
+NEWOWN
+OBJTYPE
+QSQJRN
+QSYS
+SPCAUT
+STRSQL
+SYSSCHEMAS
+TAPLIB
+TESTCDC
+USRCLS
+USRPRF
+pdk
 bson
 fileformat
 hangzhou
@@ -728,6 +751,4 @@ paimon
 upserts
 resync
 resynced
-
-
 

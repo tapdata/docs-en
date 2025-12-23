@@ -87,6 +87,7 @@ const sidebars = {
                   items: [
                           'connectors/on-prem-databases/dameng',
                           'connectors/on-prem-databases/db2',
+                          'connectors/on-prem-databases/db2-for-i',
                           'connectors/on-prem-databases/elasticsearch',
                           'connectors/on-prem-databases/gbase-8a',
                           'connectors/on-prem-databases/gbase-8s',
