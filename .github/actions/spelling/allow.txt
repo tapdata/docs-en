@@ -742,5 +742,13 @@ TESTCDC
 USRCLS
 USRPRF
 pdk
-
+bson
+fileformat
+hangzhou
+HCFS
+namenode
+paimon
+upserts
+resync
+resynced
 

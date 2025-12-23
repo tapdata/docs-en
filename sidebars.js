@@ -73,6 +73,7 @@ const sidebars = {
                           'connectors/warehouses-and-lake/gaussdb',
                           'connectors/warehouses-and-lake/greenplum',
                           'connectors/warehouses-and-lake/hudi',
+                          'connectors/warehouses-and-lake/paimon',
                           'connectors/warehouses-and-lake/selectdb',
                           'connectors/warehouses-and-lake/starrocks',
                           'connectors/warehouses-and-lake/tablestore',
@@ -286,6 +287,7 @@ const sidebars = {
       items: [
         'operational-data-hub/plan-data-platform',
         'operational-data-hub/set-up-odh',
+        'operational-data-hub/evaluate-mongodb-oplog-size',
         {
           type: 'category',
           label: 'Ingest and Sync Data (FDM Layer)',
@@ -419,6 +421,7 @@ const sidebars = {
               label: 'Troubleshooting',
               link: {type: 'doc', id: 'platform-ops/troubleshooting/README'},
               items: [
+                     'platform-ops/troubleshooting/task-troubleshooting',
                      'platform-ops/troubleshooting/error-code',
                      'platform-ops/troubleshooting/error-and-solutions',
                      ]

@@ -2,6 +2,28 @@
 
 This article lists common issues related to TapData maintenance.
 
+## How to run a TapData health check
+
+Use this checklist to confirm TapData is running normally.
+
+1. Log in to TapData.
+
+2. In the left menu choose **System Management > Cluster Management** and verify [component status](../system-admin/manage-cluster.md):
+   - TapData Manager, Engine, and API Server are all **Running**.
+   - CPU and memory are below 70 %.
+
+3. Open **Data Replication** or **Data Transformation** and scan the task list:
+   - Every task should show **Running**.
+   - Click a task name and check [metrics](../data-replication/monitor-task.md): lag is acceptable and QPS > 0.
+
+   If a task is unhealthy:
+   - **Read the error log** at the bottom of the monitor page and follow the hints. See [troubleshooting](../platform-ops/troubleshooting/README.md).
+   - **Test the connection**: open **Connections**, click **Test** on the related source/target and fix any auth or network issues.
+   - **Check incremental lag**: if QPS spikes for > 30 min, the source may be in a batch window—consider scaling the task. If the target receives no changes, verify CDC prerequisites (e.g. MySQL binlog = ROW). Primary-key conflicts in the log usually mean a config change.
+
+Still stuck? [Contact support](../appendix/support.md).
+
+
 ## How to Start or Stop Services?
 
 After logging into the TapData platform, you can start or stop the target service under **System Management** > **Cluster Management**.
