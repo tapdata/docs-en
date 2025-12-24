@@ -719,6 +719,7 @@ replicasetstatus
 topmetrics
 tsdb
 xzvf
+addregister
 AUT
 CHGOBJOWN
 CRTLIB
