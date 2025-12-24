@@ -83,7 +83,7 @@ import TabItem from '@theme/TabItem';
   <tr>
     <td>Doris</td>
     <td>✅</td>
-    <td>✅</td>
+    <td>➖</td>
     <td>➖</td>
     <td>✅</td>
     <td>✅</td>
