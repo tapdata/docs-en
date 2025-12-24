@@ -254,6 +254,15 @@ The beta version of the data sources is in public preview and has passed the bas
 </thead>
 <tbody>
   <tr>
+    <td>Db2 for i</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>IBM AS400 v7r4</td>
+  </tr>
+  <tr>
     <td>Custom Connection</td>
     <td>✅</td>
     <td>✅</td>
@@ -384,6 +393,15 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>✅</td>
     <td>➖</td>
     <td>0.11.0</td>
+  </tr>
+  <tr>
+    <td>Paimon</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>0.6 and above</td>
   </tr>
   <tr>
     <td>SelectDB</td>

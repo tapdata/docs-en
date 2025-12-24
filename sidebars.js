@@ -73,6 +73,7 @@ const sidebars = {
                           'connectors/warehouses-and-lake/gaussdb',
                           'connectors/warehouses-and-lake/greenplum',
                           'connectors/warehouses-and-lake/hudi',
+                          'connectors/warehouses-and-lake/paimon',
                           'connectors/warehouses-and-lake/selectdb',
                           'connectors/warehouses-and-lake/starrocks',
                           'connectors/warehouses-and-lake/tablestore',
@@ -86,6 +87,7 @@ const sidebars = {
                   items: [
                           'connectors/on-prem-databases/dameng',
                           'connectors/on-prem-databases/db2',
+                          'connectors/on-prem-databases/db2-for-i',
                           'connectors/on-prem-databases/elasticsearch',
                           'connectors/on-prem-databases/gbase-8a',
                           'connectors/on-prem-databases/gbase-8s',
@@ -419,6 +421,7 @@ const sidebars = {
               label: 'Troubleshooting',
               link: {type: 'doc', id: 'platform-ops/troubleshooting/README'},
               items: [
+                     'platform-ops/troubleshooting/task-troubleshooting',
                      'platform-ops/troubleshooting/error-code',
                      'platform-ops/troubleshooting/error-and-solutions',
                      ]

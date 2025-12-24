@@ -77,3 +77,16 @@ A lightweight runtime component that executes pipelines. It connects to data sou
 ## TCM (TapData Control Manager)
 
 The centralized management plane for pipeline orchestration, configuration, monitoring, and deployment. Users interact with TCM to create, modify, and observe pipelines.
+
+
+## QPS
+
+Queries Per Second. The average number of change events the sync task processes every second. It shows how fast data is replicated from the source to the target.
+
+## Incremental Validation
+
+While the task is running, TapData randomly compares rows in the target with the source to make sure they match. The check keeps going as long as the sync is active. See [Incremental Data Check](../data-replication/incremental-check.md).
+
+## API Server
+
+TapData’s built-in publishing layer. Pick any table and expose it as a [RESTful API endpoint](../publish-apis/README.md). Teams use it to share clean, governed data with mobile apps, third-party systems, or any client that speaks HTTP.

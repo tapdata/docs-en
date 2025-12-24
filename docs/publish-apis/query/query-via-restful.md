@@ -57,3 +57,23 @@ If you'd prefer to use an external tool or automate API testing, [Postman](https
 6. Click **Send**. You’ll get a real-time response from the API.
 
    ![Query Result](../../images/restful_api_query_result.png)
+
+
+## Common response codes
+
+| Code | Message | Meaning |
+| --- | --- | --- |
+| 200 | OK | Request succeeded |
+| 401 | Unauthorized error: token expired | Token expired; generate a new one |
+| 404 | Not Found error: endpoint not found | API does not exist or is not yet published—check the URL or wait for the publish to finish |
+| 429 | Rate limit exceeded. Maximum \${api limit} requests per second allowed | You hit the rate limit; retry later or raise the limit in the API settings |
+
+## FAQ
+
+* Q: The API takes too long to return data or times out
+
+  A: Add indexes on every column used in `WHERE`, `ORDER BY`, or joins. If the delay persists, enable response caching or increase the query timeout in the API settings.
+
+* Q: The payload doesn’t look right
+
+   A: Check the data-source model and the underlying table—make sure the data is current and that any field-merging logic matches what you expect.
