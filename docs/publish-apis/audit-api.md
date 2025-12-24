@@ -11,8 +11,9 @@ Click **Details** to view detailed information about the corresponding request, 
 
 ![](../images/audit_api_2.png)
 
-- **Log Details**: Includes basic information and various metrics of the access, such as API ID, name, IP address of the visitor, etc.
-- **Number of Access Records**: The total number of records for this access (entries).
-- **API Average Access Rate**: The average data transmission speed for a single access to the API.
-- **Access Time**: Statistical computation of the time consumed for a single access to the API.
-- **Average Response Time**: The average response time per record for a single access to the API.
+- **Log details**: Includes basic request info and metrics, such as API ID, name, HTTP method and path, requester IP address, status code, timestamp, etc.
+- **Rows returned**: Total number of records returned in this request (independent of pagination or streaming).
+- **Matching rows**: Number of records that matched the query/filter conditions (typically ≤ rows returned).
+- **API access rate**: Average data transfer rate for a single request, used to evaluate throughput.
+- **Request duration**: End-to-end time from receiving the request to completing the response.
+- **Database response time**: Time the database took to respond during the request.

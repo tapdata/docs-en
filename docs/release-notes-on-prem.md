@@ -14,6 +14,30 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+
+## 4.11.0
+
+### New Features
+
+- Released [Db2 for i connector](connectors/on-prem-databases/db2-for-i.md) with real-time sync and write support for enterprise data integration.
+- [Incremental data validation](data-replication/incremental-check.md) now supports bulk manual verification and repair, configurable validation scope, and per-table ignore lists.
+- The [master-child merge node](data-transformation/process-node.md#master-slave-merge) adds child-table cache rebuild to quickly fix cache inconsistencies and protect data quality.
+- [Data replication tasks](data-replication/create-task.md) extend exactly-once writes with MongoDB and Sybase as supported targets, ensuring idempotent and consistent writes.
+- [Task logs](data-replication/monitor-task.md#-task-log-display-area) add DDL output for easier troubleshooting and audit reviews.
+- Incremental reads are now auto-tuned by adjusting batch size to balance throughput and stability.
+
+
+### Enhancements
+
+- [API audit logs](./publish-apis/audit-api.md) now include database response time.
+- Improved API performance for faster overall request handling.
+- Improved API debug page results display for better readability and debugging.
+- Improved the logic for switching master-child merge tasks into incremental mode.
+
+### Bug Fixes
+
+- Fixed a memory leak that could occur in specific scenarios.
+
 ## 4.10.0
 
 ### New Features

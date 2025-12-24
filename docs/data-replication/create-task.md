@@ -99,6 +99,8 @@ As an example of creating a data replication task, the article demonstrates the 
      * **Data Writing Mode**: Select according to business needs.
        * **Process by Event Type**: If you choose this, you also need to select data writing strategies for insert, update, and delete events.
        * **Statistical Append Write**: Only processes insert events, discarding update and delete events.
+    * **Increment Exactly Once Write**: Creates a cache table on the target to mark and check events, ensuring each change is written exactly once. Recommended when association fields (join keys) may change; enabling can impact sync performance. The target database must permit table creation and data writes.
+    * **Time Window**: Sets the retention period for the cache used by exactly-once dedup checks (the validity window). Expired cache entries are cleaned up daily. Longer windows consume more storage on the target database.
      * **Data Source Exclusive Configuration**: Choose whether to save deleted data.
      * **Synchronize Partition Properties**: When this feature is enabled, TapData will automatically create a sharded collection in the target database. This function is only effective when both the source and target databases are MongoDB clusters.
    * **Data Model**
@@ -123,4 +125,3 @@ As an example of creating a data replication task, the article demonstrates the 
 ## See also
 
 [Monitor or Manage Tasks](../data-transformation/manage-task.md)
-

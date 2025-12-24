@@ -38,6 +38,10 @@ To address these challenges, TapData introduces **Incremental Data Validation**,
 
    - **Incremental Validation**: When enabled, TapData will sample and validate newly inserted or updated records to identify data inconsistencies during sync.
    - **Validation Frequency**: Controls how many records are validated per second. TapData will compare records by primary key to check for differences between source and target. Default is 10 records/sec. Adjust based on workload.
+   - **Table Filter**: Configure which tables to validate. Defaults to all tables. You can include or exclude specific tables, or use regular expressions to select tables for customized needs.
+   - **Time Precision**: Supports strict match, rounding, and truncation. Default is strict match, requiring time-field values to be identical between source and target. Rounding or truncation allows small tolerances where exact precision is not required.
+   - **Queue Capacity**: Default is Auto. The system dynamically adjusts buffer size based on task concurrency and validation rate. Increasing it manually may raise resource consumption.
+   - **Check No Primary Key Tables**: Disabled by default—only tables with a primary key are validated. If the source or target has tables without a primary key, define a key first or enable this option to include them.
    - **Auto Repair**: When enabled, TapData will re-fetch and re-sync inconsistent records from the source, ensuring consistency without manual fixes.
 
 5. Before starting the task, it is recommended to go to **Settings** in the top-right corner of the page, open the **Alert Settings** tab, enable **Email Alerts** related to task validation, and **select recipients**. This ensures timely notifications when data inconsistencies are detected.
