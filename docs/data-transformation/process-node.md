@@ -91,6 +91,11 @@ In big data processing and analysis, merging and transforming data is a pivotal 
 
    Once the process is completed, you can monitor the task's performance on the current page, such as RPS (Records Per Second), latency, task time statistics, etc.
 
+
+In addition, when you detect data inconsistencies or unexpected results, stop and edit the task. Click the Master Slave Merge node and, under Cache Management, rebuild the child-table cache that needs to be re-synchronized.
+
+![Rebuild Data Cache](../images/rebuild_data_cache.png)
+
 ## <span id="union-node">Union</span>
 
 The **Union** node in TapData merges multiple tables with the same or similar structure into a single table, combining the data based on matching field names. The detail rules are as follows:
@@ -378,4 +383,3 @@ Parameter Description
 
 * [Standard JS](../appendix/standard-js.md): TapData supports processing and operating on data records, providing various functions and operations to manipulate and transform data. For example, you can use JavaScript or Java code to convert date strings to Date types. This allows you to perform date-related operations, comparisons, and formatting on the data records as needed. With this capability, you have flexibility in manipulating and transforming your data to meet your specific requirements.
 * [Enhanced JS (Beta)](../appendix/enhanced-js.md): TapData supports making external calls in JavaScript code using standard built-in functions. This allows you to perform network requests, interact with databases, and perform other operations by utilizing the capabilities of JavaScript and its built-in functions.
-
