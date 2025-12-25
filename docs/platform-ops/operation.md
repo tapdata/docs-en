@@ -237,12 +237,51 @@ If the memory allocation is small but the task load is heavy, the Java program m
 2. Execute `./tapdata restart frontend`, then find the frontendDebug.log file in the logs directory and review it. Analyze the specific reason for the problem through the error messages in the log.
 
 
+## How Does Task Scheduling Work?
 
-## What Are the Rules for Task Scheduling?
+TapData provides layered scheduling controls, including built-in intelligent load balancing, flexible Agent group scheduling, and tag-based startup priority. Together, they ensure tasks run efficiently on the right Agents, avoiding wasted resources and single-node overload.
 
-- When a task starts: Query the number of tasks each alive engine is running and schedule the task to the engine with the smallest number of running tasks.
-- Heartbeat timeout: The engine will send heartbeat messages to the tasks it takes over. After a heartbeat timeout, the task is rescheduled to the alive engine with the smallest number of running tasks.
-- Takeover timeout: After being scheduled to an alive engine, if the task is not taken over by the engine within the timeout period, the task is rescheduled to the alive engine with the smallest number of running tasks.
+**Best practice**: Use the default load balancing for day-to-day workloads. For tasks that require performance isolation or dedicated resources, use Agent group scheduling. When starting many tasks in bulk, use tags to control startup order so critical tasks are not blocked.
+
+
+### Basic Scheduling (Default)
+
+By default, the system uses task-count-based load balancing and automatically assigns tasks to the best Agent:
+
+- **Startup scheduling**: When a task starts, the system checks how many tasks each live Agent is currently running and schedules to the Agent with the fewest tasks.
+- **Failover**: If an Agent heartbeat times out or task takeover fails, the system immediately reschedules and moves affected tasks to the live Agent with the fewest tasks.
+- **Dynamic balancing**: The system continuously monitors Agent load and automatically rebalances tasks to keep distribution even.
+
+This mechanism fits most scenarios and requires no extra configuration to achieve efficient resource usage.
+
+### Agent Group Scheduling
+
+To meet business needs such as performance, isolation, or dedicated resources, TapData supports Agent group scheduling.
+
+**Configuration**:  
+Go to [Cluster Management](../system-admin/manage-cluster.md), switch to the component view, create groups based on machine capability or business domain (for example, “High-performance” or “Business A dedicated”), and add the relevant Agents to each group.
+
+**Scheduling rules**:
+- When creating a connection or task, you can select a specific group.
+- The system schedules the task only among Agents in the selected group.
+- Load balancing still applies within the group (the Agent with the fewest tasks is preferred).
+- If all Agents in the group are unavailable, the task enters a waiting state and triggers [alert notifications](../system-admin/other-settings/notification.md) so administrators can intervene.
+
+### Tag-Based Scheduling
+
+Task tags are primarily used for classification and to control startup order during bulk operations.
+
+**Configuration**:  
+In [Task Management](../data-replication/manage-task.md), set tags for tasks (priority range: P1–P6).
+
+**Scheduling rules**:
+- Priority range: P1–P6 (smaller number means higher priority and earlier startup).
+- When starting multiple tasks in bulk, the system starts them from higher to lower priority.
+- Tasks without a tag use the default order (typically after tagged tasks).
+
+:::tip
+Tag scheduling only controls startup order. It does not affect Agent assignment at runtime.
+:::
 
 
 ## How Does TapData Achieve High Availability?
