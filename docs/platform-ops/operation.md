@@ -280,7 +280,8 @@ In [Task Management](../data-replication/manage-task.md), set a tag for each tas
 - Tasks without a tag start in the selected order. If you select multiple untagged tasks, the system starts them concurrently.
 
 :::tip
-Tag scheduling only controls startup order. It does not affect Flow Engine assignment at runtime.
+- Tag scheduling only controls startup order. It does not affect Flow Engine assignment at runtime.
+- During bulk start, TapData treats a task as “started” once the start command is issued; it does not wait for the task status to change to “Running”.
 :::
 
 
