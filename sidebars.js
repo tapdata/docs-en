@@ -422,6 +422,7 @@ const sidebars = {
               link: {type: 'doc', id: 'platform-ops/troubleshooting/README'},
               items: [
                      'platform-ops/troubleshooting/task-troubleshooting',
+                     'platform-ops/troubleshooting/cdc-troubleshooting',
                      'platform-ops/troubleshooting/error-code',
                      'platform-ops/troubleshooting/error-and-solutions',
                      ]

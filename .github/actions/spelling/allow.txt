@@ -772,3 +772,6 @@ SYSTABLES
 tls
 tlsssl
 truststore
+keepalive
+telnet
+
