@@ -61,6 +61,69 @@ Subsystem:
 
 
 
+## How to Back Up and Restore TapData
+
+While TapData is running, critical data such as task configurations and shared cache are stored in MongoDB. For safe upgrades or migrations, use the [MongoDB Database Tools](https://www.mongodb.com/docs/database-tools/mongodump/) to back up the metadata database and (optionally) the TapData work directory, then restore them when needed.
+
+
+**Backup**
+
+1. Preparation
+   
+   Log in to the server hosting TapData, go to the installation directory, and stop the service. In an HA deployment, run this on each node one by one.
+   ```bash
+   ./tapdata stop -f
+   ```
+
+2. Back up the metadata database using the following command format.
+
+   ```bash
+   mongodump --uri "mongodb://<username>:<password>@<mongodb_host>:<mongodb_port>/<database_name>?authSource=admin" --gzip --excludeCollection="collection_name"  -o /backup/tapdata_db_$(date +%F)
+   ```
+   - `<username>`, `<password>`: Username and password for the MongoDB instance.
+   - `<mongodb_host>`, `<mongodb_port>`: MongoDB host and port (default: 27017).
+   - `<database_name>`: Database name (default: tapdata; use your actual name if customized).
+   - `--gzip`: Compresses backup files to reduce backup size.
+   - `--excludeCollection="collection_name"`: Excludes specific collections from the backup (for example, system logs) to reduce backup time and storage usage. You can specify this option multiple times. Recommended settings: `--excludeCollection="AgentMeasurementV2" --excludeCollection="AlarmInfo" --excludeCollection="ApiCall" --excludeCollection="fs.files" --excludeCollection="fs.chunks" --excludeCollection="Message" --excludeCollection="monitoringLogs" --excludeCollection="InspectDetails" --excludeCollection="DDlTaskHistories" --excludeCollection="Logs"`
+   
+3. (Optional) For a full backup (for example, host-level migration), also back up the TapData work directory:
+   ```bash
+   # Replace <tapdata_work_dir> with the actual work directory
+   tar -czf /backup/tapdata_work_$(date +%F).tar.gz <tapdata_work_dir>
+   ```
+4. Start the service. In an HA deployment, run this on each node one by one.
+   ```bash
+   # Replace <tapdata_work_dir> with the actual work directory
+   ./tapdata start --workDir <tapdata_work_dir>
+   ```
+
+**Restore / Rollback**
+
+1. Stop the service. In an HA deployment, run this on each node one by one.
+   ```bash
+   ./tapdata stop -f
+   ```
+
+2. Import the metadata using `mongorestore`. If the target database already contains data, clean it up or rename it first to avoid conflicts.
+   ```bash
+   mongorestore --uri "mongodb://<username>:<password>@<mongodb_host>:<mongodb_port>/<database_name>?authSource=admin" <backup_dir>/<database_name>
+   ```
+   - `<username>`, `<password>`: Username and password for the MongoDB instance.
+   - `<mongodb_host>`, `<mongodb_port>`: MongoDB host and port (default: 27017).
+   - `<database_name>`: Database name (default: tapdata; use your actual name if customized).
+   - `<backup_dir>`: Directory that contains the backup files (the output directory specified by `mongodump -o`).
+
+3. Start the service. In an HA deployment, run this on each node one by one.
+   ```bash
+   # Replace <tapdata_work_dir> with the actual work directory
+   ./tapdata start --workDir <tapdata_work_dir>
+   ```
+
+:::tip
+For full host migrations, restore the TapData work directory to the new server before starting the service.
+:::
+
+
 ## <span id="release330-upgrade">How to Perform a Rolling Upgrade?</span>
 
 Starting with version 3.3.0, TapData supports rolling upgrades. Compared to the standard downtime upgrade, it helps shorten the upgrade window and further reduce business impact. The specific steps are as follows:

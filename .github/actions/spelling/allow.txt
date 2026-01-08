@@ -772,3 +772,8 @@ SYSTABLES
 tls
 tlsssl
 truststore
+czf
+mongodump
+mongorestore
+OBJEXIST
+
