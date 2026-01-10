@@ -15,6 +15,27 @@ import TabItem from '@theme/TabItem';
 ```
 
 
+## 4.12.0
+
+### New Features
+
+- [System settings](system-admin/other-settings/system-settings.md) now support environment-level visual labels. When enabled, an environment tag is shown in the top bar to help you quickly identify the deployment and reduce operational mistakes.
+- [Data model comparison](case-practices/best-practice/compare-data-model.md) adds primary-key consistency checks for manually created tables, helping you detect and fix PK mismatches earlier.
+- [Task monitoring](./data-replication/monitor-task.md) adds P99/P95 latency metrics with time-range views for clearer performance and tail-latency visibility.
+
+
+### Enhancements
+
+- Standardized naming for all data sources to improve consistency and readability across configurations.
+- Improved the API publishing experience by disabling selection and renaming of nested fields under Array fields, reducing the risk of accidental misconfiguration.
+- Replication tasks can now aggregate and report all tables with anomalies in one go while running, making issue triage faster.
+
+
+### Bug Fixes
+
+- Fixed an issue where tasks could stop unexpectedly after adding tables dynamically in multi-table merge scenarios.
+
+
 ## 4.11.0
 
 ### New Features
