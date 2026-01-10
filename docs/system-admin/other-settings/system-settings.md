@@ -6,6 +6,13 @@ The system settings feature is mainly used to configure some parameters of the s
 
 In the upper-right corner of the page, click on the ![Settings](../../images/setting.png) icon, and then click on **System Settings**.
 
+
+## Appearance
+
+![Appearance Settings](../../images/set_environment_tag.png)
+
+Enable **Environment Tag**, set a **custom text** and **color** for each deployment environment, and **save**. The environment tag will be shown in the top bar to help you quickly identify the current environment and reduce operational mistakes.
+
 ## Log Settings
 
 ![Log Settings](../../images/log_settings.png)
