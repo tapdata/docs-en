@@ -11,7 +11,7 @@ This guide helps you compare both, and shows when TapData’s **Active MDM** off
 | **Data Freshness**      | Sub-second CDC updates                     | Hourly/daily batch jobs                    |
 | **Golden Record Logic** | Real-time merge with conflict resolution   | Scheduled merges                           |
 | **Source Connectivity** | 100+ CDC connectors, zero-code setup       | ETL tools and PowerExchange required       |
-| **Change Propagation**  | <500ms latency to downstream systems       | Delayed by next batch cycle (hours)        |
+| **Change Propagation**  | &lt;500 ms latency to downstream systems       | Delayed by next batch cycle (hours)        |
 | **API Access**          | Auto-generated REST & GraphQL APIs         | Requires separate CIAM setup               |
 | **Cloud Architecture**  | Unified control plane across cloud/on-prem | Separate modules for each deployment model |
 
@@ -23,7 +23,7 @@ This guide helps you compare both, and shows when TapData’s **Active MDM** off
 
 TapData merges incoming changes from 10+ systems via CDC, keeping master data always current.
 
-*Example: A customer address update in SAP triggers a golden record refresh in <1s.*
+*Example: A customer address update in SAP triggers a golden record refresh in &lt;1 s.*
 
 ### Built-In Data Quality
 

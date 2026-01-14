@@ -102,11 +102,11 @@ markdown: {
             position: 'right',
             label: 'Log in TapData Cloud',
           },
-          {
+          /*{
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: true,
-          },
+          },*/
           {
             href: 'https://github.com/tapdata/tapdata',
             label: 'GitHub⭐',

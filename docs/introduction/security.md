@@ -9,7 +9,8 @@ As we embrace cloud services, the safety of our data has become a top priority. 
 - **Secure Operational Environment**: TapData Cloud utilizes Google Cloud as its preferred deployment platform. All core components operate within a Virtual Private Cloud (VPC), isolated from the public internet. Rigorous firewall controls further secure both inbound and outbound traffic, ensuring heightened data security.
 - **Automated Cloud Deployment**: In the TapData Cloud technical framework, the Agent plays a pivotal role, primarily handling data synchronization tasks. Users are offered the convenience of one-click deployment of the Agent on platforms like Google Cloud and Alibaba Cloud, reducing external vulnerabilities and guaranteeing robust security.
 
-<details><summary>What is the role of  Agent?</summary>
+<details>
+<summary>What is the role of  Agent?</summary>
 The TapData Agent plays a crucial role in data synchronization, handling data heterogeneity, and supporting data transformation scenarios. It is responsible for extracting data from the source system, performing necessary processing, and transmitting it to the target system. The TapData Agent is centrally managed by TapData Cloud.
 </details>
 ## Systematic Security Design

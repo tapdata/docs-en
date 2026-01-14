@@ -53,7 +53,7 @@ TapData sends alerts by [email](../../case-practices/best-practice/alert-via-qqm
 Lag exceeds the threshold you set. Open the task monitor and look for:
 
 - **Slow source reads** – “Read time” is high → ask the DBA to check load or network.
-- **Slow target writes / high QPS** – raise “Incremental read size” (≤1 000) and “Batch write size” (≤10 000); keep Agent memory <70 %.
+- **Slow target writes / high QPS** – raise “Incremental read size” (≤1 000) and “Batch write size” (≤10 000); keep Agent memory &lt; 70 %.
 - **False lag** – QPS is 0 but lag still climbs → enable [heartbeat table](../../case-practices/best-practice/heart-beat-task.md) on the source.
 - **Slow engine** – “Process time” keeps rising → optimise JS code or open a ticket.
 

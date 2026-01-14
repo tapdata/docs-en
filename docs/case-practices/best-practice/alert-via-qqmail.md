@@ -62,7 +62,7 @@ The email authorization code is a special password used by QQ Mail to log into t
    ![SMTP Service Settings](../../images/qqmail_smtp_settings.png)
 
    * **SMTP Service Account**: Enter your QQ email address.
-   * **SMTP Service Password**: Enter the authorization code you obtained in [Step One](#mail-code).
+   * **SMTP Service Password**: Enter the authorization code you obtained in [Step One](#step-one-obtain-email-authorization-code).
    * **Encryption Method**: Select **SSL** to ensure security.
    * **SMTP Service Host**: Enter **smtp.qq.com**, the SMTP server for sending emails from QQ Mail.
    * **SMTP Service Port**: Enter **465** or **587**.

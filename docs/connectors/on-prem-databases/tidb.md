@@ -165,6 +165,6 @@ GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP ON *.* TO 'username';
 
   1. Extract the downloaded file, then navigate to the extracted directory and run the `make` command to compile.
 
-  2. Locate the generated **cdc** binary file and place it in the **{tapData-dir}/run-resource/ti-db/tool** directory on the TapData engine machine (replace if necessary).
+  2. Locate the generated **cdc** binary file and place it in the **\{tapData-dir\}/run-resource/ti-db/tool** directory on the TapData engine machine (replace if necessary).
 
   3. Use the `chmod` command to grant read, write, and execute permissions to the files in this directory.

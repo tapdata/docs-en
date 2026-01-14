@@ -66,7 +66,7 @@ If you'd prefer to use an external tool or automate API testing, [Postman](https
 | 200 | OK | Request succeeded |
 | 401 | Unauthorized error: token expired | Token expired; generate a new one |
 | 404 | Not Found error: endpoint not found | API does not exist or is not yet published—check the URL or wait for the publish to finish |
-| 429 | Rate limit exceeded. Maximum \${api limit} requests per second allowed | You hit the rate limit; retry later or raise the limit in the API settings |
+| 429 | Rate limit exceeded. Maximum N requests per second allowed | You hit the rate limit; retry later or raise the limit in the API settings |
 
 ## FAQ
 
