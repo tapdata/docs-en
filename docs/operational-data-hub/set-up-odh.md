@@ -17,6 +17,7 @@ When creating the MongoDB connection, be sure to set the **connection role as bo
 :::
 
 <details>
+
 <summary>Recommended best practices</summary>
 
 

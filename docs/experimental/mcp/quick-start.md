@@ -92,6 +92,7 @@ import TabItem from '@theme/TabItem';
 ```
 
 <details>
+
 <summary><b>Understand Tapdata MCP Server Primitives</b></summary>
 
 Tapdata MCP Server is built on three core primitives: **Prompts**, **Resources**, and **Tools**. These form the foundation for AI models to interact with data systems—allowing them to discover available resources, select appropriate operations, and use prompt templates to retrieve structured context for accurate and efficient reasoning.

@@ -49,6 +49,7 @@ import TabItem from '@theme/TabItem';
 
 
 <details>
+
 <summary><b>What is the distribution column?</b></summary>
 
 In GaussDB (DWS), distribution columns determine how data is distributed across nodes in a distributed table, impacting query performance. For more details, see [Best Practices for Choosing Distribution Columns](https://support.huaweicloud.com/intl/en-us/performance-dws/dws_10_0042.html).

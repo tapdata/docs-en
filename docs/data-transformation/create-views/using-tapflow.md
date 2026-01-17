@@ -72,7 +72,9 @@ You can build the real-time, incremental materialized view directly in **TapShel
    ```
 
    <details>
+
    <summary>Understanding type and path in .lookup()</summary>
+   
    These parameters control **how** related data is merged:
 
    - **type="object"** – embeds the joined record as a nested document at `path`. Ideal for one-to-one enrichments like adding user profiles inside orders.

@@ -76,11 +76,14 @@ Lag exceeds the threshold you set. Open the task monitor and look for:
 When the master-data layer (MDM) contains bad records you can repair them through the same sync task. Choose the strategy that matches the data volume: rerun the entire job for small tables, or resync only the affected tables for large ones. The steps below explain the latter approach.
 
 <details>
+
 <summary>What are master and child tables?</summary>
+
 - **Master table**: the core table that produces the final model.  
 - **Child table**: embedded documents or arrays that are merged into the master as fields.
 
 Example: in an order-management model, *orders* is the master; *users* and *products* are children merged into each order document so analysts can identify high-value customers in one view.
+
 </details>
 
 Before you start, open the data-hub lineage to confirm which tasks feed the table.

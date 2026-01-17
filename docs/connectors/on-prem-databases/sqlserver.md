@@ -59,6 +59,7 @@ In addition, for synchronization from SQL Server to PostgreSQL, extra support is
 * When SQL Server is used as the source database and a DDL operation (such as adding a column) is performed on the fields of a table under incremental sync, you will need to restart change data capture for the table to avoid data synchronization errors or failures.
 
 <details>
+
 <summary>Restart change data capture for the corresponding table</summary>
 
 ```sql
@@ -342,8 +343,11 @@ When configuring SQL Server as the source node for a task, TapData provides seve
   **A**: SQL Server 2005 does not support CDC. Incremental data capture can be done via [field polling](../../introduction/change-data-capture-mechanism.md), or by using the following method:
 
   <details>
+
   <summary>SQL Server 2005 as a Source Solution</summary>
+
   Since CDC is supported from SQL Server 2008 onward, for earlier versions, you can simulate change data capture using Custom SQL. When replicating data from older versions, the source table must have a change-tracking column, such as <b>LAST_UPDATED_TIME</b>, which is updated with every insert or update. When creating the data replication task, set the task synchronization type to <b>Full</b>, enable <b>Repeat Custom SQL</b> as <b>True</b>, and provide appropriate Custom SQL in the mapping design.
+  
   </details>
   
 * **Q**: When certain tables cannot enable CDC while others work normally. How can I resolve this issue without restarting the entire database?

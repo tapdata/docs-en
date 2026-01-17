@@ -23,7 +23,8 @@ Lark is an enterprise collaboration and management platform that integrates inst
   ```
 
 <details>
-  <summary>Fields Description</summary>
+
+<summary>Fields Description</summary>
 
 | Field Name      | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
@@ -33,7 +34,8 @@ Lark is an enterprise collaboration and management platform that integrates inst
 | **content**     | Message content, formatted as a JSON string                  |
 
 For more details, see the [Send message content structure](https://open.feishu.cn/document/server-docs/im-v1/message-content-description/create_json).
-  </details>
+
+</details>
 
 ## Prerequisites
 

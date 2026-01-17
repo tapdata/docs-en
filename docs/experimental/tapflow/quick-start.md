@@ -82,6 +82,7 @@ import TabItem from '@theme/TabItem';
    * Press `L` to connect to a locally deployed TapData Enterprise platform, then input the server address and access code.
 
    <details>
+
    <summary>How to obtain access keys?</summary>
 
    <Tabs className="unique-tabs">
@@ -128,9 +129,12 @@ After configuring the data sources, you can create a data flow to synchronize My
 - **Using Python Script**: Use Python code to control data flow logic, enabling easy saving, reuse, and version management. Best suited for complex scenarios requiring dynamic task creation and automated deployment.
 
 <details>
+
 <summary>What is a Data Flow?</summary>
+
 In Tapdata, a Data Flow is an execution unit used for data synchronization, processing, and transformation between data sources. It can include multiple data synchronization tasks, allowing data from different sources to be integrated, cleansed, and transformed before being written to a target system.
 Data flows are more advanced than individual real-time synchronization tasks and are suitable for defining complex data pipelines. They support requirements such as multi-table joins and data aggregation, forming the foundation for real-time data processing in Tapdata.
+
 </details>
 
 
@@ -323,6 +327,7 @@ By using a programming approach, you can flexibly define and manage data flows. 
    ```
 
 <details>
+
 <summary>Further Optimization</summary>
 
 - **Configuration Management**: Extract data source configurations into a configuration file or environment variables to protect sensitive information.

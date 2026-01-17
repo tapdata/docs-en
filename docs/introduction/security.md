@@ -10,9 +10,13 @@ As we embrace cloud services, the safety of our data has become a top priority. 
 - **Automated Cloud Deployment**: In the TapData Cloud technical framework, the Agent plays a pivotal role, primarily handling data synchronization tasks. Users are offered the convenience of one-click deployment of the Agent on platforms like Google Cloud and Alibaba Cloud, reducing external vulnerabilities and guaranteeing robust security.
 
 <details>
+
 <summary>What is the role of  Agent?</summary>
+
 The TapData Agent plays a crucial role in data synchronization, handling data heterogeneity, and supporting data transformation scenarios. It is responsible for extracting data from the source system, performing necessary processing, and transmitting it to the target system. The TapData Agent is centrally managed by TapData Cloud.
+
 </details>
+
 ## Systematic Security Design
 
 ### Account Access Control
