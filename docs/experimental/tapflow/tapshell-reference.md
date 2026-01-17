@@ -17,7 +17,7 @@ id         status     database_type        name
 4fa6c1     ready      Mysql                MySQL_ECommerce  
 ```
 
-### use <db_name>
+### use &lt;db_name&gt;
 
 **Command Description**: Select a data source for further operations, such as viewing tables.
 
@@ -40,7 +40,7 @@ ecom_customers        ecom_order_items      ecom_order_payments   ecom_orders   
 ecom_products         ecom_sellers   
 ```
 
-### desc <table_name>
+### desc &lt;table_name&gt;
 
 **Command Description**: After selecting a data source, use this command to view the schema information of a specific table (such as column types).
 
@@ -57,7 +57,7 @@ tap> desc ecom_customers
 }
 ```
 
-### **peek <table_name>**
+### **peek &lt;table_name&gt;**
 
 **Command Description**: After selecting the data source, this command allows you to preview a few records from a specified table along with its total row count. By default, it displays **5 records**, but you can specify the number of records to display using the `-n` option.
 
@@ -69,7 +69,7 @@ table ecom_customers has 99002 records
 {'customer_unique_id': '248ffe10d632bebe4f7267f1f44844c9', 'customer_state': 'SP', 'customer_id': '00012a2ce6f8dcda20d059ce98491703', 'customer_zip_code_prefix': '06273', 'customer_city': 'CITY_osasco'}
 ```
 
-### count  <table_name>
+### count  &lt;table_name&gt;
 
 **Command Description**: After selecting a data source, use this command to view the row count of a specific table.
 
@@ -93,7 +93,7 @@ tap> show flows
 d7c298: Oracle_Sync_Test       complete     sync/initial_sync+cdc
 ```
 
-### **status <flow name/id>**
+### **status &lt;flow name/id&gt;**
 
 **Command Description**: Displays runtime statistics for a data synchronization task.
 
@@ -104,7 +104,7 @@ tap> status MySQL_A_to_B
 job current status is: running, qps is: 31808.0, total rows: 1300000, delay is: 706ms
 ```
 
-### <span id="start">start</span> <flow name/id>
+### <span id="start">start</span> &lt;flow name/id&gt;
 
 **Command Description**: Starts the specified data flow task. By default, the first run will perform a full data synchronization, followed by incremental synchronization. If the task is configured as full-only, it will complete a single full synchronization; if incremental-only, it will begin at the specified starting point or current time.
 
@@ -115,7 +115,7 @@ tap> start MySQL_A_to_B
 Task start succeed 
 ```
 
-### stop <flow name/id>
+### stop &lt;flow name/id&gt;
 
 **Command Description**: Stops the specified data flow task, which will resume from the last incremental point on the next start.
 
@@ -126,7 +126,7 @@ tap> stop MySQL_A_to_B
 Task stop succeed 
 ```
 
-### **logs <flow name/id>**
+### **logs &lt;flow name/id&gt;**
 
 **Command Description**: Displays logs for the specified data flow task.
 
@@ -135,7 +135,7 @@ tap> logs Oracle_Sync_Test
 {'id': '671f9c54cc9caf4b1cb1942b', 'customId': '638af042703dd67b8fb63af8', 'level': 'INFO', 'timestamp': 1730124884471, 'date': '2024-10-28T14:14:43.568+00:00', 'taskId': '668f197a37800f4b2a167806', 'taskRecordId': '671f9bee548ec6691e89681c', 'taskName': 'MySQL_A_to_B', 'nodeId': '4eb098ee-19f8-4e63-a7bf-9d7e726c62ea', 'nodeName': 'Region_A', 'message': 'Node Region_A[4eb098ee-19f8-4e63-a7bf-9d7e726c62ea] start preload schema,table counts: 1', 'logTags': [], 'data': [], 'user_id': '638af042c162f518b1b9bdf4'}
 ```
 
-### reset <flow name/id>
+### reset &lt;flow name/id&gt;
 
 **Command Description**: Clears synchronization progress of  the specified data flow task, and the task will restart from scratch on the next start.
 
@@ -146,7 +146,7 @@ tap> reset MySQL_B_to_A
 Task reset success 
 ```
 
-### delete <flow name/id>
+### delete &lt;flow name/id&gt;
 
 **Command Description**: Deletes the specified data flow task
 
@@ -163,4 +163,3 @@ tap> delete MySQL_to_MongoDB_Order
 Are you sure you want to delete flow MySQL_to_MongoDB_Order (y/[n]): y
 Task deleted successfully            
 ```
-

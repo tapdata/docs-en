@@ -85,7 +85,7 @@ For more information, See [Management Tasks](../../data-transformation/manage-ta
 
 
 
-## <span id="faq"> FAQ</span>
+## FAQ
 
 * Q: Why does Agent's machine require access to Google Cloud Services?
 

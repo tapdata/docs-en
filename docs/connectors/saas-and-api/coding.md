@@ -47,6 +47,7 @@ For more details on data structures and event support, refer to Coding's [offici
      - **Webhook**: Uses Coding’s Webhook feature to listen for events and sends notifications to the Tapdata platform via HTTP POST. If selected, click **Generate** to obtain a service URL, and follow the steps below to configure Webhook on the Coding platform.
 
        <details>
+       
        <summary>Configure Webhook on the Coding Platform</summary>
    
        1. Log in to the [Coding platform](https://e.coding.net/login) as an administrator.

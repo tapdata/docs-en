@@ -9,7 +9,9 @@ Please follow the instructions below to successfully add and use openGauss datab
 openGauss 3.0.0 and above
 
 ## Supported Field Types
+
 <details>
+
 <summary><b>Click to expand and view the detailed list</b></summary>
 
 - smallint

@@ -109,4 +109,4 @@ Tapdata is a real-time data platform that unifies change capture, in-memory proc
   _e.g., MDM → real-time compliance, API services → product agility_.
 
 - **Real-Time Advantage** 
-  Outperforms batch-based stacks (like Kafka + Flink + DWH) by simplifying architecture and minimizing latency (<500ms typical).
+  Outperforms batch-based stacks (like Kafka + Flink + DWH) by simplifying architecture and minimizing latency (&lt;500 ms typical).

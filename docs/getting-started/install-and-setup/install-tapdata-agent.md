@@ -8,8 +8,11 @@ import TabItem from '@theme/TabItem';
 ```
 
 <details>
-  <summary>Agent Introduction</summary>
-  TapData Agent plays a critical role in the data flow process. It retrieves data from the source, performs necessary processing and transformations, and subsequently transfers it to the designated target. It is important to note that the data being handled by the TapData Agent is not uploaded or stored in TapData Cloud. The agent acts as a facilitator, ensuring efficient and secure data transfer without retaining any data in the cloud environment.
+
+<summary>Agent Introduction</summary>
+
+TapData Agent plays a critical role in the data flow process. It retrieves data from the source, performs necessary processing and transformations, and subsequently transfers it to the designated target. It is important to note that the data being handled by the TapData Agent is not uploaded or stored in TapData Cloud. The agent acts as a facilitator, ensuring efficient and secure data transfer without retaining any data in the cloud environment.
+
 </details>
 
 
@@ -51,6 +54,7 @@ Next, let's create a free Agent instance.
    3. Follow the steps below based on the selected deployment platform.
 
 <details>
+
 <summary>Show Requirements</summary>
 
 - CPU: x86 Architecture Processor
@@ -103,6 +107,7 @@ Next, let's create a free Agent instance.
 
 
 <details>
+
 <summary>Need to Install on Mac (M1 Chip)?</summary>
 
 1. Open the Mac's terminal, then execute the following command to download and launch the JDK image.

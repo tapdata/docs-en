@@ -20,8 +20,10 @@ TapData Platform's machine can access to Google Cloud Services.
    2. On the redirected page, enter the role name and click **ADD PERMISSIONS**.
    3. In the pop-up dialog, search for each permission one by one and grant them accordingly.
 
-<details>
-    <summary>Minimum Permissions List (Click to expand) </summary>
+   <details>
+
+   <summary>Minimum Permissions List (Click to expand) </summary>
+
    <div>
        <div>
        bigquery.datasets.create<br/>
@@ -45,6 +47,7 @@ TapData Platform's machine can access to Google Cloud Services.
          bigquery.tables.updateData
        </div>
      </div>
+
    </details>
 
 2. After the permission selection is complete, click **CREATE**.

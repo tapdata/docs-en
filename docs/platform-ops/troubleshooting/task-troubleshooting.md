@@ -53,7 +53,7 @@ TapData sends alerts by [email](../../case-practices/best-practice/alert-via-qqm
 Lag exceeds the threshold you set. Open the task monitor and look for:
 
 - **Slow source reads** – “Read time” is high → ask the DBA to check load or network.
-- **Slow target writes / high QPS** – raise “Incremental read size” (≤1 000) and “Batch write size” (≤10 000); keep Agent memory <70 %.
+- **Slow target writes / high QPS** – raise “Incremental read size” (≤1 000) and “Batch write size” (≤10 000); keep Agent memory &lt; 70 %.
 - **False lag** – QPS is 0 but lag still climbs → enable [heartbeat table](../../case-practices/best-practice/heart-beat-task.md) on the source.
 - **Slow engine** – “Process time” keeps rising → optimise JS code or open a ticket.
 
@@ -76,11 +76,14 @@ Lag exceeds the threshold you set. Open the task monitor and look for:
 When the master-data layer (MDM) contains bad records you can repair them through the same sync task. Choose the strategy that matches the data volume: rerun the entire job for small tables, or resync only the affected tables for large ones. The steps below explain the latter approach.
 
 <details>
+
 <summary>What are master and child tables?</summary>
+
 - **Master table**: the core table that produces the final model.  
 - **Child table**: embedded documents or arrays that are merged into the master as fields.
 
 Example: in an order-management model, *orders* is the master; *users* and *products* are children merged into each order document so analysts can identify high-value customers in one view.
+
 </details>
 
 Before you start, open the data-hub lineage to confirm which tasks feed the table.

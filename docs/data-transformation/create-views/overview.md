@@ -23,7 +23,9 @@ import TapDataAnimation from '@site/src/components/Animation/TapDataAnimation';
 <TapDataAnimation />
 
 
-<details><summary>Ways to Add Related Fields</summary>
+<details>
+
+<summary>Ways to Add Related Fields</summary>
 
 When designing your Incremental Materialized View, you can choose how data from related tables is included in your main record. TapData lets you customize this structure to match your analysis needs and downstream use cases:
 

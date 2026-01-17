@@ -4,7 +4,9 @@
 
 Dummy is a data source that generates test data. This article describes how to add Dummy data sources to TapData Cloud.
 
-<details><summary>Supported Generated Field Types</summary>
+<details>
+
+<summary>Supported Generated Field Types</summary>
 
 | Type                      | Description            | Parameters                                                    |
 | ------------------------- | ---------------------- | ------------------------------------------------------------ |
@@ -58,4 +60,3 @@ Dummy is a data source that generates test data. This article describes how to a
    If the connection test fails, follow the prompts on the page to fix it.
 
    :::
-

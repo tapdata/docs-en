@@ -16,22 +16,22 @@ After the data replication/development task configuration is completed, execute 
 | -------------------------- | ------------------------------------------------------------ |
 | Task Sync Type Check       | 【ERROR】【2023-01-01 00:00:00】【Task Sync Type Check】【Node-Source】The sync type (Full) of this node does not match the task sync type (Full + Incremental), the task cannot start normally, please check the relevant configuration. |
 | Default Timezone Check     | 【WARN】【2023-01-01 00:00:00】【Default Timezone Check】The default timezone connected by the source node (Node-Source) is inconsistent with the default timezone connected by the target node (Node-Target), which may cause inconsistency in synchronized data. |
-| Task Model Inference Check | 【ERROR】【2023-01-01 00:00:00】【Task Model Inference Check】Task configuration model inference failed, the task cannot start normally, please check the relevant issues. <br /> { <br />Node Name 1: Table Name 1: Field Name 1; <br />Node Name 2: Table Name 2: Field Name 2 <br />} |
+| Task Model Inference Check | 【ERROR】【2023-01-01 00:00:00】【Task Model Inference Check】Task configuration model inference failed, the task cannot start normally, please check the relevant issues. <br /> &#123; <br />Node Name 1: Table Name 1: Field Name 1; <br />Node Name 2: Table Name 2: Field Name 2 <br />&#125; |
 
 ## Source Node Check
 
 | Check Item                     | Log Example                                                  |
 | ------------------------------ | ------------------------------------------------------------ |
-| Source Connection Status Check | 【ERROR】【2023-01-01 00:00:00】【Source Connection Status Check】【Node-Source】The data connection of this node is unavailable, the task cannot start normally, please check the relevant issues. { Data source login permission check failed: Wrong username or password } |
-| Source Model Load Check        | 【ERROR】【2023-01-01 00:00:00】【Source Model Load Check】【Node-Source】The data model loading of this node failed, the task cannot start normally, please check the relevant issues. <br />{ Table Name 1; <br />Table Name 2 <br />} |
+| Source Connection Status Check | 【ERROR】【2023-01-01 00:00:00】【Source Connection Status Check】【Node-Source】The data connection of this node is unavailable, the task cannot start normally, please check the relevant issues. &#123; Data source login permission check failed: Wrong username or password &#125; |
+| Source Model Load Check        | 【ERROR】【2023-01-01 00:00:00】【Source Model Load Check】【Node-Source】The data model loading of this node failed, the task cannot start normally, please check the relevant issues. <br />&#123; Table Name 1; <br />Table Name 2 <br />&#125; |
 | Source Type Mapping Check      | 【WARN】【2023-01-01 00:00:00】【Source Type Mapping Check】【Node-Source】【Personinfo】【id】The data type of this field is temporarily unsupported, and will be ignored during data reading. |
 
 ## Target Node Check
 
 | Check Item                     | Log Example                                                  |
 | ------------------------------ | ------------------------------------------------------------ |
-| Target Connection Status Check | 【ERROR】【2023-01-01 00:00:00】【Target Connection Status Check】【Node-Target】The data connection of this node is unavailable, the task cannot start normally, please check the relevant issues. { Data source login permission check failed: Wrong username or password } |
-| Target Model Load Check        | 【ERROR】【2023-01-01 00:00:00】【Target Model Load Check】【Node-Target】The data model loading of this node failed, the task cannot start normally, please check the relevant issues. { Table Name 1; Table Name 2 } |
+| Target Connection Status Check | 【ERROR】【2023-01-01 00:00:00】【Target Connection Status Check】【Node-Target】The data connection of this node is unavailable, the task cannot start normally, please check the relevant issues. &#123; Data source login permission check failed: Wrong username or password &#125; |
+| Target Model Load Check        | 【ERROR】【2023-01-01 00:00:00】【Target Model Load Check】【Node-Target】The data model loading of this node failed, the task cannot start normally, please check the relevant issues. &#123; Table Name 1; Table Name 2 &#125; |
 | Target Type Mapping Failure    | 【WARN】【2023-01-01 00:00:00】【Target Type Mapping Check】【Node-Target】【Personinfo】【id】The data type of this field is temporarily unsupported, and will be ignored during data writing. |
 | Target Type Mapping Warning    | 【WARN】【2023-01-01 00:00:00】【Source Type Mapping Check】【Node-Target】【Personinfo】【pic】The target data type mapped by this field is a system-guessed result, which may be biased. Please check and confirm whether it meets the expectations, and adjust accordingly. |
 

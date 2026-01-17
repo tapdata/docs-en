@@ -16,7 +16,9 @@ This MongoDB instance will serve two critical roles:
 When creating the MongoDB connection, be sure to set the **connection role as both Source and Target**, so it can support full read/write capabilities across Tapdata’s layers. For step-by-step setup, refer to [Connect On-Premises MongoDB](../connectors/on-prem-databases/mongodb.md).
 :::
 
-<details><summary>Recommended best practices</summary>
+<details>
+
+<summary>Recommended best practices</summary>
 
 
 - You can use one shared database for both FDM and MDM layers, or create dedicated databases for better isolation and scalability.

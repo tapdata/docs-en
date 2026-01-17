@@ -97,7 +97,8 @@ Before connecting Zoho Desk to TapData, follow these steps to retrieve authentic
        
        
        <details>
-              <summary>Create Webhook (Click to expand) </summary>
+
+       <summary>Create Webhook (Click to expand) </summary>
        
        1. In [Zoho Desk](https://www.zoho.com/), click the ![settings](../../images/setting_icon.png) icon in the top-right.
        

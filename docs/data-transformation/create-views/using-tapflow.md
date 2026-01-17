@@ -71,7 +71,10 @@ You can build the real-time, incremental materialized view directly in **TapShel
    )
    ```
 
-   <details><summary>Understanding type and path in .lookup()</summary>
+   <details>
+
+   <summary>Understanding type and path in .lookup()</summary>
+   
    These parameters control **how** related data is merged:
 
    - **type="object"** – embeds the joined record as a nested document at `path`. Ideal for one-to-one enrichments like adding user profiles inside orders.
@@ -245,6 +248,5 @@ This structure is analysis-ready, API-friendly, and tailored for real-time use. 
 - **Monitor your task** to track throughput and latency in real time.
 -  **Validate data accuracy** using built-in tools or source queries.
 - **Publish the view as an API** so other teams or systems can consume fresh, structured order data via REST or GraphQL.
-
 
 

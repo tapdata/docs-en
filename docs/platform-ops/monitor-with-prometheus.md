@@ -373,6 +373,7 @@ Metrics are exposed in Prometheus format via:
 * TapData ApiServer: `http://127.0.0.1:3080/metrics`
 
 <details>
+
 <summary><b>Detailed Metrics List (Click to Expand)</b></summary>
 
 #### TapData Management
