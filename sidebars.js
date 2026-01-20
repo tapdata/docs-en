@@ -133,9 +133,9 @@ const sidebars = {
                            'connectors/cloud-databases/mongodb-atlas',
                            'connectors/cloud-databases/polardb-mysql',
                            'connectors/cloud-databases/polardb-postgresql',
+                           'connectors/cloud-databases/tencentdb-for-mysql',
                            'connectors/cloud-databases/tencentdb-for-mariadb',
                            'connectors/cloud-databases/tencentdb-for-mongodb',
-                           'connectors/cloud-databases/tencentdb-for-mysql',
                            'connectors/cloud-databases/tencentdb-for-pg',
                            'connectors/cloud-databases/tencentdb-for-sql-server',
                           ]
