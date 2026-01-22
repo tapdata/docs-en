@@ -776,4 +776,7 @@ czf
 mongodump
 mongorestore
 OBJEXIST
+tdmysql
+tdsql
+tdsqld
 
