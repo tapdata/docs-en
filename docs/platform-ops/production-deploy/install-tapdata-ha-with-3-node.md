@@ -40,10 +40,10 @@ Before deployment, perform the following steps on each of the three servers. Thi
    sed -i "s/enforcing/disabled/g" /etc/selinux/config 
    ```
 
-2. Run the following command to install Java 1.8.
+2. Run the following command to install Java 17.
 
    ```bash
-   yum -y install java-1.8.0-openjdk
+   yum -y install java-17-openjdk
    ```
 
 3. Ensure consistent machine time and time zone settings across all servers.
@@ -119,7 +119,7 @@ The following operations need to be **performed separately on each of the three 
    System initialized. To start Tapdata, run: tapdata start
    WORK DIR:/data/tapdata/tapdata_work
    Testing JDK...
-   java version:1.8
+   java version:17
    Java environment OK.
    Unpack the files...
    frontend server started.begin deploy init

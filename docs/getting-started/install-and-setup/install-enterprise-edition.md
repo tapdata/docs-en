@@ -14,6 +14,7 @@ Before you begin, ensure your environment meets the following requirements:
 - Hardware specifications: 8-core CPU (x86 architecture), 16 GB of memory
 - Storage specifications: 100 GB
 - Operating System: **CentOS 7+** , **Ubuntu 16.04+** or **Red Hat Enterprise Linux（RHEL）7.x/8.x**
+- Java: **JDK 17**
 
 
 
@@ -39,10 +40,10 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
 
 2. Install environmental dependencies.
 
-   1. Install Java 1.8 version.
+   1. Install Java 17.
 
       ```bash
-      yum -y install java-1.8.0-openjdk
+      yum -y install java-17-openjdk
       ```
 
    2. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
@@ -55,7 +56,7 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
    tar -zxvf package_name && cd tapdata
    ```
 
-   For example: `tar -zxvf tapdata-release-v2.14.tar.gz && cd tapdata`
+   For example: `tar -zxvf tapdata-release-v4.10.tar.gz && cd tapdata`
 
    :::tip
    If you need to copy the extracted program files to another directory for deployment, use the `cp -a` command to copy the entire directory. Avoid using the `*` wildcard to match files, as this may omit hidden files and cause startup failures.
@@ -104,7 +105,7 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
    System initialized. To start TapData, run: tapdata start
    WORK DIR:/root/tapdata
    Testing JDK...
-   java version:1.8
+   java version:17
    Java environment OK.
    Unpack the files...
    Restart TapDataAgent ...:
@@ -146,9 +147,9 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
 
 1. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
 
-2. Log in to the target device, install Java 1.8 and set environment variables.
+2. Log in to the target device, install Java 17 and set environment variables.
 
-   1. [Download Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html) and follow the prompts to complete the installation.
+   1. [Download Java 17](https://www.oracle.com/java/technologies/downloads/#java17) and follow the prompts to complete the installation.
 
    2. Go to **Control Panel** > **System and Security** > **System**.
 
@@ -161,26 +162,20 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
       ![Add Variable](../../images/add_system_env.png)
 
       - **Variable Name**: `JAVA_HOME`
-      - **Variable Value**: The installation path of JDK, for example, `C:\Program Files\Java\jdk1.8.0_202`
+      - **Variable Value**: The installation path of JDK, for example, `C:\Program Files\Java\jdk-17.0.10`
 
    5. In the **System Variables** area, find and double-click the **Path** variable, then in the dialog that appears, add the following environment variables, and click **OK**.
 
       ![Edit Variable](../../images/edit_system_env.png)
 
       - `%JAVA_HOME%\bin`
-      - `%JAVA_HOME%\jre\bin`
 
-   6. Following step 4, continue to add a system variable with the name and value as follows, then click **OK** after completing the setup.
-
-      - **Variable Name**: `CLASSPATH`
-      - **Variable Value**: `.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar`
-
-   7. (Optional) Open the command line, execute `java -version` to verify the effectiveness of the environment variable. Successful execution example:
+   6. (Optional) Open the command line, execute `java -version` to verify the effectiveness of the environment variable. Successful execution example:
 
       ```bash
-      java version "1.8.0_202"
-      Java(TM) SE Runtime Environment (build 1.8.0_202-b08)
-      Java HotSpot(TM) 64-Bit Server VM (build 25.202-b08, mixed mode)
+      openjdk version "17.0.10" 2024-01-16
+      OpenJDK Runtime Environment (build 17.0.10+7)
+      OpenJDK 64-Bit Server VM (build 17.0.10+7, mixed mode, sharing)
       ```
 
 3. Download the TapData installation package (you can [contact us](mailto:team@tapdata.io) to obtain it) and unzip the package to the desired directory.
@@ -228,7 +223,7 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
    System initialized. To start TapData, run: tapdata start
    WORK DIR:/root/tapdata
    Testing JDK...
-   Java version:1.8
+   Java version:17
    Java environment OK.
    Unpack the files...
    Restart TapDataAgent ...:
