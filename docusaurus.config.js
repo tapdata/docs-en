@@ -120,7 +120,7 @@ markdown: {
       apiKey: '76c365bb35304a755c612e0d58b1df5e',
       indexName: 'tapdata-io',
       contextualSearch: true,
-      askAI: '4vGMgACDzf3j',
+      askAI: 'BSuLtTkwafCP',
       },
       footer: {
         style: 'dark',
