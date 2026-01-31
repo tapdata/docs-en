@@ -115,12 +115,21 @@ markdown: {
         ],
       },
       // algolia search plugin
-     algolia: {
-      appId: 'QMWL076P1O',
-      apiKey: '76c365bb35304a755c612e0d58b1df5e',
-      indexName: 'tapdata-io',
-      contextualSearch: true,
-      askAI: 'BSuLtTkwafCP',
+      algolia: {
+        appId: 'QMWL076P1O',
+        apiKey: '76c365bb35304a755c612e0d58b1df5e',
+        indexName: 'tapdata-io',
+        contextualSearch: true,
+
+        // Ask AI only works with DocSearch v4
+        ...(require('@docsearch/react').version.startsWith('4.')
+          ? {
+              askAi: {
+                assistantId: 'BSuLtTkwafCP',
+                indexName: 'tapdata-io',
+              },
+            }
+          : {}),
       },
       footer: {
         style: 'dark',
