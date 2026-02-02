@@ -67,7 +67,7 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
    1. Execute the following command to obtain the SID information required for the application.
 
       ```bash
-      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
+      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.launch.PropertiesLauncher
       ```
 
    2. Provide the printed SID information to the TapData support team to complete the License application process.
@@ -191,7 +191,7 @@ This example uses Windows Server 2019 to demonstrate the deployment process.
    1. Execute the following command to obtain the SID information required for the application.
 
       ```bash
-      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
+      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.launch.PropertiesLauncher
       ```
 
    2. Provide the printed SID information to the TapData support team to complete the License application process.
