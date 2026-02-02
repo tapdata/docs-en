@@ -65,7 +65,7 @@ The following operations need to be **performed separately on each of the three 
    1. Run the following command to get the SID information required for the license application.
 
       ```bash
-      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
+      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.launch.PropertiesLauncher
       ```
 
    2. Provide the printed SID information to the TapData support team to complete the license application process.

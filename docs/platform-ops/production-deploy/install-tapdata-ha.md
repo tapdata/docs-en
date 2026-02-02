@@ -77,7 +77,7 @@ Before deployment, we need to perform the following operations on both servers.
    1. Execute the following command to obtain the required SID information for application.
 
       ```bash
-      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
+      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.launch.PropertiesLauncher
       ```
 
    2. Provide the printed SID information to the TapData support team to complete the License application process.
@@ -185,7 +185,7 @@ Before deployment, we need to perform the following operations on both servers.
    1. Execute the following command to obtain the required SID information for application.
 
       ```bash
-      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.PropertiesLauncher
+      java -cp components/tm.jar -Dloader.main=com.tapdata.tm.license.util.SidGenerator org.springframework.boot.loader.launch.PropertiesLauncher
       ```
 
    2. Provide the printed SID information to the TapData support team to complete the License application process.
