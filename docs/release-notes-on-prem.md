@@ -14,6 +14,20 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.13.0
+
+### Bug Fixes
+
+- Fixed an issue where the API service token expiration time was too short.
+- Fixed an issue where the API Server did not support the sorting parameter `"order": "effectiveStartDate desc"`.
+- Fixed an anomaly in incremental verification where the verification time matched the automatic re-verification time.
+- Fixed an issue in the Master-Slave Merge node where selecting **Array** as the merge type for a child table incorrectly inferred the model as **Document**.
+- Fixed a failure in rebuilding the cache for Master-Slave Merge tasks after creating a new external storage.
+- Fixed potential memory leaks in large-scale data synchronization scenarios, improving long-running system stability.
+- Fixed a `NullPointerException` during model comparison when syncing from PostgreSQL to a SQL Server partitioned table.
+- Fixed unexpected retry logic behavior when the PostgreSQL source database is unavailable.
+- Fixed an issue where replication slots were not automatically cleaned up in shared mining tasks with PostgreSQL sources, causing slot accumulation.
+
 
 ## 4.12.0
 
