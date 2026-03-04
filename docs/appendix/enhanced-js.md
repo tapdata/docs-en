@@ -254,7 +254,7 @@ DELIMITER ;
 Description: Obtain a script executor for a specific data source via `ScriptExecutorsManager`, then call this method to execute SQL statements or NoSQL operations. This method is recommended for simple scenarios.
 
 * **executeQuery**: Primarily used for queries (SELECT). Returns an array (result set) and supports trial runs (data preview).
-* **execute**: Used for DML (INSERT/UPDATE/DELETE) or DDL operations. Returns a boolean (true/false) and does not support trial run data preview.
+* **execute**: Used to execute SQL statements. It can return multiple result sets, equivalent to the behavior of standard database tools. While suitable for retrieving result sets in simple query scenarios, note that this method does not support data preview during trial runs.
 
 :::tip
 
