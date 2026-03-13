@@ -14,6 +14,30 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+
+## 4.14.0
+
+### New Features
+
+- When using MongoDB as a source, TapData now intelligently identifies memory overflow risks based on queue/document size and prompts users to adjust batch sizes, ensuring stable task operation.
+
+### Enhancements
+
+- Enhanced JS node support for stored procedure calls, improving compatibility for complex scenarios like input parameter handling and multiple result set returns.
+- The API service now directly displays code examples for obtaining Tokens, simplifying the calling process.
+- Optimized the Paimon connector reading logic to improve data synchronization efficiency.
+- Added support for sorting task tags to improve the filtering experience.
+- Optimized the License update process and node count calculation logic.
+
+### Bug Fixes
+
+- Fixed an issue where field names in the Master-Slave Merge node on the task monitoring page were truncated and could not be copied.
+- Fixed an issue in Master-Slave Merge tasks where the presence of a disabled table prevented cache rebuilding for all tables.
+- Fixed a data truncation issue caused by insufficient precision when mapping Double type fields from Db2 to PostgreSQL.
+- Fixed a character set encoding error when reading data containing special characters from Db2.
+- Fixed a potential permission validation warning for PostgreSQL partition tables during the CDC phase.
+- Fixed an issue where AS400 GRAPHIC type fields were not automatically converted to compatible types in the target database.
+
 ## 4.13.0
 
 ### Bug Fixes
