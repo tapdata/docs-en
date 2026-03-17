@@ -185,94 +185,236 @@ Example:
 var source = ScriptExecutorsManager.getScriptExecutor('mysql-connection-name');
 ```
 
+
 ## ScriptExecutor
 
-### execute
 
-Description: When performing operations on a database, the return value is of Boolean type. **True** indicates a successful operation, while **false** indicates a failed operation.
+<details>
+
+<summary>Preparation (Optional)</summary>
+
+For demonstration purposes, we executed the following SQL statements in the database to create an `Orders` table and procedures to simulate real business scenarios.
+
+```sql
+-- 1. Create Orders table
+CREATE TABLE Orders (
+    order_id VARCHAR(20) PRIMARY KEY,
+    order_date DATETIME,
+    total_amount DECIMAL(10, 2),
+    status INT DEFAULT 0, -- 0: Pending, 1: Paid, 2: Shipped, 9: Closed
+    points INT DEFAULT 0  -- Order points
+);
+
+-- Initialize test data
+INSERT INTO Orders (order_id, order_date, total_amount, status, points) VALUES 
+('ORD_001', NOW(), 100.00, 0, 0),
+('ORD_002', NOW(), 5000.00, 1, 0), 
+('ORD_003', '2023-01-01 10:00:00', 50.00, 0, 0); -- An old record to demonstrate auto-closing
+
+-- 2. Procedure 1 (No parameters): Batch close expired orders
+-- Function: Simulate a scheduled task to mark all unpaid orders older than 30 days as '9' (Closed)
+DELIMITER $$
+CREATE PROCEDURE sp_close_expired_orders()
+BEGIN
+    UPDATE Orders SET status = 9 WHERE status = 0 AND order_date < DATE_SUB(NOW(), INTERVAL 30 DAY);
+END$$
+DELIMITER ;
+
+-- 3. Procedure 2 (With input parameters): Ship order
+-- Function: Update the status of a specific order to '2' (Shipped)
+DELIMITER $$
+CREATE PROCEDURE sp_ship_order(IN p_order_id VARCHAR(20))
+BEGIN
+    UPDATE Orders SET status = 2 WHERE order_id = p_order_id;
+END$$
+DELIMITER ;
+
+-- 4. Procedure 3 (Complex scenario): Calculate order points (With IN/OUT parameters)
+-- Function: Input order amount, return points earned
+-- Rule: Amount < 1000, 1 point per 10 currency units; Amount >= 1000, 2 points per 10 currency units
+DELIMITER $$
+CREATE PROCEDURE sp_calculate_points(
+    IN p_amount DECIMAL(10,2), 
+    OUT p_points INT
+)
+BEGIN
+    IF p_amount < 1000 THEN
+        SET p_points = FLOOR(p_amount / 10);
+    ELSE
+        SET p_points = FLOOR(p_amount / 10) * 2;
+    END IF;
+END$$
+DELIMITER ;
+```
+
+</details>
+
+### execute / executeQuery
+
+Description: Obtain a script executor for a specific data source via `ScriptExecutorsManager`, then call this method to execute SQL statements or NoSQL operations. This method is recommended for simple scenarios.
+
+* **executeQuery**: Primarily used for queries (SELECT). Returns an array (result set) and supports trial runs (data preview).
+* **execute**: Used to execute SQL statements. It can return multiple result sets, equivalent to the behavior of standard database tools. While suitable for retrieving result sets in simple query scenarios, note that this method does not support data preview during trial runs.
 
 :::tip
 
-Before executing, the **source** component indicates performing operations on the source database, while the **target** component indicates performing operations on the target database.
+The object before `execute` or `executeQuery` determines the target database: `source` for the source database and `target` for the target database.
 
 :::
 
-Example:
+#### Structured Databases (e.g., MySQL)
 
-```javascript
-var result = target.execute({
-    database: “test”,
-    collection: “user”,
-    op: “update”,
-    filter: {id: 1},
-    opObject: {name: “user001”, age: 20},
-    upsert: true
-});
-```
+Examples:
 
-Parameter Description
+* Using execute for DML
 
-* For structured databases (such as MySQL), you can refer to the method: `var result = source.execute({sql: “update test.user set name='user001' where id = 1”});`
-* For MongoDB, the available parameters are as follows:
+  ```javascript
+  // Get source connection (replace with your actual source connection name, e.g., 'Source_MySQL')
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // Simple SQL execution: update orders with status 0 (Pending) to 9 (Closed)
+  var result = source.execute({
+      "sql": "UPDATE Orders SET status = 9 WHERE order_id = 'ORD_001'"
+  });
+  log.info("Update result: " + result); 
+  ```
 
-   - **database**: The name of the database on which the operation is being performed. 
-   - **collection**: The collection name.
-   - **op**: The action to be performed (INSERT/UPDATE/DELETE).
-   - **filter**: The conditions for updating or deleting data.
-   - **opObject**: The specific data for insertion, update, or deletion operations
-   - **upsert**: You can choose whether to use the UPSERT mode of MongoDB, which enables inserting data if it doesn't exist and updating it if it does. The default value is **false**.
-   - **multi**: You can specify whether to update multiple records. By default, it is set to **false**.
+* Using executeQuery for queries
 
-### executeQuery
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // Query all high-value orders (amount > 1000)
+  var result = source.executeQuery({
+      "sql": "SELECT * FROM Orders WHERE total_amount > 1000"
+  });
+  log.info("High value orders: " + result);
+  ```
 
-Description: When performing database query operations, the return value is an array type that represents the result set of the query.
+* Using execute to call procedures (no parameters)
+
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // Call the procedure to batch close expired orders
+  // Equivalent to source.call("sp_close_expired_orders", [])
+  var result = source.execute({
+      "sql": "CALL sp_close_expired_orders()"
+  });
+  ```
+
+* Using execute to call procedures (with parameters)
+
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // Call the shipping procedure (manually construct SQL parameters)
+  // Equivalent to source.call("sp_ship_order", [...])
+  var result = source.execute({
+      "sql": "CALL sp_ship_order('ORD_002')"
+  });
+  ```
 
 :::tip
 
-Before executing, the **source** component indicates performing operations on the source database, while the **target** component indicates performing operations on the target database.
+`execute` and `executeQuery` **do not support** retrieving `OUT` (output) or `INOUT` (input/output) parameters from procedures, nor do they support non-query return values. For such complex scenarios, please use the `call` method described below.
 
 :::
 
-Example:
+#### NoSQL Databases (e.g., MongoDB)
 
-```javascript
-var users = target.executeQuery({
-    database: “test”,
-    collection: “user”,
-    filter: {age: {$gt: 10}}，
-    sort: {age: -1},
-    limit: 10
-});
-```
+Parameter Description:
 
-Parameter Description
+* **database**: The name of the database to operate on.
+* **collection**: The name of the collection to operate on.
+* **op**: The operation to perform (INSERT/UPDATE/DELETE, `execute` only).
+* **filter**: Conditions for query, update, or delete.
+* **opObject**: The specific data to insert or update.
+* **upsert**: Whether to use MongoDB's UPSERT mode (insert if not exists). Default is **false**.
+* **multi**: Whether to update multiple records. Default is **false**.
+* **sort**: Sorting conditions (`executeQuery` only).
+* **limit**: Limit the number of output records (`executeQuery` only).
 
-* For structured databases (such as MySQL), you can refer to the method: `var users = source.executeQuery({sql: “select * from test.user where age>10”});`
-* For MongoDB, the available parameters are as follows:
-   * **database**: The name of the database being operated on.
-   * **collection**: The name of the collection on which the operation is being performed.
-   * **filter**: The conditions for updating or deleting data.
-   * **sort**:  Sorting condition (optional).
-   * **limit**: Limit on the number of output records (optional).
+Examples:
+
+* Using execute for updates
+
+  ```javascript
+  var result = target.execute({
+      database: "test",
+      collection: "user",
+      op: "update",
+      filter: {id: 1},
+      opObject: {name: "user001", age: 20},
+      upsert: true
+  });
+  ```
+
+* Using executeQuery for queries
+
+  ```javascript
+  var users = target.executeQuery({
+      database: "test",
+      collection: "user",
+      filter: {age: {$gt: 10}},
+      sort: {age: -1},
+      limit: 10
+  });
+  ```
 
 ### call
 
-Description: Executing stored procedures and functions is supported only by structured databases. This feature enables the execution of specific database stored procedures and custom functions. The return value is in the form of key-value pairs, based on the defined result of the stored procedure.
+Description: Call custom procedures in the database, supporting complex input/output parameters and return values. This method is recommended for procedures involving multiple result sets or complex parameters (IN/OUT/RETURN).
 
-Example:
+:::tip
 
-```javascript
-var result = source.call('demo' [{'param1':'aa'}])
-```
+This method is based on the JDBC generic interface. It is recommended to use basic parameter types (such as `int`, `double`, `varchar`) and avoid database-specific complex types to maximize compatibility across different database systems.
 
-Parameter Description
+:::
 
-* **funcName**: The name of the stored procedure or function.
-* **params**: The supported parameters for input.
-   * **mode**: Parameter types for input, with the following values: **in** (default, for input parameters), **out** (for output parameters), and **in/out** (for parameters that are both input and output).
-   * **name**: Parameter name.
-   * **value**: The value of the parameter.
-   * **type**: Parameter class type.
+Parameter Description:
+
+`call(procedureName, parameters)`
+
+* **procedureName**: The name of the procedure.
+* **parameters**: An array of parameters, strictly ordered, containing the following properties:
+    * **mode**: Parameter mode. Options: `in` | `out` | `in/out` | `return`.
+    * **type**: Data type. Supports common types like `int` | `double` | `varchar`.
+    * **value**: The specific value of the input parameter.
+    * **name**: Parameter name (optional; if specified, this name will be used as the key in the returned result; otherwise, it is auto-generated).
+
+Examples:
+
+* Simple call (no parameters)
+
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // Call parameterless procedure: batch close expired orders
+  source.call("sp_close_expired_orders", []);
+  ```
+
+* Call with input parameters
+
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // Call procedure with parameters: Ship order (update status of order ORD_002 to 2)
+  source.call("sp_ship_order", [
+      {"mode": "in", "type": "varchar", "value": 'ORD_002'}
+  ]);
+  ```
+
+* Complex call (with return values/output parameters)
+
+  ```javascript
+  var source = ScriptExecutorsManager.getScriptExecutor('Source_MySQL');
+  // Scenario: Calculate order points
+  // Input: Order amount 5000 (in)
+  // Output: Points earned (out)
+  var result = source.call("sp_calculate_points", [
+      {"mode": "in",  "type": "decimal", "value": 5000.00},
+      {"name": "points", "mode": "out", "type": "int"}
+  ]);
+  
+  // Result returned as a Map
+  // Example: {points=1000}
+  log.info("Points earned: " + result.points);
+
 
 ## JSONUtil
 
