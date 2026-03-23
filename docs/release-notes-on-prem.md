@@ -14,6 +14,36 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.15.0
+
+### New Features
+
+- The [Paimon connector](./connectors/warehouses-and-lake/paimon.md#advanced-node-features) now supports per-table partitioning configuration, allowing customization of partition keys, buckets, compression formats, and other attributes to improve data management flexibility.
+
+### Enhancements
+
+- Significantly improved the data writing performance of the Paimon connector under multiple update conditions.
+- The StarRocks connector now adapts to High Availability (HA) architectures, ensuring continuous and stable data writing.
+- Added WSS protocol support for the communication port (8246) between the engine and the management node, enhancing communication security.
+
+### Bug Fixes
+
+- Fixed an issue where AVRO formatted data with Debezium structure in Kafka could not be parsed correctly.
+- Fixed an issue where the MariaDB to Doris synchronization task failed during the CDC phase after the full sync was completed.
+- Fixed a synchronization failure in MySQL tasks caused by a field rename processor exception.
+- Fixed a task execution error caused by `BSONRegExp` type data when syncing from MongoDB to MySQL.
+- Fixed an issue where PostgreSQL CDC tasks could not be recovered after an engine restart due to cleaned-up WAL logs.
+- Fixed a task error when enabling the full breakpoint resume function for TDSQL.
+- Fixed an issue where the API Server audit log still contained exception information when the request was successful (Code 200).
+- Fixed an issue where duplicate name validation was missing when creating an API.
+- Fixed an issue where published API interfaces could not correctly handle parameter filtering.
+- Fixed a failure when publishing an API based on MySQL.
+- Fixed an issue where the generated API could not query data by primary key after the `_id` field was deleted in the synchronization task.
+- Fixed a task startup failure when using MongoDB 8.0 as intermediate storage.
+- Fixed a performance degradation in full data batch writing after enabling multi-table concurrent reading.
+- Fixed a false alarm stating the tag did not exist when starting a task after modifying the connection's engine tag.
+- Fixed the loss of query filter status when returning to the list page from the edit page on the connection management page.
+- Fixed an issue where scheduled validation tasks abnormally triggered secondary validations in a loop.
 
 ## 4.14.0
 
