@@ -14,6 +14,41 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+
+## 4.16.0
+
+### New Features
+
+- When [create an API](./publish-apis/create-api-service.md), you can now configure data masking rules for specific parameters. After enabling, those parameters are displayed as masked values in API audit logs, improving sensitive data protection.
+- You can now build and manage logical views in the [Master Data Model (MDM)](./operational-data-hub/mdm-layer/build-view-in-odh.md) using MongoDB Aggregation Pipelines.
+
+### Enhancements
+
+- Removed the obsolete alert options "When a validation task fails" and "When the data source network is unreachable" to simplify alert configuration.
+- Optimized MongoDB-to-SQL Server synchronization to support writing Object and Array values directly into Text fields.
+
+### Bug Fixes
+
+- Fixed an error in API service debugging caused by older MongoDB versions not supporting `allowDiskUse`.
+- Fixed slow queries on API-related tables in the TapData intermediate database to improve system responsiveness.
+- Fixed an issue where property types within array objects were incorrectly converted to arrays in API Server responses.
+- Fixed an issue where data synchronization could be blocked when MongoDB encountered transaction errors.
+- Fixed a potential out-of-memory issue when starting MongoDB mining tasks.
+- Fixed an issue where single-node Oracle tasks could fail to start from a specified incremental timestamp due to abnormal log file matching.
+- Fixed potential data inconsistencies when syncing Blob/Clob fields from Oracle to MySQL.
+- Fixed a task failure when syncing from PostgreSQL to a sharded MongoDB collection due to shard key updates.
+- Fixed an issue where some update operations could cause other columns to become empty when syncing from PostgreSQL to StarRocks.
+- Fixed an issue where StarRocks targets could not correctly advance checkpoints in specific scenarios.
+- Fixed a formatting issue in the debugging panel when the last line of Advanced JS node code was a comment.
+- Fixed an issue where re-adding nodes after configuring an incremental start time caused the start time setting to be reset.
+- Fixed an issue where the data model comparison feature could not enable the ignore-case option.
+- Fixed an issue with the permission assignment and override logic in role management.
+- Fixed an issue where incremental tasks unexpectedly re-ran full loads after rebuilding cache.
+- Fixed inconsistent input/output change statistics in shared mining tasks.
+- Fixed an issue where Kafka-to-StarRocks sync tasks could not automatically re-authenticate after an AD server restart.
+- Fixed an issue where some connectors required manual re-registration after upgrading to version 3.27.
+
+
 ## 4.15.0
 
 ### New Features
