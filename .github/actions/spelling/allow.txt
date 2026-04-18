@@ -783,5 +783,7 @@ AVRO
 Clob
 INOUT
 WSS
-
+executability
+NTZ
+snowflakecomputing
 

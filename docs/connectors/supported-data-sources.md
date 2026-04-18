@@ -412,7 +412,16 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>➖</td>
     <td>2.0.13 and above</td>
   </tr>
-    <tr>
+  <tr>
+    <td>Snowflake</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>➖</td>
+    <td>✅</td>
+    <td>➖</td>
+    <td>N/A</td>
+  </tr>  
+  <tr>
     <td>StarRocks</td>
     <td>➖</td>
     <td>➖</td>
