@@ -99,9 +99,7 @@ INSERT, UPDATE, DELETE
 
 ## Connect to Snowflake
 
-1. [Log into TapData platforms](../../user-guide/log-in.md).
-
-<!-- This is for test. -->
+1. Log into the TapData platform.
 
 2. In the left navigation bar, click **Connections**.
 
