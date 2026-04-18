@@ -28,6 +28,7 @@ const config = {
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
+          exclude: ['**/AGENTS.md', '**/AGENTS.override.md'],
           // Configuring versioning behavior and label
           /*lastVersion: 'current',
           versions: {
