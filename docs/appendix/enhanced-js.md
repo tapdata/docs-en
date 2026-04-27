@@ -61,7 +61,7 @@ var dteStr = DateUtil.timeStamp2Date(1592233019140, 'yyyy-MM-dd HH:mm:ss');
 
 ### addYears/addMonths/addDays/addHours/addMinutes/addSeconds
 
-Description: Adds or subtracts the year/month/day/hour/minute/second of the date.
+Description: Adds or subtracts the year/month/day/hour/minute/second of the date. Accepts `Date` (i.e. `DateTime`) type.
 
 Example:
 
@@ -80,6 +80,101 @@ Example:
 if ( DataUtil.sameYear(new Date(), new Date()) ) {
     ...
 }
+```
+
+### getFullYear/getMonth/getDate/getHours/getMinutes/getSeconds/getMilliSeconds
+
+Description: Extracts year/month/day/hour/minute/second/millisecond from a date.
+
+Example:
+
+```javascript
+var dte = new Date();
+var year = DateUtil.getFullYear(dte);    // 4-digit year
+var month = DateUtil.getMonth(dte);      // Month (1-12)
+var day = DateUtil.getDate(dte);         // Day (1-31)
+var hours = DateUtil.getHours(dte);      // Hours (0-23)
+var minutes = DateUtil.getMinutes(dte);  // Minutes (0-59)
+var seconds = DateUtil.getSeconds(dte);  // Seconds (0-59)
+var millis = DateUtil.getMilliSeconds(dte); // Milliseconds
+```
+
+:::tip
+
+The following methods are available since **version 4.18**.
+
+:::
+
+### isBefore/isAfter/isEqual
+
+Description: Compares the chronological order of two dates. Accepts `Date` (i.e. `DateTime`) type.
+
+| Method | Description | Return |
+| --- | --- | --- |
+| `isBefore(a, b)` | Whether a is before b | `boolean` |
+| `isAfter(a, b)` | Whether a is after b | `boolean` |
+| `isEqual(a, b)` | Whether a equals b | `boolean` |
+
+Example:
+
+```javascript
+var d1 = new Date();
+var d2 = DateUtil.addDays(d1, 1);
+var before = DateUtil.isBefore(d1, d2);  // true
+var after = DateUtil.isAfter(d1, d2);    // false
+var equal = DateUtil.isEqual(d1, d1);    // true
+```
+
+### compare
+
+Description: Compares two dates and returns an integer. Returns a negative number if a is before b, 0 if equal, and a positive number if a is after b.
+
+Example:
+
+```javascript
+var result = DateUtil.compare(d1, d2);  // < 0 means d1 is before d2
+```
+
+### isSameDay/isSameMonth
+
+Description: Determines whether two dates fall on the same day/month. A time zone can be specified.
+
+| Method | Description |
+| --- | --- |
+| `isSameDay(a, b, zoneId)` | Whether a and b are on the same day (`zoneId` can be `null` to use the system default time zone) |
+| `isSameMonth(a, b, zoneId)` | Whether a and b are in the same month |
+
+Example:
+
+```javascript
+var d1 = new Date();
+var d2 = DateUtil.addHours(d1, 2);
+var sameDay = DateUtil.isSameDay(d1, d2, null);    // true
+var sameMonth = DateUtil.isSameMonth(d1, d2, null); // true
+```
+
+### diffMillis/diffSeconds/diffMinutes/diffHours/diffDays
+
+Description: Calculates the difference between two dates (`a - b`), returning the value in the corresponding time unit.
+
+| Method | Description | Return |
+| --- | --- | --- |
+| `diffMillis(a, b)` | Difference in milliseconds | `long` |
+| `diffSeconds(a, b)` | Difference in seconds | `long` |
+| `diffMinutes(a, b)` | Difference in minutes | `long` |
+| `diffHours(a, b)` | Difference in hours | `long` |
+| `diffDays(a, b)` | Difference in days | `long` |
+
+Example:
+
+```javascript
+var d1 = new Date();
+var d2 = DateUtil.addHours(d1, 3);
+var diffMs = DateUtil.diffMillis(d2, d1);     // 10800000
+var diffSec = DateUtil.diffSeconds(d2, d1);   // 10800
+var diffMin = DateUtil.diffMinutes(d2, d1);   // 180
+var diffHour = DateUtil.diffHours(d2, d1);    // 3
+var diffDay = DateUtil.diffDays(d2, d1);      // 0
 ```
 
 ## idGen/UUIDGenerator
@@ -166,15 +261,120 @@ list.remove(0);
 
 ## Date
 
-### add/remove
+Description: Date type. In Enhanced JS, objects created by `new Date()` are actually of type `DateTime`, which is compatible with common JavaScript `Date` methods.
 
-Description: Date type.
+:::tip
 
-Example:
+The following Date instance methods are available since **version 4.18**.
+
+:::
+
+### Constructor
+
+```javascript
+// Get the current time
+var dte = new Date();
+
+// Construct from millisecond timestamp
+var dte = new Date(1592233019140);
+```
+
+### Getter Methods
+
+| Method | Description | Return |
+| --- | --- | --- |
+| `getFullYear()` | Get 4-digit year | `int` |
+| `getYear()` | Get year (return value is year minus 1900) | `int` |
+| `getMonth()` | Get month (0-11, 0 means January) | `int` |
+| `getDate()` | Get day of month (1-31) | `int` |
+| `getDay()` | Get day of week (0=Sunday, 6=Saturday) | `int` |
+| `getHours()` | Get hours (0-23) | `int` |
+| `getMinutes()` | Get minutes (0-59) | `int` |
+| `getDateSeconds()` | Get seconds (0-59) | `int` |
+| `getMilliseconds()` | Get milliseconds (0-999) | `int` |
+| `getTime()` | Get milliseconds since 1970-01-01 | `long` |
+| `getTimezoneOffset()` | Get timezone offset in minutes (positive means after UTC) | `int` |
+
+### UTC Getter Methods
+
+| Method | Description | Return |
+| --- | --- | --- |
+| `getUTCFullYear()` | Get UTC 4-digit year | `int` |
+| `getUTCMonth()` | Get UTC month (0-11) | `int` |
+| `getUTCDate()` | Get UTC day of month (1-31) | `int` |
+| `getUTCDay()` | Get UTC day of week (0=Sunday) | `int` |
+| `getUTCHours()` | Get UTC hours (0-23) | `int` |
+| `getUTCMinutes()` | Get UTC minutes (0-59) | `int` |
+| `getUTCSeconds()` | Get UTC seconds (0-59) | `int` |
+| `getUTCMilliseconds()` | Get UTC milliseconds (0-999) | `int` |
+
+### Setter Methods
+
+| Method | Description |
+| --- | --- |
+| `setFullYear(year)` | Set 4-digit year |
+| `setYear(year)` | Set year (input value plus 1900 is the actual year) |
+| `setMonth(month)` | Set month (0-11) |
+| `setDate(date)` | Set day of month (1-31) |
+| `setHours(hours)` | Set hours (0-23) |
+| `setMinutes(minutes)` | Set minutes (0-59) |
+| `setDateSeconds(seconds)` | Set seconds (0-59) |
+| `setMilliseconds(ms)` | Set milliseconds (0-999) |
+| `setTime(millis)` | Set milliseconds since 1970-01-01 |
+
+### UTC Setter Methods
+
+| Method | Description |
+| --- | --- |
+| `setUTCFullYear(year)` | Set UTC year |
+| `setUTCMonth(month)` | Set UTC month (0-11) |
+| `setUTCDate(date)` | Set UTC day of month (1-31) |
+| `setUTCHours(hours)` | Set UTC hours (0-23) |
+| `setUTCMinutes(minutes)` | Set UTC minutes (0-59) |
+| `setUTCSeconds(seconds)` | Set UTC seconds (0-59) |
+| `setUTCMilliseconds(ms)` | Set UTC milliseconds (0-999) |
+
+### Formatting Methods
+
+| Method | Description | Example Return |
+| --- | --- | --- |
+| `toDateString()` | Returns a readable string of the date portion | `"Wed May 08 2024"` |
+| `toTimeString()` | Returns a readable string of the time portion | `"14:30:00 GMT+0800"` |
+| `toISOString()` | Returns an ISO 8601 formatted UTC string | `"2024-05-08T06:30:00.000Z"` |
+| `toJSON()` | Returns a JSON serialization string (same as `toISOString()`) | `"2024-05-08T06:30:00.000Z"` |
+| `toGMTString()` | Returns a GMT formatted string | — |
+| `toUTCString()` | Returns a UTC formatted string | — |
+| `toLocaleString()` | Returns a localized date-time string | — |
+| `toLocaleDateString()` | Returns a localized date string | — |
+| `toLocaleTimeString()` | Returns a localized time string | — |
+| `valueOf()` | Returns the millisecond timestamp (same as `getTime()`) | — |
+
+### Comparison Methods
+
+| Method | Description |
+| --- | --- |
+| `after(dateTime)` | Whether the current date is after the specified date |
+| `before(dateTime)` | Whether the current date is before the specified date |
+
+### Example
 
 ```javascript
 var dte = new Date();
-var year = dte.getYear()+1900;
+var year = dte.getFullYear();      // Get 4-digit year, e.g. 2024
+var month = dte.getMonth();        // Get month, 0-11
+var day = dte.getDate();           // Get day, 1-31
+var hours = dte.getHours();        // Get hours
+var iso = dte.toISOString();       // "2024-05-08T06:30:00.000Z"
+
+// Modify date
+dte.setFullYear(2025);
+dte.setMonth(0);                   // Set to January
+
+// Compare two dates
+var dte2 = new Date();
+if (dte.before(dte2)) {
+    // dte is before dte2
+}
 ```
 
 ## ScriptExecutorsManager
