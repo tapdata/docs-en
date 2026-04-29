@@ -171,6 +171,7 @@ mdm
 metabase
 mgtg
 microsoft
+millis
 mongodb
 MULTILINESTRING
 MULTIPOINT
