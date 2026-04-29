@@ -76,23 +76,6 @@ if ( DateUtil.sameYear(new Date(), new Date()) ) {
 }
 ```
 
-### getFullYear/getMonth/getDate/getHours/getMinutes/getSeconds/getMilliSeconds
-
-Description: Extracts year/month/day/hour/minute/second/millisecond from a date.
-
-Example:
-
-```javascript
-var dte = new Date();
-var year = DateUtil.getFullYear(dte);    // 4-digit year
-var month = DateUtil.getMonth(dte);      // Month (1-12)
-var day = DateUtil.getDate(dte);         // Day (1-31)
-var hours = DateUtil.getHours(dte);      // Hours (0-23)
-var minutes = DateUtil.getMinutes(dte);  // Minutes (0-59)
-var seconds = DateUtil.getSeconds(dte);  // Seconds (0-59)
-var millis = DateUtil.getMilliSeconds(dte); // Milliseconds
-```
-
 :::tip
 
 The following methods are available since **version 4.18**.
