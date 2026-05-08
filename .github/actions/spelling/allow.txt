@@ -786,4 +786,9 @@ WSS
 executability
 NTZ
 snowflakecomputing
+aat
+cicd
+lpt
+unconfigured
+
 

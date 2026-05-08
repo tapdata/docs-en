@@ -13,7 +13,7 @@ This guide uses a common real-time data warehouse scenario. A team synchronizes 
 The following workflow shows how to create a project, export configuration, deploy automatically, and publish manually when needed.
 
 :::tip
-Use the same connection names across environments. During automated deployment, TapData matches connection names to GitHub Secrets and Variables, then injects the real address, username, and password for the target environment.
+Use the same connection names across environments. During automated deployment, TapData matches connection names to GitHub Secrets and Variables, then injects the real address, username, and password for the target environment. Use connection names that contain only letters, numbers, and underscores, such as `oracle_source`.
 :::
 
 ## Step 1: Create a project and select resources
@@ -27,7 +27,7 @@ Package the team's tasks and API as one project. The project becomes the unit th
    ![Create a project and select resources](../../images/create_project.png)
 
    :::tip
-   When you select tasks or APIs, TapData automatically includes dependent connections. In this example, `oracle-source` and `doris-target` are included automatically.
+   When you select tasks or APIs, TapData automatically includes dependent connections. In this example, `oracle_source` and `doris_target` are included automatically.
    :::
 
 4. Click **Save**.
@@ -143,8 +143,8 @@ If a deployment does not behave as expected, such as when a task enters an abnor
 
 1. In the GitHub tenant repository, go to **Actions**, and select `TapData Rollback`.
 2. Click **Run workflow**. Enter the target environment, such as `prod`, and the tag to roll back to, such as `v0.9.0`.
-3. The rollback workflow stops the current tasks, clears the existing configuration, and imports the configuration from the selected tag.
-4. After rollback finishes, sign in to the target environment, verify the result, and start the tasks manually.
+3. The rollback workflow stops the current tasks, unpublishes active APIs, clears the existing configuration, imports the configuration from the selected tag, and restores the runtime state for tasks and APIs that were active before rollback.
+4. After rollback finishes, sign in to the target environment and verify the task status and API availability.
 
 Rollback affects only the selected target environment. Other environments are not changed.
 

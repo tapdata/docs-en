@@ -57,7 +57,7 @@ Use the following permission model:
 - If the Worker repository and tenant repositories are in the same organization, use a fine-grained personal access token (PAT). Grant `Contents` read access to the Worker repository, and grant `Contents` and `Pull requests` read and write access to tenant repositories.
 - If the repositories are in different organizations, you can use a classic PAT with the `repo` and `workflow` scopes.
 
-Secrets and Variables for TapData connections use this naming rule: convert the connection name in TapData to uppercase, then replace spaces and hyphens with underscores. For example, the connection name `oracle-source` uses the prefix `ORACLE_SOURCE`.
+Secrets and Variables for TapData connections use the exported TapData connection name as the lookup key, with lowercase letters converted to uppercase. The worker does not replace spaces or hyphens with underscores. For compatibility with GitHub Secrets and Variables, name TapData connections with letters, numbers, and underscores before export. For example, the connection name `oracle_source` uses the prefix `ORACLE_SOURCE`.
 
 ## Initialize the pipeline
 
@@ -145,7 +145,11 @@ Configure shared credentials and access endpoints at the organization level so G
 6. Configure real connection values for the SIT, production, and any other enabled environments. Use one of the following formats:
 
    - **URI format**: Use this format for databases such as MongoDB where the connection string includes the username and password. Store the value as a Secret named `{PREFIX}_URI`, for example `FDM_URI`.
-   - **Host and port format**: Use this format for databases such as PostgreSQL, Oracle, and MySQL. Store the address and username as Variables, and store the password as a Secret. Use names such as `{PREFIX}_URL`, `{PREFIX}_USER`, and `{PREFIX}_PASSWORD`, for example `ORACLE_SOURCE_URL`, `ORACLE_SOURCE_USER`, and `ORACLE_SOURCE_PASSWORD`.
+   - **Host and port format**: Use this format for databases such as PostgreSQL, Oracle, and MySQL. Store the address and username as Variables, and store the password as a Secret. Use names such as `{PREFIX}_URL`, `{PREFIX}_USER`, and `{PREFIX}_PASSWORD`. For a TapData connection named `oracle_source`, configure `ORACLE_SOURCE_URL`, `ORACLE_SOURCE_USER`, and `ORACLE_SOURCE_PASSWORD`.
+
+   :::caution
+   For automated deployment with the default worker, avoid connection names that contain spaces or hyphens. For example, rename `oracle-source` to `oracle_source` in TapData and export the project again before configuring `ORACLE_SOURCE_URL`, `ORACLE_SOURCE_USER`, and `ORACLE_SOURCE_PASSWORD`.
+   :::
 
    If multiple connections can share the same fallback values, configure `DEFAULT_URL`, `DEFAULT_USER`, and `DEFAULT_PASSWORD`.
 
