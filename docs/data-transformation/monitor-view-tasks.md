@@ -2,13 +2,36 @@
 
 
 
-Once the data transformation task is started, the page will automatically redirect to the task monitoring page. From there, you can monitor the task's operation details, such as the status of the Agent, data synchronization progress, task progress, alert settings, and other relevant information.
+After you start a data transformation task, TapData automatically redirects you to the task monitoring page. You can use this page to check runtime details such as Agent status, synchronization status, task progress, and alert settings. You can also review the overall task status from the task list before opening a specific task for details.
+
 
 :::tip
 
-By clicking the **monitor** button on the task list page, you can access the monitoring page as well.
+You can also open the monitoring page by clicking **Monitor** on the task list page.
 
 :::
+
+
+## Task List Metrics
+
+On the **Data Transformation** task list page, use filters such as **Task Status**, **Sync Type**, **Task Milestone**, **Agent Name**, and **Task Name** to find tasks. You can also click **Display Settings** to adjust the columns shown in the list. The following table describes the common fields:
+
+| Field | Description |
+| --- | --- |
+| **Task Name** | The display name of the task. You can search tasks by this field. |
+| **Task Status** | The current task status, such as Editing, Running, Stopped, or Failed. |
+| **Sync Type** | The task synchronization type, such as full, incremental, or full + incremental. |
+| **Task Milestone** | The current execution stage, which helps you determine whether the task is initializing, running full synchronization, running incremental synchronization, or processing another stage. |
+| **Incremental Delay** | The time between when an event is generated at the source and when the task finishes processing it. Use this metric to identify incremental backlog. |
+| **Last Event Time** | The latest source event time processed by the task. The closer this time is to the current time, the more up to date incremental processing is. |
+| **Last Run Time** | The most recent time when the task was started. |
+| **Create Time** | The time when the task was created. |
+| **Update Time** | The most recent time when the task configuration or status was updated. |
+| **Available Operation** | Operations available for the task, such as Start, Edit, Monitor, Reset, Copy, and Delete. The available operations depend on the task status. |
+
+To view node-level metrics, run logs, alerts, or task settings, click **Monitor** on the right side of the target task to open the task details page.
+
+## View Task Details
 
 ![](../images/monitor_copy_task_overview.png)
 
@@ -69,4 +92,3 @@ Click the ![](../images/task_setting_icon.png) icon at the top of the page, whic
 * Task increment start notification
 * Task stop alert
 * Task increment delay alert
-

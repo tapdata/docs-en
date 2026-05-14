@@ -173,6 +173,12 @@ mysql> select * from student_merge;
 
 
 
+## Aggregate
+
+The **Aggregate** node groups, summarizes, and derives values from MongoDB source detail or model data. It is suitable for creating reusable result sets for user profiles, order summaries, and operational dashboards.
+
+For prerequisites, configuration steps, and example pipelines, see [Aggregate Node](aggregate-computing-node.md).
+
 
 
 ## Join
