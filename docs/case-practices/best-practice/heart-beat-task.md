@@ -5,9 +5,9 @@ TapData uses heartbeat tables to write timestamp information to the source datab
 
 ## Applicable Scenarios
 
-* If the source database often has long periods without DML operations (such as data insertion), and you need to quickly determine the status of incremental tasks through the **Incremental Checkpoint** in the **Task List** to ensure the link status and incremental log acquisition are normal.
+* If the source database often has long periods without DML operations (such as data insertion), and you need to quickly determine the status of incremental tasks through the **Last Event Time** in the **Task List** to ensure the link status and incremental log acquisition are normal.
 
-  ![Incremental Checkpoint](../../images/incremental_check_point.png)
+  ![Last Event Time](../../images/incremental_check_point.png)
 
 * If the source database has many DML operations, it is necessary to prevent the incremental logs recorded by TapData from being archived and deleted, which would make it impossible to obtain the incremental checkpoint.
 

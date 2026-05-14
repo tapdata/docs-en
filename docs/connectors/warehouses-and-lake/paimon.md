@@ -32,6 +32,7 @@ Add a [Type Modification Processor](../../data-transformation/process-node.md#ty
 - To avoid write conflicts and reduce compaction pressure, disable multi-threaded writes in the target node and set batch size to 1,000 rows and timeout to 1,000 ms.
 - Always define a primary key for efficient upserts and deletes; for large tables, use partitioning to speed up queries and writes.
 - Paimon supports primary keys only (no secondary indexes) and does not allow runtime schema evolution.
+- When Paimon is used as the target and soft delete is enabled, TapData converts `DELETE` operations into `UPDATE` operations with a delete marker. Because Paimon updates require complete row data, the source `DELETE` event must provide the full before image; otherwise, fields other than the primary key may be written as `null`. If the source database is MongoDB 6.0 or later, enable **[Document Pre-image](../on-prem-databases/mongodb.md#node-advanced-features)**. For other source databases, ensure that CDC logs contain the complete row data before the `DELETE` operation.
 
 ## Connect to Paimon
 

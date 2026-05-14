@@ -15,6 +15,43 @@ import TabItem from '@theme/TabItem';
 ```
 
 
+## 4.17.0
+
+### New Features
+
+- Added the [Aggregate node](data-transformation/aggregate-computing-node.md), which supports **Visual Config** for grouping, summarizing, and deriving data. You can use it to precompute metrics and keep business definitions consistent across downstream consumers.
+
+### Enhancements
+
+- Improved task list metrics with metric descriptions, delay status, and additional runtime information.
+- Improved Paimon target configuration by supporting import and export of custom table creation settings.
+- Improved Db2 Raw Log parsing for High Availability (HA) architectures.
+- Improved Kafka write logic by supporting bucket assignment based on update conditions and allowing primary key update events to be split into Delete and Insert operations.
+- Enhanced custom nodes so that one processing run can return multiple data records.
+- Improved connection timeout handling and HA retry strategies for the built-in MongoDB service to increase system stability.
+- Added support for mocking input data in JS nodes for faster debugging.
+
+### Bug Fixes
+
+- Fixed an intermittent issue where run logs could not be displayed for data replication or transformation tasks.
+- Fixed an issue where an intermediate database connection error could cause the management node (TM) to exit unexpectedly.
+- Fixed an issue where Real-Time Data Hub did not correctly display row counts and storage sizes for AS400 data sources.
+- Fixed an issue where the task cache page could not display cache information properly.
+- Fixed a task error during cache rebuild caused by updates to the `_id` field.
+- Fixed an issue where shared cache could read stale data and affect data consistency.
+- Fixed an issue in master-child merge flattening scenarios where child-table association keys were not cleaned up correctly after they changed in the primary table.
+- Fixed excessive invalid warning logs in master-child merge tasks.
+- Fixed an incorrect recommended association key order in data validation tasks.
+- Fixed an issue where restarting a task with no incremental data could incorrectly trigger an incremental delay alert.
+- Fixed a null pointer exception when synchronizing specific time-type data in the incremental phase.
+- Fixed JSON parsing errors in specific scenarios.
+- Fixed DDL handling errors when synchronizing Dameng Database to Doris.
+- Fixed an error when synchronizing negative time format values from MySQL.
+- Fixed validation failures when comparing array and object values between MongoDB and MySQL.
+- Fixed a task error when synchronizing PostgreSQL partitioned tables to SQL Server.
+- Fixed an issue where SQL Server did not output logs correctly after Database Log was enabled.
+- Fixed an issue where, if a SQL Server-to-SQL Server task stopped because of an error, the error details were not written correctly to the frontend task logs.
+
 ## 4.16.0
 
 ### New Features
