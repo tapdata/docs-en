@@ -115,6 +115,8 @@ Configure shared credentials and access endpoints at the organization level so G
 
 4. On the **Secrets** tab, add the following encrypted values:
 
+   ![Set GitHub Actions Secrets 和 Variables](../../images/github_actions_secrets_variables.png)
+
    | Secret name | Description |
    | --- | --- |
    | `GH_DEPLOY_TOKEN` | The PAT created in the previous step. |
@@ -140,6 +142,11 @@ Configure shared credentials and access endpoints at the organization level so G
 1. In the tenant repository, go to **Settings > Environments**.
 2. Create at least the `sit`, `prod`, and `deploy` Environments. The `sit` and `prod` Environments represent the SIT and production TapData environments. The `deploy` Environment is the resource import approval gate.
 3. For `deploy`, configure **Required reviewers**.
+
+   The following image shows where to configure required reviewers for the `deploy` Environment.
+
+   ![Configure GitHub Environment required reviewers](../../images/github_environments_required_reviewers.png)
+
 4. If user acceptance testing or production release approval also requires environment-level review, configure **Required reviewers** on the corresponding `aat` or `prod` Environment.
 5. If your release process includes development validation, performance testing, or user acceptance testing, create the corresponding Environments.
 6. Configure real connection values for the SIT, production, and any other enabled environments. Use one of the following formats:

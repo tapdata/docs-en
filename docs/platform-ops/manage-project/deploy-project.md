@@ -178,6 +178,9 @@ Use manual import when GitHub integration is not configured or when you need to 
 1. On the **Advanced Settings > Export/Import** page, click **Import**.
 2. Upload the archive exported from the development environment.
 3. Select a conflict handling policy, such as **Skip** or **Update existing configuration**.
-4. Click **Start Import**. TapData validates the file format and shows an import preview, including the affected connections, tasks, and APIs.
+4. Click **OK**. TapData validates the file format and shows an import preview, including the affected connections, tasks, and APIs.
+   The following image shows the import preview page, which is used to confirm the resources to be added or updated.
+
+   ![View project import preview](../../images/tapdata_import_project_preview.png)
 5. Review the preview and run the import.
 6. After import finishes, sign in to the target TapData environment. Update the real connection addresses, usernames, and passwords, test the database connections, verify task status and API availability, and then start the tasks.
