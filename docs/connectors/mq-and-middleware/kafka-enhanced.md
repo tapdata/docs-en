@@ -53,9 +53,9 @@ Since Kafka as a message queue only supports append operations, avoid duplicate 
 ## Limitations
 
 - **Data Type Adaptation**: As a source, Kafka's data types need to be adjusted according to the target data source's requirements, or corresponding table structures should be manually created on the target side to ensure compatibility.
-- **Message Delivery Guarantee**: Due to Kafka's `At least once` delivery semantics and append-only behavior, duplicate consumption may occur. Idempotency must be ensured on the target side to avoid duplicate data resulting from repeated consumption.
+- **Message Delivery Guarantee**: When Kafka is used as a source, duplicate consumption can still occur. Design the target for idempotent writes to avoid duplicate data. When Kafka-Enhanced is used as a target, it supports transactional writes and can work with the task-level exactly-once write capability to improve write consistency.
 - **Consumption Mode Limitation**: Consumption threads use different consumer group numbers, so be aware of the impact on consumption concurrency.
-- **Security Authentication Limitation**: Currently, only authentication-free Kafka instances are supported.
+- **Security Authentication**: Supports authentication-free and SASL username/password authentication. Select **PLAIN**, **SCRAM-SHA-256**, or **SCRAM-SHA-512** based on the authentication method of your Kafka instance.
 
 ## Connect Kafka-Enhanced
 
@@ -331,4 +331,3 @@ When configuring data replication or transformation tasks, and using Kafka-Enhan
 
 </TabItem>
 </Tabs>
-

@@ -14,6 +14,43 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.18.0
+
+### New Features
+
+- Added connection count metrics to [API Status Monitor](publish-apis/monitor-api-request.md), so you can view the connection status between API Server and the API database.
+- The [Db2 connector](connectors/on-prem-databases/db2.md) now supports TLS encryption settings to improve database connection security.
+- The [Kafka-Enhanced connector](connectors/mq-and-middleware/kafka-enhanced.md) now supports transactional writes as a target, improving exactly-once write consistency.
+
+### Enhancements
+
+- Improved [Aggregate node](data-transformation/aggregate-computing-node.md) processing by supporting multithreaded concurrent execution.
+- Improved API publishing model configuration. You can now load single-table models and merged models, and manually add, delete, or adjust fields.
+- Improved the task list by supporting custom display columns and task delay status.
+
+### Bug Fixes
+
+- Fixed an issue where the cluster overview status in the workbench was not updated promptly after an engine or cluster management service stopped.
+- Fixed an issue where email notifications were not sent properly after a node stopped unexpectedly in a multi-node cluster.
+- Fixed an issue where task retry alerts did not display task names correctly.
+- Fixed an issue where the management service continuously printed exception logs in specific scenarios.
+- Fixed an issue where tasks could fail in specific scenarios after full breakpoint resume was enabled.
+- Fixed an issue where the time operation node could cause task failures when processing date fields.
+- Fixed an issue in master-child merge tasks where expired child-table data was not cleaned up correctly after the association key between the primary table and child table changed.
+- Fixed an issue where a task remained in the **Running** state for a long time after cache rebuild completed.
+- Fixed an issue where filtering validation tasks by the **One-time Validation** type returned no results.
+- Fixed an issue where part of the connection string was not displayed correctly when viewing MongoDB data source details.
+- Fixed possible data inconsistency in specific MongoDB sharded cluster transformation scenarios.
+- Fixed frequent read timeouts that could occur in MongoDB mining tasks under specific load conditions.
+- Fixed an issue where the merged connection list was empty in shared mining tasks.
+- Fixed an issue where configuration could not be saved when OceanBase (Oracle mode) was used as a target connection.
+- Fixed an issue where SQL Server CDC exceptions did not trigger alerts after heartbeat detection was enabled.
+- Fixed an issue where Date field values could shift during incremental replication from SQL Server to SQL Server.
+- Fixed an issue where field length fixes from model comparison did not take effect when syncing PostgreSQL to SQL Server.
+- Fixed false data validation inconsistencies for all-null records when syncing PostgreSQL to Oracle.
+- Fixed an issue where Oracle incremental synchronization could become stuck after a small SCN rollback.
+- Fixed an issue where data validation tasks failed to connect to SQL Server in specific scenarios.
+- Fixed an issue where the `fields` parameter in API services did not filter fields in embedded documents.
 
 ## 4.17.0
 

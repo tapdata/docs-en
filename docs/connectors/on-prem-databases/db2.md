@@ -45,7 +45,7 @@ import TabItem from '@theme/TabItem';
   ```
 - In scenarios where the ReadLog size in Db2 is very large, incremental synchronization based on a specified time may encounter slow LRI lookup initially, potentially leading to a longer time to start incremental synchronization.
 - Due to variable-length fields in the DB2 database, DML operations may trigger space expansion, resulting in discrepancies between the expected and actual operation types in task monitoring or logs (e.g., insert and delete actions appearing within an update event). Although the log may not match expectations, data accuracy remains unaffected.
-- Deploying a raw log service to parse Db2 incremental data changes requires configuring the service with the same national language code as the Db2 database.
+- Deploying a raw log service to parse Db2 incremental data changes requires configuring the service with the same language code and country code as the Db2 database. To use raw log high availability, deploy the raw log service on multiple nodes and make sure the language code and country code are consistent across all nodes.
   ```bash
     # UTF-8 Language Code
     db2set db2codepage=1208
@@ -57,7 +57,9 @@ import TabItem from '@theme/TabItem';
 
 ## Considerations
 
-When capturing incremental data changes, periodic calls to the Db2 [ReadLog API](https://www.ibm.com/docs/zh/db2/11.5?topic=apis-db2readlog-read-log-records) may introduce load on the database and consume network bandwidth and disk I/O resources.
+- When capturing incremental data changes, periodic calls to the Db2 [ReadLog API](https://www.ibm.com/docs/zh/db2/11.5?topic=apis-db2readlog-read-log-records) may introduce load on the database and consume network bandwidth and disk I/O resources.
+
+- Connection tests automatically trigger LRI (Log Record Identifier) caching in the raw log service. In multi-node clusters, run the connection test multiple times to make sure each node is reached and caches the LRI. This helps avoid extra delay when a task first enters CDC or switches nodes and needs to look up the LRI again.
 
 ## Preparation
 
@@ -158,6 +160,8 @@ Before connecting to a Db2 database, you need to complete account authorization 
      * **Additional Connection String Parameters**: Additional connection parameters, default is empty.
      * **User** and **Password**: Enter the database username and password.
      * **Grpc Server Host**, **Grpc Server Port**: Contact the [TapData Team](../../appendix/support.md) for raw log collection components to capture Db2 incremental data, default service port is **50051**.
+     * **High Availability**: After this option is enabled, you can add multiple raw log service nodes in **Raw Log Cluster** to improve the availability of the Db2 raw log capture path.
+     * **Raw Log Cluster**: Click **Add**, then enter the address and port for each raw log service. When a CDC task starts, TapData selects a raw log service by preferring local services first and remote services second. If multiple available services have the same priority, TapData assigns one randomly.
      
    * **Advanced Settings**
       * **Time Zone**: Default is UTC (0).  If changed to another timezone, it will impact the synchronization time, particularly for fields without timezone information, such as TIMESTAMP and TIME types. However, DATE types will remain unaffected.
@@ -170,6 +174,8 @@ Before connecting to a Db2 database, you need to complete account authorization 
         :::tip
         After referencing and starting the data replication/development task, the heartbeat task will be activated. At this point, you can click **View heartbeat task** to monitor the task.
         :::
+
+   * **SSL Settings**: If TLS/SSL is enabled on the Db2 server, enable **Use SSL**, then upload the **CA File**, **Client Certificate File**, and **Client Key File** according to the database certificate configuration. If required, enter the **Client Key Password**.
 
 6. Click **Test**. If the test passes, click **Save**.
 
