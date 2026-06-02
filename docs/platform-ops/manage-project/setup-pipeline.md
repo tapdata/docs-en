@@ -9,7 +9,7 @@ Prepare the following resources and information before you configure the pipelin
 | Resource | Requirement |
 | --- | --- |
 | **GitHub organization** | You have administrator access to at least one GitHub organization. The Worker repository and tenant repositories can be in the same organization. |
-| **TapData environments** | You have at least one system integration testing (SIT) environment and one production environment. Add development, performance testing, or user acceptance testing environments as needed. |
+| **TapData environments** | We recommend preparing development, testing, and production TapData environments. If you do not need a development environment, prepare at least testing and production environments. |
 | **Internal runner host** | You have at least one Linux server, Ubuntu 20.04 or later recommended, that can access GitHub and the TapData service ports for all target environments. Install `git`, `bash`, `jq`, and `curl`, and register the runner with the `tapdata` label. For more information, see [Adding self-hosted runners](https://docs.github.com/en/actions/how-tos/manage-runners/self-hosted-runners/add-runners). |
 | **Database connection details** | You have obtained the connection addresses, usernames, and passwords for each environment from the database administrator. |
 | **Deployment approver** | You have designated at least one GitHub account to approve resource imports. |
@@ -27,15 +27,51 @@ Automated deployment uses two types of GitHub repositories:
 
 ### Environment model
 
-Start with SIT and production, then add intermediate environments if your release process requires them. The following lowercase values are fixed names used by GitHub Environments and workflows:
+Plan business environments around development, testing, and production. In customer-facing communication, use the business environment names. In GitHub Environments and workflows, use the environment codes that the pipeline recognizes.
 
-- `sit`: System integration testing environment. A pushed Git tag, such as `v1.2.3`, triggers deployment to this environment.
-- `prod`: Production environment. Deployments are triggered manually from GitHub Actions. To use it, add this option to `workflow_dispatch.target_env.options` in the tenant repository workflow.
-- `deploy`: Resource import approval gate. This environment does not store credentials. It is used to pause the workflow for manual approval before connections, tasks, or APIs are imported.
+| Business phase | Default environment code | Default trigger | Description |
+| --- | --- | --- | --- |
+| Development | `dev` | Automatically triggered after a merge to the `main` branch | Optional. If you do not need automated deployment to development, adjust the tenant repository workflow. |
+| Testing or acceptance | `sit` | Automatically triggered when a Git tag is pushed | Optional. |
+| Production | `prod` | Manually triggered | Recommended after testing or acceptance passes. Operations teams usually trigger this release manually. |
+| Resource import approval gate | `deploy` | Entered automatically by the deployment workflow | Required. This is not a business environment and does not store TapData URLs or connection credentials. |
 
 :::tip
 
-If you use additional stages, create environments such as `dev` for development validation, `lpt` for performance testing, or `aat` for user acceptance testing. The official tenant template deploys to `dev` after changes are merged into `main`. If you do not use a `dev` environment, update the tenant deployment workflow so merged Pull Requests do not trigger an unconfigured environment.
+This article uses "testing or acceptance environment" for the business phase. `sit` is only the default environment code in the official template. To change it to `test`, `uat`, or another custom code, update the tenant repository workflow, Worker script validation logic, Secrets and Variables prefixes, and rollback options together.
+
+:::
+
+**Adjust the deployment workflow for customer environments**
+
+Environment counts and naming conventions can vary by customer. When you adjust the workflow, update the GitHub Environment, URL and Access Code, tenant repository workflow, and release steps together. Do not change only one part.
+
+| Customer environment flow | Recommended configuration | Adjustment notes |
+| --- | --- | --- |
+| Development -> testing -> production | Keep the three business environments and the `deploy` approval gate. | Merges to `main` deploy to development. Tags deploy to testing. Production is released manually. |
+| Development -> UAT -> production | Use the testing or acceptance environment for the customer's UAT stage. | You do not need an extra environment. Configure `DEV_*`, testing environment prefixes, and `PROD_*` variables based on the default environment code. |
+| Testing -> production | Keep only testing, production, and the `deploy` approval gate. | If automated development deployment is not required, delete the `push.branches` and `push.paths` triggers from the tenant repository workflow. Keep tag and manual release triggers. |
+
+The following example shows where to configure `workflow_dispatch.target_env.options` in the tenant repository workflow. To release to production, add `prod` to this option.
+
+```yaml
+# Other configuration omitted
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: 'Target environment'
+        required: true
+        type: choice
+        options:
+          - dev
+          - sit
+          - prod
+# Other configuration omitted
+```
+
+:::tip
+
+Check the rollback workflow as well. In `tapdata-rollback.yml`, keep only the environments that can actually be rolled back in `workflow_dispatch.target_env.options`.
 
 :::
 
@@ -48,16 +84,27 @@ TapData masks sensitive fields in exported project configuration. Repositories s
 - Store shared values, such as `GH_DEPLOY_TOKEN`, TapData URLs, and TapData access codes, as organization-level Secrets or Variables.
 - Store environment-specific connection values as Environment Secrets or Variables.
 
-### Personal access token and naming rules
+### GitHub permissions and credentials
 
-The `GH_DEPLOY_TOKEN` is used by the runner to pull deployment scripts from the Worker repository and by TapData to push configuration and create Pull Requests in tenant repositories.
+Automated deployment requires access to GitHub repositories, TapData environments, and database connection credentials. We recommend splitting these settings instead of putting all information at the same level.
 
-Use the following permission model:
+| Configuration item | Location | Purpose | Recommended setting |
+| --- | --- | --- | --- |
+| `GH_DEPLOY_TOKEN` | GitHub organization-level or tenant repository-level Secret | Lets the runner pull Worker repository scripts, read tenant repository configuration, and push branches and create Pull Requests when TapData exports to Git. | A fine-grained PAT must have at least read access to the Worker repository and read/write access to `Contents` and `Pull requests` in the tenant repository. If it needs to write `.github/workflows/`, also grant Workflows write permission. A classic PAT can use the `repo` and `workflow` scopes. |
+| `{ENV}_TAPDATA_ACCESS_CODE` | GitHub organization-level or tenant repository-level Secret | Gets the access token for the specified TapData environment. | Configure one value for each business environment, such as testing and production. |
+| `{ENV}_TAPDATA_URL` | GitHub organization-level or tenant repository-level Variable | Specifies the target TapData environment URL. | Configure one value for each business environment, such as testing and production. |
+| Database connection credentials | Secrets and Variables in the corresponding business Environment of the tenant repository | Injects real connection addresses, usernames, and passwords during deployment. | Configure these values under development, testing, production, and other business Environments. Do not configure them under `deploy`. |
+| Runner Group access | GitHub organization **Settings > Actions > Runner groups** | Allows tenant repositories to use self-hosted runners. | Grant the Runner Group to the tenant repositories that execute deployment. Allow public repositories only when you explicitly accept the risk. |
 
-- If the Worker repository and tenant repositories are in the same organization, use a fine-grained personal access token (PAT). Grant `Contents` read access to the Worker repository, and grant `Contents` and `Pull requests` read and write access to tenant repositories.
-- If the repositories are in different organizations, you can use a classic PAT with the `repo` and `workflow` scopes.
+:::tip
 
-Secrets and Variables for TapData connections use the exported TapData connection name as the lookup key, with lowercase letters converted to uppercase. The worker does not replace spaces or hyphens with underscores. For compatibility with GitHub Secrets and Variables, name TapData connections with letters, numbers, and underscores before export. For example, the connection name `oracle_source` uses the prefix `ORACLE_SOURCE`.
+If Secrets and Variables are configured at the organization level, make sure the tenant repository is authorized to use them. If the values serve only one tenant repository, you can configure them directly in that repository.
+
+:::
+
+### Connection credential naming rules
+
+Secrets and Variables for TapData connections use the exported TapData connection name as the lookup key after converting letters to uppercase. GitHub Secret and Variable names support only letters, numbers, and underscores, and must start with a letter or underscore. We recommend using the same rule for TapData connection names. For example, the connection name `oracle_source` maps to the prefix `ORACLE_SOURCE`. Do not use spaces, hyphens (`-`), or Chinese characters in connection names, or deployment might not find the corresponding credentials.
 
 ## Initialize the pipeline
 
@@ -86,7 +133,7 @@ Use a two-repository model to separate deployment logic from business configurat
        └── tapdata-rollback.yml     # Tenant rollback workflow template
    ```
 
-2. Create a tenant repository for the business team. Use a name that matches the TapData project name when possible, for example `user-center-sync`.
+2. Create a tenant repository for the business team. Use a name that matches the TapData project name when possible, for example `user-center-sync`. Confirm that the default branch is `main`. If the default branch is still `master`, change it to `main` in GitHub repository settings, or update the watched branch in the workflow.
 
 3. In the tenant repository, add two lightweight workflow route files copied from `tenant-template/.github/workflows/` in the Worker repository:
 
@@ -99,64 +146,60 @@ Use a two-repository model to separate deployment logic from business configurat
 
 4. Commit the workflow files and push them to the `main` branch of the tenant repository.
 
-### Step 2: Configure organization-level Secrets and Variables
+### Step 2: Configure GitHub Secrets and Variables
 
-Configure shared credentials and access endpoints at the organization level so GitHub Actions can connect to TapData environments.
+Configure repository access credentials, TapData access credentials, and service URLs so GitHub Actions can connect to and operate different TapData environments. The following example uses organization-level configuration. If the values serve only one tenant repository, you can configure the same Secrets and Variables in that repository.
 
 1. Sign in to GitHub with an account that has repository permissions, and go to **Settings > Developer settings > Personal access tokens**.
 
-2. Generate a token named `tapdata-deploy`. Use an expiration of 90 days or less, and copy the token immediately after it is created.
+2. Generate a token named `tapdata-deploy`. Use an expiration of 90 days or less, grant only the minimum permissions listed in the permissions table above, and copy the token immediately after it is created.
 
    :::tip
-   If the Worker repository and tenant repositories are in the same GitHub organization, prefer a fine-grained PAT. Grant `Contents` read access to the Worker repository, and grant `Contents` and `Pull requests` read and write access to tenant repositories.
+   If the Worker repository and tenant repository are in the same GitHub organization, use a fine-grained PAT when possible. If you cannot assign different permissions to different repositories, use **Only select repositories** to limit the token scope to the Worker repository and the tenant repository that will actually run deployment.
    :::
 
-3. Go to **Organization settings > Secrets and variables > Actions**.
+3. Go to **Organization settings > Secrets and variables > Actions**, or go to the tenant repository's **Settings > Secrets and variables > Actions**.
 
 4. On the **Secrets** tab, add the following encrypted values:
 
-   ![Set GitHub Actions Secrets 和 Variables](../../images/github_actions_secrets_variables.png)
+   ![Configure GitHub Actions Secrets and Variables](../../images/github_actions_secrets_variables.png)
 
    | Secret name | Description |
    | --- | --- |
    | `GH_DEPLOY_TOKEN` | The PAT created in the previous step. |
-   | `SIT_TAPDATA_ACCESS_CODE` | Access code for the SIT TapData instance. |
+   | `{ENV}_TAPDATA_ACCESS_CODE` for the testing environment | Access code for the testing TapData instance. If you use the official template, the name is `SIT_TAPDATA_ACCESS_CODE`. |
    | `PROD_TAPDATA_ACCESS_CODE` | Access code for the production TapData instance. |
-   | `{ENV}_TAPDATA_ACCESS_CODE` | Optional. Add an access code for each intermediate environment you enable, such as `DEV_TAPDATA_ACCESS_CODE`. |
-   | `VAULT_ENCRYPTION_KEY` | Optional. Encrypts the generated `vault.json` credential file. |
+   | `{ENV}_TAPDATA_ACCESS_CODE` | Optional. If the development environment is enabled, add the access code for that environment, such as `DEV_TAPDATA_ACCESS_CODE`. |
+   | `VAULT_ENCRYPTION_KEY` | Optional. Encrypts the `vault.json` credential file generated by the pipeline. |
 
 5. On the **Variables** tab, add the following plain-text values:
 
    | Variable name | Example value |
    | --- | --- |
-   | `SIT_TAPDATA_URL` | SIT environment URL, such as `http://10.0.0.2:3030`. |
+   | `{ENV}_TAPDATA_URL` for the testing environment | Testing environment URL, such as `http://10.0.0.2:3030`. If you use the official template, the name is `SIT_TAPDATA_URL`. |
    | `PROD_TAPDATA_URL` | Production environment URL. |
-   | `{ENV}_TAPDATA_URL` | Optional. Add a URL for each intermediate environment you enable, such as `DEV_TAPDATA_URL`. |
+   | `{ENV}_TAPDATA_URL` | Optional. If the development environment is enabled, add the URL for that environment, such as `DEV_TAPDATA_URL`. |
 
    :::tip
-   To get a TapData access code, sign in to the corresponding TapData environment as an administrator and go to **System Settings > User Management** to view the user information. In some environments, the user can also copy the access code from **Profile** in the upper-right corner.
+   To get a TapData access code, sign in to the corresponding TapData environment as an administrator and go to **System Settings > User Management** to view the user information. In some environments, the user can also copy the access code from **Personal Settings** in the upper-right corner.
    :::
 
 ### Step 3: Create Environments and configure connection values
 
 1. In the tenant repository, go to **Settings > Environments**.
-2. Create at least the `sit`, `prod`, and `deploy` Environments. The `sit` and `prod` Environments represent the SIT and production TapData environments. The `deploy` Environment is the resource import approval gate.
-3. For `deploy`, configure **Required reviewers**.
+2. Create the business Environments that are actually used, such as development, testing, and production, and create the fixed approval gate `deploy`.
+3. For `deploy`, configure **Required reviewers**. This Environment acts as the resource import approval gate. We recommend adding an operations or release-owner team and enabling **Prevent self-review** so the person who triggers deployment cannot approve their own change.
 
    The following image shows where to configure required reviewers for the `deploy` Environment.
 
    ![Configure GitHub Environment required reviewers](../../images/github_environments_required_reviewers.png)
 
-4. If user acceptance testing or production release approval also requires environment-level review, configure **Required reviewers** on the corresponding `aat` or `prod` Environment.
-5. If your release process includes development validation, performance testing, or user acceptance testing, create the corresponding Environments.
-6. Configure real connection values for the SIT, production, and any other enabled environments. Use one of the following formats:
+4. `deploy` is only an approval gate. Do not configure TapData URLs, access codes, or connection credentials under it. Configure those values in testing, production, and other business Environments.
+5. If production release itself requires environment-level approval, configure **Required reviewers** separately in the `prod` Environment.
+6. Configure real connection values under each active environment, such as development, testing, and production. Do not add the environment prefix to connection credential names under an Environment. Use one of the following formats:
 
-   - **URI format**: Use this format for databases such as MongoDB where the connection string includes the username and password. Store the value as a Secret named `{PREFIX}_URI`, for example `FDM_URI`.
-   - **Host and port format**: Use this format for databases such as PostgreSQL, Oracle, and MySQL. Store the address and username as Variables, and store the password as a Secret. Use names such as `{PREFIX}_URL`, `{PREFIX}_USER`, and `{PREFIX}_PASSWORD`. For a TapData connection named `oracle_source`, configure `ORACLE_SOURCE_URL`, `ORACLE_SOURCE_USER`, and `ORACLE_SOURCE_PASSWORD`.
-
-   :::caution
-   For automated deployment with the default worker, avoid connection names that contain spaces or hyphens. For example, rename `oracle-source` to `oracle_source` in TapData and export the project again before configuring `ORACLE_SOURCE_URL`, `ORACLE_SOURCE_USER`, and `ORACLE_SOURCE_PASSWORD`.
-   :::
+   - **URI format**: Use this for databases such as MongoDB where the connection string includes the username and password. Store it as a Secret named `{PREFIX}_URI`, such as `FDM_URI`.
+   - **Host and port format**: Use this for PostgreSQL, Oracle, MySQL, and similar databases. Store the address and username as Variables, and store the password as a Secret. Use names such as `{PREFIX}_URL`, `{PREFIX}_USER`, and `{PREFIX}_PASSWORD`. For a TapData connection named `oracle_source`, configure `ORACLE_SOURCE_URL`, `ORACLE_SOURCE_USER`, and `ORACLE_SOURCE_PASSWORD`.
 
    If multiple connections can share the same fallback values, configure `DEFAULT_URL`, `DEFAULT_USER`, and `DEFAULT_PASSWORD`.
 
@@ -166,7 +209,13 @@ GitHub-hosted runners usually cannot access TapData services and databases in an
 
 1. In the GitHub organization, go to **Settings > Actions > Runners**, and click **New self-hosted runner**.
 2. On the prepared Linux server, follow the GitHub setup commands to download, register, and start the runner. Add the `tapdata` label during registration.
-3. Return to the **Runners** page and confirm that the runner status is `Idle`. Verify that it has the `tapdata` label and can access the TapData service ports for all target environments.
+3. If you use a Runner Group, go to **Settings > Actions > Runner groups** and confirm that the Runner Group is authorized for the tenant repository that will run deployment. Allow public repositories only when you explicitly accept the security risk.
+
+   The following figure shows the Repository access area for Runner Group configuration.
+
+   ![Configure Runner Group access](../../images/github_runner_group_access.png)
+
+4. Return to the **Runners** page and confirm that the runner status is `Idle`. Verify that it has the `tapdata` label and can access the TapData service ports for all target environments.
 
 ## Validate the setup
 
@@ -174,9 +223,11 @@ Before the first automated deployment, check the following items:
 
 - [ ] The Worker repository is **Internal** and contains the deployment workflow, rollback workflow, and core scripts.
 - [ ] The `{WORKER_REPO}` placeholder in tenant repository workflows has been replaced with the real Worker repository path.
-- [ ] Organization-level Secrets and Variables include `GH_DEPLOY_TOKEN`, TapData access codes, and TapData URLs for SIT and production.
-- [ ] The tenant repository contains the `sit`, `prod`, and `deploy` Environments, plus any intermediate Environments that are enabled.
-- [ ] Connection values are configured for SIT, production, and other enabled environments according to the naming rules.
-- [ ] At least one self-hosted runner is `Idle`, has the `tapdata` label, and can access all target TapData environments.
+- [ ] The tenant repository default branch is `main`, or the watched branch in the workflow has been adjusted.
+- [ ] GitHub Secrets and Variables include `GH_DEPLOY_TOKEN`, access codes, and TapData URLs for the active business environments, and the tenant repository is authorized to use them.
+- [ ] The tenant repository contains the active business Environments and the fixed approval gate `deploy`.
+- [ ] If the customer does not need automated deployment to development, the tenant repository workflow triggers have been adjusted.
+- [ ] Connection values are configured for active environments according to the naming rules.
+- [ ] At least one self-hosted runner is `Idle`, has the `tapdata` label, the Runner Group is authorized for the tenant repository, and the runner can access all target TapData environments.
 
 After the checklist is complete, continue with [Create and deploy a project](deploy-project.md) to package TapData configuration and release it to a target environment.

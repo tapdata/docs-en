@@ -8,12 +8,12 @@ This guide covers both automated deployment and manual import/export. If you pla
 
 ## Example scenario
 
-This guide uses a common real-time data warehouse scenario. A team synchronizes data from an Oracle source database to a Doris warehouse. The team has already verified wide-table synchronization tasks and an external API in the development environment. The next step is to promote the same configuration to system integration testing (SIT), and then to production.
+This guide uses a common real-time data warehouse scenario. A team synchronizes data from an Oracle source database to a Doris warehouse. The team has already verified wide-table synchronization tasks and an external API in the development environment. The next step is to promote the same configuration to a testing or acceptance environment, and then to production.
 
 The following workflow shows how to create a project, export configuration, deploy automatically, and publish manually when needed.
 
 :::tip
-Use the same connection names across environments. During automated deployment, TapData matches connection names to GitHub Secrets and Variables, then injects the real address, username, and password for the target environment. Use connection names that contain only letters, numbers, and underscores, such as `oracle_source`.
+Use the same connection names across environments. Use names that contain only letters, numbers, and underscores, such as `oracle_source`. During automated deployment, TapData matches connection names to GitHub Secrets and Variables, then injects the real address, username, and password for the target environment.
 :::
 
 ## Step 1: Create a project and select resources
@@ -34,6 +34,10 @@ Package the team's tasks and API as one project. The project becomes the unit th
 
 ## Step 2: Connect the Git repository
 
+:::tip
+If you do not want to integrate with GitHub, skip this step. In [Step 3](#step-3-export-the-configuration), choose file export and import the archive manually. If you use Git export, make sure the repository URL is writable and the personal access token has permission to write contents and create Pull Requests in the tenant repository.
+:::
+
 Connect the TapData project to the GitHub tenant repository. After the connection is configured, exports can be pushed to the repository and opened as Pull Requests without downloading and uploading files manually.
 
 1. In the upper-right corner, click **Git Configuration**.
@@ -42,10 +46,6 @@ Connect the TapData project to the GitHub tenant repository. After the connectio
    ![Configure the Git repository](../../images/git_config.png)
 
 3. Click **Save**.
-
-:::tip
-If you do not want to integrate with GitHub, skip this step. In [Step 3](#step-3-export-the-configuration), choose file export and import the archive manually.
-:::
 
 ## Step 3: Export the configuration
 
@@ -106,34 +106,34 @@ Notes:
 
 ## Step 4: Optional: Merge the Pull Request to deploy to development validation
 
-If the `dev` environment is configured, merge the Pull Request in GitHub to deploy the exported configuration to the development validation environment. This step verifies that the configuration files can be imported before you promote them further. If your process only uses SIT and production, skip this stage and adjust the tenant deployment workflow accordingly.
+If the `dev` environment is configured, merge the Pull Request in GitHub to deploy the exported configuration to the development validation environment. This step verifies that the configuration files can be imported before you promote them further. If your process only uses testing and production, skip this stage and adjust the tenant deployment workflow accordingly.
 
 1. In the GitHub tenant repository, open the Pull Request created by TapData. Review the exported configuration, then click **Merge**.
 2. The merge triggers the GitHub Actions `TapData Deploy` workflow and deploys the configuration to the development validation environment.
 3. If the preview shows changes to connections, tasks, or APIs, approve the `deploy` gate on the **Actions** page.
 4. After deployment finishes, sign in to the development validation TapData environment. Verify that `CRM_TO_DW`, `ORDER_TO_DW`, and `customer-api` were imported correctly and that the connections pass the connection test.
 
-## Step 5: Create a tag to deploy to SIT
+## Step 5: Create a tag to deploy to testing or acceptance
 
-After the configuration is ready for testing, create and push a Git tag to trigger deployment to the SIT environment.
+After the configuration is ready for the next validation environment, create and push a Git tag. The official template deploys tags to the testing or acceptance environment by default.
 
 ```bash
 git tag v1.0.0
 git push origin v1.0.0
 ```
 
-After the tag is pushed, GitHub Actions starts the SIT deployment. If the preview shows changes to connections, tasks, or APIs, approve the `deploy` gate before the import continues.
+After the tag is pushed, GitHub Actions starts deployment to the corresponding validation environment. If the preview shows changes to connections, tasks, or APIs, approve the `deploy` gate before the import continues.
 
-When deployment finishes, complete business validation in the SIT environment. Check functional correctness, data volume, synchronization latency, and other acceptance criteria. If validation passes, continue to production deployment.
+When deployment finishes, complete business validation in the testing or acceptance environment. Check functional correctness, data volume, synchronization latency, and other acceptance criteria. If validation passes, continue to production deployment.
 
 ## Step 6: Trigger production deployment manually
 
-After SIT validation passes, deploy the same tag to production. Using the same tag ensures that production receives the exact configuration that passed testing.
+After testing or acceptance validation passes, deploy the same tag to production. Using the same tag ensures that production receives the exact configuration that passed validation.
 
-The official tenant template includes `dev`, `sit`, and `lpt` as manual deployment options by default. To deploy to `prod`, add `prod` to the tenant workflow options first. If your process includes performance testing or user acceptance testing, deploy to `lpt` or `aat` before production in the same way.
+The official tenant template does not include `prod` in the manual deployment options by default. To deploy to production, add `prod` to the tenant workflow options first.
 
 1. In the GitHub tenant repository, go to **Actions**, and select `TapData Deploy`.
-2. Click **Run workflow**. For **Branch**, select the tag, such as `v1.0.0`. For **Target environment**, select `prod`. If you need to deploy to performance testing or user acceptance testing first, select the configured `lpt` or `aat` environment.
+2. Click **Run workflow**. For **Branch**, select the tag, such as `v1.0.0`. For **Target environment**, select `prod`.
 3. Click **Run workflow**. If the preview shows changes to connections, tasks, or APIs, approve the `deploy` gate on the **Actions** page.
 4. After deployment finishes, sign in to the target TapData environment. Verify task status and API availability, then complete the production release.
 
@@ -164,7 +164,18 @@ With GitHub-based deployment, real connection addresses, usernames, and password
 **Q: The deployment succeeded, but the database password was not injected. What should I check?**
 
 - Check whether connection credentials are configured in the target Environment Secrets or Variables, not repository-level Secrets.
-- Check whether the variable names exactly match the connection names in TapData after applying the naming rules.
+- Check whether the variable names exactly match the connection names in TapData after applying the naming rules. When credentials are configured under an Environment, do not add the environment prefix to the credential names again.
+- Check whether the TapData connection name contains only letters, numbers, and underscores, and starts with a letter or underscore. If the connection name contains hyphens, spaces, or Chinese characters, GitHub Secrets and Variables might not be created with matching names. Rename the connection and export the project again.
+
+**Q: Git export reports `git-receive-pack not permitted` or cannot push. What should I check?**
+
+- Check whether the personal access token in Git configuration has read and write permissions for `Contents` and `Pull requests` in the tenant repository.
+- For a fine-grained PAT, check whether **Resource owner** and **Repository access** include the current tenant repository.
+- If this change includes files under `.github/workflows/`, also make sure the token has write permission for Actions or Workflows.
+
+**Q: Import fails and reports `tag does not exist`. What should I do?**
+
+The target environment might be missing a tag, Agent, or another runtime resource referenced by a task in the source environment. Create a resource with the same name in the target environment, or remove bindings that are not suitable for cross-environment deployment from the source environment and export again.
 
 **Q: What should I do if the import script fails?**
 

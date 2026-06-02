@@ -4,7 +4,7 @@ Project management packages TapData connections, tasks, APIs, and related config
 
 ## Why use projects
 
-Enterprise TapData deployments usually include multiple environments, such as development, system integration testing, performance testing, and production. Each environment has its own source databases, target databases, service endpoints, accounts, and network settings.
+Enterprise TapData deployments usually include multiple environments, such as development, testing, performance validation, and production. Each environment has its own source databases, target databases, service endpoints, accounts, and network settings.
 
 Without a release process, engineers must recreate or update connections, tasks, and APIs in each environment by hand. As the number of resources grows, teams are more likely to miss dependencies, use the wrong parameters, or discover configuration drift only after a production incident. Manual promotion also makes it difficult to answer who changed what and when.
 
@@ -26,7 +26,7 @@ Projects let you move related resources across environments as one package. This
 
 When a data integration requirement is ready, developers configure and verify tasks, APIs, and connections in a source environment. They then export the configuration as a TapData project and commit it to a GitHub repository for version control.
 
-When the configuration needs to move to the next environment, a GitHub Actions workflow starts the deployment. The workflow selects the target environment, such as system integration testing, performance testing, or production, and loads the corresponding connection details from GitHub Environment Secrets and Variables.
+When the configuration needs to move to the next environment, a GitHub Actions workflow starts the deployment. The workflow selects the target environment, such as testing, performance validation, or production, and loads the corresponding connection details from GitHub Environment Secrets and Variables.
 
 Before importing resources, the pipeline previews the differences. After approval, it imports the configuration into the target TapData environment. Engineers no longer need to sign in to each environment and recreate resources one by one. Configuration files stay versioned, credentials stay isolated, and deployment history stays traceable.
 
