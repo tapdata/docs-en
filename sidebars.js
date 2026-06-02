@@ -406,6 +406,16 @@ const sidebars = {
      items: [
             {
               type: 'category',
+              label: 'Project Management',
+              link: {type: 'doc', id: 'platform-ops/manage-project/README'},
+              items:[
+                     'platform-ops/manage-project/introduction',
+                     'platform-ops/manage-project/setup-pipeline',
+                     'platform-ops/manage-project/deploy-project',
+                    ]
+             },
+            {
+              type: 'category',
               label: 'Production Deployment',
               link: {type: 'doc', id: 'platform-ops/production-deploy/README'},
               items:[
