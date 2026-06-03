@@ -1,6 +1,6 @@
 # Paimon
 
-Apache Paimon is a lake format that lets you build a real-time Lakehouse with Flink and Spark. TapData can stream data into Paimon tables for an always-up-to-date data lake.
+Apache Paimon is a data lake format that lets you build a real-time Lakehouse with Flink and Spark. TapData supports using Paimon as a source or target database for real-time data lake workflows.
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -15,6 +15,13 @@ Paimon 0.6 and later (0.8.2+ recommended)
 
 DML only: INSERT, UPDATE, DELETE
 
+:::tip
+
+- As a source, Paimon supports full data reads and incremental reads based on Paimon snapshots. DDL event collection is not supported.
+- As a target, Paimon does not support runtime dynamic schema changes. Create or adjust the target table schema before you start the task.
+
+:::
+
 ## Supported data types
 
 All Paimon 0.6+ types. To preserve precision, follow the [official docs](https://paimon.apache.org/docs/master/concepts/spec/fileformat/) when mapping columns—for example, use INT32 for DATE in Parquet files.
@@ -25,7 +32,10 @@ Add a [Type Modification Processor](../../data-transformation/process-node.md#ty
 
 ## Considerations
 
-- To avoid write conflicts and reduce compaction pressure, disable multi-threaded writes in the target node, set the write batch size to 1,000 rows, and set the timeout to 1,000 ms.
+- When Paimon is used as a source, TapData must read Paimon warehouse metadata and table data. Make sure the TapData Agent can access the warehouse path and has permissions to list databases and tables, read table schemas, and read data files.
+- When Paimon is used as a source for incremental synchronization, TapData reads changes based on Paimon snapshots. When a task first enters incremental synchronization and no checkpoint is available, TapData starts reading after the latest snapshot and does not replay historical changes before that snapshot.
+- When reading update events from a Paimon source, TapData emits change records based on Paimon RowKind. If the downstream system depends on native UPDATE semantics, verify update and delete handling in a test environment first.
+- To avoid write conflicts and reduce compaction pressure when syncing data to Paimon, disable multi-threaded writes in the target node, set the write batch size to 1,000 rows, and set the timeout to 1,000 ms.
 - Always define a primary key for efficient upserts and deletes; for large tables, use partitioning to speed up queries and writes.
 - Paimon supports primary keys only (no secondary indexes) and does not allow runtime schema evolution.
 - When Paimon is used as the target and soft delete is enabled, TapData converts `DELETE` operations into `UPDATE` operations with a delete marker. Because Paimon updates require complete row data, the source `DELETE` event must provide the full before image; otherwise, fields other than the primary key may be written as `null`. If the source database is MongoDB 6.0 or later, enable **[Document Pre-image](../on-prem-databases/mongodb.md#node-advanced-features)**. For other source databases, ensure that CDC logs contain the complete row data before the `DELETE` operation.
@@ -42,48 +52,53 @@ Add a [Type Modification Processor](../../data-transformation/process-node.md#ty
 
    **Basic Settings**
    - **Name**: Enter a meaningful and unique name.
-   - **Type**: Only supports using Paimon as a target database.
+   - **Type**: Supports using Paimon as a source or target database.
    - **Warehouse Path**: Enter the root path for Paimon data based on the storage type.
      - S3: `s3://bucket/path`
      - HDFS: `hdfs://namenode:port/path`
      - OSS: `oss://bucket/path`
      - Local FS: `/local/path/to/warehouse`
+
+     Make sure the TapData Agent can access this path. As a source, Paimon requires permissions to read warehouse metadata and table data. As a target, it also requires write, create, and delete permissions.
    - **Storage Type**: TapData supports S3, HDFS, OSS, and Local FS, with each storage type having its own connection settings.
 
      ```mdx-code-block
      <Tabs className="unique-tabs">
      <TabItem value="S3" default>
      ```
-     Use this option for any S3-compatible object store—AWS S3, MinIO, or private-cloud solutions. Supply the endpoint, keys, and region (if required) so TapData can write Paimon data directly to your bucket.
+     Use this option for any S3-compatible object store—AWS S3, MinIO, or private-cloud solutions. Supply the endpoint, keys, and region (if required) so TapData can read from or write to Paimon data in your bucket.
      - **S3 Endpoint**: full URL including protocol and port, e.g. `http://192.168.1.57:9000/`
-     - **S3 Access Key**: the Access-Key ID that owns read/write permission on the bucket/path
+     - **S3 Access Key**: the Access-Key ID used to access the bucket/path
      - **S3 Secret Key**: the corresponding Secret-Access-Key
      - **S3 Region**: the region where the bucket was created, e.g. `us-east-1`
+     - **Permission requirements**: As a source, the access key must be able to list buckets or directories and read objects. As a target, it also needs permissions to write and delete objects.
 
      </TabItem>
 
      <TabItem value="HDFS">
-     Choose this when your warehouse sits on Hadoop HDFS or any HCFS-compatible cluster. TapData writes through the standard HDFS client, so give it the NameNode host/port and the OS user it should impersonate.
+     Choose this when your warehouse sits on Hadoop HDFS or any HCFS-compatible cluster. TapData reads and writes through the standard HDFS client, so give it the NameNode host/port and the OS user it should impersonate.
 
      - **HDFS Host**: NameNode hostname or IP, e.g. `192.168.1.57`
      - **HDFS Port**: NameNode RPC port, e.g. `9000` or `8020`
-     - **HDFS User**: OS user that TapData will impersonate when writing, e.g. `hadoop` 
+     - **HDFS User**: OS user that TapData will impersonate, e.g. `hadoop`
+     - **Permission requirements**: As a source, the HDFS user must have read and execute permissions on the warehouse path and its subdirectories. As a target, it also needs write, create, and delete permissions.
 
      </TabItem>
 
      <TabItem value="OSS">
-     Pick this for Alibaba Cloud OSS or any other OSS-compatible provider. Enter the public or VPC endpoint, the access key pair, and TapData will create Paimon files inside the bucket you specify.
+     Pick this for Alibaba Cloud OSS or any other OSS-compatible provider. Enter the public or VPC endpoint and access key pair so TapData can read from or write to Paimon data in the bucket you specify.
 
      - **OSS Endpoint**: VPC or public endpoint, e.g. `https://oss-cn-hangzhou.aliyuncs.com` (do **not** include the bucket name)
-     - **OSS Access Key**: Access-Key ID that has read/write permission on the bucket/path
+     - **OSS Access Key**: Access-Key ID used to access the bucket/path
      - **OSS Secret Key**: the corresponding Access-Key Secret
+     - **Permission requirements**: As a source, the access key must be able to list buckets or directories and read objects. As a target, it also needs permissions to write and delete objects.
 
      </TabItem>
 
      <TabItem value="Local">
 
      **Local filesystem**:
-     Select this option if you want to store the Paimon warehouse on a local disk or an NFS mount that is visible to the TapData server. Make sure the directory is writable by the TapData OS user and that enough free space is available for both data and compaction temporary files.
+     Select this option if you want to store the Paimon warehouse on a local disk or an NFS mount that is visible to the TapData server. As a source, the TapData Agent OS user must have read permissions on the warehouse path and its subdirectories. As a target, it also needs write, create, and delete permissions. Make sure enough free space is available for both data and compaction temporary files.
 
      </TabItem>
      </Tabs>
