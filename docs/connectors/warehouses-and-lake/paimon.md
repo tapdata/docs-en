@@ -1,9 +1,5 @@
 # Paimon
 
-import Content1 from '../../reuse-content/_enterprise-and-community-features.md';
-
-<Content1 />
-
 Apache Paimon is a lake format that lets you build a real-time Lakehouse with Flink and Spark. TapData can stream data into Paimon tables for an always-up-to-date data lake.
 
 ```mdx-code-block
