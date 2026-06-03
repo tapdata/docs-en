@@ -29,7 +29,7 @@ Add a [Type Modification Processor](../../data-transformation/process-node.md#ty
 
 ## Considerations
 
-- To avoid write conflicts and reduce compaction pressure, disable multi-threaded writes in the target node and set batch size to 1,000 rows and timeout to 1,000 ms.
+- To avoid write conflicts and reduce compaction pressure, disable multi-threaded writes in the target node, set the write batch size to 1,000 rows, and set the timeout to 1,000 ms.
 - Always define a primary key for efficient upserts and deletes; for large tables, use partitioning to speed up queries and writes.
 - Paimon supports primary keys only (no secondary indexes) and does not allow runtime schema evolution.
 - When Paimon is used as the target and soft delete is enabled, TapData converts `DELETE` operations into `UPDATE` operations with a delete marker. Because Paimon updates require complete row data, the source `DELETE` event must provide the full before image; otherwise, fields other than the primary key may be written as `null`. If the source database is MongoDB 6.0 or later, enable **[Document Pre-image](../on-prem-databases/mongodb.md#node-advanced-features)**. For other source databases, ensure that CDC logs contain the complete row data before the `DELETE` operation.
@@ -118,22 +118,28 @@ When Paimon is used as the target node in a data replication or transformation t
 
 :::tip
 
-The table creation settings below mainly take effect when the target table does not exist and is created automatically by Tapdata. If the target table already exists, Tapdata keeps the existing table schema and table options instead of overwriting them.
+The table creation settings below mainly take effect when the target table does not exist and is created automatically by TapData. If the target table already exists, TapData keeps the existing table schema and table options instead of overwriting them.
 
 :::
 
 | Configuration | Description |
 | --- | --- |
-| **Hash Key** | When enabled, if there are many primary key or update-condition fields, Tapdata automatically adds an `_hash_key` field to the Paimon table and uses it as the primary key to reduce write overhead in wide-key scenarios. Enable it only when many key fields are affecting write performance. |
-| **Partition Key** | Specifies the partition fields for the target table. Leaving it empty means partitioning is disabled. It is recommended for large tables or scenarios where data needs to be organized by date or business dimension. |
-| **Bucket Mode** | Supports **Dynamic** and **Fixed** modes. Dynamic mode is suitable for general scenarios and lets the system assign buckets automatically. Fixed mode usually provides more stable write performance, but it should be used together with **Bucket Count**. |
-| **Bucket Count** | Takes effect only when **Bucket Mode** is set to **Fixed**. It defines the number of buckets, with a default value of **4**. Set it based on data volume, write concurrency, and small-file control requirements. |
-| **File Format** | Specifies the underlying file format used when the table is created. Supported formats include ORC, Parquet, Avro, CSV, JSON, Lance, and Blob. Choose the format based on query engine compatibility, compression ratio, and read/write performance requirements. |
-| **Compression Format** | Specifies the compression format for data files. Supported options include None, Snappy, LZ4, ZSTD, GZIP, and BZIP2. This setting usually involves a trade-off between compression ratio, CPU usage, and read/write performance. |
-| **Table Properties** | Lets you append Paimon table properties in key-value form for finer-grained control over table behavior. This is useful when you need to customize table creation parameters further. |
-| **Write Buffer Size (MB)** | Controls the in-memory buffer size used for writes. The default value is **256 MB**. Increasing it can improve throughput, but it also increases memory consumption. |
-| **Write Threads** | Controls the number of parallel write threads. The default value is **4**. Increasing it can improve write concurrency when enough resources are available, but it also increases resource usage. |
-| **Enable Auto Compaction** | Controls whether automatic compaction is enabled. When enabled, it helps reduce small files and improve query performance. When disabled, it reduces compaction overhead but may result in more small files. |
-| **Compaction Interval (minutes)** | Takes effect after **Enable Auto Compaction** is enabled. It controls how often automatic compaction runs, with a default value of **30** minutes. |
-| **Target File Size (MB)** | Controls the target size of data files. The default value is **128 MB**. Increasing it can help reduce the number of small files, but it also increases the processing cost of each individual file. |
-| **Enable Primary Key Update Detection** | When enabled, if a primary key value changes, Tapdata converts the update into a delete of the old record followed by an insert of the new record. This feature requires the source to provide before-update data. If that data is unavailable, the task will fail, and enabling this feature will reduce update performance. |
+| **Hash Key** | Disabled by default. When enabled, if there are more than five primary key or update-condition fields, TapData adds an `_hash_key` field to automatically created Paimon tables and uses it as the primary key to reduce write overhead in wide-key scenarios. Enable it only when many key fields are affecting write performance. |
+| **Partition Key** | Empty by default. Specifies partition fields for automatically created target tables. Leaving it empty disables partitioning. Use partitioning for large tables or when you need to organize data by date or business dimension. |
+| **Bucket Mode** | Supports **Dynamic** (default) and **Fixed** modes. Dynamic mode is suitable for general scenarios. Fixed mode usually provides more stable write performance, but it should be used together with **Bucket Count**. |
+| **Bucket Count** | The default value is **4**. When **Bucket Mode** is set to **Fixed**, this setting specifies the number of buckets in the Paimon table. When **Bucket Mode** is set to **Dynamic**, TapData also uses this value to calculate dynamic bucket write positions. Set it based on data volume, write concurrency, and small-file control requirements. |
+| **File Format** | Empty by default, which means the Paimon default file format is used. You can also specify ORC, Parquet, Avro, CSV, JSON, Lance, or Blob when TapData creates the table automatically. Choose the format based on query engine compatibility, compression ratio, and read/write performance requirements. |
+| **Compression Format** | Empty by default, which means the Paimon default compression setting is used. You can also specify None, Snappy, LZ4, ZSTD, GZIP, or BZIP2. This setting usually involves a trade-off between compression ratio, CPU usage, and read/write performance. |
+| **Table Properties** | Empty by default. Lets you append Paimon table properties in key-value form for finer-grained control over table behavior. This is useful when you need to customize table creation parameters further. |
+| **Write Buffer Size (MB)** | Controls the in-memory buffer size used for writes. The default value is **256 MB**. The supported range is 64-2048 MB. Increasing it can improve throughput, but it also increases memory consumption. |
+| **Data disk overflow write** | Disabled by default. When enabled, TapData turns on disk spill for the Paimon write buffer. You can then configure **Disk overflow capacity (GB)** and **Disk temporary directory**. |
+| **Disk overflow capacity (GB)** | Displayed only after **Data disk overflow write** is enabled. The default value is **1 GB**. The supported range is 1-10 GB. This setting limits the maximum amount of write buffer data that can spill to disk. |
+| **Disk temporary directory** | Displayed only after **Data disk overflow write** is enabled. The default value is `/tmp`. This directory is used by the Paimon write IO manager. Make sure the TapData Agent has read and write permissions on the directory and that enough disk space is available. |
+| **Batch Accumulation Size** | Controls how many records are accumulated before commit. The default value is **100000**. The supported range is 0-1000000. Set it to 0 to disable accumulation and commit immediately after writes. Increasing it can improve throughput, but it also increases the amount of uncommitted data. |
+| **Commit Interval (ms)** | Controls the commit interval. The default value is **30000** ms. The supported range is 0-300000 ms. Set it to 0 to disable time-based commits and trigger commits only by **Batch Accumulation Size**. |
+| **Enable Async Commit** | Enabled by default. When enabled, TapData periodically checks and commits accumulated data based on **Commit Interval (ms)** to reduce write blocking and improve throughput. |
+| **Write Threads** | Controls write parallelism for Paimon tables. The default value is **4**. The supported range is 1-32. Increasing it can improve write concurrency when enough resources are available, but it also increases resource usage. |
+| **Enable Auto Compaction** | Enabled by default. Controls whether automatic compaction is enabled. When enabled, it helps reduce small files and improve query performance. When disabled, it reduces compaction overhead but may result in more small files. |
+| **Compaction Interval (minutes)** | Takes effect after **Enable Auto Compaction** is enabled. It controls how often automatic compaction runs. The default value is **30** minutes. The supported range is 1-1440 minutes. |
+| **Target File Size (MB)** | Controls the target size of data files. The default value is **128 MB**. The supported range is 32-1024 MB. Increasing it can help reduce the number of small files, but it also increases the processing cost of each individual file. |
+| **Enable Primary Key Update Detection** | Disabled by default. When enabled, if a primary key value changes, TapData converts the update into a delete of the old record followed by an insert of the new record. This feature requires the source to provide before-update data. If that data is unavailable, the task will fail, and enabling this feature will reduce update performance. |
