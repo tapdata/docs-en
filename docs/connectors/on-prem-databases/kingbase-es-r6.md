@@ -140,7 +140,22 @@ When KingbaseES-R6 is used as a target, you can choose write strategies through 
 
    4. Install the log plugin:
 
-      * **wal2json**: Log in to the server where KingbaseES-R6 is hosted and follow the steps below to compile the plugin. After compilation, copy the generated `wal2json.so` file to the corresponding KingbaseES-R6 directory. In this example, the directory is `/home/kingbase5b/ES/V8/KESRealPro/V008R006C005B0054/Server/lib/`.
+      * [Walminer](https://gitee.com/movead/XLogMiner/tree/master/) (recommended): Built into KingbaseES-R6 V87B and later. For usage details, see the [WalMiner example](https://help.kingbase.com.cn/v8/admin/reference/walminer/walminer-4.html). This option does not rely on logical replication, so you do not need to set `wal_level` to `logical` or adjust replication slot settings. It requires superuser privileges.
+
+      * [Pgoutput](https://www.postgresql.org/docs/15/sql-createsubscription.html): Uses the built-in logical replication protocol and requires no additional installation. For tables with primary keys and `replica identity` set to `default`, the `before` field in update events is empty. Set `replica identity full` to include the before image. To use the default global publication, ask an administrator or superuser to create it in advance:
+
+        ```sql
+        -- Run as an administrator or superuser
+        CREATE PUBLICATION dbz_publication FOR ALL TABLES;
+        ```
+
+        :::tip
+        When you create the connection and select Pgoutput as the log plugin, you can enable **Partial Publication** to avoid creating a global publication. This option does not change the replica identity requirement for UPDATE and DELETE logging. For tables that require full row images, configure `REPLICA IDENTITY FULL` as described earlier. The synchronization account must have `CREATE PUBLICATION` permission and `OWNER` privileges on the target tables.
+        :::
+
+      * [Decoderbufs](https://github.com/debezium/postgres-decoderbufs): Uses Google Protocol Buffers to parse WAL logs. Configuration is more complex.
+
+      * [wal2json](https://github.com/eulerto/wal2json/blob/master/README.md): Log in to the server where KingbaseES-R6 is hosted and follow the steps below to compile the plugin. After compilation, copy the generated `wal2json.so` file to the corresponding KingbaseES-R6 directory. In this example, the directory is `/home/kingbase5b/ES/V8/KESRealPro/V008R006C005B0054/Server/lib/`.
       
         ```
         # Download wal2json plugin
@@ -163,7 +178,6 @@ When KingbaseES-R6 is used as a target, you can choose write strategies through 
         # Run make to generate wal2json.so in the directory
         make
         ```
-      * **walminer**: Available in versions V87B and above. For usage details, see the [WalMiner Example](https://help.kingbase.com.cn/v8/admin/reference/walminer/walminer-4.html). This method does not rely on logical replication, does not require setting `wal_level` to `logical`, nor adjusting replication slots, but requires superuser privileges.
 
 ### As a Target Database
 
