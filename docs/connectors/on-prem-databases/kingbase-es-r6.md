@@ -150,7 +150,7 @@ When KingbaseES-R6 is used as a target, you can choose write strategies through 
         ```
 
         :::tip
-        When you create the connection and select Pgoutput as the log plugin, you can enable **Partial Publication** to avoid requiring `REPLICA IDENTITY FULL` on tables without primary keys for update and delete events. This option does not require a global publication, but the synchronization account must have `CREATE PUBLICATION` permission and `OWNER` privileges on the target tables.
+        When you create the connection and select Pgoutput as the log plugin, you can enable **Partial Publication** to avoid creating a global publication. This option does not change the replica identity requirement for UPDATE and DELETE logging. For tables that require full row images, configure `REPLICA IDENTITY FULL` as described earlier. The synchronization account must have `CREATE PUBLICATION` permission and `OWNER` privileges on the target tables.
         :::
 
       * [Decoderbufs](https://github.com/debezium/postgres-decoderbufs): Uses Google Protocol Buffers to parse WAL logs. Configuration is more complex.
