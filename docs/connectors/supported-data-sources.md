@@ -418,7 +418,7 @@ The beta version of the data sources is in public preview and has passed the bas
     <td>➖</td>
     <td>➖</td>
     <td>✅</td>
-    <td>➖</td>
+    <td>✅</td>
     <td>N/A</td>
   </tr>  
   <tr>
