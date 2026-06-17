@@ -16,14 +16,9 @@ import TabItem from '@theme/TabItem';
 
 ## 4.19.0
 
-### New Features
-
-- Added [Data Lineage Tracing](operational-data-hub/fdm-layer/explore-fdm-tables.md#trace-record-lineage). You can trace how a business record moves through the FDM and MDM layers in the Operational Data Hub and review field-level changes to identify data issues and assess impact.
-
 ### Enhancements
 
 - Improved [API Status Monitor](publish-apis/monitor-api-request.md) metrics by capping CPU and memory usage at 100%, making resource bottlenecks easier to identify.
-- Improved task scheduling with one-click automatic task rebalancing and better balancing when tasks are started manually.
 - Improved context information for [Excel](connectors/files/excel.md) data sources in [JS nodes](data-transformation/process-node.md#js-processing), including the file name and last modified time.
 - Improved the editing experience for custom connection parameters by supporting copy and paste.
 
