@@ -14,6 +14,35 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.19.0
+
+### Enhancements
+
+- Improved [API Status Monitor](publish-apis/monitor-api-request.md) metrics by capping CPU and memory usage at 100%, making resource bottlenecks easier to identify.
+- Improved context information for [Excel](connectors/files/excel.md) data sources in [JS nodes](data-transformation/process-node.md#js-processing), including the file name and last modified time.
+- Improved the editing experience for custom connection parameters by supporting copy and paste.
+
+### Bug Fixes
+
+- Fixed inaccurate response data size statistics in Service Audit.
+- Fixed an issue where API publishing could fail after the associated connection was changed because connection information was not synchronized.
+- Fixed a possible compatibility issue when API Server accessed SSL-enabled data source connections.
+- Fixed an issue where log time filters could only select the current day.
+- Fixed an issue where permissions for users with the admin role did not take effect as expected.
+- Fixed an issue in LDAP login settings where saving without changing the password could overwrite the password configuration.
+- Fixed an issue where engine task statistics included scheduled tasks, causing inaccurate scheduling decisions.
+- Fixed a possible time zone offset when synchronizing time fields from SQL Server to Paimon.
+- Fixed an issue where SQL Server to PostgreSQL tasks with heartbeat tables enabled could continue triggering delay alerts after an Agent upgrade and restart when no new source data was generated.
+- Fixed a possible error when synchronizing Timestamp fields from TDSQL MySQL to Oracle.
+- Fixed an issue where master-child merge tasks for multiple tables sometimes required multiple start attempts before they could start successfully.
+- Fixed a missing INTEGER option in the type modification node.
+- Fixed inaccurate precision display for NUMBER fields when synchronizing Oracle to PostgreSQL.
+- Fixed an issue where MariaDB to Doris synchronization could fail in the CDC phase after the full sync completed.
+- Fixed an issue where TapData could use high network bandwidth when multiple MySQL instances were deployed on the same machine.
+- Fixed a possible duplicate key write error in the full sync phase when synchronizing Oracle to SQL Server in specific scenarios.
+- Fixed a possible data validation task error in specific scenarios.
+- Fixed an issue where data validation tasks could fail after upgrading from an earlier version.
+
 ## 4.18.0
 
 ### New Features
