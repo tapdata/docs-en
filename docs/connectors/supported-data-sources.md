@@ -396,8 +396,8 @@ The beta version of the data sources is in public preview and has passed the bas
   </tr>
   <tr>
     <td>Paimon</td>
-    <td>➖</td>
-    <td>➖</td>
+    <td>✅</td>
+    <td>✅</td>
     <td>➖</td>
     <td>✅</td>
     <td>➖</td>
