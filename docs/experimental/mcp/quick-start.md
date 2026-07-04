@@ -118,18 +118,23 @@ Tapdata MCP Server is built on three core primitives: **Prompts**, **Resources**
 
 <TabItem value="Tools">
 
-Tools are callable functions or commands the model can use to interact with structured data—such as queries, aggregations, and sampling.
-These tools are automatically discovered and made available through MCP without additional configuration.
+Tools are callable functions or commands the model can use to interact with structured data. For example, the model can query data models, run MongoDB queries, or create connections and tasks after user confirmation. These tools are automatically discovered and made available through MCP without additional configuration.
 
-| Tool Name        | Function Description                                  |
-| ---------------- | ----------------------------------------------------- |
-| `listConnection` | Lists all database connections and their tags         |
-| `listDataModel`  | Retrieves all data models under a connection          |
-| `sampleData`     | Samples up to 100 records from a model                |
-| `query`          | Executes a MongoDB query                              |
-| `aggregate`      | Performs MongoDB aggregation                          |
-| `count`          | Returns the total number of documents in a collection |
-| `listCollection` | Lists all collections in a MongoDB database           |
+| Tool Name | Function Description |
+| --- | --- |
+| `listConnection` | Lists database connections available in TapData |
+| `listDataModel` | Retrieves data model structures under a connection, with optional field and index details |
+| `createConnection` | Creates a database connection, or returns the required connection fields when no configuration is provided |
+| `createMigrateTask` | Creates a data replication task by selecting source tables with table names or a table name expression |
+| `createMergeTableTask` | Creates a master-child merge task that merges child table data into a target table or document |
+| `startTask` | Starts one or more TapData tasks. Tasks in the editing state require confirmation before they start |
+| `updateFieldDescription` | Updates business descriptions for table model fields in bulk |
+| `listCollection` | Lists collections in a MongoDB database |
+| `query` | Executes a MongoDB query |
+| `count` | Counts MongoDB documents that match the specified conditions |
+| `aggregate` | Runs a MongoDB aggregation pipeline |
+
+`createMigrateTask` is used to create data replication tasks. It usually requires the task name, source and target connection IDs, source and target database types, and table selection method. When selecting specific tables, pass the table list through `tableNames`. When selecting tables by expression, pass the table matching expression through `tableExpression`. To run the task immediately after it is created, call `startTask`.
 
 </TabItem>
 
@@ -138,8 +143,7 @@ These tools are automatically discovered and made available through MCP without 
 </details>
 
 :::tip
-The current MCP service supports read-based primitives for contextual data, including structured queries, aggregations, and data sampling.
-Tapdata will gradually introduce enhanced capabilities such as **write support, data publishing APIs, and AI Agent–driven modeling**, continuously improving the end-to-end context loop and enabling secure, efficient AI-driven analytics.
+The current MCP service supports contextual data reads and operational tools such as connection creation, task creation, and task startup. Operational tools can change TapData platform configuration or task status. Before an AI agent runs these tools, confirm key parameters such as the connection, table scope, and sync type.
 :::
 
 ## FAQ

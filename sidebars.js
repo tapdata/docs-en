@@ -416,6 +416,7 @@ const sidebars = {
                     ]
              },
             'platform-ops/operation',
+            'platform-ops/task-scheduling-balance',
             'platform-ops/monitor-with-prometheus',
             {
               type: 'category',

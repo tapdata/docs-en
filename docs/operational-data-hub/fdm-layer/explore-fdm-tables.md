@@ -1,6 +1,6 @@
 # Explore FDM Table Details
 
-Explore comprehensive details for any table in the Platform Cache (FDM Layer), including metadata, schema, related tasks, and data lineage—all designed to help you manage synchronized data with confidence.
+Explore comprehensive details for any table in the Platform Cache (FDM Layer), including metadata, schema, related tasks, data lineage, and record-level lineage tracing. These details help you manage synchronized data with confidence.
 
 ## Procedure
 
@@ -31,3 +31,22 @@ Explore comprehensive details for any table in the Platform Cache (FDM Layer), i
    - **Lineage**: Visualize data lineage as an interactive graph. This helps you track and manage data quality across your pipelines. Clicking a task node in the lineage view will take you directly to its monitoring page.
 
      ![Lineage Info](../../images/lineage_for_fdm.png)
+
+## Trace record-level data lineage
+
+For tables in the Platform Cache (FDM Layer) or Master Data Model (MDM Layer), you can click **Data Lineage Tracing** in the upper-right corner of the table details page to trace how a specific business record moves through upstream and downstream tables and to inspect field-level changes.
+
+![Data lineage tracing entry](../../images/data_lineage_tracing_entry.png)
+
+- **Set data filters**: In **Builder** mode, select fields, operators, and values. You can also switch to **MQL JSON** mode and write query conditions. Then click **Trace**.
+- **Select tracing fields**: In **Select fields to trace in data lineage**, add fields to focus the lineage view on changes to those fields.
+- **View the lineage path**: The left pane shows related tables and their upstream and downstream relationships as a graph. Click a table node to view details for that node.
+- **View change details**: The right pane lets you query changes for the selected node by time range. Switch between **JSON** and **Change Log** views to compare field values before and after the change.
+
+![Data lineage tracing result](../../images/data_lineage_tracing_result.png)
+
+:::tip
+
+Data lineage tracing depends on data lineage and traceable change records in Real-Time Data Center. If no results are returned, confirm that the filter conditions match existing data, related tasks have run and generated change records, and your account has permission to view Real-Time Data Center and data lineage information.
+
+:::
