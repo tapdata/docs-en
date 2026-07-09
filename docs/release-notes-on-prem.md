@@ -14,6 +14,41 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.20.0
+
+### New Features
+
+- Added [Data Lineage Tracing](operational-data-hub/fdm-layer/explore-fdm-tables.md#trace-record-level-data-lineage), which lets you trace how a business record moves through the FDM and MDM layers in Real-Time Data Center and inspect field-level changes. Use it to locate data issues and evaluate impact.
+- [MCP Server](experimental/mcp/quick-start.md) now supports creating data replication tasks. AI agents can create replication tasks based on connections, table scope, and sync type, extending automation coverage for task configuration.
+- [Data replication tasks](data-replication/create-task.md) now support adjusting target model field order in the target node, so you can organize fields based on target table creation or business access requirements.
+
+### Enhancements
+
+- Added `./tapdata sid` to retrieve the SID required for License applications in one step, simplifying the [deployment](platform-ops/production-deploy/install-tapdata-ha.md) License application process. The original Java command remains available as a compatible method.
+- Improved [API creation](publish-apis/create-api-service.md) model configuration display, making it easier to view fields that are not selected in the response result.
+- Improved [Task Scheduling Balance](platform-ops/task-scheduling-balance.md), including a dedicated entry for viewing balance records, adjusting eligible task distribution across engines, and better scheduling balance when tasks are started manually.
+- Improved position calculation when nodes are created or deleted on the task canvas, making node arrangement smoother.
+- Refactored [DDL synchronization](case-practices/best-practice/handle-schema-changes.md) processing logic to improve the stability of schema change collection and application.
+- Improved exception codes and messages when connection tests fail, making troubleshooting more efficient.
+- The [Snowflake](connectors/warehouses-and-lake/snowflake.md) data source is now generally available and can be used as a source or target node. It adds PAT token and key-pair authentication, and supports selecting Standard Table, Hybrid Table, or Dynamic Table as the target table type by table.
+
+### Bug Fixes
+
+- Fixed an issue where task alert emails might not be delivered after the email system was upgraded.
+- Fixed an issue where API Server status reporting could be inaccurate in multi-API-Server scenarios.
+- Fixed an issue where cache was not rebuilt as expected when a full and incremental task contained disabled nodes.
+- Fixed an issue where newly imported tasks were not shown in the task list when imported as copies.
+- Fixed an issue where incremental lag shown in the task list was inconsistent with task details.
+- Fixed an issue in three-level master-child merge tasks where third-level table data was not deleted as expected after the association key was unset.
+- Fixed a possible time zone offset when synchronizing time fields from SQL Server to Paimon.
+- Fixed an issue where Oracle to MariaDB tasks could report a HikariPool timeout during the incremental phase.
+- Fixed a possible error for StarRocks data source connections in specific scenarios.
+- Fixed an issue where SQL Server to SQL Server tasks could report `result set is closed` during the incremental phase.
+- Fixed a possible error when synchronizing Timestamp fields from TDSQL MySQL to Oracle.
+- Fixed an issue where tasks could fail when an Oracle table name contained a period (`.`).
+- Fixed an issue where target index names could be inconsistent with source index names in MongoDB-to-MongoDB synchronization.
+- Fixed an issue where MongoDB to Kafka incremental task errors did not output useful error details in logs.
+
 ## 4.19.0
 
 ### Enhancements

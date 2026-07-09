@@ -70,7 +70,7 @@ DECFLOAT, UUID, TIMESTAMP_LTZ, VARIANT, GEOGRAPHY, and GEOMETRY are recognized o
    GRANT ROLE <role_name> TO USER <username>;
    ```
 
-   To use a PAT or key-pair authentication, prepare the corresponding credentials for the user in Snowflake and make sure the user still has the following roles and permissions. If you use a PAT, also confirm that your Snowflake account meets the network policy or authentication policy requirements for [programmatic access tokens](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens).
+   To use a PAT or key-pair authentication, prepare the corresponding credentials for the user in Snowflake and make sure the user still has the following roles and permissions. If you use a PAT, also confirm that your Snowflake account meets the network policy or authentication policy requirements for [programmatic access tokens](https://docs.snowflake.com/en/user-guide/programmatic-access-tokens). If you use key-pair authentication, make sure the user has a public key configured in Snowflake. In TapData, provide the private key and, if used, the private key password.
 
 3. Grant permissions to the user. You can also apply more granular permissions based on your business requirements.
 
@@ -172,11 +172,11 @@ DECFLOAT, UUID, TIMESTAMP_LTZ, VARIANT, GEOGRAPHY, and GEOMETRY are recognized o
 
 ## Advanced node features
 
-When Snowflake is used as the target node in a data replication or transformation task, you can select the target table type for automatic table creation in the node advanced settings. This setting mainly affects target tables that TapData creates automatically. If the target table already exists, TapData keeps the current target table definition.
+When Snowflake is used as the target node in a data replication or transformation task, you can select the target table type for automatic table creation by table in the node advanced settings. This setting mainly affects target tables that TapData creates automatically. If the target table already exists, TapData keeps the current target table definition.
 
 | Configuration | Description |
 | --- | --- |
-| **Table Type** | The table type used when TapData creates the target table. Supported values are **Standard Table** (STANDARD, default), **Hybrid Table** (HYBRID), and **Dynamic Table** (DYNAMIC). Standard tables are suitable for most sync write scenarios. Hybrid tables require a primary key and are suitable for scenarios that need primary-key updates and point queries. Dynamic tables are defined by a query and are not suitable as ordinary targets for INSERT, UPDATE, and DELETE writes. |
+| **Table Type** | The table type used when TapData creates the target table. Supported values are **Standard Table** (STANDARD, default), **Hybrid Table** (HYBRID), and **Dynamic Table** (DYNAMIC). Standard tables are suitable for most sync write scenarios. Hybrid tables require a primary key and are suitable for scenarios that need primary-key updates and point queries. After creating a hybrid table, TapData attempts to create non-primary-key indexes. If index creation fails, handle the indexes manually in Snowflake. Dynamic tables are defined by a query and are not suitable as ordinary targets for INSERT, UPDATE, and DELETE writes. |
 | **Target Lag** | Takes effect only when **Table Type** is set to **Dynamic Table**. Sets the target lag for the dynamic table. The default value is `1 minute`. You can also enter values such as `DOWNSTREAM` by following Snowflake syntax. |
 | **Dynamic Table Query** | Takes effect only when **Table Type** is set to **Dynamic Table**. Enter the `AS SELECT` query that defines the dynamic table content. This setting is required when you use a dynamic table, and the query must meet Snowflake dynamic table requirements. |
 

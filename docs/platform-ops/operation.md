@@ -302,32 +302,33 @@ If the memory allocation is small but the task load is heavy, the Java program m
 
 ## How Does Task Scheduling Work?
 
-TapData provides layered scheduling controls, including the default task-count-based strategy, flexible Flow Engine group scheduling, and tag-based startup priority. These mechanisms help tasks run efficiently on the right Flow Engines, avoiding wasted resources and single-node overload.
+TapData provides layered scheduling controls, including the default task-count-based strategy, flexible engine (Flow Engine) group scheduling, and tag-based startup priority. These mechanisms help tasks run efficiently on the right engines, avoiding wasted resources and single-node overload.
 
-**Best practice**: Use the basic scheduling mechanism for day-to-day workloads. For tasks that require performance isolation or dedicated resources, enable Flow Engine group scheduling. When starting many tasks in bulk, use tags to control startup order so critical tasks are not blocked.
+**Best practice**: Use the basic scheduling mechanism for day-to-day workloads. For tasks that require performance isolation or dedicated resources, enable engine group scheduling. When starting many tasks in bulk, use tags to control startup order so critical tasks are not blocked.
 
 
 ### Basic Scheduling (Default)
 
-By default, TapData uses a task-count-based balancing strategy and automatically assigns tasks to the best Flow Engine:
+By default, TapData uses a task-count-based balancing strategy and automatically assigns tasks to a suitable engine:
 
-- **Startup scheduling**: When a task starts, the system checks how many tasks each live Flow Engine is currently running and schedules to the Flow Engine with the fewest tasks.
-- **Failover**: If a Flow Engine heartbeat times out or task takeover fails, the system immediately reschedules and moves affected tasks to the live Flow Engine with the fewest tasks.
+- **Startup scheduling**: When a task starts, the system checks how many tasks each live engine is currently running and schedules the task to the engine with the fewest tasks.
+- **Failover**: If an engine heartbeat times out or task takeover fails, the system immediately reschedules and moves affected tasks to the live engine with the fewest tasks.
+- **Task scheduling balance**: When scaling, node recovery, or long-running workloads cause uneven task distribution, use [Task Scheduling Balance](task-scheduling-balance.md) to reassign movable tasks.
 
 This mechanism fits most scenarios and requires no extra configuration to achieve efficient resource usage.
 
-### Flow Engine Group Scheduling
+### Engine Group Scheduling
 
-To meet business needs such as performance, isolation, or dedicated resources, TapData supports Flow Engine group scheduling.
+To meet business needs such as performance, isolation, or dedicated resources, TapData supports engine group scheduling.
 
 **Configuration**:  
-Go to [Cluster Management](../system-admin/manage-cluster.md), switch to the component view, create groups based on machine capability or business domain (for example, “High-performance” or “Business A dedicated”), and add the relevant Flow Engines to each group.
+Go to [Cluster Management](../system-admin/manage-cluster.md), switch to the component view, create groups based on machine capability or business domain (for example, "High-performance" or "Business A dedicated"), and add the relevant engines to each group.
 
 **Scheduling rules**:
 - When creating a connection or task, you can select a specific group.
-- TapData schedules the task only among Flow Engines in the selected group.
-- Balancing still applies within the group (the Flow Engine with the fewest tasks is preferred).
-- If all Flow Engines in the group are unavailable, the task enters a waiting state and triggers [alert notifications](../system-admin/other-settings/notification.md) so administrators can intervene.
+- TapData schedules the task only among engines in the selected group.
+- Balancing still applies within the group. The engine with the fewest tasks is preferred.
+- If all engines in the group are unavailable, the task enters a waiting state and triggers [alert notifications](../system-admin/other-settings/notification.md) so administrators can intervene.
 
 
 ### Tag-Based Scheduling
@@ -343,7 +344,7 @@ In [Task Management](../data-replication/manage-task.md), set a tag for each tas
 - Tasks without a tag start in the selected order. If you select multiple untagged tasks, the system starts them concurrently.
 
 :::tip
-- Tag scheduling only controls startup order. It does not affect Flow Engine assignment at runtime.
+- Tag scheduling only controls startup order. It does not affect engine assignment at runtime.
 - During bulk start, TapData treats a task as “started” once the start command is issued; it does not wait for the task status to change to “Running”.
 :::
 
