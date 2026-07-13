@@ -14,6 +14,37 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.21.0
+
+### New Features
+
+- [PostgreSQL](connectors/on-prem-databases/postgresql.md) sources now support DDL event collection. TapData can capture schema changes such as adding columns, renaming columns, changing column attributes, and dropping columns, and work with target-side DDL apply to synchronize schema changes.
+
+### Enhancements
+
+- Refactored and upgraded [MCP Server](experimental/mcp/quick-start.md) to improve protocol adaptation and tool extensibility.
+- Improved frontend multilingual message adaptation by supporting unified `i18nMessage` handling.
+- Improved task monitoring metric display. Related charts can now be controlled by the task CPU and memory metric collection switches.
+- Improved email template variables in [Notification and Alert Settings](system-admin/other-settings/notification.md), so notification content can reference the task description.
+- Improved task canvas node-centering logic for a smoother canvas layout experience.
+
+### Bug Fixes
+
+- Fixed insufficient script execution isolation for JS processing nodes in specific scenarios, improving custom script runtime security.
+- Fixed insufficient protection when displaying or storing some sensitive information, improving credential security.
+- Fixed an issue where, when shared mining was unavailable and a merge task fell back to regular CDC, the source connection might report an error after entering the incremental phase.
+- Fixed issues where task metrics, heartbeat status, or incremental lag alerts could become abnormal after a full sync completed or a task restarted.
+- Fixed an issue where duplicate path validation might not work as expected when adding or editing an API, and API publishing could fail in specific scenarios.
+- Fixed missing password rule prompts when creating roles.
+- Fixed issues in the CI/CD task import and publish flow where duplicate projects might be created, primary-secondary tasks might fail to run, or adding an FDM table might unexpectedly trigger a full sync.
+- Fixed an issue where tasks could remain in **Starting** for an extended time after a single-node deployment restarted.
+- Fixed an issue in master-child merge tasks where the target did not delete fields as expected after fields were removed from embedded documents in child tables.
+- Fixed an issue where task retry alerts were still displayed after recovery.
+- Fixed an issue where reverse synchronization from PostgreSQL to Sybase could fail because of foreign key constraint validation.
+- Fixed an issue where polling requests continuously refreshed user active time, so sessions could remain active even when users performed no actions.
+- Fixed an issue where sub-accounts could not view engine tags.
+- Fixed an issue where task startup could fail after DDL event collection was enabled.
+
 ## 4.20.0
 
 ### New Features

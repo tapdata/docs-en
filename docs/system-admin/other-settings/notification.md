@@ -51,7 +51,7 @@ You can also click **Custom Email Template** in the top-right corner of the page
 
 ![Customize Email Template](../../images/alter_email_templates.png)
 
-The subject and body support the following insertable variables: `{taskName}` (task name), `{errorTime}` (error time), and `{errorLog}` (error log). You can quickly insert them by clicking the variable names at the bottom of the page.
+The subject and body support insertable variables such as `{taskName}` (task name), task description, `{errorTime}` (error time), and `{errorLog}` (error log). You can quickly insert them by clicking the variable names at the bottom of the page.
 
 ## Webhook Alerts
 

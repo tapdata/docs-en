@@ -183,7 +183,7 @@ import TabItem from '@theme/TabItem';
     <td>PostgreSQL</td>
     <td>✅</td>
     <td>✅</td>
-    <td>➖</td>
+    <td>✅</td>
     <td>✅</td>
     <td>✅</td>
     <td>9.4～16</td>

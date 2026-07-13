@@ -39,7 +39,9 @@ When using PostgreSQL as the target database or obtaining incremental data via t
 
 ## Supported Operations
 
-**INSERT**, **UPDATE**, **DELETE**
+**DML operations**: **INSERT**, **UPDATE**, **DELETE**
+
+**DDL operations**: Add columns, rename columns, change column attributes, and drop columns
 
 :::tip
 
@@ -50,7 +52,8 @@ When using PostgreSQL as the target database or obtaining incremental data via t
 
 ## Limitations
 
-- When PostgreSQL is used as a source database, capturing its DDL (like adding fields) is not supported, nor is specifying a time for incremental data capture.
+- When PostgreSQL is used as a source, the physical log plugin does not support specifying an incremental start time. When you use pgoutput, wal2json, or decoderbufs, to start incremental sync from a specified time, set **WAL Retention Hours** in the source node advanced features to a value greater than 0 and make sure the target time is within the retention window.
+- To collect DDL events from a PostgreSQL source, use a logical replication plugin such as pgoutput, wal2json, or decoderbufs, and turn on **Enable DDL Trigger** in the source node advanced features. This feature creates the `public._tapdata_ddl_audit` audit table, an event trigger, and a trigger function in the source database by default. The sync account must have permission to create event triggers, which usually requires superuser privileges.
 - PostgreSQL does not support storing `\0` in string types; TapData will automatically filter it to avoid exceptions.
 - To capture incremental events for partitioned parent tables, PostgreSQL version 13 or above must be used, and the pgoutput plugin must be selected.
 - The Walminer plugin currently only supports connecting and merging shared mining.
@@ -119,7 +122,11 @@ When using PostgreSQL as the target database or obtaining incremental data via t
       * **schema_name**: Schema name.
       * **username**: Username.
 
-3. <span id="prerequisites">Execute the following</span> command format to modify the replica identity to FULL (using the entire row as the identifier), which determines the fields recorded in the log when data undergoes UPDATE/DELETE.
+3. If you need to collect DDL events from the PostgreSQL source, make sure the sync account can create event triggers.
+
+   PostgreSQL requires superuser privileges to create event triggers. For managed PostgreSQL services, confirm that event triggers are supported and grant the equivalent administrator role. If you cannot grant these privileges or do not need DDL event collection, turn off **Enable DDL Trigger** in the source node advanced features before starting the task.
+
+4. <span id="prerequisites">Execute the following</span> command format to modify the replica identity to FULL (using the entire row as the identifier), which determines the fields recorded in the log when data undergoes UPDATE/DELETE.
 
    :::tip
 
@@ -134,7 +141,7 @@ When using PostgreSQL as the target database or obtaining incremental data via t
    * **schema_name**: Schema name.
    * **table_name**: Table name.
 
-4. Log in to the server hosting PostgreSQL, and choose the decoder plugin to install based on business needs and version:
+5. Log in to the server hosting PostgreSQL, and choose the decoder plugin to install based on business needs and version:
 
    - [Wal2json](https://github.com/eulerto/wal2json/blob/master/README.md) (Recommended): Suitable for PostgreSQL 9.4 and above, converts WAL logs to JSON format, simple to use, but requires source tables to have primary keys; otherwise, delete operations cannot be synchronized.
    - [Pgoutput](https://www.postgresql.org/docs/15/sql-createsubscription.html): An internal logical replication protocol introduced in PostgreSQL 10, no additional installation needed. For tables with primary keys and `replica identity` set to `default`, the `before` in update events will be empty, which can be solved by setting `replica identity full`. Additionally, if you do not have database-level **CREATE** permissions, you need to run the following commands to create the required PUBLICATION:
@@ -149,6 +156,12 @@ When using PostgreSQL as the target database or obtaining incremental data via t
 
    - [Decoderbufs](https://github.com/debezium/postgres-decoderbufs): Suitable for PostgreSQL 9.6 and above, uses Google Protocol Buffers to parse WAL logs but requires more complex configuration.
    - [Walminer](https://gitee.com/movead/XLogMiner/tree/master/): Does not rely on logical replication, doesn't require setting `wal_level` to `logical`, or adjusting replication slot configuration, but requires superuser permissions. In a **replication architecture**, we recommend using the **Walminer** plugin to read incremental changes to ensure data integrity during failover.
+
+   :::tip
+
+   To collect DDL events from a PostgreSQL source, select the pgoutput, wal2json, or decoderbufs plugin and make sure the sync account has permission to create event triggers. TapData writes DDL events to the `public._tapdata_ddl_audit` audit table through an event trigger, then collects changes from the audit table through a logical replication slot. If the account does not have sufficient permissions or you do not need DDL event collection, turn off **Enable DDL Trigger** in the task source node advanced features.
+
+   :::
 
    Next, we will demonstrate the installation process using **Wal2json** as an example.
 
@@ -219,7 +232,7 @@ When using PostgreSQL as the target database or obtaining incremental data via t
       service postgresql-12.service restart
       ```
 
-5. (Optional) Test the log plugin.
+6. (Optional) Test the log plugin.
 
    1. Connect to the postgres database, switch to the database to be synchronized, and create a test table.
 
@@ -462,6 +475,8 @@ When configuring data synchronization/conversion tasks, you can use PostgreSQL a
   * **Hash Sharding**: When enabled, all table data will be split into multiple shards based on hash values during the full synchronization phase, allowing concurrent data reading. This significantly improves reading performance but also increases the database load. The maximum number of shards can be manually set after enabling this option.
   * **Partition Table CDC Root Table**: Supported only in PostgreSQL 13 and above, and when selecting the pgoutput log plugin. When enabled, only CDC events for root tables will be detected; when disabled, only CDC events for child tables will be detected.
   * **Max Queue Size**: Specifies the queue size for reading incremental data in PostgreSQL. The default value is **8000**. If the downstream synchronization is slow or individual table records are too large, consider lowering this value.
+  * **Enable DDL Trigger**: Enabled by default. Before starting a task with this option enabled, make sure the sync account can create PostgreSQL event triggers. TapData creates the `public._tapdata_ddl_audit` audit table, a DDL event trigger, and a trigger function in the source database by default. It writes source DDL events to the audit table and collects them through a logical replication slot. Supported events include adding columns, renaming columns, changing column attributes, and dropping columns. If the sync account does not have sufficient permissions or DDL event collection is not required, turn this off.
+  * **WAL Retention Hours**: The default is **0**, in hours. This setting retains CDC checkpoints and the WAL advancement window for logical replication. When set to 0, historical checkpoints are not retained. When set to a value greater than 0, TapData can start incremental sync from a specified time within the retention window. A longer retention period might increase WAL usage in the source database.
   * **Split Update Unique Key**: Enabled by default. When updating unique key fields, this splits UPDATE into DELETE + INSERT events to improve target compatibility. Disable this if you need to preserve original UPDATE events (e.g., for auditing or change tracking).
 * As a Target Node
   * **Ignore NotNull**: Default is off, meaning NOT NULL constraints will be ignored when creating tables in the target database.
