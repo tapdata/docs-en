@@ -4,9 +4,6 @@ slug: /platform-ops/monitor-with-prometheus
 
 # Monitor TapData with Prometheus
 
-import Content from '../../reuse-content/_enterprise-features.md';
-
-<Content />
 
 Use Prometheus to collect TapData metrics, Grafana to review trends, and Alertmanager to send notifications. You can also monitor the MongoDB system database used by TapData.
 

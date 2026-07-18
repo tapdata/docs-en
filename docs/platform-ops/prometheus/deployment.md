@@ -1,9 +1,5 @@
 # Deploy Prometheus monitoring
 
-import Content from '../../reuse-content/_enterprise-features.md';
-
-<Content />
-
 TapData provides component and runtime metrics through HTTP endpoints. Prometheus collects these metrics, Grafana displays trends, and Alertmanager sends notifications. Task metrics are deployment-dependent and must be verified in the target environment.
 
 This page covers the complete path from enabling metric endpoints to validating collection. After deployment, continue with:
