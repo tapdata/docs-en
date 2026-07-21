@@ -1,0 +1,258 @@
+groups:
+  - name: tapdata-availability
+    rules:
+      - alert: TapDataTargetDown
+        expr: up{job=~"tapdata-(management|flow-engine|api-server|agent)"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          alert_family: target_down
+          component: "{{ $labels.job }}"
+        annotations:
+          summary: "TapData target {{ $labels.instance }} is unavailable"
+          description: "Prometheus has been unable to scrape {{ $labels.instance }} for {{ $labels.job }} for two minutes. Check the network, metric port, path, and component process."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/alerting/#response-order"
+
+      - alert: MongoDBExporterDown
+        expr: up{job="mongodb"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          alert_family: mongodb_exporter_down
+          component: mongodb
+        annotations:
+          summary: "MongoDB exporter {{ $labels.instance }} is unavailable"
+          description: "Prometheus has been unable to scrape the MongoDB exporter for two minutes. Check the exporter process, network, MongoDB connection, and authentication."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/alerting/#response-order"
+
+  - name: tapdata-resources
+    rules:
+      - alert: TapDataLowDiskSpace
+        expr: disk_free_bytes{job=~"tapdata-(management|flow-engine|agent)"} / disk_total_bytes{job=~"tapdata-(management|flow-engine|agent)"} < 0.2
+        for: 15m
+        labels:
+          severity: warning
+          alert_family: disk_space
+          component: "{{ $labels.job }}"
+        annotations:
+          summary: "Available disk space on {{ $labels.instance }} is below 20%"
+          description: "Check logs, temporary files, backups, and data growth. Confirm file ownership and a recovery plan before deleting files."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/metrics/#initial-health-thresholds"
+
+      - alert: TapDataCriticalDiskSpace
+        expr: disk_free_bytes{job=~"tapdata-(management|flow-engine|agent)"} / disk_total_bytes{job=~"tapdata-(management|flow-engine|agent)"} < 0.1
+        for: 5m
+        labels:
+          severity: critical
+          alert_family: disk_space
+          component: "{{ $labels.job }}"
+        annotations:
+          summary: "Available disk space on {{ $labels.instance }} is below 10%"
+          description: "A full disk can stop TapData components. Address the capacity risk immediately, and do not delete MongoDB data files."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/metrics/#initial-health-thresholds"
+
+      - alert: TapDataHighCpuUsage
+        expr: avg_over_time(system_cpu_usage{job=~"tapdata-(management|flow-engine|agent)"}[5m]) > 0.85
+        for: 15m
+        labels:
+          severity: warning
+          alert_family: cpu_usage
+          component: "{{ $labels.job }}"
+        annotations:
+          summary: "Five-minute CPU average on {{ $labels.instance }} is above 85%"
+          description: "Correlate CPU usage with task lag, HTTP errors, GC, and other host processes before tuning or scaling."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/metrics/#initial-health-thresholds"
+
+      - alert: TapDataCriticalCpuUsage
+        expr: avg_over_time(system_cpu_usage{job=~"tapdata-(management|flow-engine|agent)"}[5m]) > 0.95
+        for: 5m
+        labels:
+          severity: critical
+          alert_family: cpu_usage
+          component: "{{ $labels.job }}"
+        annotations:
+          summary: "Five-minute CPU average on {{ $labels.instance }} is above 95%"
+          description: "CPU usage remains extremely high. Check task lag, HTTP errors, GC, high-load tasks, and host processes immediately."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/metrics/#initial-health-thresholds"
+
+  - name: tapdata-http
+    rules:
+      - alert: TapDataManagementHigh5xxRatio
+        expr: |
+          (
+            sum by (project, instance) (rate(http_server_requests_seconds_count{job="tapdata-management",status=~"5.."}[5m]))
+            /
+            sum by (project, instance) (rate(http_server_requests_seconds_count{job="tapdata-management"}[5m]))
+          ) > 0.05
+          and on (project, instance)
+          sum by (project, instance) (rate(http_server_requests_seconds_count{job="tapdata-management"}[5m])) > 0.1
+        for: 10m
+        labels:
+          severity: warning
+          alert_family: management_5xx_ratio
+          component: management
+        annotations:
+          summary: "Management 5xx ratio on {{ $labels.instance }} is above 5%"
+          description: "Management has a sustained high 5xx ratio while receiving traffic. Investigate routes, logs, dependencies, and recent changes."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/metrics/#initial-health-thresholds"
+
+      - alert: TapDataManagementCritical5xxRatio
+        expr: |
+          (
+            sum by (project, instance) (rate(http_server_requests_seconds_count{job="tapdata-management",status=~"5.."}[5m]))
+            /
+            sum by (project, instance) (rate(http_server_requests_seconds_count{job="tapdata-management"}[5m]))
+          ) > 0.2
+          and on (project, instance)
+          sum by (project, instance) (rate(http_server_requests_seconds_count{job="tapdata-management"}[5m])) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+          alert_family: management_5xx_ratio
+          component: management
+        annotations:
+          summary: "Management 5xx ratio on {{ $labels.instance }} is above 20%"
+          description: "Management 5xx responses have reached a critical level. Confirm user impact, route logs, dependencies, and recent changes immediately."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/alerting/#incident-severity-and-escalation"
+
+      - alert: TapDataApiHigh5xxRatio
+        expr: |
+          (
+            sum by (project, instance) (rate(http_requests_total{job="tapdata-api-server",statusCode=~"5.."}[5m]))
+            /
+            sum by (project, instance) (rate(http_requests_total{job="tapdata-api-server"}[5m]))
+          ) > 0.05
+          and on (project, instance)
+          sum by (project, instance) (rate(http_requests_total{job="tapdata-api-server"}[5m])) > 0.1
+        for: 10m
+        labels:
+          severity: warning
+          alert_family: api_5xx_ratio
+          component: api-server
+        annotations:
+          summary: "API Server 5xx ratio on {{ $labels.instance }} is above 5%"
+          description: "API Server has a sustained high 5xx ratio while receiving traffic. Investigate path, logs, dependencies, and recent changes."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/grafana/#read-the-api-server-dashboard"
+
+      - alert: TapDataApiCritical5xxRatio
+        expr: |
+          (
+            sum by (project, instance) (rate(http_requests_total{job="tapdata-api-server",statusCode=~"5.."}[5m]))
+            /
+            sum by (project, instance) (rate(http_requests_total{job="tapdata-api-server"}[5m]))
+          ) > 0.2
+          and on (project, instance)
+          sum by (project, instance) (rate(http_requests_total{job="tapdata-api-server"}[5m])) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+          alert_family: api_5xx_ratio
+          component: api-server
+        annotations:
+          summary: "API Server 5xx ratio on {{ $labels.instance }} is above 20%"
+          description: "API Server 5xx responses have reached a critical level. Confirm user impact, route logs, dependencies, and recent changes immediately."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/alerting/#incident-severity-and-escalation"
+
+  - name: tapdata-mongodb
+    rules:
+      - alert: MongoDBConnectionDown
+        expr: mongodb_up{job="mongodb"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          alert_family: mongodb_connection
+          component: mongodb
+        annotations:
+          summary: "MongoDB exporter {{ $labels.instance }} cannot connect to the database"
+          description: "Prometheus can scrape the exporter, but the exporter has been unable to connect to MongoDB for two minutes. Check the system database, URI, authentication database, certificates, and network."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/deployment/#verify-mongodb-monitoring"
+
+      - alert: MongoDBReplicaSetStateUnhealthy
+        expr: |
+          mongodb_rs_myState{job="mongodb"} != 1
+          and mongodb_rs_myState{job="mongodb"} != 2
+          and mongodb_rs_myState{job="mongodb"} != 7
+        for: 5m
+        labels:
+          severity: warning
+          alert_family: mongodb_replset_state
+          component: mongodb
+        annotations:
+          summary: "MongoDB replica set member {{ $labels.instance }} is unhealthy"
+          description: "The member has not been PRIMARY, SECONDARY, or ARBITER for five minutes. Check replica set status, MongoDB logs, network, and disk."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/grafana/#read-the-mongodb-dashboard"
+
+  # Enable and rely on this group only after the Flow Engine endpoint provides task_* metrics.
+  - name: tapdata-tasks
+    rules:
+      - alert: TapDataTaskFailed
+        expr: task_status{job="tapdata-flow-engine"} == 1
+        for: 1m
+        labels:
+          severity: critical
+          alert_family: task_status
+          component: flow-engine
+        annotations:
+          summary: "Task {{ $labels.task_name }} has failed"
+          description: "The task reports a failed state on Flow Engine. Check task logs, source and target connections, and Flow Engine health."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/alerting/#response-order"
+
+      - alert: TapDataTaskRetrying
+        expr: task_status{job="tapdata-flow-engine"} == 2
+        for: 10m
+        labels:
+          severity: warning
+          alert_family: task_status
+          component: flow-engine
+        annotations:
+          summary: "Task {{ $labels.task_name }} continues to retry"
+          description: "The task has been retrying for ten minutes. If it does not recover, investigate it as a failed task."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/alerting/#response-order"
+
+      - alert: TapDataTaskDataSourceConnectionError
+        expr: task_active_db{job="tapdata-flow-engine"} == 1
+        for: 1m
+        labels:
+          severity: critical
+          alert_family: task_database_connection
+          component: flow-engine
+        annotations:
+          summary: "Task {{ $labels.task_name }} has a data source connection error"
+          description: "Node {{ $labels.node_name }} reports a network or server connection error. Test the connection and check the network, database, and certificates."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/metrics/#core-task-metrics"
+
+      - alert: TapDataTaskDataSourceAuthenticationError
+        expr: task_active_db{job="tapdata-flow-engine"} == 2
+        for: 1m
+        labels:
+          severity: critical
+          alert_family: task_database_connection
+          component: flow-engine
+        annotations:
+          summary: "Task {{ $labels.task_name }} failed data source authentication"
+          description: "Node {{ $labels.node_name }} reports invalid credentials. Check the account, password, and required certificates."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/metrics/#core-task-metrics"
+
+      - alert: TapDataTaskHighCdcDelay
+        expr: task_cdc_delay_ms{job="tapdata-flow-engine"} > 30000
+        for: 5m
+        labels:
+          severity: warning
+          alert_family: task_cdc_delay
+          component: flow-engine
+        annotations:
+          summary: "CDC lag for task {{ $labels.task_name }} is above 30 seconds"
+          description: "Current lag is {{ $value }} milliseconds. Adjust this threshold to the task SLA. Check source load, node processing time, target writes, and network."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/metrics/#core-task-metrics"
+
+      - alert: TapDataTaskCriticalCdcDelay
+        expr: task_cdc_delay_ms{job="tapdata-flow-engine"} > 300000
+        for: 5m
+        labels:
+          severity: critical
+          alert_family: task_cdc_delay
+          component: flow-engine
+        annotations:
+          summary: "CDC lag for task {{ $labels.task_name }} is above five minutes"
+          description: "Current lag is {{ $value }} milliseconds. Adjust this threshold to the task SLA. Confirm business impact and the backlog cause immediately."
+          runbook_url: "https://docs.tapdata.io/platform-ops/prometheus/alerting/#incident-severity-and-escalation"

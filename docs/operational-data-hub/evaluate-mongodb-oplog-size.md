@@ -88,7 +88,7 @@ Suited for steady-state scenarios like MDM ongoing writes, TapData CDC, or repli
 **Steps**:
 
 1. **Determine Average Write Rate (OPS)** 
-   - Use [TapData monitoring](../platform-ops/monitor-with-prometheus.md) or `mongostat` over 1–3 days.
+   - Use [TapData monitoring](../platform-ops/prometheus/README.md) or `mongostat` over 1–3 days.
    - Include inserts, updates, deletes; use weighted averages or P90 for peaks/valleys.
    - Account for occasional bursts separately.
 2. **Set Retention Time**: At least 72 hours recommended.
@@ -127,7 +127,7 @@ use admin
 db.adminCommand({ replSetGetStatus: 1 })  // Displays overall status, including oplog window
 ```
 
-[Integrate Prometheus](../platform-ops/monitor-with-prometheus.md) for monitoring and set alerts (e.g., used/size > 80%). Focus on OPS, oplog window, and replication lag, especially during peaks or bulk syncs.
+[Integrate Prometheus](../platform-ops/prometheus/README.md) for monitoring and set alerts (e.g., used/size > 80%). Focus on OPS, oplog window, and replication lag, especially during peaks or bulk syncs.
 
 ## Adjusting Oplog Size
 
@@ -146,5 +146,5 @@ In TapData production, do this during maintenance windows with backups. Some set
 
 * **Capacity Planning**: Size for at least 72 hours of writes; start at 10–50 GB.
 * **Safety Buffer**: Add 20–30% to estimates for unexpected spikes.
-* **[Monitoring Alerts](../platform-ops/monitor-with-prometheus.md)**: Trigger warnings at 80% usage for timely adjustments.
+* **[Monitoring Alerts](../platform-ops/prometheus/README.md)**: Trigger warnings at 80% usage for timely adjustments.
 * **Regular Reviews**: Reassess quarterly as business and data volumes grow.

@@ -167,7 +167,7 @@ If you are using data replication/transform tasks, skip the lineage and layer co
    7. **Repair evaluation**: After correcting the configuration, decide whether you can simply resume or whether the task must be reset and fully re-synced.
 
 
-Most anomalies are found within minutes by following the path above. Add critical validations to [daily monitoring](../monitor-with-prometheus.md) and [alerting](../../case-practices/best-practice/alert-via-qqmail.md) to catch the next one before users do.
+Most anomalies are found within minutes by following the path above. Continue to review validation results for critical tables on the TapData task monitoring page, and configure [notifications](../../case-practices/best-practice/alert-via-qqmail.md). Prometheus monitors task runtime state, lag, and component resources; it does not replace data validation alerts.
 
 If you are still stuck, collect the table name, owning task, processing logic, logs (with errors), and a sample bad row, then open a ticket with [TapData support](../../appendix/support.md).
 

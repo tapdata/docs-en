@@ -346,7 +346,7 @@ import TabItem from '@theme/TabItem';
 
 ### New Features
 
-* [Added Prometheus integration](platform-ops/monitor-with-prometheus.md), allowing you to connect Tapdata to your existing monitoring stack, and build custom visual dashboards with Grafana.
+* [Added Prometheus integration](platform-ops/prometheus/README.md) to connect TapData to an existing monitoring stack and create custom Grafana dashboards.
 * Introduced new API monitoring metrics with support for [email alert configuration](system-admin/other-settings/notification.md#alert-settings).
 * Added support for [one-click API duplication](publish-apis/create-api-service.md#release330-export-api), making it easier to quickly create APIs with the same configuration.
 * Added the ability to [set task startup priority using tags](data-replication/manage-task.md); when starting tasks in bulk, execution will follow the defined priority order.

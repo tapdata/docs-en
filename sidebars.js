@@ -417,7 +417,17 @@ const sidebars = {
              },
             'platform-ops/operation',
             'platform-ops/task-scheduling-balance',
-            'platform-ops/monitor-with-prometheus',
+            {
+              type: 'category',
+              label: 'Prometheus Monitoring',
+              link: {type: 'doc', id: 'platform-ops/prometheus/README'},
+              items: [
+                     'platform-ops/prometheus/deployment',
+                     'platform-ops/prometheus/metrics',
+                     'platform-ops/prometheus/grafana',
+                     'platform-ops/prometheus/alerting',
+                    ]
+            },
             {
               type: 'category',
               label: 'Troubleshooting',
