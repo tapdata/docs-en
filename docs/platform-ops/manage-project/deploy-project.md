@@ -6,6 +6,7 @@ After engineers configure TapData connections, tasks, and APIs, they can package
 This guide covers both automated deployment and manual import/export. If you plan to use GitHub and GitHub Actions, first complete [Set up an automated deployment pipeline](setup-pipeline.md). If you only need manual import/export, follow this guide and see [Appendix: Manually import configuration](#appendix-manually-import-configuration).
 :::
 
+
 ## Example scenario
 
 This guide uses a common real-time data warehouse scenario. A team synchronizes data from an Oracle source database to a Doris warehouse. The team has already verified wide-table synchronization tasks and an external API in the development environment. The next step is to promote the same configuration to a testing or acceptance environment, and then to production.
@@ -74,6 +75,7 @@ Export the project configuration from the development environment and submit it 
 
 <details>
 <summary>Exported file structure</summary>
+
 
 Exported configuration is organized as a directory. Git export commits this directory to the repository. File export packages it as an archive.
 
