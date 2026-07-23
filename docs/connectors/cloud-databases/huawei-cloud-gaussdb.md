@@ -19,6 +19,21 @@ If you are using an on-premises deployment of GaussDB, the supported version is 
 
 :::
 
+## Supported Data Types
+
+| Category | Data Types |
+| --- | --- |
+| String | char, character, nchar, varchar, character varying, varchar2, nvarchar2, text, clob, name |
+| Integer | smallserial, serial, bigserial, tinyint, smallint, integer, binary_integer, bigint, int16, largeserial |
+| Numeric | numeric, decimal, number, real, float4, double, float8, binary_double, float, dec, money |
+| Date/Time | date, TIME WITHOUT TIME ZONE, TIME WITH TIME ZONE, INTERVAL DAY TO SECOND, SMALLDATETIME, TIMESTAMP, TIMESTAMP WITHOUT TIME ZONE, TIMESTAMP WITH TIME ZONE |
+| Boolean | boolean |
+| Binary | raw, bytea, byteawithoutorderwithequalcol, byteawithoutordercol, _byteawithoutorderwithequalcol, _byteawithoutordercol, bit varying |
+| Spatial Data | point, lseg, box, path, polygon, circle |
+| Network Types | cidr, inet, macaddr, uuid |
+| Text Search | tsvector, tsquery |
+| Others | enum, set, bit, json, jsonb, hll |
+
 ## Incremental Synchronization Instructions
 
 To achieve incremental data reading, TapData requires Huawei Cloud GaussDB's [logical decoding function](https://support.huaweicloud.com/intl/en-us/centralized-devg-v2-gaussdb/devg_03_1324.html) to extract changes submitted to the transaction log and parse data changes. The limitations are as follows:
