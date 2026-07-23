@@ -24,14 +24,13 @@ If you are using an on-premises deployment of GaussDB, the supported version is 
 | Category | Data Types |
 | --- | --- |
 | String | char, character, nchar, varchar, character varying, varchar2, nvarchar2, text, clob, name |
-| Integer | smallserial, serial, bigserial, integer, binary_integer, int16, largeserial |
-| Numeric | tinyint, smallint, bigint, numeric, decimal, number, real, float4, double, float8, binary_double, float, dec, money |
-| Date/Time | date, TIME, INTERVAL DAY TO SECOND, SMALLDATETIME, TIMESTAMP, TIMESTAMP WITHOUT TIME ZONE, TIMESTAMP WITH TIME ZONE |
+| Integer | smallserial, serial, bigserial, tinyint, smallint, integer, binary_integer, bigint, int16, largeserial |
+| Numeric | numeric, decimal, number, real, float4, double, float8, binary_double, float, dec, money |
+| Date/Time | date, TIME WITHOUT TIME ZONE, TIME WITH TIME ZONE, INTERVAL DAY TO SECOND, SMALLDATETIME, TIMESTAMP, TIMESTAMP WITHOUT TIME ZONE, TIMESTAMP WITH TIME ZONE |
 | Boolean | boolean |
 | Binary | raw, bytea, byteawithoutorderwithequalcol, byteawithoutordercol, _byteawithoutorderwithequalcol, _byteawithoutordercol, bit varying |
 | Spatial Data | point, lseg, box, path, polygon, circle |
-| Network Types | cidr, inet, macaddr |
-| Identifier | uuid |
+| Network Types | cidr, inet, macaddr, uuid |
 | Text Search | tsvector, tsquery |
 | Others | enum, set, bit, json, jsonb, hll |
 
