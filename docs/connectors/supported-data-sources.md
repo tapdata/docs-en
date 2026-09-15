@@ -186,7 +186,7 @@ import TabItem from '@theme/TabItem';
     <td>✅</td>
     <td>✅</td>
     <td>✅</td>
-    <td>9.4～16</td>
+    <td>9.4～17</td>
   </tr>
   <tr>
     <td>SQL Server</td>
