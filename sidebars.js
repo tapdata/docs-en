@@ -384,6 +384,7 @@ const sidebars = {
       items:[
              'system-admin/manage-user',
              'system-admin/manage-role',
+             'system-admin/configure-sso',
              'system-admin/manage-cluster',
              'system-admin/operation-log',
             {

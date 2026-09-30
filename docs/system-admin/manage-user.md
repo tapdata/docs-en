@@ -29,3 +29,5 @@ After TapData is deployed, a system administrator named `admin@admin.com` will b
       :::caution   
       Once a user is deleted, it cannot be recovered. Please proceed with caution.   
       :::
+
+If you use SAML SSO, see [Bulk import SSO users](configure-sso.md#bulk-import-sso-users) to pre-create accounts and assign roles using Excel.

@@ -160,6 +160,10 @@ TapData supports integrating with LDAP (Lightweight Directory Access Protocol) f
 
 Once the settings are configured, you can click **Test** to verify the correctness of the configuration.
 
+## SAML Authentication
+
+Use SAML 2.0 to connect TapData to an enterprise identity provider so users can sign in with their enterprise accounts. Open **SAML Authentication** under System Settings. For AD FS setup, pre-created accounts, and local-account sign-in, see [Configure single sign-on (SSO)](../configure-sso.md).
+
 ## <span id="login">Login Settings</span>
 
 ![Login Settings](../../images/login_settings.png)
