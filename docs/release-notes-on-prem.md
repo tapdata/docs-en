@@ -14,6 +14,39 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.23.0
+
+### New Features
+
+- Added [single sign-on (SSO)](system-admin/configure-sso.md) for integration with enterprise identity providers.
+- Added [PostgreSQL physical replication slot (PHYSICAL) capture](connectors/on-prem-databases/postgresql.md?cdc=physical#physical-replication-slot-physical), including support for reading EDB TDE-encrypted WAL and an option to prefer a standby for CDC.
+
+### Enhancements
+
+- Improved connection error alerts: errors that affect data consistency are logged at the ERROR level and trigger email notifications.
+- Added bulk task email alert configuration on the data replication and data transformation pages.
+- Improved field lineage to trace fields renamed by JS processing nodes.
+- Improved permission controls for shared mining and user management so authorized users can view the relevant data.
+- Added bulk add and remove actions for task and connection tags.
+- Improved Dashboard monitoring query performance and page responsiveness.
+
+### Bug Fixes
+
+- Fixed an issue where task export files could contain sensitive information.
+- Fixed issues where an incremental task could miss data after being stopped and restarted, or UPDATE and DELETE events for a table without a primary key might not sync.
+- Fixed excessive monitoring log cache growth that could exhaust disk space.
+- Fixed an issue where tasks could restart repeatedly after the TapData backend service restarted.
+- Fixed JS processing node errors involving array iteration, date and time types, or concurrent execution.
+- Fixed issues involving MySQL connection credential encryption, API publishing after a high-availability project import, and API Server deployment after a rolling upgrade.
+- Fixed missing or delayed task alert emails and alert delay thresholds reverting after they were saved.
+- Fixed inaccurate difference counts and abnormal recheck results in [Data Validation](operational-data-hub/fdm-layer/validate-data-quality.md), and a false table-not-found error during full-field validation when MongoDB was the target of a data transformation task.
+- Fixed errors during incremental homogeneous [MongoDB](connectors/on-prem-databases/mongodb.md) replication, subdocument fields becoming null during full sync from MongoDB, and SSL connection failures with a password-protected private key.
+- Fixed index column order differences during homogeneous PostgreSQL synchronization and jsonb synchronization errors when using a physical replication slot.
+- Fixed incorrect numeric values read from [Excel](connectors/files/excel.md), unrecognized or unsupported cell types being treated as empty strings, and date conversion errors when syncing to SQL Server, Paimon, or StarRocks.
+- Fixed duplicate incremental records and full-sync hash partitioning errors when syncing Db2 for i (AS400) to Paimon, and a case where the Paimon **Discard updates to nonexistent records** policy did not take effect after a JS node filtered out the id field.
+- Fixed an issue where the browser could freeze during sign-in.
+- Fixed incremental synchronization errors in multitenant Oracle environments.
+
 ## 4.22.0
 
 ### New Features
