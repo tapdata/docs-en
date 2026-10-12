@@ -13,7 +13,7 @@ Before you begin, ensure your environment meets the following requirements:
 
 - Hardware specifications: 8-core CPU (x86 architecture), 16 GB of memory
 - Storage specifications: 100 GB
-- Operating System: **CentOS 7+** , **Ubuntu 16.04+** or **Red Hat Enterprise Linux（RHEL）7.x/8.x**
+- Operating system: Ubuntu 22.04/24.04 LTS or Red Hat Enterprise Linux (RHEL) 9.x recommended.
 - Java: **JDK 17**
 
 
@@ -24,7 +24,7 @@ Before you begin, ensure your environment meets the following requirements:
 <Tabs className="unique-tabs">
 <TabItem value="Deploy on Linux Platform">
 ```
-This guide uses CentOS 7 as an example to demonstrate the deployment process.
+The system configuration and package installation commands below use RHEL 9. For Ubuntu, use the corresponding package management and system configuration commands.
 
 1. Log in to the target device and execute the following commands to set system parameters such as file access numbers and firewall.
 

@@ -11,7 +11,7 @@ To ensure reliability in production environments, we recommend deploying TapData
 * CPU: 8 cores
 * Memory: 16 GB
 * Storage Space: 100 GB
-* Operating System: **CentOS 7+** , **Ubuntu 16.04+** or **Red Hat Enterprise Linux（RHEL）7.x/8.x**
+* Operating system: Ubuntu 22.04/24.04 LTS or Red Hat Enterprise Linux (RHEL) 9.x recommended.
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
 
@@ -30,7 +30,7 @@ In this environment, we have already deployed a [MongoDB replica set](install-re
 
 
 
-This guide uses CentOS 7 as an example to demonstrate the deployment process for Servers A and B.
+The system configuration and package installation commands below use RHEL 9. For Ubuntu, use the corresponding package management and system configuration commands. Complete the deployment steps on both Server A and Server B.
 
 ## Prerequisites
 

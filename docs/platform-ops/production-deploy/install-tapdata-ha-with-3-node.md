@@ -13,7 +13,9 @@ In this example, we have three servers (as illustrated in the architecture below
 
 ![Deployment Architecture](../../images/tapdata_ha_with_3_node.png)
 
-In this example, each server is equipped with a **16-core CPU and 32 GB of RAM**. The recommended minimum hardware configuration is an **8-core CPU with 16 GB of RAM**, and the operating system should be CentOS 7+ or Ubuntu 16.04+.
+In this example, each server is equipped with a **16-core CPU and 32 GB of RAM**. The recommended minimum hardware configuration is an **8-core CPU with 16 GB of RAM**.
+
+* Operating system: Ubuntu 22.04/24.04 LTS or Red Hat Enterprise Linux (RHEL) 9.x recommended.
 
 | Service                            | Service Port   | Role Description                                             | Resource Planning                                            |
 | ---------------------------------- | -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -26,7 +28,7 @@ In this example, each server is equipped with a **16-core CPU and 32 GB of RAM**
 
 ## Preparation
 
-Before deployment, perform the following steps on each of the three servers. This guide uses CentOS 7 as an example to demonstrate the deployment process.
+Before deployment, perform the following steps on each of the three servers. The system configuration and package installation commands below use RHEL 9. For Ubuntu, use the corresponding package management and system configuration commands.
 
 1. Log in to the server and run the following commands to configure system parameters such as file access numbers and the firewall.
 
