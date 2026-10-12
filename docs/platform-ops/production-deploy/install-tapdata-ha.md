@@ -11,7 +11,7 @@ To ensure reliability in production environments, we recommend deploying TapData
 * CPU: 8 cores
 * Memory: 16 GB
 * Storage Space: 100 GB
-* Operating System: **CentOS 7+** , **Ubuntu 16.04+** or **Red Hat Enterprise Linux（RHEL）7.x/8.x**
+* Operating system: Ubuntu 22.04/24.04 LTS or Red Hat Enterprise Linux (RHEL) 9.x recommended.
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer/AsciinemaPlayer.tsx';
 
@@ -22,7 +22,7 @@ In this example, assume we have two servers (A and B), each configured with an I
 
 :::tip
 
-In this environment, we have already deployed a [MongoDB replica set](install-replica-mongodb.md), which provides storage services for running data for TapData services.
+This example assumes you have deployed a [MongoDB replica set](https://www.mongodb.com/docs/v8.0/tutorial/deploy-replica-set/) to store TapData runtime data. Use a MongoDB version compatible with your TapData release and target operating system, and select the matching documentation version.
 
 :::
 
@@ -30,7 +30,7 @@ In this environment, we have already deployed a [MongoDB replica set](install-re
 
 
 
-This guide uses CentOS 7 as an example to demonstrate the deployment process for Servers A and B.
+The system configuration and package installation commands below use RHEL 9. For Ubuntu, use the corresponding package management and system configuration commands. Complete the deployment steps on both Server A and Server B.
 
 ## Prerequisites
 
@@ -56,7 +56,7 @@ Before deployment, we need to perform the following operations on both servers.
       yum -y install java-1.8.0-openjdk
       ```
 
-   2. Install MongoDB (version 4.0 or above) as an intermediary database to store task data and more. For detailed steps, see the [official documentation](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/).
+   2. Install MongoDB to store task data. Choose a MongoDB version (4.0 or later) compatible with your TapData release and target operating system. Follow the official [RHEL](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-red-hat/) or [Ubuntu](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/) installation guide. Select the documentation version that matches your chosen MongoDB version.
 
 3. Download the TapData installation package (you can [contact us](mailto:team@tapdata.io) to obtain it), and upload it to the device to be deployed.
 

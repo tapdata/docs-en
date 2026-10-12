@@ -13,7 +13,7 @@ Before you begin, ensure your environment meets the following requirements:
 
 - Hardware specifications: 8-core CPU (x86 architecture), 16 GB of memory
 - Storage specifications: 100 GB
-- Operating System: **CentOS 7+** , **Ubuntu 16.04+** or **Red Hat Enterprise Linux（RHEL）7.x/8.x**
+- Operating system: Ubuntu 22.04/24.04 LTS or Red Hat Enterprise Linux (RHEL) 9.x recommended.
 - Java: **JDK 17**
 
 
@@ -24,7 +24,7 @@ Before you begin, ensure your environment meets the following requirements:
 <Tabs className="unique-tabs">
 <TabItem value="Deploy on Linux Platform">
 ```
-This guide uses CentOS 7 as an example to demonstrate the deployment process.
+The system configuration and package installation commands below use RHEL 9. For Ubuntu, use the corresponding package management and system configuration commands.
 
 1. Log in to the target device and execute the following commands to set system parameters such as file access numbers and firewall.
 
@@ -46,7 +46,7 @@ This guide uses CentOS 7 as an example to demonstrate the deployment process.
       yum -y install java-17-openjdk
       ```
 
-   2. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
+   2. Install MongoDB to store task data, logs, and metadata. Choose a MongoDB version (4.0 or later) compatible with your TapData release and target operating system. Follow the official [RHEL](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-red-hat/) or [Ubuntu](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/) installation guide, then [configure a replica set](https://www.mongodb.com/docs/v8.0/tutorial/deploy-replica-set/). Select the documentation version that matches your chosen MongoDB version.
 
 3. Download the TapData installation package (contact us at [team@tapdata.io](mailto:team@tapdata.io) to obtain it) and upload it to the target device.
 
