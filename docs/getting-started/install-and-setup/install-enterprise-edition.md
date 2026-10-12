@@ -46,7 +46,7 @@ The system configuration and package installation commands below use RHEL 9. For
       yum -y install java-17-openjdk
       ```
 
-   2. [Install MongoDB](../../platform-ops/production-deploy/install-replica-mongodb.md) (version 4.0 and above), which will serve as the storage system for TapData to run related data, such as logs and metadata.
+   2. Install MongoDB to store task data, logs, and metadata. Choose a MongoDB version (4.0 or later) compatible with your TapData release and target operating system. Follow the official [RHEL](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-red-hat/) or [Ubuntu](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-ubuntu/) installation guide, then [configure a replica set](https://www.mongodb.com/docs/v8.0/tutorial/deploy-replica-set/). Select the documentation version that matches your chosen MongoDB version.
 
 3. Download the TapData installation package (contact us at [team@tapdata.io](mailto:team@tapdata.io) to obtain it) and upload it to the target device.
 
