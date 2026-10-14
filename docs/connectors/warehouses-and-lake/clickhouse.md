@@ -18,12 +18,12 @@ ClickHouse 20.x, 21.x, 22.x, 23.x, 24.x
 | Category    | Data Types                                                   |
 | ----------- | ------------------------------------------------------------ |
 | String      | FixedString, String, UUID                                    |
-| Integer     | Int8, UInt8, Int16, UInt16, Int32, UInt32, UInt64, Int128, UInt128, Int256, UInt256 |
+| Integer     | Int8, UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Int128, UInt128, Int256, UInt256 |
 | Floating    | Float32, Float64                                             |
 | Numeric     | Decimal                                                      |
 | Date/Time   | Date, Date32, DateTime, DateTime64                           |
 | Enumeration | Enum8, Enum16                                                |
-| Composite   | Tuple                                                        |
+| Composite   | Array, Tuple                                                 |
 
 ## SQL Operations for Sync
 
