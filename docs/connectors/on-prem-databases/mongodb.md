@@ -63,7 +63,9 @@ When MongoDB is used as a target database, you can select the write strategy thr
 
 2. To ensure sufficient storage space for the Oplog, it is important to configure it to accommodate at least 24 hours' worth of data. For detailed instructions, see [Change the Size of the Oplog](https://docs.mongodb.com/manual/tutorial/change-oplog-size/).
 
-3. To create an account and grant permissions according to permission management requirements, follow the necessary steps.
+3. Create a sync or data development account with read access to the source database and the `clusterMonitor` role for data validation. Choose the access scope below.
+
+   For MongoDB 4.0 or later, incremental sync uses Change Streams and requires `find` and `changeStream`. The built-in `read` and `readAnyDatabase` roles below include both privileges. Custom roles must grant both on all non-system collections in the source database, in addition to other required read privileges.
 
    ```mdx-code-block
    <Tabs className="unique-tabs">
@@ -104,9 +106,74 @@ When MongoDB is used as a target database, you can select the write strategy thr
    </TabItem>
    </Tabs>
 
+   **Document preimage permissions**
+
+   For new source nodes running MongoDB 6.0 or later, **Document Preimages** is enabled by default. Grant the sync account the `collMod` privilege, or have a DBA enable preimages on the collections in advance.
+
+   Preimages require additional storage and expire with the corresponding oplog entries by default. A DBA can set [`changeStreamOptions.preAndPostImages.expireAfterSeconds`](https://www.mongodb.com/docs/manual/changestreams/#change-streams-with-document-pre--and-post-images) to limit retention while allowing for sync lag and task recovery.
+
+   ```mdx-code-block
+   <Tabs className="unique-tabs" defaultValue="tapdata-auto">
+   <TabItem value="tapdata-auto" label="Grant collMod privileges">
+   ```
+
+   Have an administrator run the following commands to grant `collMod` to the sync account. This example uses the `tapdata` account created in the `admin` database. Replace the database name and username.
+
+   ```javascript
+   use admin
+
+   db.createRole({
+     role: "tapdataPreImageRole",
+     privileges: [
+       {
+         resource: { db: "database_name", collection: "" },
+         actions: ["collMod"]
+       }
+     ],
+     roles: []
+   })
+
+   db.grantRolesToUser(
+     "tapdata",
+     [{ role: "tapdataPreImageRole", db: "admin" }]
+   )
+   ```
+
+   The example covers all non-system collections in the specified database. To limit access to specific collections, replace the empty `collection` value with a collection name. For multiple databases or collections, add entries to `privileges`.
+
+   </TabItem>
+
+   <TabItem value="dba-preconfigured" label="Have a DBA enable preimages">
+
+   Have a DBA with `collMod` privileges run this command for each existing collection to sync. Replace the database and collection names:
+
+   ```javascript
+   use database_name
+
+   db.runCommand({
+     collMod: "collection_name",
+     changeStreamPreAndPostImages: { enabled: true }
+   })
+   ```
+
+   The sync account needs `listCollections` on the source database to check the preimage setting. The built-in roles above include this privilege. The account does not need `collMod`.
+
+   Run this check as the sync account. The result must be `{ enabled: true }`:
+
+   ```javascript
+   use database_name
+
+   db.getCollectionInfos({ name: "collection_name" })[0].options.changeStreamPreAndPostImages
+   ```
+
+   A DBA must also enable preimages on new or recreated collections.
+
+   </TabItem>
+   </Tabs>
+
    :::tip
 
-   In shard cluster architectures, the shard server is unable to retrieve user permissions from the config database. Therefore, it is necessary to create corresponding users and grant permissions on the master nodes of each shard.
+   For a sharded source cluster, create the sync account and grant its privileges on each shard's primary node. For details, see MongoDB's [Change Streams](https://www.mongodb.com/docs/manual/changestreams/), [collMod command](https://www.mongodb.com/docs/manual/reference/command/collmod/), and [built-in roles](https://www.mongodb.com/docs/manual/reference/built-in-roles/?deployment-type=self).
 
    :::
 
@@ -191,8 +258,8 @@ DB as the source or target node, TapData provides more advanced features to bett
 
 | **Configuration**                  | **Description**                                              |
 | ---------------------------------- | ------------------------------------------------------------ |
-| **Document Preimages**             | Disabled by default. [Document Pre-Image](https://www.mongodb.com/docs/manual/changeStreams/#change-streams-with-document-pre--and-post-images) refers to the document before it is replaced, updated, or deleted. It is only supported in MongoDB 6.0 and above. When enabled, the UPDATE/DELETE event will record the pre-image, which TapData will use for data synchronization. |
-| **Filling Modified Data**          | Enabled by default. When enabled, it automatically fills in complete fields for **UPDATE** events. |
+| **Document Preimages**             | Available only for MongoDB 6.0 or later and enabled by default for new source nodes. Reads documents as they existed before an update, replacement, or deletion. For required privileges, see [Source prerequisites](#as-a-source-database). Cannot be enabled together with **Filling Modified Data**. |
+| **Filling Modified Data**          | Disabled by default for MongoDB 6.0 or later; enabled by default for earlier versions. Fills in complete fields for **UPDATE** events. Cannot be enabled together with **Document Preimages**. |
 | **Skip Deleted Events On Filling** | Enabled by default. Disabling this feature may cause incremental data issues in the following cases: tasks using non-`_id` fields for business logic; source field type is a sub-document and its attributes are modified; source field type is an embedded array and the `PULL` operation is executed. |
 | **No Cursor Timeout**              | Disabled by default. When enabled, MongoDB will disable cursor timeout to prevent timeout errors during data synchronization. |
 | **Write Concern**                  | Sets the [write concern level](https://www.mongodb.com/docs/manual/reference/write-concern/). In a sharded cluster, `mongos` will pass the write concern to the shards. The default value is **w1**. Options are as follows:<br />●  **w0 / Unacknowledged**: Does not wait for write acknowledgment. Fastest, but cannot confirm whether the write was successful.<br />●  **w1 / Acknowledged**: Acknowledges successful write to the primary node. Suitable for most scenarios, balancing performance and safety.<br />●  **w3**: Acknowledges successful write to 3 nodes, increasing data safety.<br />●  **majority**: Acknowledges successful write to most nodes. High security, but may impact performance if there are many nodes. |
