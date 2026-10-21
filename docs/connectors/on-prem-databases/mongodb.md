@@ -110,6 +110,8 @@ When MongoDB is used as a target database, you can select the write strategy thr
 
    For new source nodes running MongoDB 6.0 or later, **Document Preimages** is enabled by default. Grant the sync account the `collMod` privilege, or have a DBA enable preimages on the collections in advance.
 
+   Preimages require additional storage and expire with the corresponding oplog entries by default. A DBA can set [`changeStreamOptions.preAndPostImages.expireAfterSeconds`](https://www.mongodb.com/docs/manual/changestreams/#change-streams-with-document-pre--and-post-images) to limit retention while allowing for sync lag and task recovery.
+
    ```mdx-code-block
    <Tabs className="unique-tabs" defaultValue="tapdata-auto">
    <TabItem value="tapdata-auto" label="Grant collMod privileges">
