@@ -27,17 +27,18 @@ import TabItem from '@theme/TabItem';
 
 ## SQL Operations for Sync
 
+For MySQL tables, TapData supports syncing the following data and schema changes:
+
 - **DML**: INSERT, UPDATE, DELETE
+- **DDL**: ADD COLUMN, CHANGE COLUMN (excluding changes to auto-increment attributes), DROP COLUMN, RENAME COLUMN
 
-  :::tip
+When syncing tables between MySQL databases, TapData also supports **column default values**, **auto-increment columns**, and **foreign key constraints**. MySQL sources also support syncing view data through full sync or incremental [field polling](../../faq/data-pipeline.md#polling-sync).
 
-  When MySQL is used as a target database, you can configure write policies through advanced settings in the task node: for insert conflicts, you can choose to update or discard; for update failures, you can choose to insert or just log the errors.
+:::tip
 
-  :::
+When MySQL is used as a target database, you can configure write policies through advanced settings in the task node: for insert conflicts, you can choose to update or discard; for update failures, you can choose to insert or just log the errors.
 
-- **DDL**: ADD COLUMN, CHANGE COLUMN, DROP COLUMN, RENAME COLUMN
-
-In addition, for data synchronization between MySQL databases, extra support is provided for synchronizing **column default values**, **auto-increment columns**, and **foreign key constraints**.
+:::
 
 ## Supported Sync Directions
 
@@ -46,7 +47,7 @@ In addition, for data synchronization between MySQL databases, extra support is 
 
 ## Considerations
 * The TapData Agent and MySQL instance should be deployed in the same intranet environment. If connecting over the internet, make sure the network is accessible.
-* Incremental data capture is mainly achieved through parsing the binlog, which may consume CPU and disk I/O resources if there are frequent data changes.
+* Capturing incremental table changes from the binlog may consume CPU and disk I/O resources when data changes frequently.
 * In MySQL 5.6 and earlier versions, preprocess negative values for the **TIME** type (e.g., convert to a legal positive value) to avoid issues with incremental data capture.
 * For some data sources based on the MySQL kernel, using schemas or functions not supported by native MySQL might cause errors in incremental data capture. In such cases, please contact [TapData Support](../../appendix/support.md) for assistance.
 
@@ -59,9 +60,9 @@ In addition, for data synchronization between MySQL databases, extra support is 
 
 Applicable when MySQL is used as a source:
 
-- Only tables and indexes can be synchronized. Temporary tables, hidden columns, triggers, views, and stored procedures are not supported.
+- TapData supports syncing tables and indexes and reading view data. Temporary tables, hidden columns, triggers, and stored procedures are not supported.
 - Tapdata supports master-slave switchovers without interrupting sync, but the replication status must be consistent and the failover strategy properly configured. Otherwise, temporary interruptions or data loss may occur.
-- To enable incremental data sync, make sure MySQL Binlog settings are correctly configured:
+- To capture incremental table changes from the binlog, configure the following MySQL Binlog settings:
   - The Binlog must be retained for **at least 7 days**, or Tapdata may fail to access it, resulting in incremental sync failures.
   - `binlog_format` should be set to `ROW`, `binlog_row_image` to `FULL`, and the target database must **not** be included in `binlog-ignore-db`.
   - If `binlog-do-db` is configured, the target database must be explicitly included; otherwise, incremental data may be missed.
@@ -136,7 +137,7 @@ CREATE USER 'tapdata'@'%' IDENTIFIED BY 'yourpasswd';
 
 ```mdx-code-block
 <Tabs className="unique-tabs">
-<TabItem value="Full Data Synchronization" default>
+<TabItem value="Full sync or field polling" default>
 ```
 
 ```sql
@@ -145,7 +146,7 @@ GRANT SELECT ON database_name.* TO 'username' IDENTIFIED BY 'password';
 ```
 
 </TabItem>
-<TabItem value="Full + Incremental Data Synchronization">
+<TabItem value="Full sync and binlog capture">
 
 ```sql
 -- Grant read permissions for the specified database
@@ -161,7 +162,7 @@ GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'username' IDENTIFIED BY '
 * **username**: Enter user name.
 * **password**: Enter password.
 
-3. To ensure that the incremental data of the MySQL database can be read, you need to follow the steps below to turn on Binlog.
+3. To capture incremental table changes from the binlog, enable Binlog as follows. Skip this step if you only use full sync or field polling.
 
    1. Use the `vim` command to modify the configuration in `$MYSQL_HOME/mysql.cnf`, for example:
 

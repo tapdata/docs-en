@@ -14,6 +14,37 @@ import TabItem from '@theme/TabItem';
 <TabItem value="Version 4.x" default>
 ```
 
+## 4.24.0
+
+### New Features
+
+- [MySQL](connectors/on-prem-databases/mysql.md#sql-operations-for-sync) sources now support syncing view data through full sync and incremental field polling.
+- Added bulk configuration of task alert recipients by user group, user, or email address, with options to append, replace, or remove recipients. See [Manage Data Replication Tasks](data-replication/manage-task.md) and [Manage Data Transformation Tasks](data-transformation/manage-task.md).
+
+### Enhancements
+
+- Enhanced JS nodes to continue syncing data to downstream databases after FTP file synchronization.
+- Added query conditions for selecting sample data when debugging JS nodes.
+- Improved detection and alerts for stalled incremental progress at the task and table levels.
+- Improved task resource monitoring and shared mining task metrics.
+- Added a prompt when system-level settings prevent task email alerts from being sent.
+- Replaced deprecated MongoDB commands in the connector to improve compatibility.
+- Improved type handling for single- and double-precision floating-point values.
+
+### Bug Fixes
+
+- Fixed unexpected API Server restarts after connection configuration changes and restarts getting stuck under high load.
+- Fixed an issue where concurrent JS script test runs in custom connections could cause the engine to exit.
+- Fixed an issue where a shared cache could remain in **Starting** after it was reset and its field configuration was changed.
+- Fixed an issue where task alert emails might not be sent.
+- Fixed an issue where tasks could not participate in load balancing after an engine tag was assigned to the connection.
+- Fixed incorrect type mappings or precision handling for some numeric fields when syncing between SQL Server, StarRocks, and Paimon.
+- Fixed incorrect date and time conversions when syncing CSV data to SQL Server.
+- Fixed upsert issues with auto-increment columns in SQL Server targets and full sync errors for SQL Server source tables with clustered columnstore indexes.
+- Fixed DML parsing errors when DML and DDL operations occurred in rapid succession in an Oracle source.
+- Fixed an issue where Kafka schema information might fail to load when source records contained array fields.
+- Fixed errors caused by heartbeat processing or checkpoint recovery during incremental synchronization from Kafka to Paimon.
+
 ## 4.23.0
 
 ### New Features

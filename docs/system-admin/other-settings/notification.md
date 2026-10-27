@@ -43,6 +43,8 @@ Through alert settings, you can configure alert rules for tasks, nodes, and API 
 
 :::tip
 
+To update alert rules or recipients for multiple tasks, use the task list. See [Manage Data Replication Tasks](../../data-replication/manage-task.md) or [Manage Data Transformation Tasks](../../data-transformation/manage-task.md).
+
 For a practical example of email alert setup, see [Send Alerts via Mail](../../case-practices/best-practice/alert-via-qqmail.md).
 
 :::

@@ -277,7 +277,7 @@ The output is a single table. Data transformation tasks are mainly used for data
 
 ### If the source table does not support real-time log parsing, how can incremental synchronization be performed?
 
-Incremental data can be obtained through field polling. This field is usually an auto-increment value or timestamp. For example, data insertion/change is accompanied by a timestamp, and TapData can use regular queries of this field's value to assist in determining incremental data changes, typically capturing INSERT/UPDATE operations but not DELETE operations.
+Incremental data can be obtained through <span id="polling-sync">field polling</span>. This field is usually an auto-increment value or timestamp. For example, data insertion/change is accompanied by a timestamp, and TapData can use regular queries of this field's value to assist in determining incremental data changes, typically capturing INSERT/UPDATE operations but not DELETE operations.
 
 ![Select Field Polling Method](../images/select_sync_request_type.png)
 
