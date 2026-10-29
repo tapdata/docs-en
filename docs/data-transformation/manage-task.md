@@ -13,4 +13,5 @@ Once the data transformation task is created, you can manage it in the task list
 | **Monitor** | View the running progress, running logs, connections, history, synchronized content, and more. For more information, see [monitor task](monitor-view-tasks.md) |
 | **Copy** | Clear the data synchronization progress of the task, and the next start will initiate the data synchronization task from the beginning. |
 | **Reset** | Clear the data synchronization progress of the task, and the next start will restart the data synchronization task.  |
+| **Batch Set Alerts** | Select tasks, then choose **Batch Operation → Batch Set Alerts** to update alert rules or append, replace, or remove alert recipients by user group, user, or email address. |
 | **Delete** | Please note that once a task is deleted, it cannot be recovered. Please proceed with caution when deleting tasks. |
