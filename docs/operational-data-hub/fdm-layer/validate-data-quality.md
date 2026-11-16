@@ -53,14 +53,13 @@ Data validation is **not supported** for queue-based sources like Kafka.
 
 ## Manage Validation Results
 
-Click the **Result** link for any validation task to view its results in depth. For any inconsistencies, you can:
+Click **Result** for a validation task to view its results. If the results show inconsistencies, click **Download** to export the details.
 
-- Use **One-Click Repair** to automatically align data between source and target.
-- Download detailed mismatch reports for further analysis.
+For **Related Fields Validation** or **Hash Validation**, the results page can offer **Data Correction** to repair differences directly and **Generate Recovery SQL** to create SQL for manual repair.
 
-Additionally, you can **generate repair SQL** for in-depth analysis or execute it manually in the database to fix the issue.
+The following example shows results for **Related Fields Validation**.
 
-![View validation Results](../../images/check_data_result_en.png)
+![Example results for Related Fields Validation](../../images/check_data_result_en.png)
 
 For **Full Table Value Validation** or **Key Field Value Validation**, you can also click **Diff Validation** in the top-right corner to re-run validation only on the previously identified differences, confirming whether they have been resolved.
 
